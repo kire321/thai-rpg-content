@@ -1,0 +1,570 @@
+[
+  {
+    "id": "ep_001",
+    "title": "The Resonance Route",
+    "acts": [
+      {
+        "id": "act_1",
+        "title": "The Discovery",
+        "lines_before": [
+          {
+            "character": "char_narrator",
+            "place": "place_resonance_ship",
+            "dialogue": "The resonance ship Khrueang's Whisper cuts through the cloud layer, its singing engine humming at the precise frequency that keeps the lattice beneath parted like a sea of crystal.",
+            "stage_directions": "Wind whips across the deck. The crystalline sails pulse with harmonic light."
+          },
+          {
+            "character": "char_chanida",
+            "place": "place_resonance_ship",
+            "dialogue": "I've been mapping unauthorized frequencies between Khrueang and Phrao. There's a tonal pattern the lattice responds to that isn't in any Tonal Order registry.",
+            "stage_directions": "Chanida holds up a crystal tuning fork, its vibration creating small ripples in the deck's resonance panels."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_resonance_ship",
+            "dialogue": "Unauthorized frequencies are unauthorized for a reason, kid. I lost my last ship to a frequency that wasn't in any registry either.",
+            "stage_directions": "Arthit's hand unconsciously touches the tattooed routes on his neck, visible above his collar."
+          },
+          {
+            "character": "char_pichit",
+            "place": "place_resonance_ship",
+            "dialogue": "The lattice has been singing differently lately. At Phrao, the Listeners have noticed harmonic shifts that don't correspond to any known routes.",
+            "stage_directions": "Pichit's crystal staff glows faintly, resonating with the ship's engine tone."
+          },
+          {
+            "character": "char_narrator",
+            "place": "place_phrao_monastery",
+            "dialogue": "The ship docks at Phrao monastery-city, where the constant background hum of meditating Listeners creates an atmosphere of solemn reverence.",
+            "stage_directions": "Crystal bowls of varying sizes line the docking pavilion, each vibrating at a different harmonic."
+          },
+          {
+            "character": "char_monk",
+            "place": "place_phrao_monastery",
+            "dialogue": "You must be the ones. The lattice has been... speaking. Not singing, not reacting. Speaking. We recorded frequencies that form patterns we've never catalogued.",
+            "stage_directions": "The Listener monk's crystal earpieces flicker with stored tonal data. His hands tremble slightly."
+          },
+          {
+            "character": "char_malee",
+            "place": "place_phrao_monastery",
+            "dialogue": "Speaking? The lattice doesn't speak. It reacts. I've been on the surface my whole life and it's never done anything but react.",
+            "stage_directions": "Malee's prosthetic leg makes a soft crystalline clicking sound against the monastery's polished floor."
+          }
+        ],
+        "tag": "tag_134",
+        "lines_after": [
+          {
+            "character": "char_pichit",
+            "place": "place_phrao_monastery",
+            "dialogue": "Before I left the order, I received a fragmentary communication from the lattice. Patterns that suggested... an impending change. They dismissed it as hallucination.",
+            "stage_directions": "Pichit's staff dims, then pulses once, as if acknowledging something."
+          },
+          {
+            "character": "char_chanida",
+            "place": "place_phrao_monastery",
+            "dialogue": "What if the lattice isn't just a barrier? What if it's trying to tell us something? My frequency map might be picking up the beginning of a message.",
+            "stage_directions": "Chanida pulls out a crystal tablet covered in tonal notation, her unauthorized frequency map glowing with new patterns."
+          },
+          {
+            "character": "char_monk",
+            "place": "place_phrao_monastery",
+            "dialogue": "We need to know what you've found. If the lattice is truly communicating, the Tonal Orders must be told. But some of us believe... they already know. And they're keeping it from us.",
+            "stage_directions": "The monk glances nervously at the monastery's central resonance anchor, as if fearing surveillance."
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_narrator",
+            "place": "place_phrao_monastery",
+            "dialogue": "The monk hands you a crystal recording of the anomalous frequencies. Chanida's unauthorized map and the monastery's data seem to point to the same location — a region of the Silent Zone where no ship has ever returned.",
+            "stage_directions": "The recording crystal pulses with an unfamiliar rhythm, neither random nor musical. Something intentional."
+          },
+          "choices": [
+            {
+              "description": "Share Chanida's frequency map with the monastery openly — knowledge should be free",
+              "difficulty": "medium",
+              "subplot": "subplot_frequency_map",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_chanida",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "Here. Everything I have. If the lattice is talking, everyone deserves to hear what it's saying.",
+                  "stage_directions": "Chanida uploads her complete frequency map to the monastery's public resonance archive."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_arthit",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "Wait — we don't know what we're sharing. Half a map of an unknown frequency could get people killed.",
+                  "stage_directions": "Arthit intercepts the crystal tablet before Chanida can complete the upload."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": -1
+              }
+            },
+            {
+              "description": "Investigate the Silent Zone coordinates alone — avoid drawing attention",
+              "difficulty": "hard",
+              "subplot": "subplot_listener_warning",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pichit",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "If the Tonal Orders already know about this, sharing it openly won't help. We need to understand it first.",
+                  "stage_directions": "Pichit copies the monastery's recording to his staff's memory crystal, leaving no trace."
+                },
+                "subplot": "subplot_listener_warning",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_monk",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "You cannot keep this to yourselves. If the lattice is warning us of something, everyone must know. This is not the time for secrecy.",
+                  "stage_directions": "The monk's voice rises, drawing attention from other Listeners in the pavilion."
+                },
+                "subplot": "subplot_listener_warning",
+                "delta": 0
+              }
+            },
+            {
+              "description": "Skeptically question whether the lattice is really communicating or just malfunctioning",
+              "difficulty": "easy",
+              "subplot": "subplot_groundless",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "I've seen the lattice do weird things. Doesn't mean it's talking. Could just be a new kind of crystal growth changing the resonance patterns. We need proof, not faith.",
+                  "stage_directions": "Malee's practical assessment grounds the conversation. The monk looks disappointed but nods slowly."
+                },
+                "subplot": "subplot_groundless",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pichit",
+                  "place": "place_phrao_monastery",
+                  "dialogue": "Dismissing it as malfunction is exactly what the monastery did to my warning. Sometimes you have to trust what you're hearing, even when you can't explain it.",
+                  "stage_directions": "Pichit's staff flares with light, resonating with the anomalous frequency in the recording crystal."
+                },
+                "subplot": "subplot_groundless",
+                "delta": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "act_2",
+        "title": "The Urgency",
+        "lines_before": [
+          {
+            "character": "char_narrator",
+            "place": "place_resonance_ship",
+            "dialogue": "The Khrueang's Whisper departs Phrao with new data and heavier questions. The ship's singing engine strains as Chanida feeds her unauthorized frequency into the navigation crystal.",
+            "stage_directions": "The engine's hum shifts to an unfamiliar tonal pattern. The lattice below responds differently — not parting smoothly but rippling, as if uncertain."
+          },
+          {
+            "character": "char_malee",
+            "place": "place_resonance_ship",
+            "dialogue": "Something's wrong with my leg. The crystal prosthetic is... vibrating. Not with the engine. With something underneath us.",
+            "stage_directions": "Malee clutches her prosthetic leg, wincing. The crystal components glow faintly, pulsing in rhythm with Chanida's unauthorized frequency."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_resonance_ship",
+            "dialogue": "Crystal ship off the port bow. Modified hull, no registry markings. They're running a harmonic disruptor — that's pirate gear.",
+            "stage_directions": "Arthit points to a sleek predatory vessel emerging from the cloud layer, its crystalline fins jagged and weaponized."
+          },
+          {
+            "character": "char_bandit",
+            "place": "place_resonance_ship",
+            "dialogue": "Heave to and surrender your frequency data! That route you're mapping belongs to us now!",
+            "stage_directions": "The pirate ship's disruptor emits a dissonant tone that makes the lattice below shudder violently."
+          }
+        ],
+        "tag": "tag_022",
+        "lines_after": [
+          {
+            "character": "char_chanida",
+            "place": "place_resonance_ship",
+            "dialogue": "They're using a frequency jammer! It's corrupting the lattice response — if they keep this up, our safe channel will collapse!",
+            "stage_directions": "Chanida frantically adjusts the singing engine's tonal output, countering the pirate disruptor's interference."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_resonance_ship",
+            "dialogue": "There's a narrow corridor to the southeast. Old smuggler's route, not in any registry. It'll take us close to the Silent Zone, but it's our only shot.",
+            "stage_directions": "Arthit's tattooed skin glows faintly as he recalls a forbidden route from memory, his fingers tracing the tonal notation on his forearm."
+          },
+          {
+            "character": "char_pichit",
+            "place": "place_resonance_ship",
+            "dialogue": "The lattice is reacting to both frequencies at once. It's creating... interference patterns I've never seen before. The crystal is trying to harmonize them.",
+            "stage_directions": "Through the deck's observation panels, the lattice below shows complex geometric patterns where the two frequencies intersect."
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_narrator",
+            "place": "place_resonance_ship",
+            "dialogue": "The pirate ship gains, its disruptor widening the corrupted zone in the lattice. Arthit's smuggler route leads toward the Silent Zone — a region where the lattice doesn't respond to sound at all. Malee's prosthetic is glowing brighter, resonating with something beneath the corrupted lattice.",
+            "stage_directions": "The ship's engine sputters as the disruptor's interference intensifies. The deck vibrates with two competing frequencies."
+          },
+          "choices": [
+            {
+              "description": "Have Chanida broadcast her frequency openly to overwhelm the pirate disruptor",
+              "difficulty": "hard",
+              "subplot": "subplot_frequency_map",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_chanida",
+                  "place": "place_resonance_ship",
+                  "dialogue": "Full broadcast! Everyone tune to this frequency — if the lattice wants this signal, let's give it everything!",
+                  "stage_directions": "Chanida pushes the singing engine to maximum output. The lattice erupts with light as her frequency floods the corrupted zone."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": 3
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_arthit",
+                  "place": "place_resonance_ship",
+                  "dialogue": "The engine's overheating! Chanida, dial it back — we're going to burn out the crystal core!",
+                  "stage_directions": "Smoke rises from the singing engine as the crystal core cracks under the strain. The pirate ship continues closing."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": -2
+              }
+            },
+            {
+              "description": "Follow Arthit's smuggler route into the Silent Zone to escape",
+              "difficulty": "medium",
+              "subplot": "subplot_haunted_ship",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_arthit",
+                  "place": "place_resonance_ship",
+                  "dialogue": "Hold on. This route hasn't been flown in twenty years. The lattice changes, but the old paths... they leave echoes.",
+                  "stage_directions": "Arthit takes the helm, his tattooed hands steady as he navigates by memory into the unmapped corridor."
+                },
+                "subplot": "subplot_haunted_ship",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_resonance_ship",
+                  "dialogue": "The lattice is different here! Arthit, your route is wrong — the crystal formations have shifted!",
+                  "stage_directions": "The ship lurches as the lattice beneath refuses to part, jagged crystal spires rising toward the hull."
+                },
+                "subplot": "subplot_haunted_ship",
+                "delta": -1
+              }
+            },
+            {
+              "description": "Use Malee's prosthetic resonance to jam the pirate disruptor",
+              "difficulty": "medium",
+              "subplot": "subplot_crystal_leg",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_resonance_ship",
+                  "dialogue": "My leg's already resonating with whatever's down there. If I tune it to counter their disruptor frequency...",
+                  "stage_directions": "Malee exposes her prosthetic's crystal core, connecting it to the ship's engine. The lattice responds with a blinding flash of harmonic light."
+                },
+                "subplot": "subplot_crystal_leg",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_resonance_ship",
+                  "dialogue": "Agh! The feedback — the crystal in my leg can't handle the output! Disconnect it!",
+                  "stage_directions": "Malee collapses as the prosthetic's crystal overheats, smoke rising from the joint. The pirate disruptor continues unabated."
+                },
+                "subplot": "subplot_crystal_leg",
+                "delta": -2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "act_3",
+        "title": "The Crisis",
+        "lines_before": [
+          {
+            "character": "char_narrator",
+            "place": "place_silent_zone",
+            "dialogue": "The Silent Zone. Where the lattice doesn't respond to sound. Where the crystalline surface is dark and non-reactive, forming sharp obsidian spires that have claimed a hundred ships.",
+            "stage_directions": "The ship's singing engine falters, then dies. The crystalline sails go dark. The unnatural silence is suffocating — no hum, no vibration, no response."
+          },
+          {
+            "character": "char_malee",
+            "place": "place_silent_zone",
+            "dialogue": "The engine's dead. We're drifting. In the Silent Zone, without propulsion, we fall. Slowly, but we fall.",
+            "stage_directions": "Through the observation panels, the dark lattice stretches in every direction, jagged and unresponsive."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_silent_zone",
+            "dialogue": "I know a way through. There's a resonance echo here — from before the Silencing. The lattice remembers, even when it doesn't respond. I can feel it in my tattoos.",
+            "stage_directions": "Arthit's tattooed skin glows faintly even in the dead zone, the ancient tonal notation seeming to vibrate with a frequency only he can perceive."
+          },
+          {
+            "character": "char_chanida",
+            "place": "place_silent_zone",
+            "dialogue": "The unauthorized frequency — it's getting stronger here. Not weaker. The Silent Zone isn't dead, it's... waiting. Listening for something specific.",
+            "stage_directions": "Chanida holds her tuning fork near the ship's dead engine. It begins to vibrate on its own, responding to something in the silent lattice below."
+          }
+        ],
+        "tag": "tag_253",
+        "lines_after": [
+          {
+            "character": "char_pichit",
+            "place": "place_silent_zone",
+            "dialogue": "The lattice isn't silent. It's holding its breath. All the frequencies we've been playing — Chanida's unauthorized map, the pirate disruptor, the ship's engine — they've been... questions. And now we're in the place where the answer lives.",
+            "stage_directions": "Pichit's staff pulses weakly, then with increasing intensity, as if the lattice is finally responding to something."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_silent_zone",
+            "dialogue": "Tattooed route says there's a resonance chamber beneath us. A hollow space where the pre-Silencing crystal networks intersect. If Chanida's frequency can reach it...",
+            "stage_directions": "Arthit traces a complex pattern on his arm, comparing it to the dark lattice formations visible through the observation panel."
+          },
+          {
+            "character": "char_narrator",
+            "place": "place_silent_zone",
+            "dialogue": "The pirate ship hesitates at the edge of the Silent Zone, its disruptor useless where the lattice doesn't respond. But they won't wait forever. And the Khrueang's Whisper is still falling.",
+            "stage_directions": "Through the rear viewport, the pirate ship circles the Silent Zone's border like a predator unwilling to enter deep water."
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_narrator",
+            "place": "place_silent_zone",
+            "dialogue": "The ship drifts lower, its resonance anchor beginning to scrape the dark crystal spires. Chanida's tuning fork vibrates with increasing intensity, and Pichit's staff pulses in rhythm with it. The lattice beneath them is not dead — it is waiting. For the right frequency. For the right question. For someone to finally listen.",
+            "stage_directions": "The anchor spire makes contact with a dark crystal formation. Instead of shattering, the crystal begins to glow at the point of contact."
+          },
+          "choices": [
+            {
+              "description": "Have Chanida play her unauthorized frequency at maximum power through the ship's anchor",
+              "difficulty": "hard",
+              "subplot": "subplot_frequency_map",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_chanida",
+                  "place": "place_silent_zone",
+                  "dialogue": "This is what the lattice has been trying to tell us. Not a warning — an invitation. Here's my answer!",
+                  "stage_directions": "Chanida channels her frequency through the anchor spire directly into the lattice. The dark crystal erupts with light, forming a perfect harmonic pathway."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": 3
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_narrator",
+                  "place": "place_silent_zone",
+                  "dialogue": "The frequency is correct but the lattice's response is overwhelming. Crystal growths erupt around the ship, trapping the anchor. They've been heard, but the lattice's reply is too much to contain.",
+                  "stage_directions": "Jagged crystal formations rise rapidly around the ship, encasing the anchor in a prison of reactive lattice."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": -2
+              }
+            },
+            {
+              "description": "Use Arthit's tattooed forbidden routes combined with Chanida's frequency",
+              "difficulty": "medium",
+              "subplot": "subplot_haunted_ship",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_arthit",
+                  "place": "place_silent_zone",
+                  "dialogue": "Old routes and new frequencies. The lattice remembers the paths I've memorized, and Chanida's signal gives it permission to respond. Together...",
+                  "stage_directions": "Arthit guides Chanida's frequency along the ancient tattooed routes. The dark lattice lights up section by section, revealing a hidden pathway through the Silent Zone."
+                },
+                "subplot": "subplot_haunted_ship",
+                "delta": 3
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_arthit",
+                  "place": "place_silent_zone",
+                  "dialogue": "The routes have changed. The lattice I memorized isn't the lattice that's here anymore. I'm navigating by a map that no longer exists.",
+                  "stage_directions": "The crystal pathway Arthit tries to open collapses behind them, sealing their retreat. The ship continues to fall."
+                },
+                "subplot": "subplot_haunted_ship",
+                "delta": -1
+              }
+            },
+            {
+              "description": "Attempt to restart the engine using Malee's prosthetic as a temporary crystal core",
+              "difficulty": "hard",
+              "subplot": "subplot_crystal_leg",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_silent_zone",
+                  "dialogue": "My leg's crystal has been resonating with this place since we entered. If I use it to jumpstart the engine, we might get enough power to reach the resonance chamber.",
+                  "stage_directions": "Malee detaches her prosthetic's crystal core and slots it into the engine housing. The singing engine roars back to life, powered by lattice-tuned crystal."
+                },
+                "subplot": "subplot_crystal_leg",
+                "delta": 3
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_silent_zone",
+                  "dialogue": "The crystal's burned out. I can't feel my leg anymore — the connection's severed. I gave everything and it wasn't enough.",
+                  "stage_directions": "Malee collapses, her prosthetic leg now inert and dark. The engine sputters once, then dies again."
+                },
+                "subplot": "subplot_crystal_leg",
+                "delta": -3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "act_4",
+        "title": "The Transformation",
+        "lines_before": [
+          {
+            "character": "char_narrator",
+            "place": "place_the_hollow",
+            "dialogue": "The resonance chamber beneath the Silent Zone. A vast underground space where pre-Silencing crystal networks intersect, pulsing with frequencies that haven't been heard in millennia. The lattice wasn't dead here — it was sleeping. Dreaming. Waiting to be asked the right question.",
+            "stage_directions": "Bioluminescent crystal formations light the chamber in impossible colors. Ancient tonal machinery, predating the skycities, hums with renewed purpose."
+          },
+          {
+            "character": "char_chanida",
+            "place": "place_the_hollow",
+            "dialogue": "The unauthorized frequency — it wasn't unauthorized at all. It was a response. The lattice has been trying to create new safe routes, but it needed someone to hear the invitation. The Tonal Orders never listened. They just repeated the old songs.",
+            "stage_directions": "Chanida's frequency map, displayed on her crystal tablet, now shows a complete route where before there was only silence."
+          },
+          {
+            "character": "char_pichit",
+            "place": "place_the_hollow",
+            "dialogue": "This is what I heard at the monastery. The lattice wasn't warning of catastrophe — it was offering a gift. New pathways. New connections between the skycities. But gifts require trust, and trust requires risk.",
+            "stage_directions": "Pichit's staff resonates with the ancient machinery, creating harmonic overtones that fill the chamber like music."
+          },
+          {
+            "character": "char_arthit",
+            "place": "place_the_hollow",
+            "dialogue": "My tattoos... they're glowing in response to this place. The old routes I memorized — they weren't just maps. They were conversations the lattice was trying to have with us all along.",
+            "stage_directions": "Arthit's tattooed skin pulses with light as the ancient tonal notation harmonizes with the chamber's natural frequencies."
+          },
+          {
+            "character": "char_malee",
+            "place": "place_the_hollow",
+            "dialogue": "If this route is real, the Groundless movement was right. We don't have to live in the sky anymore. The lattice isn't our enemy — it's been our landlord, waiting for us to read the lease.",
+            "stage_directions": "Malee's repaired prosthetic, now resonating with the chamber's frequency, allows her to walk without pain for the first time since entering the Silent Zone."
+          }
+        ],
+        "tag": "tag_044",
+        "lines_after": [
+          {
+            "character": "char_narrator",
+            "place": "place_the_hollow",
+            "dialogue": "The resonance chamber's machinery begins recording Chanida's frequency into the lattice's permanent memory. A new safe route is being etched into the crystal — a pathway from Khrueang to Phrao that cuts travel time by half and avoids the pirate-infested corridors entirely.",
+            "stage_directions": "Crystal formations throughout the chamber align themselves along the new route, creating a luminous map visible from every angle."
+          },
+          {
+            "character": "char_merchant",
+            "place": "place_the_hollow",
+            "dialogue": "Word travels fast between skycities. A trade negotiator who followed your ship's trail reports that the Tonal Orders have already dispatched an investigation team. They know something happened in the Silent Zone.",
+            "stage_directions": "The trade negotiator's holographic projection flickers in the chamber, transmitted via the newly active resonance network."
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_narrator",
+            "place": "place_the_hollow",
+            "dialogue": "The new route is stable, recorded in the lattice's memory. But knowledge of its existence is already spreading. The Tonal Orders will arrive within days. The pirate ship that pursued you has fled, but they'll return with better equipment. And somewhere in the chamber's ancient machinery, more frequencies are waiting — more routes, more invitations, more questions the lattice has been waiting millennia to ask.",
+            "stage_directions": "The chamber's central crystal pulses with multiple frequencies, suggesting this was only the first of many hidden pathways."
+          },
+          "choices": [
+            {
+              "description": "Publish the new route openly, challenging the Tonal Orders' monopoly on navigation knowledge",
+              "difficulty": "medium",
+              "subplot": "subplot_frequency_map",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_chanida",
+                  "place": "place_the_hollow",
+                  "dialogue": "No more secrets. This route belongs to everyone who lives on the lattice. The Tonal Orders can adapt or become irrelevant.",
+                  "stage_directions": "Chanida uploads the complete route data to every public resonance archive in the skycity network."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": 3
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_bandit",
+                  "place": "place_the_hollow",
+                  "dialogue": "You just handed every sky pirate a new hunting ground. Public routes mean public prey, Singer.",
+                  "stage_directions": "A transmission from the fleeing pirate ship reveals they've intercepted the broadcast. The new route is already compromised."
+                },
+                "subplot": "subplot_frequency_map",
+                "delta": -2
+              }
+            },
+            {
+              "description": "Share the route only with trusted allies, keeping it from the Tonal Orders and pirates alike",
+              "difficulty": "easy",
+              "subplot": "subplot_listener_warning",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pichit",
+                  "place": "place_the_hollow",
+                  "dialogue": "The lattice entrusted us with this knowledge. Not because we're special, but because we listened. We should choose carefully who else gets to hear.",
+                  "stage_directions": "Pichit encodes the route data into his staff's crystal, protected by a tonal lock that only responds to specific harmonic signatures."
+                },
+                "subplot": "subplot_listener_warning",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_narrator",
+                  "place": "place_the_hollow",
+                  "dialogue": "Secrecy breeds suspicion. The Tonal Orders, denied access to the route data, declare the party enemies of the skycities. The gift becomes a burden.",
+                  "stage_directions": "A transmission from Khrueang announces warrants for the party's arrest on charges of unauthorized lattice manipulation."
+                },
+                "subplot": "subplot_listener_warning",
+                "delta": -1
+              }
+            },
+            {
+              "description": "Destroy the route data, fearing what other secrets the lattice might reveal if encouraged",
+              "difficulty": "easy",
+              "subplot": "subplot_groundless",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_malee",
+                  "place": "place_the_hollow",
+                  "dialogue": "We don't understand what we're dealing with. The lattice offered us one route — what's to stop it from closing all the others if we push too hard? Some doors should stay closed.",
+                  "stage_directions": "Malee overrides the chamber's recording mechanism, erasing the route data from the lattice's memory. The crystal formations dim."
+                },
+                "subplot": "subplot_groundless",
+                "delta": 2
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_chanida",
+                  "place": "place_the_hollow",
+                  "dialogue": "You can't un-hear a song, Malee. The lattice knows we listened. Even without the recorded route, this chamber exists. Others will find it. Others will listen.",
+                  "stage_directions": "Despite the erased data, the chamber's central crystal continues pulsing with the new frequency, a permanent change in the lattice's behavior."
+                },
+                "subplot": "subplot_groundless",
+                "delta": 0
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

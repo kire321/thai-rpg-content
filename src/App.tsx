@@ -5,6 +5,7 @@ import Tags from './pages/Tags'
 import Characters from './pages/Characters'
 import Places from './pages/Places'
 import Subplots from './pages/Subplots'
+import Episodes from './pages/Episodes'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/characters" element={<Characters />} />
       <Route path="/places" element={<Places />} />
       <Route path="/subplots" element={<Subplots />} />
+      <Route path="/episodes" element={<Episodes />} />
     </Routes>
   )
 }

@@ -5,9 +5,9 @@
     "phonetics": "mii rʉ̂ang jà bɔ̀ɔk (ná)",
     "english": "I have something to tell you.",
     "tag_ids": [
-      "tag_092",
-      "tag_281",
-      "tag_280",
+      "tag_077",
+      "tag_213",
+      "tag_230",
       "tag_320",
       "tag_325"
     ]
@@ -18,10 +18,10 @@
     "phonetics": "(...) bpen wí-tii tîi dii-tîi-sùt",
     "english": "(…) it’s the best way. / (…) this is the best way.",
     "tag_ids": [
-      "tag_097",
-      "tag_221",
-      "tag_259",
-      "tag_280",
+      "tag_082",
+      "tag_185",
+      "tag_214",
+      "tag_230",
       "tag_295"
     ]
   },
@@ -32,9 +32,9 @@
     "english": "Now I know… / I now know…",
     "tag_ids": [
       "tag_000",
-      "tag_096",
-      "tag_259",
-      "tag_280",
+      "tag_081",
+      "tag_214",
+      "tag_230",
       "tag_295"
     ]
   },
@@ -44,11 +44,11 @@
     "phonetics": "mii oo-gàat sǔung",
     "english": "There’s a high chance.",
     "tag_ids": [
-      "tag_043",
-      "tag_191",
-      "tag_192",
-      "tag_193",
-      "tag_259"
+      "tag_034",
+      "tag_157",
+      "tag_158",
+      "tag_159",
+      "tag_214"
     ]
   },
   {
@@ -57,11 +57,11 @@
     "phonetics": "dtrong-nǎi gɔ̂ɔ-dâi",
     "english": "Anywhere. / Anywhere you like.",
     "tag_ids": [
-      "tag_097",
-      "tag_196",
-      "tag_197",
-      "tag_283",
-      "tag_318"
+      "tag_082",
+      "tag_162",
+      "tag_163",
+      "tag_232",
+      "tag_263"
     ]
   },
   {
@@ -70,11 +70,11 @@
     "phonetics": "(phǒm) rúu-sʉ̀k mâi mʉ̌an-dəəm",
     "english": "(I) don’t feel the same (as before).",
     "tag_ids": [
-      "tag_251",
-      "tag_280",
-      "tag_284",
-      "tag_305",
-      "tag_306"
+      "tag_207",
+      "tag_230",
+      "tag_233",
+      "tag_250",
+      "tag_251"
     ]
   },
   {
@@ -83,10 +83,10 @@
     "phonetics": "pǒm kít-wâa mâi-bpen-rai",
     "english": "I thought it was okay. / I think it’s alright.",
     "tag_ids": [
-      "tag_096",
-      "tag_132",
-      "tag_173",
-      "tag_282",
+      "tag_081",
+      "tag_110",
+      "tag_145",
+      "tag_231",
       "tag_295"
     ]
   },
@@ -96,10 +96,10 @@
     "phonetics": "phǒm mii ngaan tam",
     "english": "I have work to do. / I have work I have to do.",
     "tag_ids": [
-      "tag_096",
-      "tag_310",
-      "tag_319",
-      "tag_320",
+      "tag_081",
+      "tag_255",
+      "tag_264",
+      "tag_265",
       "tag_327"
     ]
   },
@@ -111,8 +111,8 @@
     "tag_ids": [
       "tag_001",
       "tag_002",
-      "tag_310",
-      "tag_319",
+      "tag_255",
+      "tag_264",
       "tag_321"
     ]
   },
@@ -123,9 +123,9 @@
     "english": "Can you promise me?",
     "tag_ids": [
       "tag_002",
-      "tag_046",
-      "tag_319",
-      "tag_320",
+      "tag_037",
+      "tag_264",
+      "tag_265",
       "tag_322"
     ]
   },
@@ -136,10 +136,10 @@
     "english": "Don’t change the subject!",
     "tag_ids": [
       "tag_002",
-      "tag_044",
-      "tag_045",
-      "tag_046",
-      "tag_320"
+      "tag_035",
+      "tag_036",
+      "tag_037",
+      "tag_265"
     ]
   },
   {
@@ -149,10 +149,10 @@
     "english": "I’ll try it.",
     "tag_ids": [
       "tag_002",
-      "tag_036",
-      "tag_260",
-      "tag_311",
-      "tag_313"
+      "tag_027",
+      "tag_215",
+      "tag_256",
+      "tag_258"
     ]
   },
   {
@@ -161,8 +161,8 @@
     "phonetics": "kǎo bpen kon jai-dii",
     "english": "He’s a nice person. / He’s a nice guy.",
     "tag_ids": [
-      "tag_046",
-      "tag_187",
+      "tag_037",
+      "tag_156",
       "tag_319",
       "tag_320",
       "tag_327"
@@ -174,11 +174,11 @@
     "phonetics": "túk-kon rúu-jàk man / túk-kon rúu-jàk kǎo",
     "english": "Everyone knows it! / Everyone knows him!",
     "tag_ids": [
-      "tag_046",
-      "tag_134",
-      "tag_135",
-      "tag_136",
-      "tag_137"
+      "tag_037",
+      "tag_112",
+      "tag_113",
+      "tag_114",
+      "tag_115"
     ]
   },
   {
@@ -187,11 +187,11 @@
     "phonetics": "àat-jà bplìan-jai gɔ̂ɔ-dâi",
     "english": "You might change your mind. / I might change my mind.",
     "tag_ids": [
-      "tag_044",
-      "tag_045",
-      "tag_046",
-      "tag_136",
-      "tag_216"
+      "tag_035",
+      "tag_036",
+      "tag_037",
+      "tag_114",
+      "tag_181"
     ]
   },
   {
@@ -200,11 +200,11 @@
     "phonetics": "(phǒm) mâi-hěn-dûai gàp (kǎo)",
     "english": "(I) don’t agree with (him). / (I) disagree with (him).",
     "tag_ids": [
-      "tag_044",
-      "tag_064",
-      "tag_248",
-      "tag_284",
-      "tag_307"
+      "tag_035",
+      "tag_054",
+      "tag_205",
+      "tag_233",
+      "tag_252"
     ]
   },
   {
@@ -213,9 +213,9 @@
     "phonetics": "mâi-nʉ̀ai rə̌ə",
     "english": "Aren’t you tired?",
     "tag_ids": [
-      "tag_005",
-      "tag_134",
-      "tag_331",
+      "tag_004",
+      "tag_112",
+      "tag_273",
       "tag_284",
       "tag_296"
     ]
@@ -226,11 +226,11 @@
     "phonetics": "mâi-dtɔ̂ng krîat ná",
     "english": "Don’t get so stressed out.",
     "tag_ids": [
-      "tag_044",
-      "tag_215",
-      "tag_248",
-      "tag_284",
-      "tag_307"
+      "tag_035",
+      "tag_180",
+      "tag_205",
+      "tag_233",
+      "tag_252"
     ]
   },
   {
@@ -239,11 +239,11 @@
     "phonetics": "-REFUSING SOMETHING mâi-yàak dâi",
     "english": "I don’t want it.",
     "tag_ids": [
-      "tag_134",
-      "tag_136",
-      "tag_137",
-      "tag_180",
-      "tag_276"
+      "tag_112",
+      "tag_114",
+      "tag_115",
+      "tag_150",
+      "tag_226"
     ]
   },
   {
@@ -252,11 +252,11 @@
     "phonetics": "kun nîi eeng",
     "english": "Oh, it’s you!",
     "tag_ids": [
-      "tag_134",
-      "tag_135",
-      "tag_136",
-      "tag_137",
-      "tag_228"
+      "tag_112",
+      "tag_113",
+      "tag_114",
+      "tag_115",
+      "tag_190"
     ]
   },
   {
@@ -265,9 +265,9 @@
     "phonetics": "dâi-yin mòt lɛ́ɛo",
     "english": "(I) heard everything!",
     "tag_ids": [
-      "tag_109",
-      "tag_112",
-      "tag_135",
+      "tag_091",
+      "tag_092",
+      "tag_113",
       "tag_284",
       "tag_327"
     ]
@@ -279,9 +279,9 @@
     "english": "Do (you) know what this is?",
     "tag_ids": [
       "tag_000",
-      "tag_081",
-      "tag_109",
-      "tag_135",
+      "tag_068",
+      "tag_091",
+      "tag_113",
       "tag_320"
     ]
   },
@@ -291,10 +291,10 @@
     "phonetics": "lɔɔng tǎam duu gɔ̂ɔ-dâi (khráp)",
     "english": "You can ask. / You can try asking him.",
     "tag_ids": [
-      "tag_109",
-      "tag_275",
-      "tag_274",
-      "tag_313",
+      "tag_091",
+      "tag_224",
+      "tag_225",
+      "tag_258",
       "tag_328"
     ]
   },
@@ -304,10 +304,10 @@
     "phonetics": "STRONG/URGENT yùt gɔ̀ɔn",
     "english": "Stop! / Stop it!",
     "tag_ids": [
-      "tag_137",
-      "tag_253",
-      "tag_255",
-      "tag_256",
+      "tag_115",
+      "tag_209",
+      "tag_210",
+      "tag_211",
       "tag_328"
     ]
   },
@@ -317,10 +317,10 @@
     "phonetics": "(kǎo) yang sòot yùu châi-mǎi",
     "english": "He’s still single, isn’t he? / She’s still single, isn’t she?",
     "tag_ids": [
-      "tag_228",
-      "tag_241",
-      "tag_253",
-      "tag_255",
+      "tag_190",
+      "tag_201",
+      "tag_209",
+      "tag_210",
       "tag_328"
     ]
   },
@@ -331,8 +331,8 @@
     "english": "I know. / I already know that.",
     "tag_ids": [
       "tag_000",
-      "tag_253",
-      "tag_261",
+      "tag_209",
+      "tag_216",
       "tag_285",
       "tag_319"
     ]
@@ -343,11 +343,11 @@
     "phonetics": "yàa hâi kǎo hěn",
     "english": "Don’t let him see you! / Don’t let them see you!",
     "tag_ids": [
-      "tag_228",
-      "tag_255",
-      "tag_269",
-      "tag_271",
-      "tag_272"
+      "tag_190",
+      "tag_210",
+      "tag_220",
+      "tag_222",
+      "tag_223"
     ]
   },
   {
@@ -356,11 +356,11 @@
     "phonetics": "mâi nâa-glua sák-nít",
     "english": "It’s not scary at all! / That’s not scary at all!",
     "tag_ids": [
-      "tag_095",
-      "tag_223",
-      "tag_224",
-      "tag_225",
-      "tag_228"
+      "tag_080",
+      "tag_186",
+      "tag_187",
+      "tag_188",
+      "tag_190"
     ]
   },
   {
@@ -369,9 +369,9 @@
     "phonetics": "(man) bpen bprà-sòp-gaan tîi dii",
     "english": "It was a good experience.",
     "tag_ids": [
-      "tag_035",
-      "tag_101",
-      "tag_223",
+      "tag_026",
+      "tag_085",
+      "tag_186",
       "tag_285",
       "tag_328"
     ]
@@ -382,10 +382,10 @@
     "phonetics": "phǒm jam rá-hàt mâi-dâi",
     "english": "I can’t remember my password!",
     "tag_ids": [
-      "tag_216",
-      "tag_218",
-      "tag_219",
-      "tag_223",
+      "tag_181",
+      "tag_182",
+      "tag_183",
+      "tag_186",
       "tag_329"
     ]
   },
@@ -395,11 +395,11 @@
     "phonetics": "dǐao phǒm duu hâi / phǒm duu hâi",
     "english": "I’ll have a look. / I’ll look at it for you.",
     "tag_ids": [
-      "tag_036",
-      "tag_223",
-      "tag_225",
-      "tag_331",
-      "tag_332"
+      "tag_027",
+      "tag_186",
+      "tag_188",
+      "tag_273",
+      "tag_274"
     ]
   },
   {
@@ -408,11 +408,11 @@
     "phonetics": "glàp mâi-wǎi",
     "english": "I can’t make it back! (drunk and can’t drive home, etc.)",
     "tag_ids": [
-      "tag_095",
-      "tag_223",
-      "tag_225",
-      "tag_228",
-      "tag_277"
+      "tag_080",
+      "tag_186",
+      "tag_188",
+      "tag_190",
+      "tag_227"
     ]
   },
   {
@@ -421,11 +421,11 @@
     "phonetics": "chɔ̂ɔp bɛ̀ɛp nǎi",
     "english": "What kind do you like? / What style do you prefer?",
     "tag_ids": [
-      "tag_095",
-      "tag_196",
-      "tag_197",
-      "tag_224",
-      "tag_225"
+      "tag_080",
+      "tag_162",
+      "tag_163",
+      "tag_187",
+      "tag_188"
     ]
   },
   {
@@ -434,10 +434,10 @@
     "phonetics": "gam-lang jà rian jòp",
     "english": "I’m about to graduate. / He’s going to graduate soon.",
     "tag_ids": [
-      "tag_098",
-      "tag_095",
-      "tag_096",
-      "tag_097",
+      "tag_079",
+      "tag_080",
+      "tag_081",
+      "tag_082",
       "tag_329"
     ]
   },
@@ -447,11 +447,11 @@
     "phonetics": "phǒm mâi-kâo-jai à-rai ləəi",
     "english": "I don’t understand anything!",
     "tag_ids": [
-      "tag_095",
-      "tag_224",
-      "tag_225",
-      "tag_307",
-      "tag_308"
+      "tag_080",
+      "tag_187",
+      "tag_188",
+      "tag_252",
+      "tag_253"
     ]
   },
   {
@@ -460,9 +460,9 @@
     "phonetics": "POLITE chûai bɔ̀ɔk-taang bpai (roong-rɛɛm dù-sìt) nɔ̀i dâi-mǎi / chûai bɔ̀ɔk-taang bpai (roong-rɛɛm dù-sìt) nɔ̀i (kráp)",
     "english": "Could you tell me how to get to (the Dusit Hotel)?",
     "tag_ids": [
-      "tag_092",
-      "tag_224",
-      "tag_281",
+      "tag_077",
+      "tag_187",
+      "tag_213",
       "tag_321",
       "tag_326"
     ]
@@ -473,11 +473,11 @@
     "phonetics": "páp kɛ̌ɛn-sʉ̂a kʉ̂n",
     "english": "Roll up your sleeves.",
     "tag_ids": [
-      "tag_054",
-      "tag_224",
-      "tag_335",
-      "tag_336",
-      "tag_338"
+      "tag_044",
+      "tag_187",
+      "tag_277",
+      "tag_278",
+      "tag_280"
     ]
   },
   {
@@ -486,10 +486,10 @@
     "phonetics": "(man) gɔ̂ɔ nâa-kít ná",
     "english": "(It)’s something to think about.",
     "tag_ids": [
-      "tag_173",
-      "tag_282",
-      "tag_285",
-      "tag_338",
+      "tag_145",
+      "tag_231",
+      "tag_234",
+      "tag_280",
       "tag_297"
     ]
   },
@@ -499,11 +499,11 @@
     "phonetics": "kɛ̂ɛ-níi châi-mǎi (ká) / kɛ̂ɛ-níi châi-mái",
     "english": "That’s all, isn’t it? / That’s it, right?",
     "tag_ids": [
-      "tag_054",
-      "tag_241",
-      "tag_335",
-      "tag_336",
-      "tag_338"
+      "tag_044",
+      "tag_201",
+      "tag_277",
+      "tag_278",
+      "tag_280"
     ]
   },
   {
@@ -512,11 +512,11 @@
     "phonetics": "dtɔ̂ng rák dtua-eeng",
     "english": "You need to love yourself. / You have to love yourself.",
     "tag_ids": [
-      "tag_335",
-      "tag_336",
-      "tag_337",
-      "tag_338",
-      "tag_339"
+      "tag_277",
+      "tag_278",
+      "tag_279",
+      "tag_280",
+      "tag_281"
     ]
   },
   {
@@ -525,10 +525,10 @@
     "phonetics": "phǒm gam-lang jà ɔ̀ɔk-bpai",
     "english": "I’m on my way out. / I’m heading out now.",
     "tag_ids": [
-      "tag_221",
-      "tag_259",
-      "tag_336",
-      "tag_338",
+      "tag_185",
+      "tag_214",
+      "tag_278",
+      "tag_280",
       "tag_295"
     ]
   },
@@ -538,10 +538,10 @@
     "phonetics": "phǒm kɛ̂ɛ bplɛ̀ɛk-jai chə̌əi-chə̌əi (...)",
     "english": "I’m just surprised (…)",
     "tag_ids": [
-      "tag_022",
-      "tag_054",
-      "tag_335",
-      "tag_336",
+      "tag_016",
+      "tag_044",
+      "tag_277",
+      "tag_278",
       "tag_297"
     ]
   },
@@ -551,10 +551,10 @@
     "phonetics": "(hɔ̂ng kâang kâang chɔ̂ɔp) bpìt bprà-dtuu sǐang-dang",
     "english": "(The guy in the condo next door always) closes his door loudly.",
     "tag_ids": [
-      "tag_051",
-      "tag_053",
-      "tag_054",
-      "tag_335",
+      "tag_042",
+      "tag_043",
+      "tag_044",
+      "tag_277",
       "tag_329"
     ]
   },
@@ -564,10 +564,10 @@
     "phonetics": "yang mâi-kâo-jai ìik rə̌ə",
     "english": "You still don’t understand? / She still doesn’t get it?",
     "tag_ids": [
-      "tag_053",
-      "tag_064",
-      "tag_307",
-      "tag_308",
+      "tag_043",
+      "tag_054",
+      "tag_252",
+      "tag_253",
       "tag_329"
     ]
   },
@@ -577,10 +577,10 @@
     "phonetics": "pǒm mii-sɔ̌ɔn",
     "english": "I have a class. / I have a class to teach.",
     "tag_ids": [
-      "tag_050",
-      "tag_051",
-      "tag_053",
-      "tag_054",
+      "tag_041",
+      "tag_042",
+      "tag_043",
+      "tag_044",
       "tag_330"
     ]
   },
@@ -590,10 +590,10 @@
     "phonetics": "(pîi) jà rîip bpai dǐao-níi",
     "english": "(I)’m gonna rush off right now. / (I)’m going to hurry off.",
     "tag_ids": [
-      "tag_050",
-      "tag_051",
-      "tag_053",
-      "tag_093",
+      "tag_041",
+      "tag_042",
+      "tag_043",
+      "tag_078",
       "tag_330"
     ]
   },
@@ -603,10 +603,10 @@
     "phonetics": "(mɛ̂ɛ təə) lâo hâi phǒm fang lɛ́ɛo / (mɛ̂ɛ təə) lâo hâi fang lɛ́ɛo",
     "english": "(Her mom) told me about it already.",
     "tag_ids": [
-      "tag_050",
-      "tag_051",
-      "tag_053",
-      "tag_100",
+      "tag_041",
+      "tag_042",
+      "tag_043",
+      "tag_084",
       "tag_330"
     ]
   },
@@ -616,11 +616,11 @@
     "phonetics": "(nǔu) fǎn mâi-dii ləəi",
     "english": "(I) had a bad dream.",
     "tag_ids": [
-      "tag_050",
-      "tag_066",
-      "tag_067",
-      "tag_100",
-      "tag_165"
+      "tag_041",
+      "tag_056",
+      "tag_057",
+      "tag_084",
+      "tag_137"
     ]
   },
   {
@@ -629,11 +629,11 @@
     "phonetics": "dao ngâai mâak",
     "english": "That’s really easy to guess! / It’s very easy to guess!",
     "tag_ids": [
-      "tag_050",
-      "tag_051",
-      "tag_067",
-      "tag_099",
-      "tag_100"
+      "tag_041",
+      "tag_042",
+      "tag_057",
+      "tag_083",
+      "tag_084"
     ]
   },
   {
@@ -642,10 +642,10 @@
     "phonetics": "(man) chái-dâi dii",
     "english": "(It) works really well. (a laundry detergent, etc.)",
     "tag_ids": [
-      "tag_100",
-      "tag_322",
-      "tag_324",
-      "tag_325",
+      "tag_084",
+      "tag_266",
+      "tag_267",
+      "tag_268",
       "tag_330"
     ]
   },
@@ -655,11 +655,11 @@
     "phonetics": "tam-mai tam gàp pǒm bɛ̀ɛp-níi",
     "english": "Why are you doing this to me? / Why are you treating me like this?",
     "tag_ids": [
-      "tag_196",
-      "tag_197",
-      "tag_283",
-      "tag_301",
-      "tag_318"
+      "tag_162",
+      "tag_163",
+      "tag_232",
+      "tag_247",
+      "tag_263"
     ]
   },
   {
@@ -668,9 +668,9 @@
     "phonetics": "dâi-yin lɛ́ɛo châi-mǎi / dâi-yin lɛ́ɛo châi-mái",
     "english": "You heard that, didn’t you? / You heard that, right?",
     "tag_ids": [
-      "tag_100",
-      "tag_109",
-      "tag_112",
+      "tag_084",
+      "tag_091",
+      "tag_092",
       "tag_285",
       "tag_331"
     ]
@@ -681,9 +681,9 @@
     "phonetics": "gam-lang aa-rom-dii",
     "english": "I’m in a good mood. / She’s in a good mood.",
     "tag_ids": [
-      "tag_035",
-      "tag_101",
-      "tag_158",
+      "tag_026",
+      "tag_085",
+      "tag_131",
       "tag_286",
       "tag_331"
     ]
@@ -694,8 +694,8 @@
     "phonetics": "POLITE (pǒm) kɔ̌ɔ wee-laa nɔ̀i (ná) (kráp)",
     "english": "May I have some time? / I need some time.",
     "tag_ids": [
-      "tag_296",
-      "tag_300",
+      "tag_245",
+      "tag_246",
       "tag_287",
       "tag_321",
       "tag_331"
@@ -707,10 +707,10 @@
     "phonetics": "rao mâi-dâi dtìt-dtɔ̀ɔ gan",
     "english": "We don’t stay in touch.",
     "tag_ids": [
-      "tag_248",
-      "tag_250",
-      "tag_251",
-      "tag_300",
+      "tag_205",
+      "tag_206",
+      "tag_207",
+      "tag_246",
       "tag_298"
     ]
   },
@@ -720,8 +720,8 @@
     "phonetics": "mii à-rai kâo dtaa",
     "english": "There’s something in my eye. / Something went into my eye.",
     "tag_ids": [
-      "tag_243",
-      "tag_247",
+      "tag_203",
+      "tag_204",
       "tag_282",
       "tag_287",
       "tag_332"
@@ -733,8 +733,8 @@
     "phonetics": "(man) mâi-châi bpan-hǎa lɔ̀k (khráp)",
     "english": "That’s no problem. / It’s not a problem.",
     "tag_ids": [
-      "tag_243",
-      "tag_247",
+      "tag_203",
+      "tag_204",
       "tag_282",
       "tag_288",
       "tag_332"
@@ -746,8 +746,8 @@
     "phonetics": "tɔ́ɔng rə̂əm rɔ́ɔng lɛ́ɛo",
     "english": "My stomach is starting to growl! / I’m starting to get hungry!",
     "tag_ids": [
-      "tag_243",
-      "tag_247",
+      "tag_203",
+      "tag_204",
       "tag_282",
       "tag_288",
       "tag_332"
@@ -759,8 +759,8 @@
     "phonetics": "pǒm chʉ̂a wâa (kun) tam dâi",
     "english": "I believe (you) can do it!",
     "tag_ids": [
-      "tag_243",
-      "tag_247",
+      "tag_203",
+      "tag_204",
       "tag_282",
       "tag_288",
       "tag_332"
@@ -772,10 +772,10 @@
     "phonetics": "phǒm rúu-sʉ̀k mâi sà-baai-jai",
     "english": "I feel uncomfortable. / I have an uneasy feeling.",
     "tag_ids": [
-      "tag_247",
-      "tag_284",
-      "tag_305",
-      "tag_306",
+      "tag_204",
+      "tag_233",
+      "tag_250",
+      "tag_251",
       "tag_299"
     ]
   },
@@ -785,11 +785,11 @@
     "phonetics": "mâi-kɔ̂i mii pʉ̂an",
     "english": "He doesn’t have many friends. / I don’t have many friends.",
     "tag_ids": [
-      "tag_064",
-      "tag_065",
-      "tag_081",
-      "tag_251",
-      "tag_306"
+      "tag_054",
+      "tag_055",
+      "tag_068",
+      "tag_207",
+      "tag_251"
     ]
   },
   {
@@ -798,10 +798,10 @@
     "phonetics": "kun kít yàang-rai gàp…",
     "english": "What do you think about…",
     "tag_ids": [
-      "tag_173",
-      "tag_282",
-      "tag_285",
-      "tag_286",
+      "tag_145",
+      "tag_231",
+      "tag_234",
+      "tag_235",
       "tag_297"
     ]
   },
@@ -811,11 +811,11 @@
     "phonetics": "pǒm rúu dâi tan-tii wâa...",
     "english": "I knew right away (that)…",
     "tag_ids": [
-      "tag_093",
-      "tag_238",
-      "tag_242",
-      "tag_285",
-      "tag_305"
+      "tag_078",
+      "tag_198",
+      "tag_202",
+      "tag_234",
+      "tag_250"
     ]
   },
   {
@@ -824,10 +824,10 @@
     "phonetics": "(kǎo) sǒn-jai kɛ̂ɛ wâa...",
     "english": "(He)’s only interested in…",
     "tag_ids": [
-      "tag_121",
-      "tag_123",
-      "tag_124",
-      "tag_286",
+      "tag_101",
+      "tag_102",
+      "tag_103",
+      "tag_235",
       "tag_299"
     ]
   },
@@ -837,11 +837,11 @@
     "phonetics": "...yʉʉn yùu dtrong-nâa (phǒm)",
     "english": "…standing right in front of (me). / …standing in front of (me).",
     "tag_ids": [
-      "tag_238",
-      "tag_239",
-      "tag_240",
-      "tag_241",
-      "tag_242"
+      "tag_198",
+      "tag_199",
+      "tag_200",
+      "tag_201",
+      "tag_202"
     ]
   },
   {
@@ -850,10 +850,10 @@
     "phonetics": "phǒm wâa nâa-jà châi ná / kít-wâa nâa-jà châi",
     "english": "I think that’s right. / I think that’s the one. / I think so. / I think it is.",
     "tag_ids": [
-      "tag_121",
-      "tag_282",
-      "tag_285",
-      "tag_286",
+      "tag_101",
+      "tag_231",
+      "tag_234",
+      "tag_235",
       "tag_297"
     ]
   },
@@ -863,10 +863,10 @@
     "phonetics": "kun jà sǐa-jai tîi (tíng phǒm)",
     "english": "You’re gonna be sorry for (leaving me). / You’ll regret that you (dumped me).",
     "tag_ids": [
-      "tag_092",
-      "tag_121",
-      "tag_123",
-      "tag_231",
+      "tag_077",
+      "tag_101",
+      "tag_102",
+      "tag_192",
       "tag_299"
     ]
   },
@@ -876,10 +876,10 @@
     "phonetics": "kɔ̀ɔp-kun tîi bpen-hùang / kɔ̀ɔp-​jai ná tîi bpen-hùang",
     "english": "Thank you for your concern. / Thanks for worrying about me.",
     "tag_ids": [
-      "tag_121",
-      "tag_123",
-      "tag_124",
-      "tag_286",
+      "tag_101",
+      "tag_102",
+      "tag_103",
+      "tag_235",
       "tag_299"
     ]
   },
@@ -889,10 +889,10 @@
     "phonetics": "yók dii-dii",
     "english": "Lift it carefully! (a heavy or fragile object)",
     "tag_ids": [
-      "tag_121",
-      "tag_123",
-      "tag_124",
-      "tag_129",
+      "tag_101",
+      "tag_102",
+      "tag_103",
+      "tag_108",
       "tag_299"
     ]
   },
@@ -902,11 +902,11 @@
     "phonetics": "nân ngai / nân ngai lâ",
     "english": "That’s it! / There it is! / There she is!",
     "tag_ids": [
-      "tag_123",
-      "tag_124",
-      "tag_125",
-      "tag_126",
-      "tag_129"
+      "tag_102",
+      "tag_103",
+      "tag_104",
+      "tag_105",
+      "tag_108"
     ]
   },
   {
@@ -915,11 +915,11 @@
     "phonetics": "kǎo waang-sǎai bpai lɛ́ɛo",
     "english": "He hung up.",
     "tag_ids": [
-      "tag_124",
-      "tag_125",
-      "tag_126",
-      "tag_127",
-      "tag_129"
+      "tag_103",
+      "tag_104",
+      "tag_105",
+      "tag_106",
+      "tag_108"
     ]
   },
   {
@@ -928,11 +928,11 @@
     "phonetics": "ní-sǎi kǎo bpen-yang-ngai",
     "english": "What’s she like? / What’s her personality like?",
     "tag_ids": [
-      "tag_126",
-      "tag_197",
-      "tag_283",
-      "tag_301",
-      "tag_318"
+      "tag_105",
+      "tag_163",
+      "tag_232",
+      "tag_247",
+      "tag_263"
     ]
   },
   {
@@ -941,11 +941,11 @@
     "phonetics": "kâo-maa ləəi khráp / kâo-maa ləəi",
     "english": "Come in. / Come right in.",
     "tag_ids": [
-      "tag_125",
-      "tag_126",
-      "tag_127",
-      "tag_129",
-      "tag_212"
+      "tag_104",
+      "tag_105",
+      "tag_106",
+      "tag_108",
+      "tag_177"
     ]
   },
   {
@@ -954,11 +954,11 @@
     "phonetics": "nâa-sǒn-jai dii ná (kráp)",
     "english": "Interesting! / That’s interesting!",
     "tag_ids": [
-      "tag_125",
-      "tag_126",
-      "tag_127",
-      "tag_128",
-      "tag_129"
+      "tag_104",
+      "tag_105",
+      "tag_106",
+      "tag_107",
+      "tag_108"
     ]
   },
   {
@@ -967,11 +967,11 @@
     "phonetics": "too glàp-hǎa pîi dûai ná",
     "english": "Please call me back. / Call me back.",
     "tag_ids": [
-      "tag_029",
-      "tag_125",
-      "tag_127",
-      "tag_128",
-      "tag_257"
+      "tag_020",
+      "tag_104",
+      "tag_106",
+      "tag_107",
+      "tag_212"
     ]
   },
   {
@@ -980,11 +980,11 @@
     "phonetics": "yàa dtàt-sǐn kon-ʉ̀ʉn",
     "english": "Don’t judge others.",
     "tag_ids": [
-      "tag_044",
-      "tag_064",
-      "tag_215",
-      "tag_248",
-      "tag_269"
+      "tag_035",
+      "tag_054",
+      "tag_180",
+      "tag_205",
+      "tag_220"
     ]
   },
   {
@@ -993,11 +993,11 @@
     "phonetics": "FORMAL raa-dtrii sà-wàt",
     "english": "Good night.",
     "tag_ids": [
-      "tag_029",
-      "tag_127",
-      "tag_128",
-      "tag_158",
-      "tag_257"
+      "tag_020",
+      "tag_106",
+      "tag_107",
+      "tag_131",
+      "tag_212"
     ]
   },
   {
@@ -1006,9 +1006,9 @@
     "phonetics": "yàa bɔ̀ɔk hâi krai rúu",
     "english": "Don’t let anyone know! / Don’t tell anyone!",
     "tag_ids": [
-      "tag_281",
-      "tag_269",
-      "tag_271",
+      "tag_213",
+      "tag_220",
+      "tag_222",
       "tag_320",
       "tag_326"
     ]
@@ -1020,9 +1020,9 @@
     "english": "The pain is gone. / It doesn’t hurt anymore.",
     "tag_ids": [
       "tag_003",
-      "tag_029",
-      "tag_065",
-      "tag_128",
+      "tag_020",
+      "tag_055",
+      "tag_107",
       "tag_300"
     ]
   },
@@ -1032,9 +1032,9 @@
     "phonetics": "maa-tʉ̌ng lɛ́ɛo rə̌ə",
     "english": "(Oh), you’re here? / You’ve arrived? (visitor came to",
     "tag_ids": [
-      "tag_008",
-      "tag_029",
-      "tag_128",
+      "tag_005",
+      "tag_020",
+      "tag_107",
       "tag_288",
       "tag_323"
     ]
@@ -1045,9 +1045,9 @@
     "phonetics": "dâi-yin sǐang bplɛ̀ɛk-bplɛ̀ɛk",
     "english": "I heard a strange noise. / She heard strange noises.",
     "tag_ids": [
-      "tag_109",
-      "tag_112",
-      "tag_257",
+      "tag_091",
+      "tag_092",
+      "tag_212",
       "tag_288",
       "tag_333"
     ]
@@ -1058,10 +1058,10 @@
     "phonetics": "jam wái dûai... / jam wái dûai wâa... / jam wái dûai ná-ká wâa...",
     "english": "Remember... / Keep in mind...",
     "tag_ids": [
-      "tag_029",
-      "tag_216",
-      "tag_218",
-      "tag_219",
+      "tag_020",
+      "tag_181",
+      "tag_182",
+      "tag_183",
       "tag_333"
     ]
   },
@@ -1071,11 +1071,11 @@
     "phonetics": "(nâa-rák nâa-lɔɔng kà-nàat-níi) ...jà plâat dâi yang-ngai",
     "english": "(This cute and this inviting) …how could you pass it up? / (This cute and this inviting) …how could you miss out on the chance?",
     "tag_ids": [
-      "tag_043",
-      "tag_191",
-      "tag_192",
-      "tag_193",
-      "tag_257"
+      "tag_034",
+      "tag_157",
+      "tag_158",
+      "tag_159",
+      "tag_212"
     ]
   },
   {
@@ -1084,11 +1084,11 @@
     "phonetics": "jam-bpen dtɔ̂ng chái rʉ̌ʉ-bplàao",
     "english": "Do you need to use it? / Is it necessary to use one?",
     "tag_ids": [
-      "tag_043",
-      "tag_171",
-      "tag_172",
-      "tag_191",
-      "tag_192"
+      "tag_034",
+      "tag_143",
+      "tag_144",
+      "tag_157",
+      "tag_158"
     ]
   },
   {
@@ -1097,11 +1097,11 @@
     "phonetics": "yang lâo mâi jòp",
     "english": "(I)’m not finished yet! / (I)’m not done with what I was telling you! (so don’t interrupt, etc.)",
     "tag_ids": [
-      "tag_043",
-      "tag_070",
-      "tag_191",
-      "tag_193",
-      "tag_257"
+      "tag_034",
+      "tag_059",
+      "tag_157",
+      "tag_159",
+      "tag_212"
     ]
   },
   {
@@ -1110,11 +1110,11 @@
     "phonetics": "maa tàai-rûup dûai-gan ná / maa tàai-rûup dûai-gan sì",
     "english": "Come and take a picture with us. / Come and take a picture together.",
     "tag_ids": [
-      "tag_191",
-      "tag_192",
-      "tag_193",
-      "tag_194",
-      "tag_212"
+      "tag_157",
+      "tag_158",
+      "tag_159",
+      "tag_160",
+      "tag_177"
     ]
   },
   {
@@ -1123,9 +1123,9 @@
     "phonetics": "raai-dâi dii mǎi / raai-dâi dii mái ká",
     "english": "Is the pay good?",
     "tag_ids": [
-      "tag_035",
-      "tag_101",
-      "tag_158",
+      "tag_026",
+      "tag_085",
+      "tag_131",
       "tag_286",
       "tag_333"
     ]
@@ -1136,11 +1136,11 @@
     "phonetics": "sɔ̂m mâi-dâi (lɛ́ɛo)",
     "english": "It’s irrepairable. / It can’t be fixed.",
     "tag_ids": [
-      "tag_037",
-      "tag_043",
-      "tag_192",
-      "tag_193",
-      "tag_194"
+      "tag_028",
+      "tag_034",
+      "tag_158",
+      "tag_159",
+      "tag_160"
     ]
   },
   {
@@ -1149,11 +1149,11 @@
     "phonetics": "túk-yàang rîap-rɔ́ɔi-dii châi-mǎi",
     "english": "Is everything under control? / Is everything all right?",
     "tag_ids": [
-      "tag_238",
-      "tag_239",
-      "tag_240",
-      "tag_241",
-      "tag_287"
+      "tag_198",
+      "tag_199",
+      "tag_200",
+      "tag_201",
+      "tag_236"
     ]
   },
   {
@@ -1162,9 +1162,9 @@
     "phonetics": "tam-mai mâi rá-wang",
     "english": "Why aren’t you careful? / Why weren’t you careful?",
     "tag_ids": [
-      "tag_005",
-      "tag_037",
-      "tag_194",
+      "tag_004",
+      "tag_028",
+      "tag_160",
       "tag_284",
       "tag_296"
     ]
@@ -1175,9 +1175,9 @@
     "phonetics": "mii pɛ̌ɛn à-rai / mii pɛ̌ɛn à-rai yùu",
     "english": "What’s your plan? / What are you planning?",
     "tag_ids": [
-      "tag_024",
-      "tag_037",
-      "tag_194",
+      "tag_017",
+      "tag_028",
+      "tag_160",
       "tag_321",
       "tag_328"
     ]
@@ -1188,9 +1188,9 @@
     "phonetics": "dtʉ̀ʉn-dtên jang ləəi",
     "english": "I’m so excited! / I’m thrilled!",
     "tag_ids": [
-      "tag_024",
-      "tag_037",
-      "tag_194",
+      "tag_017",
+      "tag_028",
+      "tag_160",
       "tag_321",
       "tag_329"
     ]
@@ -1201,8 +1201,8 @@
     "phonetics": "sà-ngòp-dii",
     "english": "It’s nice and peaceful. / It’s peaceful.",
     "tag_ids": [
-      "tag_027",
-      "tag_187",
+      "tag_018",
+      "tag_156",
       "tag_319",
       "tag_322",
       "tag_333"
@@ -1214,11 +1214,11 @@
     "phonetics": "kâo-bpai gan-tə̀",
     "english": "Let’s go inside. / Let’s go in.",
     "tag_ids": [
-      "tag_027",
-      "tag_269",
-      "tag_271",
-      "tag_272",
-      "tag_278"
+      "tag_018",
+      "tag_220",
+      "tag_222",
+      "tag_223",
+      "tag_228"
     ]
   },
   {
@@ -1227,9 +1227,9 @@
     "phonetics": "(gɛɛ) kít-mâak bpai rʉ́-bplàao",
     "english": "Aren’t you overthinking this? / Are you thinking too much?",
     "tag_ids": [
-      "tag_005",
-      "tag_027",
-      "tag_037",
+      "tag_004",
+      "tag_018",
+      "tag_028",
       "tag_284",
       "tag_296"
     ]
@@ -1240,9 +1240,9 @@
     "phonetics": "mii kon rɔɔ kun yùu",
     "english": "Someone is waiting for you. / There’s someone waiting for you.",
     "tag_ids": [
-      "tag_024",
-      "tag_309",
-      "tag_310",
+      "tag_017",
+      "tag_254",
+      "tag_255",
       "tag_322",
       "tag_330"
     ]
@@ -1253,9 +1253,9 @@
     "phonetics": "kɔ̀ɔp-kun túk-kon mâak",
     "english": "Thank you very much everyone!",
     "tag_ids": [
-      "tag_024",
-      "tag_027",
-      "tag_309",
+      "tag_017",
+      "tag_018",
+      "tag_254",
       "tag_322",
       "tag_331"
     ]
@@ -1266,9 +1266,9 @@
     "phonetics": "pǒm ao-maa dûai",
     "english": "I brought it. / I brought some with me. / I brought it along.",
     "tag_ids": [
-      "tag_024",
-      "tag_027",
-      "tag_309",
+      "tag_017",
+      "tag_018",
+      "tag_254",
       "tag_322",
       "tag_332"
     ]
@@ -1279,11 +1279,11 @@
     "phonetics": "bpen pʉ̂an gào kɔ̌ɔng pǒm",
     "english": "He’s an old friend of mine.",
     "tag_ids": [
-      "tag_078",
-      "tag_079",
-      "tag_080",
-      "tag_220",
-      "tag_309"
+      "tag_065",
+      "tag_066",
+      "tag_067",
+      "tag_184",
+      "tag_254"
     ]
   },
   {
@@ -1292,11 +1292,11 @@
     "phonetics": "nâa-jà kəəi ná",
     "english": "I probably have. / He must have. (done that before, etc.)",
     "tag_ids": [
-      "tag_078",
-      "tag_079",
-      "tag_207",
-      "tag_210",
-      "tag_211"
+      "tag_065",
+      "tag_066",
+      "tag_172",
+      "tag_175",
+      "tag_176"
     ]
   },
   {
@@ -1305,11 +1305,11 @@
     "phonetics": "châi rə̌ə",
     "english": "Are you sure? / Is that right?",
     "tag_ids": [
+      "tag_065",
+      "tag_066",
+      "tag_067",
       "tag_078",
-      "tag_079",
-      "tag_080",
-      "tag_093",
-      "tag_239"
+      "tag_199"
     ]
   },
   {
@@ -1318,10 +1318,10 @@
     "phonetics": "...(dtɛ̀ɛ) mâi-rúu wâa jà rə̂əm dtrong-nǎi / ...(dtɛ̀ɛ) mâi-rúu wâa jà rə̂əm-dtôn dtrong-nǎi",
     "english": "…(but I) don’t know where to begin.",
     "tag_ids": [
-      "tag_068",
-      "tag_078",
-      "tag_080",
-      "tag_261",
+      "tag_007",
+      "tag_065",
+      "tag_067",
+      "tag_216",
       "tag_298"
     ]
   },
@@ -1331,11 +1331,11 @@
     "phonetics": "man sǎm-kan mâak tîi...",
     "english": "It’s very important (that)…",
     "tag_ids": [
-      "tag_078",
-      "tag_079",
-      "tag_080",
-      "tag_118",
-      "tag_220"
+      "tag_065",
+      "tag_066",
+      "tag_067",
+      "tag_098",
+      "tag_184"
     ]
   },
   {
@@ -1344,10 +1344,10 @@
     "phonetics": "(phǒm) mâi-rúu mʉ̌an-gan wâa...",
     "english": "(I) don’t know either (if)…",
     "tag_ids": [
-      "tag_068",
-      "tag_079",
-      "tag_080",
-      "tag_261",
+      "tag_007",
+      "tag_066",
+      "tag_067",
+      "tag_216",
       "tag_301"
     ]
   },
@@ -1357,11 +1357,11 @@
     "phonetics": "mâi-mii-krai rúu wâa...",
     "english": "Nobody knows… / No one knows if…",
     "tag_ids": [
-      "tag_134",
-      "tag_135",
-      "tag_136",
-      "tag_137",
-      "tag_220"
+      "tag_112",
+      "tag_113",
+      "tag_114",
+      "tag_115",
+      "tag_184"
     ]
   },
   {
@@ -1370,10 +1370,10 @@
     "phonetics": "(phǒm) jam mâi-dâi wâa...",
     "english": "(I) can’t remember… / (I) can’t remember if… / (I) can’t remember whether…",
     "tag_ids": [
-      "tag_216",
-      "tag_218",
-      "tag_219",
-      "tag_220",
+      "tag_181",
+      "tag_182",
+      "tag_183",
+      "tag_184",
       "tag_333"
     ]
   },
@@ -1383,10 +1383,10 @@
     "phonetics": "rao jà tǎam kǎo wâa...",
     "english": "I’m gonna ask him… / I’ll ask her if…",
     "tag_ids": [
-      "tag_093",
-      "tag_118",
-      "tag_275",
-      "tag_274",
+      "tag_078",
+      "tag_098",
+      "tag_224",
+      "tag_225",
       "tag_302"
     ]
   },
@@ -1396,8 +1396,8 @@
     "phonetics": "pûu-chaai kon níi kʉʉ krai",
     "english": "Who is this guy? / Who’s this man?",
     "tag_ids": [
-      "tag_030",
-      "tag_187",
+      "tag_021",
+      "tag_156",
       "tag_319",
       "tag_323",
       "tag_334"
@@ -1409,11 +1409,11 @@
     "phonetics": "pûu-yǐng kon níi kʉʉ krai",
     "english": "Who is this lady? / Who’s this woman?",
     "tag_ids": [
-      "tag_118",
-      "tag_138",
-      "tag_139",
-      "tag_219",
-      "tag_220"
+      "tag_098",
+      "tag_116",
+      "tag_117",
+      "tag_183",
+      "tag_184"
     ]
   },
   {
@@ -1422,11 +1422,11 @@
     "phonetics": "(kǎo) jà maa mʉ̂a-rài",
     "english": "When’s he coming?",
     "tag_ids": [
-      "tag_055",
-      "tag_118",
-      "tag_138",
-      "tag_139",
-      "tag_213"
+      "tag_045",
+      "tag_098",
+      "tag_116",
+      "tag_117",
+      "tag_178"
     ]
   },
   {
@@ -1435,10 +1435,10 @@
     "phonetics": "pîi wâa yang-ngai ná",
     "english": "What did you say?",
     "tag_ids": [
-      "tag_118",
-      "tag_168",
-      "tag_213",
-      "tag_226",
+      "tag_098",
+      "tag_140",
+      "tag_178",
+      "tag_189",
       "tag_302"
     ]
   },
@@ -1448,11 +1448,11 @@
     "phonetics": "kǎo kà-yìp-dtaa hâi phǒm",
     "english": "He winked at me.",
     "tag_ids": [
-      "tag_055",
-      "tag_138",
-      "tag_139",
-      "tag_213",
-      "tag_317"
+      "tag_045",
+      "tag_116",
+      "tag_117",
+      "tag_178",
+      "tag_262"
     ]
   },
   {
@@ -1462,8 +1462,8 @@
     "english": "How well do you know her?",
     "tag_ids": [
       "tag_000",
+      "tag_007",
       "tag_068",
-      "tag_081",
       "tag_285",
       "tag_301"
     ]
@@ -1474,11 +1474,11 @@
     "phonetics": "pǒm glua jà mii bpan-hǎa / pǒm glua mii bpan-hǎa",
     "english": "I’m afraid there’ll be a problem.",
     "tag_ids": [
-      "tag_055",
-      "tag_138",
-      "tag_139",
-      "tag_213",
-      "tag_317"
+      "tag_045",
+      "tag_116",
+      "tag_117",
+      "tag_178",
+      "tag_262"
     ]
   },
   {
@@ -1487,10 +1487,10 @@
     "phonetics": "mâi-rúu wâa mʉ̂a-rài / mâi-rúu mʉ̂a-rài",
     "english": "(I) don’t know when.",
     "tag_ids": [
-      "tag_068",
-      "tag_139",
-      "tag_261",
-      "tag_308",
+      "tag_007",
+      "tag_117",
+      "tag_216",
+      "tag_253",
       "tag_301"
     ]
   },
@@ -1500,9 +1500,9 @@
     "phonetics": "tam-mai mâi-dâi (bpai)",
     "english": "Why didn’t you (go)?",
     "tag_ids": [
-      "tag_063",
-      "tag_112",
-      "tag_317",
+      "tag_053",
+      "tag_092",
+      "tag_262",
       "tag_289",
       "tag_303"
     ]
@@ -1513,9 +1513,9 @@
     "phonetics": "kǎo gèng kà-nàat nǎi",
     "english": "How good is he? / How good is this guy? (at sports, etc.)",
     "tag_ids": [
-      "tag_055",
-      "tag_101",
-      "tag_138",
+      "tag_045",
+      "tag_085",
+      "tag_116",
       "tag_286",
       "tag_334"
     ]
@@ -1526,11 +1526,11 @@
     "phonetics": "(hǔa-hǐn) yùu jang-wàt à-rai",
     "english": "What province is (Hua Hin) in?",
     "tag_ids": [
-      "tag_031",
-      "tag_055",
-      "tag_151",
-      "tag_214",
-      "tag_317"
+      "tag_022",
+      "tag_045",
+      "tag_126",
+      "tag_179",
+      "tag_262"
     ]
   },
   {
@@ -1539,9 +1539,9 @@
     "phonetics": "tam-mai bpai naan jang (ləəi)",
     "english": "Why were you gone so long? / What took you so long?",
     "tag_ids": [
-      "tag_266",
-      "tag_276",
-      "tag_317",
+      "tag_218",
+      "tag_226",
+      "tag_262",
       "tag_289",
       "tag_300"
     ]
@@ -1552,11 +1552,11 @@
     "phonetics": "(...) bpen fɛɛ-chân lâa-sùt",
     "english": "(…) it’s the latest fashion.",
     "tag_ids": [
-      "tag_031",
-      "tag_034",
-      "tag_151",
-      "tag_214",
-      "tag_328"
+      "tag_022",
+      "tag_025",
+      "tag_126",
+      "tag_179",
+      "tag_271"
     ]
   },
   {
@@ -1565,11 +1565,11 @@
     "phonetics": "rə̂əm tam ləəi (kráp)",
     "english": "Let’s do it! / Let’s get to it.",
     "tag_ids": [
-      "tag_034",
-      "tag_269",
-      "tag_271",
-      "tag_272",
-      "tag_278"
+      "tag_025",
+      "tag_220",
+      "tag_222",
+      "tag_223",
+      "tag_228"
     ]
   },
   {
@@ -1578,10 +1578,10 @@
     "phonetics": "yàak tǎam à-rai nɔ̀i (...)",
     "english": "(I) wanna ask you something… / (I) want to ask you a few questions.",
     "tag_ids": [
-      "tag_034",
-      "tag_275",
-      "tag_274",
-      "tag_328",
+      "tag_025",
+      "tag_224",
+      "tag_225",
+      "tag_271",
       "tag_302"
     ]
   },
@@ -1591,9 +1591,9 @@
     "phonetics": "(...) nâa-yùu mâak-mâak",
     "english": "(It)’s really a great place to live! / …is very liveable.",
     "tag_ids": [
-      "tag_141",
-      "tag_214",
-      "tag_328",
+      "tag_119",
+      "tag_179",
+      "tag_271",
       "tag_289",
       "tag_303"
     ]
@@ -1604,10 +1604,10 @@
     "phonetics": "pá-yaa-yaam hâam dtɛ̀ɛ...",
     "english": "(I) tried to stop him but…",
     "tag_ids": [
-      "tag_214",
-      "tag_253",
-      "tag_255",
-      "tag_256",
+      "tag_179",
+      "tag_209",
+      "tag_210",
+      "tag_211",
       "tag_334"
     ]
   },
@@ -1617,10 +1617,10 @@
     "phonetics": "kǐan yàang-rai ká / (…) kǐan yang-ngai",
     "english": "How do you write…? / How do you write it?",
     "tag_ids": [
-      "tag_031",
-      "tag_034",
-      "tag_328",
-      "tag_330",
+      "tag_022",
+      "tag_025",
+      "tag_271",
+      "tag_272",
       "tag_303"
     ]
   },
@@ -1630,11 +1630,11 @@
     "phonetics": "mii kon too-maa hǎa (...)",
     "english": "Someone called (…) / Someone phoned me (…)",
     "tag_ids": [
-      "tag_030",
-      "tag_032",
-      "tag_033",
-      "tag_214",
-      "tag_328"
+      "tag_021",
+      "tag_023",
+      "tag_024",
+      "tag_179",
+      "tag_271"
     ]
   },
   {
@@ -1643,11 +1643,11 @@
     "phonetics": "mii pûu-chaai too-maa hǎa (khráp)",
     "english": "A man called you (…) / A man called (…)",
     "tag_ids": [
-      "tag_030",
-      "tag_031",
-      "tag_032",
-      "tag_033",
-      "tag_034"
+      "tag_021",
+      "tag_022",
+      "tag_023",
+      "tag_024",
+      "tag_025"
     ]
   },
   {
@@ -1656,11 +1656,11 @@
     "phonetics": "...yang yùu nai kwaam-song-jam",
     "english": "It’s still in my memory. / She still lives in my memory.",
     "tag_ids": [
-      "tag_030",
-      "tag_031",
-      "tag_033",
-      "tag_151",
-      "tag_152"
+      "tag_021",
+      "tag_022",
+      "tag_024",
+      "tag_126",
+      "tag_127"
     ]
   },
   {
@@ -1669,10 +1669,10 @@
     "phonetics": "pûut yang-ngai dii",
     "english": "How can I say it? / How do you say it? / How shall I put it?",
     "tag_ids": [
-      "tag_033",
-      "tag_151",
-      "tag_152",
-      "tag_226",
+      "tag_024",
+      "tag_126",
+      "tag_127",
+      "tag_189",
       "tag_303"
     ]
   },
@@ -1682,9 +1682,9 @@
     "phonetics": "(bâan) rao yùu glâi-gan",
     "english": "We live near each other.",
     "tag_ids": [
-      "tag_141",
-      "tag_151",
-      "tag_152",
+      "tag_119",
+      "tag_126",
+      "tag_127",
       "tag_289",
       "tag_304"
     ]
@@ -1695,8 +1695,8 @@
     "phonetics": "mâi bpai-nǎi rə̌ə / mâi bpai-nǎi rʉ̌ʉ (ká)",
     "english": "You’re not going anywhere? / Aren’t you going out?",
     "tag_ids": [
-      "tag_098",
-      "tag_266",
+      "tag_079",
+      "tag_218",
       "tag_282",
       "tag_283",
       "tag_334"
@@ -1708,9 +1708,9 @@
     "phonetics": "phǒm dii-jai tîi dâi-yin (rʉ̂ang-níi)",
     "english": "I’m happy to hear (this).",
     "tag_ids": [
-      "tag_106",
-      "tag_107",
-      "tag_141",
+      "tag_088",
+      "tag_089",
+      "tag_119",
       "tag_290",
       "tag_304"
     ]
@@ -1721,8 +1721,8 @@
     "phonetics": "təə jà bpai rʉ̌ʉ-bplàao / təə jà bpai rʉ́-bplàao",
     "english": "Are you going (or not)?",
     "tag_ids": [
-      "tag_098",
-      "tag_266",
+      "tag_079",
+      "tag_218",
       "tag_283",
       "tag_290",
       "tag_334"
@@ -1734,9 +1734,9 @@
     "phonetics": "mâi-mii krai ʉ̀ʉn",
     "english": "There’s no one else.",
     "tag_ids": [
-      "tag_106",
-      "tag_141",
-      "tag_152",
+      "tag_088",
+      "tag_119",
+      "tag_127",
       "tag_290",
       "tag_304"
     ]
@@ -1747,11 +1747,11 @@
     "phonetics": "(dtɔ̂ng) sòng lûuk bpai roong-rian",
     "english": "(I have to) take my kids to school.",
     "tag_ids": [
-      "tag_056",
-      "tag_057",
-      "tag_059",
-      "tag_106",
-      "tag_152"
+      "tag_046",
+      "tag_047",
+      "tag_049",
+      "tag_088",
+      "tag_127"
     ]
   },
   {
@@ -1760,11 +1760,11 @@
     "phonetics": "(New iPad) mii kǎai tîi (hâang)",
     "english": "They sell the (new iPads) at the (mall).",
     "tag_ids": [
-      "tag_056",
-      "tag_057",
-      "tag_059",
-      "tag_060",
-      "tag_106"
+      "tag_046",
+      "tag_047",
+      "tag_049",
+      "tag_050",
+      "tag_088"
     ]
   },
   {
@@ -1773,10 +1773,10 @@
     "phonetics": "yàa bpə̀ət tíng wái",
     "english": "Don’t leave it on. / Don’t leave it open. (electricity, door, etc.)",
     "tag_ids": [
-      "tag_045",
-      "tag_056",
-      "tag_181",
-      "tag_250",
+      "tag_036",
+      "tag_046",
+      "tag_151",
+      "tag_206",
       "tag_298"
     ]
   },
@@ -1786,11 +1786,11 @@
     "phonetics": "(bpìt fai) pʉ̂a bprà-yàt pá-lang-ngaan",
     "english": "(Turn off the lights) to conserve energy. / (Turn off the lights) in order to conserve energy.",
     "tag_ids": [
-      "tag_056",
-      "tag_057",
-      "tag_058",
-      "tag_059",
-      "tag_060"
+      "tag_046",
+      "tag_047",
+      "tag_048",
+      "tag_049",
+      "tag_050"
     ]
   },
   {
@@ -1799,11 +1799,11 @@
     "phonetics": "glàp-rót dâi-mǎi",
     "english": "Can you make a u-turn?",
     "tag_ids": [
-      "tag_056",
-      "tag_057",
-      "tag_059",
-      "tag_060",
-      "tag_277"
+      "tag_046",
+      "tag_047",
+      "tag_049",
+      "tag_050",
+      "tag_227"
     ]
   },
   {
@@ -1812,11 +1812,11 @@
     "phonetics": "(man) bpen ngaan nai fǎn kɔ̌ɔng pǒm",
     "english": "(It)’s my dream job.",
     "tag_ids": [
+      "tag_047",
+      "tag_048",
+      "tag_056",
       "tag_057",
-      "tag_058",
-      "tag_066",
-      "tag_067",
-      "tag_279"
+      "tag_229"
     ]
   },
   {
@@ -1825,11 +1825,11 @@
     "phonetics": "kǎo pûut tùuk-dtɔ̂ng lɛ́ɛo",
     "english": "He’s right! / What he said was right! / He’s spot on!",
     "tag_ids": [
-      "tag_058",
-      "tag_066",
-      "tag_212",
-      "tag_240",
-      "tag_287"
+      "tag_048",
+      "tag_056",
+      "tag_177",
+      "tag_200",
+      "tag_236"
     ]
   },
   {
@@ -1838,11 +1838,11 @@
     "phonetics": "mâi-châi wâa...",
     "english": "It’s not that… / Not that…",
     "tag_ids": [
-      "tag_014",
-      "tag_058",
-      "tag_059",
-      "tag_060",
-      "tag_066"
+      "tag_009",
+      "tag_048",
+      "tag_049",
+      "tag_050",
+      "tag_056"
     ]
   },
   {
@@ -1851,10 +1851,10 @@
     "phonetics": "...dtâng-dtɛ̀ɛ wan-nán maa...",
     "english": "…from that day… / …since that day…",
     "tag_ids": [
-      "tag_013",
-      "tag_014",
-      "tag_017",
-      "tag_016",
+      "tag_008",
+      "tag_009",
+      "tag_010",
+      "tag_011",
       "tag_304"
     ]
   },
@@ -1864,10 +1864,10 @@
     "phonetics": "...yím yàang-mii-kwaam-sùk",
     "english": "...smiling happily",
     "tag_ids": [
-      "tag_013",
-      "tag_014",
-      "tag_017",
-      "tag_016",
+      "tag_008",
+      "tag_009",
+      "tag_010",
+      "tag_011",
       "tag_305"
     ]
   },
@@ -1877,11 +1877,11 @@
     "phonetics": "...tam-hâi pǒm rúu-sʉ̀k dii-kʉ̂n / ...tam-hâi rúu-sʉ̀k dii-kʉ̂n",
     "english": "...made me feel better.",
     "tag_ids": [
-      "tag_181",
-      "tag_279",
-      "tag_284",
-      "tag_305",
-      "tag_306"
+      "tag_151",
+      "tag_229",
+      "tag_233",
+      "tag_250",
+      "tag_251"
     ]
   },
   {
@@ -1890,10 +1890,10 @@
     "phonetics": "krai jà chʉ̂a / krai jà chʉ̂a wâa...",
     "english": "Who would believe that?! / Who would believe you?! / Who would believe… ?!",
     "tag_ids": [
-      "tag_013",
-      "tag_014",
-      "tag_017",
-      "tag_016",
+      "tag_008",
+      "tag_009",
+      "tag_010",
+      "tag_011",
       "tag_305"
     ]
   },
@@ -1903,10 +1903,10 @@
     "phonetics": "pûu-chaai túk-kon chɔ̂ɔp (pûu-yǐng sǔai) / pûu-chaai túk-túk-kon chɔ̂ɔp (pûu-yǐng sǔai)",
     "english": "All guys like (beautiful women).",
     "tag_ids": [
-      "tag_014",
-      "tag_017",
-      "tag_283",
-      "tag_301",
+      "tag_009",
+      "tag_010",
+      "tag_232",
+      "tag_247",
       "tag_305"
     ]
   },
@@ -1916,10 +1916,10 @@
     "phonetics": "pûu-yǐng túk-kon chɔ̂ɔp (dtɛ̀ng-dtua sǔai-sǔai) / pûu-yǐng túk-túk-kon chɔ̂ɔp (dtɛ̀ng-dtua sǔai-sǔai)",
     "english": "All women like (to wear nice clothes).",
     "tag_ids": [
-      "tag_017",
-      "tag_283",
-      "tag_301",
-      "tag_318",
+      "tag_010",
+      "tag_232",
+      "tag_247",
+      "tag_263",
       "tag_305"
     ]
   },
@@ -1929,9 +1929,9 @@
     "phonetics": "yàa bɔ̀ɔk kǎo (ná) (kráp)",
     "english": "Don’t tell him. / Don’t tell her.",
     "tag_ids": [
-      "tag_016",
-      "tag_092",
-      "tag_281",
+      "tag_011",
+      "tag_077",
+      "tag_213",
       "tag_323",
       "tag_326"
     ]
@@ -1942,10 +1942,10 @@
     "phonetics": "POLITE (róp-guan) chûai kǐan hâi duu nɔ̀i dâi-mǎi kráp",
     "english": "Could you please write it down for me?",
     "tag_ids": [
-      "tag_013",
-      "tag_016",
-      "tag_150",
-      "tag_330",
+      "tag_008",
+      "tag_011",
+      "tag_125",
+      "tag_272",
       "tag_305"
     ]
   },
@@ -1955,10 +1955,10 @@
     "phonetics": "(kǎo) pûut jing ná",
     "english": "(He) means means it! / (He) means what he says! / (He)’s serious!",
     "tag_ids": [
-      "tag_013",
-      "tag_149",
-      "tag_150",
-      "tag_330",
+      "tag_008",
+      "tag_124",
+      "tag_125",
+      "tag_272",
       "tag_306"
     ]
   },
@@ -1968,10 +1968,10 @@
     "phonetics": "à-dìit man jòp bpai lɛ́ɛo / à-dìit jòp bpai lɛ́ɛo",
     "english": "The past is over. / The past is gone. (so let it go)",
     "tag_ids": [
-      "tag_065",
-      "tag_149",
-      "tag_150",
-      "tag_330",
+      "tag_055",
+      "tag_124",
+      "tag_125",
+      "tag_272",
       "tag_300"
     ]
   },
@@ -1981,10 +1981,10 @@
     "phonetics": "man jòp long lɛ́ɛo",
     "english": "It’s over. / It’s finished.",
     "tag_ids": [
-      "tag_070",
-      "tag_149",
-      "tag_150",
-      "tag_330",
+      "tag_059",
+      "tag_124",
+      "tag_125",
+      "tag_272",
       "tag_306"
     ]
   },
@@ -1994,10 +1994,10 @@
     "phonetics": "(pʉ̂an) nɛ́-nam hâi rúu-jàk gan",
     "english": "(A friend) introduced us. / (A friend) introduced him to me.",
     "tag_ids": [
-      "tag_070",
-      "tag_130",
-      "tag_149",
-      "tag_150",
+      "tag_059",
+      "tag_109",
+      "tag_124",
+      "tag_125",
       "tag_306"
     ]
   },
@@ -2007,9 +2007,9 @@
     "phonetics": "pûut cháa-cháa nɔ̀i dâi-mǎi (kráp)",
     "english": "Could you speak (more) slowly?",
     "tag_ids": [
-      "tag_130",
-      "tag_234",
-      "tag_235",
+      "tag_109",
+      "tag_195",
+      "tag_196",
       "tag_290",
       "tag_306"
     ]
@@ -2020,9 +2020,9 @@
     "phonetics": "bpen dtà-kiu tîi (nɔ̂ng)",
     "english": "I have a cramp in (my calf).",
     "tag_ids": [
-      "tag_130",
-      "tag_149",
-      "tag_234",
+      "tag_109",
+      "tag_124",
+      "tag_195",
       "tag_290",
       "tag_306"
     ]
@@ -2033,9 +2033,9 @@
     "phonetics": "(təə) sǔai gwàa krai",
     "english": "(She)’s more beautiful than anyone!",
     "tag_ids": [
-      "tag_085",
-      "tag_130",
-      "tag_234",
+      "tag_072",
+      "tag_109",
+      "tag_195",
       "tag_291",
       "tag_307"
     ]
@@ -2046,9 +2046,9 @@
     "phonetics": "mâi-mii-krai yàak bpai (ləəi)",
     "english": "No one wants to go.",
     "tag_ids": [
-      "tag_085",
-      "tag_130",
-      "tag_234",
+      "tag_072",
+      "tag_109",
+      "tag_195",
       "tag_291",
       "tag_307"
     ]
@@ -2059,10 +2059,10 @@
     "phonetics": "(dəən) dtrong-bpai ìik nít",
     "english": "Go a bit further. / Walk a bit further. (giving directions)",
     "tag_ids": [
-      "tag_086",
-      "tag_083",
-      "tag_084",
-      "tag_085",
+      "tag_069",
+      "tag_070",
+      "tag_071",
+      "tag_072",
       "tag_307"
     ]
   },
@@ -2072,10 +2072,10 @@
     "phonetics": "pɔɔ tʉ̌ng (sǐi-yɛ̂ɛk)... / mʉ̂a tʉ̌ng (sǐi-yɛ̂ɛk)...",
     "english": "When you reach (the intersection)…",
     "tag_ids": [
-      "tag_086",
-      "tag_083",
-      "tag_084",
-      "tag_085",
+      "tag_069",
+      "tag_070",
+      "tag_071",
+      "tag_072",
       "tag_307"
     ]
   },
@@ -2085,9 +2085,9 @@
     "phonetics": "rao kəəi kui gan lɛ́ɛo",
     "english": "We’ve talked about this before. / We’re talked before.",
     "tag_ids": [
-      "tag_008",
-      "tag_083",
-      "tag_085",
+      "tag_005",
+      "tag_070",
+      "tag_072",
       "tag_291",
       "tag_324"
     ]
@@ -2098,10 +2098,10 @@
     "phonetics": "sûu mâi-dâi (lɔ̀k)",
     "english": "I’m no match for him! / It can’t compare to… / It can’t beat…",
     "tag_ids": [
-      "tag_086",
-      "tag_083",
-      "tag_084",
-      "tag_148",
+      "tag_069",
+      "tag_070",
+      "tag_071",
+      "tag_123",
       "tag_307"
     ]
   },
@@ -2111,9 +2111,9 @@
     "phonetics": "mâi-kəəi kâo-jai wâa...",
     "english": "(I)’ve never understood…",
     "tag_ids": [
-      "tag_008",
-      "tag_083",
-      "tag_148",
+      "tag_005",
+      "tag_070",
+      "tag_123",
       "tag_291",
       "tag_325"
     ]
@@ -2124,10 +2124,10 @@
     "phonetics": "...nai wee-laa kɛ̂ɛ (hâa naa-tii)",
     "english": "In only (5 minutes)… / …in only (5 minutes).",
     "tag_ids": [
-      "tag_086",
-      "tag_084",
-      "tag_148",
-      "tag_263",
+      "tag_069",
+      "tag_071",
+      "tag_123",
+      "tag_217",
       "tag_308"
     ]
   },
@@ -2137,11 +2137,11 @@
     "phonetics": "gɔ̀ɔn-ʉ̀ʉn kun dtɔ̂ng kâo-jai wâa... / gɔ̀ɔn-ʉ̀ʉn dtɔ̂ng kâo-jai wâa...",
     "english": "First you have to understand…",
     "tag_ids": [
-      "tag_084",
-      "tag_148",
-      "tag_263",
-      "tag_307",
-      "tag_308"
+      "tag_071",
+      "tag_123",
+      "tag_217",
+      "tag_252",
+      "tag_253"
     ]
   },
   {
@@ -2150,10 +2150,10 @@
     "phonetics": "taang-lʉ̂ak tîi-sɔ̌ɔng (kʉʉ)...",
     "english": "The second option (is)…",
     "tag_ids": [
-      "tag_086",
-      "tag_148",
-      "tag_167",
-      "tag_263",
+      "tag_069",
+      "tag_123",
+      "tag_139",
+      "tag_217",
       "tag_308"
     ]
   },
@@ -2163,9 +2163,9 @@
     "phonetics": "jà bɔ̀ɔk kǎo mʉ̂a-rài",
     "english": "When are you gonna tell him?",
     "tag_ids": [
-      "tag_092",
-      "tag_093",
-      "tag_281",
+      "tag_077",
+      "tag_078",
+      "tag_213",
       "tag_323",
       "tag_326"
     ]
@@ -2176,11 +2176,11 @@
     "phonetics": "nǔu sǎai-dtaa mâi-dii",
     "english": "I have bad eyesight. / I have bad vision.",
     "tag_ids": [
-      "tag_067",
-      "tag_165",
-      "tag_167",
-      "tag_169",
-      "tag_263"
+      "tag_057",
+      "tag_137",
+      "tag_139",
+      "tag_141",
+      "tag_217"
     ]
   },
   {
@@ -2189,11 +2189,11 @@
     "phonetics": "(pǒm) tam-eeng túk-yàang",
     "english": "(I) did it all myself. / (I) made everything by myself.",
     "tag_ids": [
-      "tag_165",
-      "tag_166",
-      "tag_167",
-      "tag_168",
-      "tag_169"
+      "tag_137",
+      "tag_138",
+      "tag_139",
+      "tag_140",
+      "tag_141"
     ]
   },
   {
@@ -2202,11 +2202,11 @@
     "phonetics": "pǒm bpə̀ət eeng",
     "english": "I’ll get it. / I’ll open it for you. / I opened it by myself.",
     "tag_ids": [
-      "tag_036",
-      "tag_167",
-      "tag_169",
-      "tag_260",
-      "tag_263"
+      "tag_027",
+      "tag_139",
+      "tag_141",
+      "tag_215",
+      "tag_217"
     ]
   },
   {
@@ -2215,11 +2215,11 @@
     "phonetics": "nai nán mii à-rai (bâang)",
     "english": "What’s in there? / What do they have in there?",
     "tag_ids": [
-      "tag_114",
-      "tag_165",
-      "tag_167",
-      "tag_169",
-      "tag_236"
+      "tag_094",
+      "tag_137",
+      "tag_139",
+      "tag_141",
+      "tag_197"
     ]
   },
   {
@@ -2228,10 +2228,10 @@
     "phonetics": "pûut tai mâi-bpen",
     "english": "I can’t speak Thai. / She can’t speak Thai.",
     "tag_ids": [
-      "tag_114",
-      "tag_234",
-      "tag_235",
-      "tag_236",
+      "tag_094",
+      "tag_195",
+      "tag_196",
+      "tag_197",
       "tag_308"
     ]
   },
@@ -2241,11 +2241,11 @@
     "phonetics": "glàp dʉ̀k jang ləəi",
     "english": "You’re home so late! / You’re back late!",
     "tag_ids": [
-      "tag_114",
-      "tag_117",
-      "tag_140",
-      "tag_231",
-      "tag_235"
+      "tag_094",
+      "tag_097",
+      "tag_118",
+      "tag_192",
+      "tag_196"
     ]
   },
   {
@@ -2254,11 +2254,11 @@
     "phonetics": "yùu dtrong-níi eeng",
     "english": "(It)’s right here.",
     "tag_ids": [
-      "tag_238",
-      "tag_239",
-      "tag_240",
-      "tag_242",
-      "tag_287"
+      "tag_198",
+      "tag_199",
+      "tag_200",
+      "tag_202",
+      "tag_236"
     ]
   },
   {
@@ -2267,10 +2267,10 @@
     "phonetics": "chûai pûut ìik-tii dâi-mǎi (ká)",
     "english": "Could you say that again, please? / Could you repeat that?",
     "tag_ids": [
-      "tag_195",
-      "tag_226",
-      "tag_235",
-      "tag_236",
+      "tag_161",
+      "tag_189",
+      "tag_196",
+      "tag_197",
       "tag_308"
     ]
   },
@@ -2280,10 +2280,10 @@
     "phonetics": "yàa kít-mâak (ləəi)",
     "english": "Just relax, (don’t worry about it.) / Don’t worry. / Don’t think about it too much.",
     "tag_ids": [
-      "tag_022",
-      "tag_045",
-      "tag_114",
-      "tag_215",
+      "tag_016",
+      "tag_036",
+      "tag_094",
+      "tag_180",
       "tag_297"
     ]
   },
@@ -2293,11 +2293,11 @@
     "phonetics": "yàak lɔɔng mǎi (kráp) / yàak lɔɔng mái",
     "english": "Do you wanna try it? / Wanna try some?",
     "tag_ids": [
-      "tag_195",
-      "tag_235",
-      "tag_311",
-      "tag_312",
-      "tag_313"
+      "tag_161",
+      "tag_196",
+      "tag_256",
+      "tag_257",
+      "tag_258"
     ]
   },
   {
@@ -2306,11 +2306,11 @@
     "phonetics": "jà glàp-bâan rʉ́-yang / jà glàp-bâan rʉ̌ʉ-yang",
     "english": "Are you ready to go back home yet? / Are you going home yet?",
     "tag_ids": [
-      "tag_114",
-      "tag_115",
-      "tag_117",
-      "tag_140",
-      "tag_236"
+      "tag_094",
+      "tag_095",
+      "tag_097",
+      "tag_118",
+      "tag_197"
     ]
   },
   {
@@ -2319,9 +2319,9 @@
     "phonetics": "kun jà bpai naan tâo-rài / bpai naan tâo-rài",
     "english": "How long are you going for?",
     "tag_ids": [
-      "tag_236",
-      "tag_266",
-      "tag_276",
+      "tag_197",
+      "tag_218",
+      "tag_226",
       "tag_283",
       "tag_308"
     ]
@@ -2332,10 +2332,10 @@
     "phonetics": "chûai bplɛ̀ɛ hâi phǒm nɔ̀i khráp / chûai bplɛ̀ɛ hâi nɔ̀i",
     "english": "Please translate that for me.",
     "tag_ids": [
-      "tag_160",
+      "tag_132",
+      "tag_133",
       "tag_161",
-      "tag_195",
-      "tag_203",
+      "tag_169",
       "tag_336"
     ]
   },
@@ -2345,10 +2345,10 @@
     "phonetics": "lɛ́ɛo prûng-níi lâ / lɛ́ɛo prûng-níi à",
     "english": "What about tomorrow? (suggesting)",
     "tag_ids": [
-      "tag_160",
+      "tag_132",
+      "tag_133",
       "tag_161",
-      "tag_195",
-      "tag_203",
+      "tag_169",
       "tag_336"
     ]
   },
@@ -2358,10 +2358,10 @@
     "phonetics": "kɔ̌ɔng-tɛ́ɛ mǎi / kɔ̌ɔng-tɛ́ɛ mái / kɔ̌ɔng-tɛ́ɛ rʉ̌ʉ-bplàao",
     "english": "Is it real? / Is that real? (o---r fake)",
     "tag_ids": [
-      "tag_160",
+      "tag_132",
+      "tag_133",
       "tag_161",
-      "tag_195",
-      "tag_203",
+      "tag_169",
       "tag_336"
     ]
   },
@@ -2371,10 +2371,10 @@
     "phonetics": "gin à-rai mâi-dâi (ləəi)",
     "english": "(I) can’t eat anything. (due to sickness, etc.)",
     "tag_ids": [
-      "tag_160",
-      "tag_162",
-      "tag_203",
-      "tag_211",
+      "tag_132",
+      "tag_134",
+      "tag_169",
+      "tag_176",
       "tag_336"
     ]
   },
@@ -2384,10 +2384,10 @@
     "phonetics": "dtâng-dtɛ̀ɛ cháao tʉ̌ng yen",
     "english": "from morning until evening; from the morning until night",
     "tag_ids": [
-      "tag_158",
-      "tag_160",
-      "tag_161",
-      "tag_162",
+      "tag_131",
+      "tag_132",
+      "tag_133",
+      "tag_134",
       "tag_337"
     ]
   },
@@ -2397,11 +2397,11 @@
     "phonetics": "lɔɔng sài duu sì (kráp)",
     "english": "Try it on. / Try this on.",
     "tag_ids": [
-      "tag_161",
-      "tag_206",
-      "tag_260",
-      "tag_311",
-      "tag_313"
+      "tag_133",
+      "tag_171",
+      "tag_215",
+      "tag_256",
+      "tag_258"
     ]
   },
   {
@@ -2410,10 +2410,10 @@
     "phonetics": "(mii) raa-kaa sǒm-hèet-sǒm-pǒn",
     "english": "The prices are reasonable. / It’s reasonably priced. / They have very fair prices.",
     "tag_ids": [
-      "tag_021",
-      "tag_203",
-      "tag_205",
-      "tag_206",
+      "tag_015",
+      "tag_169",
+      "tag_170",
+      "tag_171",
       "tag_309"
     ]
   },
@@ -2423,10 +2423,10 @@
     "phonetics": "kun duu soom / kun duu soom-soom",
     "english": "You look run down. / You look tired.",
     "tag_ids": [
-      "tag_205",
-      "tag_206",
-      "tag_331",
-      "tag_332",
+      "tag_170",
+      "tag_171",
+      "tag_273",
+      "tag_274",
       "tag_296"
     ]
   },
@@ -2436,10 +2436,10 @@
     "phonetics": "sǐa-dtua bpai lɛ́ɛo",
     "english": "She lost her virginity.",
     "tag_ids": [
-      "tag_021",
-      "tag_041",
-      "tag_144",
-      "tag_205",
+      "tag_015",
+      "tag_032",
+      "tag_120",
+      "tag_170",
       "tag_309"
     ]
   },
@@ -2449,10 +2449,10 @@
     "phonetics": "aa-jaan sɔ̌ɔn dii-mâak / kruu sɔ̌ɔn dii-mâak-mâak",
     "english": "The professors are really good. / He’s a great teacher.",
     "tag_ids": [
-      "tag_021",
-      "tag_144",
-      "tag_205",
-      "tag_206",
+      "tag_015",
+      "tag_120",
+      "tag_170",
+      "tag_171",
       "tag_309"
     ]
   },
@@ -2462,11 +2462,11 @@
     "phonetics": "(man) sà-nùk gwàa yə́",
     "english": "(It)’s a lot more fun.",
     "tag_ids": [
-      "tag_048",
-      "tag_115",
-      "tag_144",
-      "tag_293",
-      "tag_295"
+      "tag_039",
+      "tag_095",
+      "tag_120",
+      "tag_242",
+      "tag_244"
     ]
   },
   {
@@ -2475,10 +2475,10 @@
     "phonetics": "(kǎo) rîip ɔ̀ɔk-jàak bâan",
     "english": "(He) left home in a hurry.",
     "tag_ids": [
-      "tag_115",
-      "tag_117",
-      "tag_144",
-      "tag_205",
+      "tag_095",
+      "tag_097",
+      "tag_120",
+      "tag_170",
       "tag_309"
     ]
   },
@@ -2488,9 +2488,9 @@
     "phonetics": "rao kəəi duu lɛ́ɛo",
     "english": "I’ve seen it before. / We’ve seen it before. (a movie, etc.)",
     "tag_ids": [
-      "tag_008",
-      "tag_011",
-      "tag_021",
+      "tag_005",
+      "tag_006",
+      "tag_015",
       "tag_291",
       "tag_325"
     ]
@@ -2501,9 +2501,9 @@
     "phonetics": "yàa tam-ngaan nàk gəən-bpai",
     "english": "Don’t work too hard. / Don’t overwork yourself.",
     "tag_ids": [
-      "tag_250",
-      "tag_319",
-      "tag_320",
+      "tag_206",
+      "tag_264",
+      "tag_265",
       "tag_292",
       "tag_326"
     ]
@@ -2514,8 +2514,8 @@
     "phonetics": "bpai mʉ̂a-rài dii",
     "english": "When should I go? / When’s a good time to go?",
     "tag_ids": [
-      "tag_296",
-      "tag_300",
+      "tag_245",
+      "tag_246",
       "tag_286",
       "tag_323",
       "tag_337"
@@ -2528,9 +2528,9 @@
     "english": "(He) stopped breathing! / (Dad)’s not breathing anymore!",
     "tag_ids": [
       "tag_003",
-      "tag_011",
-      "tag_021",
-      "tag_065",
+      "tag_006",
+      "tag_015",
+      "tag_055",
       "tag_300"
     ]
   },
@@ -2541,8 +2541,8 @@
     "english": "She walked back and forth. / He paced back and forth.",
     "tag_ids": [
       "tag_003",
-      "tag_011",
-      "tag_076",
+      "tag_006",
+      "tag_064",
       "tag_292",
       "tag_309"
     ]
@@ -2553,10 +2553,10 @@
     "phonetics": "bpen lûuk-chaai kon-diao kɔ̌ɔng (krɔ̂ɔp-krua)",
     "english": "(He)’s the only son (in the family).",
     "tag_ids": [
-      "tag_011",
-      "tag_076",
-      "tag_163",
-      "tag_164",
+      "tag_006",
+      "tag_064",
+      "tag_135",
+      "tag_136",
       "tag_310"
     ]
   },
@@ -2566,10 +2566,10 @@
     "phonetics": "nǎng rʉ̂ang-níi dii-mâak (khráp)",
     "english": "This movie is great! / It’s a really good movie!",
     "tag_ids": [
-      "tag_076",
-      "tag_104",
-      "tag_163",
-      "tag_164",
+      "tag_064",
+      "tag_086",
+      "tag_135",
+      "tag_136",
       "tag_310"
     ]
   },
@@ -2579,10 +2579,10 @@
     "phonetics": "dtɔ̂ng duu hâi-dâi ná",
     "english": "You have to see it! / You must see it! (a good movie, etc.)",
     "tag_ids": [
-      "tag_076",
-      "tag_163",
-      "tag_164",
-      "tag_267",
+      "tag_064",
+      "tag_135",
+      "tag_136",
+      "tag_219",
       "tag_310"
     ]
   },
@@ -2592,10 +2592,10 @@
     "phonetics": "(lûuk) dtɔ̂ng tam gaan-bâan hâi sèt (gɔ̀ɔn)",
     "english": "(You) have to finish your homework.",
     "tag_ids": [
-      "tag_063",
-      "tag_076",
-      "tag_163",
-      "tag_211",
+      "tag_053",
+      "tag_064",
+      "tag_135",
+      "tag_176",
       "tag_310"
     ]
   },
@@ -2605,11 +2605,11 @@
     "phonetics": "pɛ́ɛ yaa à-rai rʉ̌ʉ-bplàao ká / pɛ́ɛ yaa à-rai mǎi kráp",
     "english": "Are you allergic to any medicine?",
     "tag_ids": [
-      "tag_113",
-      "tag_116",
-      "tag_163",
-      "tag_164",
-      "tag_267"
+      "tag_093",
+      "tag_096",
+      "tag_135",
+      "tag_136",
+      "tag_219"
     ]
   },
   {
@@ -2618,11 +2618,11 @@
     "phonetics": "kǎo maa-tʉ̌ng mʉ̂a-rài",
     "english": "When did he get here? / When did he arrive?",
     "tag_ids": [
-      "tag_113",
-      "tag_116",
-      "tag_166",
-      "tag_168",
-      "tag_267"
+      "tag_093",
+      "tag_096",
+      "tag_138",
+      "tag_140",
+      "tag_219"
     ]
   },
   {
@@ -2631,11 +2631,11 @@
     "phonetics": "mâi-kɔ̂i yùu bâan ləəi",
     "english": "I’m not home a lot. / She’s not at home much.",
     "tag_ids": [
-      "tag_113",
-      "tag_115",
-      "tag_116",
-      "tag_117",
-      "tag_164"
+      "tag_093",
+      "tag_095",
+      "tag_096",
+      "tag_097",
+      "tag_136"
     ]
   },
   {
@@ -2644,10 +2644,10 @@
     "phonetics": "tîao-diao rʉ̌ʉ bpai-glàp",
     "english": "One way or round trip?",
     "tag_ids": [
-      "tag_116",
-      "tag_221",
-      "tag_259",
-      "tag_267",
+      "tag_096",
+      "tag_185",
+      "tag_214",
+      "tag_219",
       "tag_295"
     ]
   },
@@ -2657,11 +2657,11 @@
     "phonetics": "(kǎo) mâi-dâi bpen kon tam",
     "english": "(He)’s not the one who did it.",
     "tag_ids": [
-      "tag_113",
-      "tag_116",
-      "tag_166",
-      "tag_168",
-      "tag_267"
+      "tag_093",
+      "tag_096",
+      "tag_138",
+      "tag_140",
+      "tag_219"
     ]
   },
   {
@@ -2670,8 +2670,8 @@
     "phonetics": "mâi-dtɔ̂ng ləəi",
     "english": "Nah, nah. / No, no. / You don’t need to (do that).",
     "tag_ids": [
-      "tag_296",
-      "tag_337",
+      "tag_245",
+      "tag_279",
       "tag_287",
       "tag_324",
       "tag_337"
@@ -2683,10 +2683,10 @@
     "phonetics": "dtɔ̂ng bpràp-dtua",
     "english": "We have to adjust (to it). / I have to adapt.",
     "tag_ids": [
-      "tag_113",
-      "tag_221",
-      "tag_233",
-      "tag_294",
+      "tag_093",
+      "tag_185",
+      "tag_194",
+      "tag_243",
       "tag_310"
     ]
   },
@@ -2696,10 +2696,10 @@
     "phonetics": "pɔ̂ɔ-mɛ̂ɛ tam-ngaan à-rai (ká)",
     "english": "What do your parents do?",
     "tag_ids": [
-      "tag_221",
-      "tag_233",
-      "tag_292",
-      "tag_294",
+      "tag_185",
+      "tag_194",
+      "tag_241",
+      "tag_243",
       "tag_311"
     ]
   },
@@ -2709,11 +2709,11 @@
     "phonetics": "mii kɔ̌ɔng yə́ mâak",
     "english": "They have a lot of stuff! / They sell a lot of things! / You have a lot of things!",
     "tag_ids": [
-      "tag_060",
-      "tag_292",
-      "tag_293",
-      "tag_294",
-      "tag_295"
+      "tag_050",
+      "tag_241",
+      "tag_242",
+      "tag_243",
+      "tag_244"
     ]
   },
   {
@@ -2722,11 +2722,11 @@
     "phonetics": "jà duu-lɛɛ yàang-dii (ləəi)",
     "english": "I’ll take very good care of it. / He’ll take very good care of her.",
     "tag_ids": [
-      "tag_035",
-      "tag_036",
-      "tag_104",
-      "tag_292",
-      "tag_294"
+      "tag_026",
+      "tag_027",
+      "tag_086",
+      "tag_241",
+      "tag_243"
     ]
   },
   {
@@ -2735,11 +2735,11 @@
     "phonetics": "(kun) kuan pák-pɔ̀n bâang",
     "english": "(You) should get some rest.",
     "tag_ids": [
-      "tag_208",
-      "tag_232",
-      "tag_233",
-      "tag_292",
-      "tag_294"
+      "tag_173",
+      "tag_193",
+      "tag_194",
+      "tag_241",
+      "tag_243"
     ]
   },
   {
@@ -2748,11 +2748,11 @@
     "phonetics": "(təə) kong-jà mâi maa",
     "english": "(She) probably won’t come. / (She) probably won’t be coming.",
     "tag_ids": [
-      "tag_207",
-      "tag_208",
-      "tag_210",
-      "tag_212",
-      "tag_213"
+      "tag_172",
+      "tag_173",
+      "tag_175",
+      "tag_177",
+      "tag_178"
     ]
   },
   {
@@ -2761,11 +2761,11 @@
     "phonetics": "kɔ̌ɔ-tôot tîi phǒm maa cháa / kɔ̌ɔ-tôot tîi maa cháa",
     "english": "I’m sorry I’m late. / I’m sorry for being late.",
     "tag_ids": [
-      "tag_140",
-      "tag_208",
-      "tag_231",
-      "tag_232",
-      "tag_233"
+      "tag_118",
+      "tag_173",
+      "tag_192",
+      "tag_193",
+      "tag_194"
     ]
   },
   {
@@ -2774,11 +2774,11 @@
     "phonetics": "sài bəə à-rai (ká)",
     "english": "What size do you wear? / What size does she wear?",
     "tag_ids": [
-      "tag_018",
-      "tag_088",
-      "tag_232",
-      "tag_233",
-      "tag_292"
+      "tag_012",
+      "tag_074",
+      "tag_193",
+      "tag_194",
+      "tag_241"
     ]
   },
   {
@@ -2787,11 +2787,11 @@
     "phonetics": "rao bʉ̀a mâak jing-jing",
     "english": "We were so bored! / I was so bored!",
     "tag_ids": [
-      "tag_018",
+      "tag_012",
+      "tag_013",
       "tag_019",
-      "tag_028",
-      "tag_208",
-      "tag_232"
+      "tag_173",
+      "tag_193"
     ]
   },
   {
@@ -2800,11 +2800,11 @@
     "phonetics": "pǒm náp-tʉ̌ʉ sàat-sà-nǎa-pút",
     "english": "I’m a Buddhist.",
     "tag_ids": [
+      "tag_013",
       "tag_019",
-      "tag_028",
-      "tag_208",
-      "tag_232",
-      "tag_288"
+      "tag_173",
+      "tag_193",
+      "tag_237"
     ]
   },
   {
@@ -2813,11 +2813,11 @@
     "phonetics": "kon-tai sùan-mâak náp-tʉ̌ʉ sàat-sà-nǎa-pút / kon-tai sùan-yài náp-tʉ̌ʉ sàat-sà-nǎa-pút",
     "english": "Most Thais are Buddhist.",
     "tag_ids": [
-      "tag_018",
-      "tag_028",
-      "tag_288",
-      "tag_289",
-      "tag_290"
+      "tag_012",
+      "tag_019",
+      "tag_237",
+      "tag_238",
+      "tag_239"
     ]
   },
   {
@@ -2826,11 +2826,11 @@
     "phonetics": "phǒm náp-tʉ̌ʉ sàat-sà-nǎa-krít",
     "english": "I’m a Christian.",
     "tag_ids": [
-      "tag_018",
+      "tag_012",
+      "tag_013",
       "tag_019",
-      "tag_028",
-      "tag_049",
-      "tag_288"
+      "tag_040",
+      "tag_237"
     ]
   },
   {
@@ -2839,11 +2839,11 @@
     "phonetics": "phǒm pûut-tùuk châi-mái / phǒm pûut-tùuk châi-mǎi",
     "english": "I’m right, aren’t I? / What I said was true, right?",
     "tag_ids": [
-      "tag_028",
-      "tag_212",
-      "tag_287",
-      "tag_288",
-      "tag_303"
+      "tag_019",
+      "tag_177",
+      "tag_236",
+      "tag_237",
+      "tag_249"
     ]
   },
   {
@@ -2852,9 +2852,9 @@
     "phonetics": "SEMI-FORMAL kɔ̌ɔ-hâi mii sùk-kà-pâap-dii",
     "english": "I wish you good health. / May you have good health.",
     "tag_ids": [
-      "tag_101",
-      "tag_104",
-      "tag_158",
+      "tag_085",
+      "tag_086",
+      "tag_131",
       "tag_286",
       "tag_337"
     ]
@@ -2865,11 +2865,11 @@
     "phonetics": "kɔ̌ɔ duu bai-kàp-kìi dûai kráp",
     "english": "May I see your driver’s license?",
     "tag_ids": [
-      "tag_019",
-      "tag_039",
+      "tag_013",
+      "tag_030",
+      "tag_031",
       "tag_040",
-      "tag_049",
-      "tag_061"
+      "tag_051"
     ]
   },
   {
@@ -2878,8 +2878,8 @@
     "phonetics": "phǒm bpen kon tîi chôok-dii tîi-sùt",
     "english": "I’m such a lucky gal! / I’m the luckiest person alive!",
     "tag_ids": [
-      "tag_019",
-      "tag_187",
+      "tag_013",
+      "tag_156",
       "tag_319",
       "tag_324",
       "tag_327"
@@ -2891,9 +2891,9 @@
     "phonetics": "mʉ̂a-kʉʉn nɔɔn dʉ̀k",
     "english": "(I) went to bed late last night.",
     "tag_ids": [
-      "tag_140",
-      "tag_231",
-      "tag_243",
+      "tag_118",
+      "tag_192",
+      "tag_203",
       "tag_292",
       "tag_338"
     ]
@@ -2904,10 +2904,10 @@
     "phonetics": "bpai-tîao tá-lee gan dii mái / bpai-tîao tá-lee dii mǎi",
     "english": "Shall we go to the seaside? / Do you wanna do to the beach?",
     "tag_ids": [
-      "tag_049",
-      "tag_226",
-      "tag_312",
-      "tag_314",
+      "tag_040",
+      "tag_189",
+      "tag_257",
+      "tag_259",
       "tag_311"
     ]
   },
@@ -2917,10 +2917,10 @@
     "phonetics": "(man) chái-gaan-mâi-dâi",
     "english": "(It)’s not working. / (It)’s not useable. / (It) doesn’t work. / (It)’s out of order.",
     "tag_ids": [
-      "tag_058",
-      "tag_314",
-      "tag_319",
-      "tag_320",
+      "tag_048",
+      "tag_259",
+      "tag_264",
+      "tag_265",
       "tag_338"
     ]
   },
@@ -2930,11 +2930,11 @@
     "phonetics": "tam-mai tam mâi-dâi / tam-mai tʉ̌ng tam mâi-dâi / tam-mai kun tʉ̌ng tam mâi-dâi",
     "english": "Why couldn’t you? / Why can’t you do it?",
     "tag_ids": [
-      "tag_039",
+      "tag_030",
+      "tag_031",
+      "tag_033",
       "tag_040",
-      "tag_042",
-      "tag_049",
-      "tag_061"
+      "tag_051"
     ]
   },
   {
@@ -2943,11 +2943,11 @@
     "phonetics": "(sǎm-ràp) kon chɔ̂ɔp pà-jon-pai",
     "english": "(For) the adventurous. / (For) those who love adventure.",
     "tag_ids": [
-      "tag_039",
-      "tag_049",
-      "tag_061",
-      "tag_337",
-      "tag_339"
+      "tag_030",
+      "tag_040",
+      "tag_051",
+      "tag_279",
+      "tag_281"
     ]
   },
   {
@@ -2956,9 +2956,9 @@
     "phonetics": "tam-mai mâi too-maa bɔ̀ɔk gɔ̀ɔn",
     "english": "Why didn’t you call me first? (before coming over, etc.)",
     "tag_ids": [
-      "tag_061",
-      "tag_063",
-      "tag_112",
+      "tag_051",
+      "tag_053",
+      "tag_092",
       "tag_289",
       "tag_303"
     ]
@@ -2969,11 +2969,11 @@
     "phonetics": "(pǒm) tam mʉʉ-tʉ̌ʉ hǎai",
     "english": "(I) lost my phone.",
     "tag_ids": [
-      "tag_039",
-      "tag_040",
-      "tag_041",
-      "tag_042",
-      "tag_144"
+      "tag_030",
+      "tag_031",
+      "tag_032",
+      "tag_033",
+      "tag_120"
     ]
   },
   {
@@ -2982,11 +2982,11 @@
     "phonetics": "phǒm fang mâi-tan",
     "english": "I didn’t catch what you said. / I can’t keep up with what you’re saying.",
     "tag_ids": [
-      "tag_038",
-      "tag_040",
-      "tag_041",
-      "tag_042",
-      "tag_061"
+      "tag_029",
+      "tag_031",
+      "tag_032",
+      "tag_033",
+      "tag_051"
     ]
   },
   {
@@ -2995,11 +2995,11 @@
     "phonetics": "fang tan mǎi ká / fang tan mái",
     "english": "Can you catch it? / Are you with me? / Can you catch what they are saying",
     "tag_ids": [
-      "tag_038",
-      "tag_039",
-      "tag_040",
-      "tag_041",
-      "tag_042"
+      "tag_029",
+      "tag_030",
+      "tag_031",
+      "tag_032",
+      "tag_033"
     ]
   },
   {
@@ -3008,10 +3008,10 @@
     "phonetics": "jam pǒm mâi-dâi rə̌ə / jam pǒm mâi-dâi rə̌ə kráp",
     "english": "You don’t remember me?",
     "tag_ids": [
-      "tag_045",
-      "tag_216",
-      "tag_218",
-      "tag_251",
+      "tag_036",
+      "tag_181",
+      "tag_182",
+      "tag_207",
       "tag_335"
     ]
   },
@@ -3021,11 +3021,11 @@
     "phonetics": "kɔ̌ɔ pák sàk-krûu (ná-ká)",
     "english": "Can I take a break for a moment? / May I take a break?",
     "tag_ids": [
-      "tag_020",
-      "tag_038",
-      "tag_041",
-      "tag_042",
-      "tag_312"
+      "tag_014",
+      "tag_029",
+      "tag_032",
+      "tag_033",
+      "tag_257"
     ]
   },
   {
@@ -3034,10 +3034,10 @@
     "phonetics": "jam mâi-dâi jing-jing",
     "english": "I really can’t remember!",
     "tag_ids": [
-      "tag_038",
-      "tag_218",
-      "tag_219",
-      "tag_325",
+      "tag_029",
+      "tag_182",
+      "tag_183",
+      "tag_268",
       "tag_335"
     ]
   },
@@ -3047,9 +3047,9 @@
     "phonetics": "mâi-mii-krai chûai phǒm",
     "english": "I have no one to help me. / No one was helping me.",
     "tag_ids": [
-      "tag_020",
-      "tag_038",
-      "tag_157",
+      "tag_014",
+      "tag_029",
+      "tag_129",
       "tag_292",
       "tag_311"
     ]
@@ -3060,9 +3060,9 @@
     "phonetics": "dâi bpà",
     "english": "Can I?",
     "tag_ids": [
-      "tag_020",
-      "tag_153",
-      "tag_157",
+      "tag_014",
+      "tag_128",
+      "tag_129",
       "tag_292",
       "tag_311"
     ]
@@ -3074,9 +3074,9 @@
     "english": "I don’t wanna see that anymore! / I don’t wanna see it anymore!",
     "tag_ids": [
       "tag_003",
-      "tag_020",
-      "tag_153",
-      "tag_314",
+      "tag_014",
+      "tag_128",
+      "tag_259",
       "tag_300"
     ]
   },
@@ -3086,9 +3086,9 @@
     "phonetics": "rian (paa-sǎa-tai) dûai-dtua-eeng",
     "english": "I study (Thai) by myself. / I studied (Thai) by myself.",
     "tag_ids": [
-      "tag_153",
-      "tag_157",
-      "tag_155",
+      "tag_128",
+      "tag_129",
+      "tag_130",
       "tag_293",
       "tag_311"
     ]
@@ -3099,9 +3099,9 @@
     "phonetics": "kɔ̌ɔ duu mee-nuu nɔ̀i (kráp)",
     "english": "Can I see the menu? / May I see the menu?",
     "tag_ids": [
-      "tag_153",
-      "tag_157",
-      "tag_155",
+      "tag_128",
+      "tag_129",
+      "tag_130",
       "tag_293",
       "tag_312"
     ]
@@ -3112,9 +3112,9 @@
     "phonetics": "kɔ̌ɔ mee-nuu dûai (kráp)",
     "english": "Can I have a menu? / May I have a menu?",
     "tag_ids": [
-      "tag_153",
-      "tag_157",
-      "tag_155",
+      "tag_128",
+      "tag_129",
+      "tag_130",
       "tag_293",
       "tag_312"
     ]
@@ -3125,11 +3125,11 @@
     "phonetics": "an-níi rîak wâa à-rai / an-níi kǎo rîak wâa à-rai",
     "english": "What’s this called? / What do they call this?",
     "tag_ids": [
-      "tag_030",
-      "tag_032",
-      "tag_033",
-      "tag_155",
-      "tag_202"
+      "tag_021",
+      "tag_023",
+      "tag_024",
+      "tag_130",
+      "tag_168"
     ]
   },
   {
@@ -3138,10 +3138,10 @@
     "phonetics": "(...) tîi-nǎi gɔ̂ɔ-dâi",
     "english": "Anywhere’s okay.",
     "tag_ids": [
-      "tag_132",
-      "tag_133",
-      "tag_155",
-      "tag_173",
+      "tag_110",
+      "tag_111",
+      "tag_130",
+      "tag_145",
       "tag_312"
     ]
   },
@@ -3151,10 +3151,10 @@
     "phonetics": "krai gɔ̂ɔ-dâi",
     "english": "Anyone’s okay. / Anyone. / Whoever.",
     "tag_ids": [
-      "tag_132",
-      "tag_133",
-      "tag_173",
-      "tag_202",
+      "tag_110",
+      "tag_111",
+      "tag_145",
+      "tag_168",
       "tag_312"
     ]
   },
@@ -3164,11 +3164,11 @@
     "phonetics": "gèp wái gɔ̀ɔn / gèp wái gɔ̀ɔn dii-gwàa",
     "english": "Keep it. / You should keep it.",
     "tag_ids": [
-      "tag_032",
-      "tag_132",
-      "tag_133",
-      "tag_198",
-      "tag_202"
+      "tag_023",
+      "tag_110",
+      "tag_111",
+      "tag_164",
+      "tag_168"
     ]
   },
   {
@@ -3177,11 +3177,11 @@
     "phonetics": "jà gèp wái tam-mai lâ",
     "english": "Why should I keep it?! / Why would I wanna keep them?!",
     "tag_ids": [
-      "tag_132",
-      "tag_133",
-      "tag_311",
-      "tag_312",
-      "tag_314"
+      "tag_110",
+      "tag_111",
+      "tag_256",
+      "tag_257",
+      "tag_259"
     ]
   },
   {
@@ -3190,11 +3190,11 @@
     "phonetics": "yàa pə̂ng tíng (ləəi)",
     "english": "Don’t throw it away!",
     "tag_ids": [
-      "tag_032",
-      "tag_133",
-      "tag_238",
-      "tag_242",
-      "tag_308"
+      "tag_023",
+      "tag_111",
+      "tag_198",
+      "tag_202",
+      "tag_253"
     ]
   },
   {
@@ -3203,11 +3203,11 @@
     "phonetics": "mii raa-kaa tâo-gan / raa-kaa tâo-gan",
     "english": "The price is the same. / They both have the same price.",
     "tag_ids": [
-      "tag_198",
-      "tag_199",
-      "tag_200",
-      "tag_201",
-      "tag_202"
+      "tag_164",
+      "tag_165",
+      "tag_166",
+      "tag_167",
+      "tag_168"
     ]
   },
   {
@@ -3216,9 +3216,9 @@
     "phonetics": "(pá-nák-ngaan) mâi-bpen-mít ləəi",
     "english": "(The staff) were very unfriendly. / (The staff) aren’t friendly at all.",
     "tag_ids": [
-      "tag_005",
-      "tag_198",
-      "tag_202",
+      "tag_004",
+      "tag_164",
+      "tag_168",
       "tag_284",
       "tag_296"
     ]
@@ -3229,11 +3229,11 @@
     "phonetics": "(pǒm) bpen kon ní-sǎi-mâi-dii",
     "english": "(I) was bad! / (I)’m a bad guy! / (I)’m ill-mannered!",
     "tag_ids": [
-      "tag_067",
+      "tag_057",
+      "tag_137",
+      "tag_141",
       "tag_165",
-      "tag_169",
-      "tag_199",
-      "tag_200"
+      "tag_166"
     ]
   },
   {
@@ -3242,11 +3242,11 @@
     "phonetics": "kun dûai ná (ká)",
     "english": "You, too! (I wish you good luck, too, etc.)",
     "tag_ids": [
-      "tag_170",
-      "tag_198",
-      "tag_199",
-      "tag_200",
-      "tag_201"
+      "tag_142",
+      "tag_164",
+      "tag_165",
+      "tag_166",
+      "tag_167"
     ]
   },
   {
@@ -3255,11 +3255,11 @@
     "phonetics": "(káo) kîi-bòn mâak",
     "english": "(He) complains a lot! / (He)’s really a complainer!",
     "tag_ids": [
-      "tag_048",
-      "tag_198",
-      "tag_295",
-      "tag_324",
-      "tag_325"
+      "tag_039",
+      "tag_164",
+      "tag_244",
+      "tag_267",
+      "tag_268"
     ]
   },
   {
@@ -3268,11 +3268,11 @@
     "phonetics": "tam-hǎai tîi-nǎi",
     "english": "Where did you lose it?",
     "tag_ids": [
-      "tag_119",
-      "tag_120",
-      "tag_166",
-      "tag_168",
-      "tag_199"
+      "tag_099",
+      "tag_100",
+      "tag_138",
+      "tag_140",
+      "tag_165"
     ]
   },
   {
@@ -3281,11 +3281,11 @@
     "phonetics": "man nâa-duu mâak / nâa-duu jing-jing",
     "english": "It’s really worth seeing! (a movie, etc.)",
     "tag_ids": [
-      "tag_199",
-      "tag_200",
-      "tag_201",
-      "tag_310",
-      "tag_327"
+      "tag_165",
+      "tag_166",
+      "tag_167",
+      "tag_255",
+      "tag_270"
     ]
   },
   {
@@ -3294,11 +3294,11 @@
     "phonetics": "kɔ̌ɔ máai-jîm-fan nɔ̀i",
     "english": "May I have a toothpick?",
     "tag_ids": [
-      "tag_047",
-      "tag_071",
-      "tag_170",
-      "tag_200",
-      "tag_201"
+      "tag_038",
+      "tag_060",
+      "tag_142",
+      "tag_166",
+      "tag_167"
     ]
   },
   {
@@ -3307,10 +3307,10 @@
     "phonetics": "pǒm jèp-jai mâak",
     "english": "I’m really hurt! / I’m really hurting. (emotionally)",
     "tag_ids": [
-      "tag_099",
-      "tag_322",
-      "tag_324",
-      "tag_327",
+      "tag_083",
+      "tag_266",
+      "tag_267",
+      "tag_270",
       "tag_335"
     ]
   },
@@ -3320,11 +3320,11 @@
     "phonetics": "(kǎo kəəi) bpen dèk kîi-rôok",
     "english": "(He used to) be a sickly child. / (He used to) get sick a lot when he was a child.",
     "tag_ids": [
-      "tag_047",
-      "tag_048",
-      "tag_170",
-      "tag_293",
-      "tag_295"
+      "tag_038",
+      "tag_039",
+      "tag_142",
+      "tag_242",
+      "tag_244"
     ]
   },
   {
@@ -3333,9 +3333,9 @@
     "phonetics": "mâi-mii tîi-jɔ̀ɔt-rót (ləəi)",
     "english": "There weren’t any parking spaces. / There’s nowhere to park.",
     "tag_ids": [
-      "tag_005",
-      "tag_047",
-      "tag_170",
+      "tag_004",
+      "tag_038",
+      "tag_142",
       "tag_293",
       "tag_312"
     ]
@@ -3346,8 +3346,8 @@
     "phonetics": "kǎo bpen kon jai-kɛ̂ɛp",
     "english": "He’s narrow-minded. / He a narrow-minded person.",
     "tag_ids": [
-      "tag_170",
-      "tag_187",
+      "tag_142",
+      "tag_156",
       "tag_320",
       "tag_324",
       "tag_327"
@@ -3359,10 +3359,10 @@
     "phonetics": "nâa-en-duu jing-jing",
     "english": "She’s adorable! / He’s sooo cute! (used for babies, pets and endearing things)",
     "tag_ids": [
-      "tag_047",
-      "tag_071",
-      "tag_074",
-      "tag_201",
+      "tag_038",
+      "tag_060",
+      "tag_061",
+      "tag_167",
       "tag_336"
     ]
   },
@@ -3372,10 +3372,10 @@
     "phonetics": "pǒm doon goong",
     "english": "I was cheated. / I was swindled. (usually related to money)",
     "tag_ids": [
-      "tag_047",
-      "tag_071",
-      "tag_074",
-      "tag_073",
+      "tag_038",
+      "tag_060",
+      "tag_061",
+      "tag_062",
       "tag_337"
     ]
   },
@@ -3385,10 +3385,10 @@
     "phonetics": "ao-maa ləəi",
     "english": "Give it to me! / Bring it on!",
     "tag_ids": [
+      "tag_052",
+      "tag_060",
+      "tag_061",
       "tag_062",
-      "tag_071",
-      "tag_074",
-      "tag_073",
       "tag_338"
     ]
   },
@@ -3398,10 +3398,10 @@
     "phonetics": "(...) sèt lɛ́ɛo rʉ̌ʉ-yang",
     "english": "Are you finished yet? / Have you finished… yet?",
     "tag_ids": [
-      "tag_070",
-      "tag_071",
-      "tag_074",
-      "tag_073",
+      "tag_059",
+      "tag_060",
+      "tag_061",
+      "tag_062",
       "tag_338"
     ]
   },
@@ -3411,10 +3411,10 @@
     "phonetics": "...dtɛ̀ɛ-gɔ̂ɔ yang tùuk yùu",
     "english": "…but it’s still cheap.",
     "tag_ids": [
+      "tag_052",
+      "tag_058",
+      "tag_061",
       "tag_062",
-      "tag_069",
-      "tag_074",
-      "tag_073",
       "tag_338"
     ]
   },
@@ -3424,11 +3424,11 @@
     "phonetics": "kong gin mâi mòt",
     "english": "We probably can’t finish it all. / I can’t eat it all.",
     "tag_ids": [
-      "tag_063",
-      "tag_069",
-      "tag_162",
-      "tag_207",
-      "tag_211"
+      "tag_053",
+      "tag_058",
+      "tag_134",
+      "tag_172",
+      "tag_176"
     ]
   },
   {
@@ -3437,11 +3437,11 @@
     "phonetics": "phǒm gin mâi mòt",
     "english": "I didn’t finish it all. / I didn’t eat it all.",
     "tag_ids": [
+      "tag_052",
+      "tag_053",
+      "tag_058",
       "tag_062",
-      "tag_063",
-      "tag_069",
-      "tag_073",
-      "tag_162"
+      "tag_134"
     ]
   },
   {
@@ -3450,11 +3450,11 @@
     "phonetics": "kǎo wîng ɔ̀ɔk-jàak (bâan)",
     "english": "He ran out of the (house).",
     "tag_ids": [
-      "tag_062",
-      "tag_069",
-      "tag_270",
-      "tag_333",
-      "tag_334"
+      "tag_052",
+      "tag_058",
+      "tag_221",
+      "tag_275",
+      "tag_276"
     ]
   },
   {
@@ -3463,11 +3463,11 @@
     "phonetics": "(rɔɔng-táao kûu níi) sài mâi-sà-baai ləəi",
     "english": "(These shoes) are so uncomfortable!",
     "tag_ids": [
-      "tag_062",
-      "tag_305",
-      "tag_306",
-      "tag_333",
-      "tag_334"
+      "tag_052",
+      "tag_250",
+      "tag_251",
+      "tag_275",
+      "tag_276"
     ]
   },
   {
@@ -3476,11 +3476,11 @@
     "phonetics": "tam-hâi duu nùm kʉ̂n / tam-hâi nùm kʉ̂n",
     "english": "(It) makes you look younger. (for males)",
     "tag_ids": [
-      "tag_069",
-      "tag_331",
-      "tag_332",
-      "tag_333",
-      "tag_334"
+      "tag_058",
+      "tag_273",
+      "tag_274",
+      "tag_275",
+      "tag_276"
     ]
   },
   {
@@ -3489,11 +3489,11 @@
     "phonetics": "tam-hâi duu sǎao kʉ̂n / tam-hâi sǎao kʉ̂n",
     "english": "(It) makes you look younger. (for females)",
     "tag_ids": [
-      "tag_270",
-      "tag_331",
-      "tag_332",
-      "tag_333",
-      "tag_334"
+      "tag_221",
+      "tag_273",
+      "tag_274",
+      "tag_275",
+      "tag_276"
     ]
   },
   {
@@ -3502,9 +3502,9 @@
     "phonetics": "mâi-kəəi dâi lɔɔng (aa-hǎan grìik) (ləəi)",
     "english": "(I)’ve never tried (Greek food) before.",
     "tag_ids": [
-      "tag_008",
-      "tag_011",
-      "tag_270",
+      "tag_005",
+      "tag_006",
+      "tag_221",
       "tag_293",
       "tag_325"
     ]
@@ -3515,11 +3515,11 @@
     "phonetics": "lʉ̂ak an nǎi gɔ̂ɔ-dâi",
     "english": "Choose whichever one you like.",
     "tag_ids": [
-      "tag_196",
-      "tag_270",
-      "tag_301",
-      "tag_318",
-      "tag_334"
+      "tag_162",
+      "tag_221",
+      "tag_247",
+      "tag_263",
+      "tag_276"
     ]
   },
   {
@@ -3528,11 +3528,11 @@
     "phonetics": "(kǎo) gɛ̀ɛ-long bpai mâak / (kǎo) gɛ̀ɛ-long bpai yə́",
     "english": "(He)’s really aged. / (He)’s gotten a lot older.",
     "tag_ids": [
-      "tag_048",
-      "tag_104",
-      "tag_270",
-      "tag_293",
-      "tag_325"
+      "tag_039",
+      "tag_086",
+      "tag_221",
+      "tag_242",
+      "tag_268"
     ]
   },
   {
@@ -3541,10 +3541,10 @@
     "phonetics": "yang chái-dâi-yùu / yang chái-dâi",
     "english": "You can still use it. / It still works.",
     "tag_ids": [
-      "tag_322",
-      "tag_324",
-      "tag_325",
-      "tag_326",
+      "tag_266",
+      "tag_267",
+      "tag_268",
+      "tag_269",
       "tag_339"
     ]
   },
@@ -3554,10 +3554,10 @@
     "phonetics": "phǒm pə̂ng kui gàp (mɔ̌ɔ maa)",
     "english": "I just spoke with (the doctor).",
     "tag_ids": [
-      "tag_022",
-      "tag_215",
-      "tag_326",
-      "tag_332",
+      "tag_016",
+      "tag_180",
+      "tag_269",
+      "tag_274",
       "tag_313"
     ]
   },
@@ -3567,11 +3567,11 @@
     "phonetics": "kǎo mâi-rúu-jàk phǒm",
     "english": "He doesn’t know me.",
     "tag_ids": [
-      "tag_064",
-      "tag_065",
-      "tag_081",
-      "tag_326",
-      "tag_333"
+      "tag_054",
+      "tag_055",
+      "tag_068",
+      "tag_269",
+      "tag_275"
     ]
   },
   {
@@ -3580,10 +3580,10 @@
     "phonetics": "(dtɔ̂ng) rɔɔ hâi fǒn yùt gɔ̀ɔn",
     "english": "(We should) wait for the rain to stop.",
     "tag_ids": [
-      "tag_253",
-      "tag_255",
-      "tag_256",
-      "tag_326",
+      "tag_209",
+      "tag_210",
+      "tag_211",
+      "tag_269",
       "tag_339"
     ]
   },
@@ -3593,10 +3593,10 @@
     "phonetics": "lɔɔng tǎam kǎo duu gɔ̂ɔ-dâi / tǎam kǎo duu gɔ̂ɔ-dâi",
     "english": "Ask him about it. / You can ask him.",
     "tag_ids": [
-      "tag_256",
-      "tag_275",
-      "tag_274",
-      "tag_326",
+      "tag_211",
+      "tag_224",
+      "tag_225",
+      "tag_269",
       "tag_302"
     ]
   },
@@ -3606,9 +3606,9 @@
     "phonetics": "(kǎo) kəəi dtɛ̀ng-ngaan maa lɛ́ɛo (sɔ̌ɔng) kráng / (kǎo) kəəi dtɛ̀ng-ngaan maa (sɔ̌ɔng) kráng",
     "english": "(He)’s been married (2) times.",
     "tag_ids": [
-      "tag_145",
-      "tag_147",
-      "tag_275",
+      "tag_121",
+      "tag_122",
+      "tag_224",
       "tag_294",
       "tag_313"
     ]
@@ -3619,10 +3619,10 @@
     "phonetics": "(kǎo) kəəi dtɛ̀ng-ngaan maa-gɔ̀ɔn",
     "english": "(He)’s been married before.",
     "tag_ids": [
-      "tag_145",
-      "tag_147",
-      "tag_256",
-      "tag_274",
+      "tag_121",
+      "tag_122",
+      "tag_211",
+      "tag_225",
       "tag_313"
     ]
   },
@@ -3632,10 +3632,10 @@
     "phonetics": "lɛ́ɛo jəə-gan tîi-nán",
     "english": "I’ll see you there.",
     "tag_ids": [
-      "tag_035",
-      "tag_036",
-      "tag_147",
-      "tag_260",
+      "tag_026",
+      "tag_027",
+      "tag_122",
+      "tag_215",
       "tag_302"
     ]
   },
@@ -3645,10 +3645,10 @@
     "phonetics": "phǒm gam-lang lót-nám-nàk yùu",
     "english": "I’m dieting. / I’m trying to lose weight.",
     "tag_ids": [
-      "tag_119",
-      "tag_120",
-      "tag_147",
-      "tag_166",
+      "tag_099",
+      "tag_100",
+      "tag_122",
+      "tag_138",
       "tag_313"
     ]
   },
@@ -3658,10 +3658,10 @@
     "phonetics": "rao sǒng-sǎi jing-jing wâa...",
     "english": "I really wonder…",
     "tag_ids": [
-      "tag_048",
-      "tag_099",
-      "tag_322",
-      "tag_327",
+      "tag_039",
+      "tag_083",
+      "tag_266",
+      "tag_270",
       "tag_335"
     ]
   },
@@ -3671,10 +3671,10 @@
     "phonetics": "mâi yàak hâi kon rúu...",
     "english": "(I) don’t want people knowing… / (I) don’t people finding out (that)…",
     "tag_ids": [
-      "tag_145",
-      "tag_180",
-      "tag_181",
-      "tag_250",
+      "tag_121",
+      "tag_150",
+      "tag_151",
+      "tag_206",
       "tag_298"
     ]
   },
@@ -3685,9 +3685,9 @@
     "english": "(I)’m glad to know (that)…",
     "tag_ids": [
       "tag_000",
-      "tag_081",
-      "tag_119",
-      "tag_145",
+      "tag_068",
+      "tag_099",
+      "tag_121",
       "tag_301"
     ]
   },
@@ -3697,10 +3697,10 @@
     "phonetics": "pǒm yang yʉʉn-yan wâa...",
     "english": "I still insist (that)… / I insist (that)…",
     "tag_ids": [
-      "tag_119",
-      "tag_120",
-      "tag_145",
-      "tag_147",
+      "tag_099",
+      "tag_100",
+      "tag_121",
+      "tag_122",
       "tag_314"
     ]
   },
@@ -3710,11 +3710,11 @@
     "phonetics": "hěn-dâi-chát wâa...",
     "english": "It’s obvious that…. / It’s very clear that… / Obviously…",
     "tag_ids": [
-      "tag_087",
-      "tag_119",
-      "tag_120",
-      "tag_315",
-      "tag_316"
+      "tag_073",
+      "tag_099",
+      "tag_100",
+      "tag_260",
+      "tag_261"
     ]
   },
   {
@@ -3723,11 +3723,11 @@
     "phonetics": "POLITE kɔ̌ɔ jùup dâi-mǎi / kɔ̌ɔ jùup kun dâi-mǎi / kɔ̌ɔ jùup dâi-mái",
     "english": "May I kiss you?",
     "tag_ids": [
-      "tag_087",
-      "tag_120",
-      "tag_209",
-      "tag_315",
-      "tag_316"
+      "tag_073",
+      "tag_100",
+      "tag_174",
+      "tag_260",
+      "tag_261"
     ]
   },
   {
@@ -3736,11 +3736,11 @@
     "phonetics": "mii kon yùu mái / mii kon yùu mǎi ká",
     "english": "Is anyone home? / Anyone here?",
     "tag_ids": [
-      "tag_115",
-      "tag_117",
-      "tag_140",
-      "tag_315",
-      "tag_316"
+      "tag_095",
+      "tag_097",
+      "tag_118",
+      "tag_260",
+      "tag_261"
     ]
   },
   {
@@ -3749,10 +3749,10 @@
     "phonetics": "(mɛ̂ɛ) hǔa-jai sà-lǎai",
     "english": "(The mother) was heart-broken.",
     "tag_ids": [
-      "tag_022",
-      "tag_087",
-      "tag_209",
-      "tag_316",
+      "tag_016",
+      "tag_073",
+      "tag_174",
+      "tag_261",
       "tag_314"
     ]
   },
@@ -3762,11 +3762,11 @@
     "phonetics": "jà lʉ̂ak à-rai dii (ká)",
     "english": "Which one would you like? / Which do you prefer?",
     "tag_ids": [
-      "tag_196",
-      "tag_197",
-      "tag_209",
-      "tag_315",
-      "tag_316"
+      "tag_162",
+      "tag_163",
+      "tag_174",
+      "tag_260",
+      "tag_261"
     ]
   },
   {
@@ -3775,11 +3775,11 @@
     "phonetics": "(nâng) naan tâo-rài gɔ̂ɔ-dâi",
     "english": "You can (sit) for as long as you want.",
     "tag_ids": [
-      "tag_087",
-      "tag_091",
-      "tag_180",
-      "tag_276",
-      "tag_315"
+      "tag_073",
+      "tag_076",
+      "tag_150",
+      "tag_226",
+      "tag_260"
     ]
   },
   {
@@ -3788,11 +3788,11 @@
     "phonetics": "kong ngán lɛ̀ (kráp)",
     "english": "That’s probably right. / I guess so. / Probably.",
     "tag_ids": [
-      "tag_091",
-      "tag_099",
-      "tag_207",
-      "tag_209",
-      "tag_210"
+      "tag_076",
+      "tag_083",
+      "tag_172",
+      "tag_174",
+      "tag_175"
     ]
   },
   {
@@ -3801,10 +3801,10 @@
     "phonetics": "fɛɛn pǒm hʉ̌ng",
     "english": "My girlfriend gets jealous. / My girlfriend is jealous.",
     "tag_ids": [
-      "tag_087",
-      "tag_088",
-      "tag_090",
-      "tag_091",
+      "tag_073",
+      "tag_074",
+      "tag_075",
+      "tag_076",
       "tag_314"
     ]
   },
@@ -3814,9 +3814,9 @@
     "phonetics": "pǒm kɔ̂ɔ-táao-pleeng",
     "english": "I sprained my ankle.",
     "tag_ids": [
-      "tag_090",
-      "tag_209",
-      "tag_302",
+      "tag_075",
+      "tag_174",
+      "tag_248",
       "tag_294",
       "tag_314"
     ]
@@ -3827,10 +3827,10 @@
     "phonetics": "dtɔ̂ng bpai hâi-dâi",
     "english": "You must go! / You have to go no matter what! / You really gotta go!",
     "tag_ids": [
-      "tag_099",
-      "tag_322",
-      "tag_324",
-      "tag_327",
+      "tag_083",
+      "tag_266",
+      "tag_267",
+      "tag_270",
       "tag_335"
     ]
   },
@@ -3840,9 +3840,9 @@
     "phonetics": "(yàa) tam-hâi phǒm rɔ́ɔng-hâi / (yàa) tam-hâi rɔ́ɔng-hâi",
     "english": "(Don’t) make me cry!",
     "tag_ids": [
-      "tag_090",
-      "tag_277",
-      "tag_302",
+      "tag_075",
+      "tag_227",
+      "tag_248",
       "tag_294",
       "tag_314"
     ]
@@ -3853,11 +3853,11 @@
     "phonetics": "(man) kong mâi pɛɛng mâak",
     "english": "(It) probably won’t be too expensive. / (It) won’t cost so much.",
     "tag_ids": [
-      "tag_207",
-      "tag_210",
-      "tag_277",
-      "tag_289",
-      "tag_290"
+      "tag_172",
+      "tag_175",
+      "tag_227",
+      "tag_238",
+      "tag_239"
     ]
   },
   {
@@ -3866,9 +3866,9 @@
     "phonetics": "(jà) sèep prɔ́ɔm-gàp (sà-làt dtɛɛng-gwaa lɛ́ kâao)",
     "english": "It comes with (cucumber salad and rice). / It’s served with (cucumber salad and rice).",
     "tag_ids": [
-      "tag_090",
-      "tag_176",
-      "tag_302",
+      "tag_075",
+      "tag_147",
+      "tag_248",
       "tag_294",
       "tag_315"
     ]
@@ -3879,10 +3879,10 @@
     "phonetics": "àat-jà jing gɔ̂ɔ-dâi (ná)",
     "english": "It might be true. / That may be true.",
     "tag_ids": [
-      "tag_176",
-      "tag_178",
-      "tag_302",
-      "tag_303",
+      "tag_147",
+      "tag_149",
+      "tag_248",
+      "tag_249",
       "tag_315"
     ]
   },
@@ -3892,11 +3892,11 @@
     "phonetics": "(kun) nâa-jà lɔɔng-duu ná",
     "english": "(You) should give it a try! / (You) ought to try!",
     "tag_ids": [
-      "tag_178",
-      "tag_206",
-      "tag_260",
-      "tag_311",
-      "tag_313"
+      "tag_149",
+      "tag_171",
+      "tag_215",
+      "tag_256",
+      "tag_258"
     ]
   },
   {
@@ -3905,10 +3905,10 @@
     "phonetics": "pǒm mâi jâo-chúu / pǒm mâi-châi kon-jâo-chúu",
     "english": "I’m not a playboy!",
     "tag_ids": [
-      "tag_176",
-      "tag_178",
-      "tag_302",
-      "tag_303",
+      "tag_147",
+      "tag_149",
+      "tag_248",
+      "tag_249",
       "tag_315"
     ]
   },
@@ -3918,9 +3918,9 @@
     "phonetics": "yang bɔ̀ɔk mâi-dâi (wâa...)",
     "english": "We still don’t know yet (…) / I can’t say yet (if…)",
     "tag_ids": [
-      "tag_068",
-      "tag_226",
-      "tag_261",
+      "tag_007",
+      "tag_189",
+      "tag_216",
       "tag_285",
       "tag_301"
     ]
@@ -3931,11 +3931,11 @@
     "phonetics": "yàak dâi kʉʉn / yàak dâi... kʉʉn",
     "english": "(I) want it back. / (I) want… back.",
     "tag_ids": [
-      "tag_091",
-      "tag_176",
-      "tag_180",
-      "tag_276",
-      "tag_303"
+      "tag_076",
+      "tag_147",
+      "tag_150",
+      "tag_226",
+      "tag_249"
     ]
   },
   {
@@ -3944,11 +3944,11 @@
     "phonetics": "(rao) yàak nɛ̂ɛ-jai (wâa...)",
     "english": "(I) want to make sure…",
     "tag_ids": [
-      "tag_091",
-      "tag_178",
-      "tag_180",
-      "tag_277",
-      "tag_303"
+      "tag_076",
+      "tag_149",
+      "tag_150",
+      "tag_227",
+      "tag_249"
     ]
   },
   {
@@ -3957,10 +3957,10 @@
     "phonetics": "ɛ̀ɛp dâi-yin maa wâa... / ɛ̀ɛp dâi-yin wâa...",
     "english": "I overheard him (say) that… / She overheard that…",
     "tag_ids": [
-      "tag_179",
-      "tag_176",
-      "tag_177",
-      "tag_178",
+      "tag_146",
+      "tag_147",
+      "tag_148",
+      "tag_149",
       "tag_315"
     ]
   },
@@ -3970,10 +3970,10 @@
     "phonetics": "man mâi-jam-bpen wâa...",
     "english": "It’s not necessary that… / It’s not necessary to…",
     "tag_ids": [
-      "tag_171",
-      "tag_172",
-      "tag_179",
-      "tag_177",
+      "tag_143",
+      "tag_144",
+      "tag_146",
+      "tag_148",
       "tag_315"
     ]
   },
@@ -3983,10 +3983,10 @@
     "phonetics": "(rót) mâi kà-yàp ləəi",
     "english": "(The car) wouldn’t budge an inch! / (The car) won’t move at all. (stuck in the mud, broke down, etc.)",
     "tag_ids": [
-      "tag_172",
-      "tag_179",
-      "tag_210",
-      "tag_278",
+      "tag_144",
+      "tag_146",
+      "tag_175",
+      "tag_228",
       "tag_316"
     ]
   },
@@ -3996,10 +3996,10 @@
     "phonetics": "SEMI-FORMAL (pɔ̂ɔ) mâi à-nú-yâat-hâi (mii fɛɛn)",
     "english": "(My father) won’t let me (have a boyfriend).",
     "tag_ids": [
-      "tag_179",
-      "tag_177",
-      "tag_272",
-      "tag_278",
+      "tag_146",
+      "tag_148",
+      "tag_223",
+      "tag_228",
       "tag_316"
     ]
   },
@@ -4009,10 +4009,10 @@
     "phonetics": "(fǎn wâa) tùuk kà-mooi kɔ̌ɔng",
     "english": "(I dreamt) my things were stolen.",
     "tag_ids": [
-      "tag_179",
-      "tag_177",
-      "tag_293",
-      "tag_295",
+      "tag_146",
+      "tag_148",
+      "tag_242",
+      "tag_244",
       "tag_316"
     ]
   },
@@ -4022,8 +4022,8 @@
     "phonetics": "mâi-jam-bpen-dtɔ̂ng bpen (tîi-nʉ̀ng)",
     "english": "You don’t need to be (Number 1).",
     "tag_ids": [
-      "tag_296",
-      "tag_337",
+      "tag_245",
+      "tag_279",
       "tag_287",
       "tag_324",
       "tag_339"
@@ -4035,8 +4035,8 @@
     "phonetics": "mai-dtɔ̂ng kɔ̀ɔp-kun (lɔ̀k) / mai-dtɔ̂ng kɔ̀ɔp-kun pǒm (lɔ̀k)",
     "english": "You don’t need to thank me.",
     "tag_ids": [
-      "tag_296",
-      "tag_300",
+      "tag_245",
+      "tag_246",
       "tag_287",
       "tag_325",
       "tag_331"
@@ -4048,11 +4048,11 @@
     "phonetics": "(fɛɛn) mâi-hâi bpai nǎi",
     "english": "(My boyfriend) won’t let me go anywhere!",
     "tag_ids": [
-      "tag_177",
-      "tag_271",
-      "tag_272",
-      "tag_278",
-      "tag_291"
+      "tag_148",
+      "tag_222",
+      "tag_223",
+      "tag_228",
+      "tag_240"
     ]
   },
   {
@@ -4061,11 +4061,11 @@
     "phonetics": "yàak pák sàk-nɔ̀i",
     "english": "I wanna take break. / I need a break.",
     "tag_ids": [
-      "tag_020",
-      "tag_171",
-      "tag_172",
-      "tag_300",
-      "tag_312"
+      "tag_014",
+      "tag_143",
+      "tag_144",
+      "tag_246",
+      "tag_257"
     ]
   },
   {
@@ -4076,9 +4076,9 @@
     "tag_ids": [
       "tag_001",
       "tag_002",
-      "tag_171",
-      "tag_172",
-      "tag_291"
+      "tag_143",
+      "tag_144",
+      "tag_240"
     ]
   },
   {
@@ -4087,11 +4087,11 @@
     "phonetics": "(pǒm) dtɔ̂ng tam dâi dii-gwàa níi",
     "english": "(I) have to do better! / (I) have to do a better job!",
     "tag_ids": [
-      "tag_066",
-      "tag_171",
-      "tag_181",
-      "tag_279",
-      "tag_291"
+      "tag_056",
+      "tag_143",
+      "tag_151",
+      "tag_229",
+      "tag_240"
     ]
   },
   {
@@ -4101,9 +4101,9 @@
     "english": "He just had his heart broken.",
     "tag_ids": [
       "tag_001",
-      "tag_022",
-      "tag_279",
-      "tag_291",
+      "tag_016",
+      "tag_229",
+      "tag_240",
       "tag_313"
     ]
   },
@@ -4114,10 +4114,10 @@
     "english": "(The price) is (rather) expensive for Thais. / It’s (rather) pricey for Thais.",
     "tag_ids": [
       "tag_001",
-      "tag_288",
-      "tag_289",
-      "tag_290",
-      "tag_291"
+      "tag_237",
+      "tag_238",
+      "tag_239",
+      "tag_240"
     ]
   },
   {
@@ -4127,10 +4127,10 @@
     "english": "Better if you don’t go. / You better not go.",
     "tag_ids": [
       "tag_001",
-      "tag_181",
-      "tag_252",
-      "tag_279",
-      "tag_289"
+      "tag_151",
+      "tag_208",
+      "tag_229",
+      "tag_238"
     ]
   },
   {
@@ -4139,10 +4139,10 @@
     "phonetics": "ao mʉʉ long dâi lɛ́ɛo",
     "english": "You can put your hand down now. (asked to raise hand previously)",
     "tag_ids": [
-      "tag_229",
-      "tag_252",
-      "tag_289",
-      "tag_290",
+      "tag_191",
+      "tag_208",
+      "tag_238",
+      "tag_239",
       "tag_316"
     ]
   },
@@ -4152,10 +4152,10 @@
     "phonetics": "rao (jà) dtɔ̂ng tam à-rai baang-yàang (lɛ́ɛo)",
     "english": "We have to do something!",
     "tag_ids": [
-      "tag_184",
-      "tag_229",
-      "tag_252",
-      "tag_290",
+      "tag_154",
+      "tag_191",
+      "tag_208",
+      "tag_239",
       "tag_316"
     ]
   },
@@ -4165,10 +4165,10 @@
     "phonetics": "chɔ̂ɔp sùt-sùt",
     "english": "I love it!! / He loves it!!",
     "tag_ids": [
-      "tag_229",
-      "tag_252",
-      "tag_337",
-      "tag_339",
+      "tag_191",
+      "tag_208",
+      "tag_279",
+      "tag_281",
       "tag_317"
     ]
   },
@@ -4178,10 +4178,10 @@
     "phonetics": "FORMAL kɔ̌ɔ-tôot jing-jing (khráp)",
     "english": "I’m really sorry. / I’m ever so sorry.",
     "tag_ids": [
-      "tag_104",
-      "tag_229",
-      "tag_231",
-      "tag_339",
+      "tag_086",
+      "tag_191",
+      "tag_192",
+      "tag_281",
       "tag_317"
     ]
   },
@@ -4191,10 +4191,10 @@
     "phonetics": "pǒm bpen kon tîi chôok-dii tîi-sùt nai lôok / pǒm bpen kon chôok-dii tîi-sùt nai lôok",
     "english": "I’m the luckiest person in the world!",
     "tag_ids": [
-      "tag_184",
-      "tag_186",
-      "tag_229",
-      "tag_339",
+      "tag_154",
+      "tag_155",
+      "tag_191",
+      "tag_281",
       "tag_317"
     ]
   },
@@ -4204,10 +4204,10 @@
     "phonetics": "phǒm dâi-glìn nám-hɔ̌ɔm (kɔ̌ɔng təə)",
     "english": "I can smell (her) perfume. / I smelled perfume (from her).",
     "tag_ids": [
-      "tag_182",
-      "tag_183",
-      "tag_184",
-      "tag_186",
+      "tag_152",
+      "tag_153",
+      "tag_154",
+      "tag_155",
       "tag_317"
     ]
   },
@@ -4217,8 +4217,8 @@
     "phonetics": "(kwaam-dan-loo-hìt) jà kʉ̂n-kʉ̂n long-long",
     "english": "(His blood pressure) would keep going up and down. / (His blood pressure) would go up and down.",
     "tag_ids": [
-      "tag_098",
-      "tag_266",
+      "tag_079",
+      "tag_218",
       "tag_283",
       "tag_294",
       "tag_339"
@@ -4230,10 +4230,10 @@
     "phonetics": "(kwaai) gin-aa-hǎan dâi-rʉ̂ai-rʉ̂ai",
     "english": "(Water buffalo) eat continuously. / (Water buffalo) eat constantly.",
     "tag_ids": [
-      "tag_162",
-      "tag_182",
-      "tag_183",
-      "tag_211",
+      "tag_134",
+      "tag_152",
+      "tag_153",
+      "tag_176",
       "tag_317"
     ]
   },
@@ -4243,9 +4243,9 @@
     "phonetics": "kun jà bpai yùu tîi-nǎi",
     "english": "Where will you live? / Where are you going to live? (moving, etc.)",
     "tag_ids": [
-      "tag_141",
-      "tag_184",
-      "tag_186",
+      "tag_119",
+      "tag_154",
+      "tag_155",
       "tag_283",
       "tag_304"
     ]
@@ -4256,10 +4256,10 @@
     "phonetics": "phǒm mâi-yàak bpai nǎi dtɔ̀ɔ lɛ́ɛo",
     "english": "I don’t wanna go anywhere else.",
     "tag_ids": [
-      "tag_182",
-      "tag_183",
-      "tag_184",
-      "tag_314",
+      "tag_152",
+      "tag_153",
+      "tag_154",
+      "tag_259",
       "tag_318"
     ]
   },
@@ -4269,10 +4269,10 @@
     "phonetics": "təə tùuk lâi-ɔ̀ɔk",
     "english": "She was fired.",
     "tag_ids": [
-      "tag_075",
-      "tag_182",
-      "tag_183",
-      "tag_186",
+      "tag_063",
+      "tag_152",
+      "tag_153",
+      "tag_155",
       "tag_318"
     ]
   },
@@ -4282,11 +4282,11 @@
     "phonetics": "kít wâa mâi ná",
     "english": "I don’t think so.",
     "tag_ids": [
-      "tag_183",
-      "tag_215",
-      "tag_282",
-      "tag_285",
-      "tag_286"
+      "tag_153",
+      "tag_180",
+      "tag_231",
+      "tag_234",
+      "tag_235"
     ]
   },
   {
@@ -4295,10 +4295,10 @@
     "phonetics": "yùu chə̌əi-chə̌əi tə̀",
     "english": "Stay still. / Don’t move. / Stay right there. / Sit tight.",
     "tag_ids": [
-      "tag_248",
-      "tag_250",
-      "tag_251",
-      "tag_252",
+      "tag_205",
+      "tag_206",
+      "tag_207",
+      "tag_208",
       "tag_298"
     ]
   },
@@ -4308,10 +4308,10 @@
     "phonetics": "(təə) lʉʉm túk-yàang mòt lɛ́ɛo",
     "english": "(She) forgot everything! / (She) had forgotten all of it!",
     "tag_ids": [
-      "tag_075",
-      "tag_105",
-      "tag_182",
-      "tag_186",
+      "tag_063",
+      "tag_087",
+      "tag_152",
+      "tag_155",
       "tag_318"
     ]
   },
@@ -4321,10 +4321,10 @@
     "phonetics": "kǎo mii fɛɛn lɛ́ɛo rʉ̌ʉ-yang",
     "english": "Does she have a boyfriend? / Does he have a girlfriend?",
     "tag_ids": [
-      "tag_018",
-      "tag_088",
-      "tag_090",
-      "tag_105",
+      "tag_012",
+      "tag_074",
+      "tag_075",
+      "tag_087",
       "tag_318"
     ]
   },
@@ -4334,11 +4334,11 @@
     "phonetics": "mâi-kəəi dâi-yin (ləəi)",
     "english": "I can barely hear you. / She can’t hear very well. / He’s hard of hearing.",
     "tag_ids": [
+      "tag_074",
+      "tag_087",
       "tag_088",
-      "tag_105",
-      "tag_106",
-      "tag_107",
-      "tag_108"
+      "tag_089",
+      "tag_090"
     ]
   },
   {
@@ -4347,11 +4347,11 @@
     "phonetics": "(phǒm) yang tam mâi sèt",
     "english": "(I)’m not finished yet. / (I)’m not done.",
     "tag_ids": [
-      "tag_070",
-      "tag_075",
-      "tag_105",
-      "tag_107",
-      "tag_108"
+      "tag_059",
+      "tag_063",
+      "tag_087",
+      "tag_089",
+      "tag_090"
     ]
   },
   {
@@ -4361,9 +4361,9 @@
     "english": "I stopped smoking (8 years) ago.",
     "tag_ids": [
       "tag_003",
-      "tag_075",
-      "tag_088",
-      "tag_108",
+      "tag_063",
+      "tag_074",
+      "tag_090",
       "tag_318"
     ]
   },
@@ -4373,11 +4373,11 @@
     "phonetics": "jà bpai rʉ̌ʉ mâi bpai dii",
     "english": "Should I go or not?!",
     "tag_ids": [
-      "tag_075",
-      "tag_105",
-      "tag_107",
-      "tag_108",
-      "tag_280"
+      "tag_063",
+      "tag_087",
+      "tag_089",
+      "tag_090",
+      "tag_230"
     ]
   },
   {
@@ -4386,10 +4386,10 @@
     "phonetics": "dǐao phǒm gɔ̂ɔ jà bpai / dǐao jà bpai",
     "english": "I’m leaving soon. / I’m about to go.",
     "tag_ids": [
-      "tag_098",
-      "tag_096",
-      "tag_097",
-      "tag_107",
+      "tag_079",
+      "tag_081",
+      "tag_082",
+      "tag_089",
       "tag_339"
     ]
   },
@@ -4399,11 +4399,11 @@
     "phonetics": "(kǎo) gam-lang àap-náam yùu / (kǎo) àap-náam yùu",
     "english": "(He)’s taking a shower. / (He)’s taking a shower right now.",
     "tag_ids": [
-      "tag_239",
-      "tag_240",
-      "tag_241",
-      "tag_242",
-      "tag_287"
+      "tag_199",
+      "tag_200",
+      "tag_201",
+      "tag_202",
+      "tag_236"
     ]
   },
   {
@@ -4412,11 +4412,11 @@
     "phonetics": "(dtɛ̀ɛ) kúm tîi-jà rɔɔ",
     "english": "(But) it’s worth waiting for.",
     "tag_ids": [
-      "tag_097",
-      "tag_108",
-      "tag_309",
-      "tag_310",
-      "tag_327"
+      "tag_082",
+      "tag_090",
+      "tag_254",
+      "tag_255",
+      "tag_270"
     ]
   }
 ]

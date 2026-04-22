@@ -25,9 +25,14 @@ export default function Home() {
             Places
           </Link>
         </li>
-        <li>
+        <li style={{ marginBottom: '0.5rem' }}>
           <Link to="/subplots" style={{ color: '#2563eb', textDecoration: 'underline', fontSize: '1.1rem' }}>
             Subplots
+          </Link>
+        </li>
+        <li>
+          <Link to="/episodes" style={{ color: '#2563eb', textDecoration: 'underline', fontSize: '1.1rem' }}>
+            Episodes
           </Link>
         </li>
       </ul>
