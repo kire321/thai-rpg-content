@@ -1,0 +1,72 @@
+[
+  {
+    "id": "char_chanida",
+    "name": "Chanida",
+    "picture": "/characters/chanida.png",
+    "type": "party",
+    "description": "A Singer-in-training from Khrueang who possesses an undocumented tonal range allowing her to hear lattice frequencies others cannot. She is impatient with the Tonal Orders' secrecy and believes resonance knowledge should be shared freely."
+  },
+  {
+    "id": "char_pichit",
+    "name": "Pichit",
+    "picture": "/characters/pichit.png",
+    "type": "party",
+    "description": "A former Listener monk from Phrao who left the monastery after a spiritual crisis. He carries a resonant staff that allows short-distance communication through the lattice. His measured, philosophical approach balances the party."
+  },
+  {
+    "id": "char_malee",
+    "name": "Malee",
+    "picture": "/characters/malee.png",
+    "type": "party",
+    "description": "A scavenger from the lattice surface who grew up on mobile platforms. She has a prosthetic leg made from harvested crystal core and can repair any resonance engine with scavenged parts. She is pragmatic and suspicious of skycity people."
+  },
+  {
+    "id": "char_arthit",
+    "name": "Arthit",
+    "picture": "/characters/arthit.png",
+    "type": "party",
+    "description": "A former resonance ship captain who lost his vessel and crew to a catastrophic lattice surge. He carries maps of forgotten routes tattooed on his skin in ancient tonal notation. He is haunted but determined."
+  },
+  {
+    "id": "char_villager",
+    "name": "Skycity Resident",
+    "picture": "/characters/npc_villager.png",
+    "type": "npc",
+    "description": "An ordinary person living on a floating skycity - a farmer, craftsperson, or shopkeeper who knows little of the lattice beyond what the Tonal Orders tell them."
+  },
+  {
+    "id": "char_bandit",
+    "name": "Sky Pirate",
+    "picture": "/characters/npc_bandit.png",
+    "type": "npc",
+    "description": "A bandit who operates a modified resonance ship, attacking trade vessels between skycities. They know secret frequencies that can destabilize another ship's safe channel."
+  },
+  {
+    "id": "char_merchant",
+    "name": "Trade Negotiator",
+    "picture": "/characters/npc_merchant.png",
+    "type": "npc",
+    "description": "A merchant who brokers deals between isolated skycities, traveling with Singer escorts. They carry news, letters, and rare goods from city to city."
+  },
+  {
+    "id": "char_monk",
+    "name": "Listener Monk",
+    "picture": "/characters/npc_monk.png",
+    "type": "npc",
+    "description": "A member of the religious order studying the lattice's natural sounds, seeking to decode what they believe is the lattice's attempt to communicate with humanity."
+  },
+  {
+    "id": "char_scavenger",
+    "name": "Surface Scavenger",
+    "picture": "/characters/npc_scavenger.png",
+    "type": "npc",
+    "description": "A hardy individual living on a fortified mobile platform on the lattice surface, harvesting crystal fragments and searching for pre-Silencing artifacts."
+  },
+  {
+    "id": "char_narrator",
+    "name": "The Chronicler",
+    "picture": "/characters/narrator.png",
+    "type": "narrator",
+    "description": "An unnamed observer who records the party's journey, providing context, exposition, and occasional commentary on the ethical implications of their choices."
+  }
+]

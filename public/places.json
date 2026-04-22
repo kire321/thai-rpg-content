@@ -1,0 +1,62 @@
+[
+  {
+    "id": "place_khrueang_market",
+    "name": "Khrueang Market",
+    "picture": "/places/khrueang_market.png",
+    "description": "The central marketplace of the largest skycity, a hub of commerce and gossip. The ambient noise of thousands of conversations creates a constant background hum that makes precise tonal work difficult. Good for social encounters, trade negotiations, and overhearing rumors."
+  },
+  {
+    "id": "place_anchor_spire",
+    "name": "The Anchor Spire",
+    "picture": "/places/anchor_spire.png",
+    "description": "A massive resonance anchor extending from a floating island into the lattice below. The harmonic vibration creates a powerful, steady tone that calms emotions but makes stealth impossible. Good for dramatic confrontations and moments of revelation."
+  },
+  {
+    "id": "place_phrao_monastery",
+    "name": "Phrao Monastery",
+    "picture": "/places/phrao_monastery.png",
+    "description": "The monastery-city where Listeners study the lattice's song. The carefully maintained acoustic environment allows for precise tonal experiments. Good for gaining knowledge, spiritual encounters, and technical training."
+  },
+  {
+    "id": "place_lattice_surface",
+    "name": "The Lattice Surface",
+    "picture": "/places/lattice_surface.png",
+    "description": "The crystalline ground itself, seen from a safe observation platform. The shifting patterns of light and sound are beautiful but dangerous. Good for moments of awe, scavenging missions, and reminders of the world's perilous nature."
+  },
+  {
+    "id": "place_resonance_ship",
+    "name": "Resonance Ship Deck",
+    "picture": "/places/resonance_ship.png",
+    "description": "The deck of a ship navigating between skycities. The wind, the ship's engine tones, and the ever-changing lattice below create a dynamic environment. Good for travel sequences, ship-to-ship encounters, and moments of isolation."
+  },
+  {
+    "id": "place_tha_khwae_scrapyard",
+    "name": "Tha Khwae Scrapyard",
+    "picture": "/places/tha_khwae_scrapyard.png",
+    "description": "The industrial edge of the scavenger city, where old ships are broken down. The clanging metal and running engines create a harsh acoustic environment. Good for mechanical problem-solving, underworld contacts, and salvage missions."
+  },
+  {
+    "id": "place_the_hollow",
+    "name": "The Hollow",
+    "picture": "/places/the_hollow.png",
+    "description": "A rare cave system inside a floating island with ancient pre-Silencing ruins. The natural acoustics create unusual echo patterns. Good for discovery, archaeological mystery, and encounters with the unknown."
+  },
+  {
+    "id": "place_mae_rim_gardens",
+    "name": "Mae Rim's Hanging Gardens",
+    "picture": "/places/mae_rim_gardens.png",
+    "description": "Agricultural terraces on the edge of a farming skycity. The quiet, rhythmic sounds of wind through crops and flowing water create a peaceful atmosphere. Good for rest, reflection, pastoral encounters, and agricultural subplots."
+  },
+  {
+    "id": "place_silent_zone",
+    "name": "The Silent Zone",
+    "picture": "/places/silent_zone.png",
+    "description": "A dead region where the lattice does not respond to sound. The unnatural quiet is deeply unsettling to the characters. Good for horror, mystery, survival challenges, and existential unease."
+  },
+  {
+    "id": "place_tonal_archives",
+    "name": "The Tonal Archives",
+    "picture": "/places/tonal_archives.png",
+    "description": "The great library where all known safe routes and tonal patterns are recorded. The hushed reverence and precise acoustic design create a focused environment. Good for research, planning, and uncovering lost knowledge."
+  }
+]
