@@ -6,6 +6,7 @@ import Characters from './pages/Characters'
 import Places from './pages/Places'
 import Subplots from './pages/Subplots'
 import Episodes from './pages/Episodes'
+import EpisodeDetail from './pages/EpisodeDetail'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/places" element={<Places />} />
       <Route path="/subplots" element={<Subplots />} />
       <Route path="/episodes" element={<Episodes />} />
+      <Route path="/episodes/:episodeId" element={<EpisodeDetail />} />
     </Routes>
   )
 }
