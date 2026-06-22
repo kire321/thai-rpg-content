@@ -27,7 +27,8 @@ interface Decision {
   choices: Choice[]
 }
 
-interface Act {
+// Old format: single tag with lines_before / lines_after
+interface OldAct {
   id: string
   title: string
   lines_before: Line[]
@@ -36,10 +37,58 @@ interface Act {
   decision: Decision
 }
 
+// New format V2: segments array with variable tags
+interface NarrativeSegment {
+  type: 'narrative'
+  lines: Line[]
+}
+
+interface TagSegment {
+  type: 'tag'
+  tag: string
+}
+
+type Segment = NarrativeSegment | TagSegment
+
+interface NewAct {
+  id: string
+  title: string
+  segments: Segment[]
+  decision: Decision
+}
+
+type Act = OldAct | NewAct
+
 interface Episode {
   id: string
   title: string
   acts: Act[]
+}
+
+// Helper: Detect old vs new format
+function isOldAct(act: Act): act is OldAct {
+  return 'lines_before' in act && 'tag' in act && 'lines_after' in act
+}
+
+// Helper: Normalize act to render segments
+type RenderSegment =
+  | { kind: 'narrative'; lines: Line[] }
+  | { kind: 'tag'; tag: string }
+
+function normalizeAct(act: Act): RenderSegment[] {
+  if (isOldAct(act)) {
+    return [
+      { kind: 'narrative', lines: act.lines_before },
+      { kind: 'tag', tag: act.tag },
+      { kind: 'narrative', lines: act.lines_after },
+    ]
+  }
+  return act.segments.map((seg) => {
+    if (seg.type === 'narrative') {
+      return { kind: 'narrative' as const, lines: seg.lines }
+    }
+    return { kind: 'tag' as const, tag: seg.tag }
+  })
 }
 
 export default function EpisodeDetail() {
@@ -84,58 +133,58 @@ export default function EpisodeDetail() {
       </h1>
       <p style={{ color: '#6b7280', fontSize: '0.85rem', marginBottom: '1.5rem' }}>{episode.id}</p>
 
-      {episode.acts.map((act, actIdx) => (
-        <div
-          key={act.id}
-          style={{
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            padding: '1.25rem',
-            marginBottom: '1.5rem',
-            backgroundColor: '#ffffff',
-          }}
-        >
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 'bold', margin: '0 0 1rem 0', color: '#1f2937' }}>
-            Act {actIdx + 1}: {act.title}
-          </h2>
-
-          {/* Lines Before */}
-          <div style={{ marginBottom: '1rem' }}>
-            {act.lines_before.map((line, i) => (
-              <LineBlock key={`b${i}`} line={line} />
-            ))}
-          </div>
-
-          {/* Tag */}
+      {episode.acts.map((act, actIdx) => {
+        const segments = normalizeAct(act)
+        return (
           <div
+            key={act.id}
             style={{
-              backgroundColor: '#dbeafe',
-              padding: '0.6rem 0.9rem',
-              borderRadius: '6px',
-              marginBottom: '1rem',
-              fontSize: '0.85rem',
+              border: '1px solid #d1d5db',
+              borderRadius: '8px',
+              padding: '1.25rem',
+              marginBottom: '1.5rem',
+              backgroundColor: '#ffffff',
             }}
           >
-            <strong style={{ color: '#1e40af' }}>Vocab Review:</strong>{' '}
-            <Link
-              to={`/tags?highlight=${act.tag}`}
-              style={{ color: '#1e40af', textDecoration: 'underline' }}
-            >
-              {tags[act.tag]?.name || act.tag}
-            </Link>
-          </div>
+            <h2 style={{ fontSize: '1.15rem', fontWeight: 'bold', margin: '0 0 1rem 0', color: '#1f2937' }}>
+              Act {actIdx + 1}: {act.title}
+            </h2>
 
-          {/* Lines After */}
-          <div style={{ marginBottom: '1rem' }}>
-            {act.lines_after.map((line, i) => (
-              <LineBlock key={`a${i}`} line={line} />
-            ))}
-          </div>
+            {/* Render segments in order */}
+            {segments.map((seg, segIdx) =>
+              seg.kind === 'narrative' ? (
+                <div key={segIdx} style={{ marginBottom: '1rem' }}>
+                  {seg.lines.map((line, lineIdx) => (
+                    <LineBlock key={`${segIdx}-${lineIdx}`} line={line} />
+                  ))}
+                </div>
+              ) : (
+                <div
+                  key={segIdx}
+                  style={{
+                    backgroundColor: '#dbeafe',
+                    padding: '0.6rem 0.9rem',
+                    borderRadius: '6px',
+                    marginBottom: '1rem',
+                    fontSize: '0.85rem',
+                  }}
+                >
+                  <strong style={{ color: '#1e40af' }}>Vocab Review:</strong>{' '}
+                  <Link
+                    to={`/tags?highlight=${seg.tag}`}
+                    style={{ color: '#1e40af', textDecoration: 'underline' }}
+                  >
+                    {tags[seg.tag]?.name || seg.tag}
+                  </Link>
+                </div>
+              )
+            )}
 
-          {/* Decision */}
-          <DecisionBlock decision={act.decision} />
-        </div>
-      ))}
+            {/* Decision */}
+            <DecisionBlock decision={act.decision} />
+          </div>
+        )
+      })}
     </div>
   )
 }

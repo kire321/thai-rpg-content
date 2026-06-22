@@ -4,6 +4,11 @@ import { Link } from 'react-router'
 interface Episode {
   id: string
   title: string
+  acts?: Act[]
+}
+
+interface Act {
+  segments?: unknown[]
 }
 
 export default function Episodes() {
@@ -94,6 +99,14 @@ export default function Episodes() {
                   >
                     {ep.title}
                   </Link>
+                  {ep.acts && ep.acts.length > 0 && 'segments' in ep.acts[0] && (
+                    <span style={{
+                      marginLeft: '0.5rem', fontSize: '0.65rem',
+                      padding: '0.1rem 0.35rem', borderRadius: '4px',
+                      backgroundColor: '#dbeafe', color: '#1e40af',
+                      fontWeight: 'bold',
+                    }}>v2</span>
+                  )}
                 </td>
               </tr>
             ))}

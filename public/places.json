@@ -58,5 +58,65 @@
     "name": "The Tonal Archives",
     "picture": "/places/tonal_archives.png",
     "description": "The great library where all known safe routes and tonal patterns are recorded. The hushed reverence and precise acoustic design create a focused environment. Good for research, planning, and uncovering lost knowledge."
+  },
+  {
+    "id": "place_sri_thep_ruins",
+    "name": "Sri Thep Ruins",
+    "picture": "/places/sri_thep_ruins.png",
+    "description": "The buried remnants of the greatest pre-Silencing city, now half-sunk into the lattice. Ancient resonance technology still flickers in its halls. Good for uncovering lost history, powerful artifacts, and the truth about what caused the Silencing."
+  },
+  {
+    "id": "place_wharf_of_echoes",
+    "name": "The Wharf of Echoes",
+    "picture": "/places/wharf_of_echoes.png",
+    "description": "A clandestine docking point for smugglers and pirates hidden inside a resonant cavern. The overlapping echoes make it nearly impossible to eavesdrop. Good for illicit deals, finding forbidden goods, and meeting unsavory contacts."
+  },
+  {
+    "id": "place_crystal_core_depths",
+    "name": "Crystal Core Depths",
+    "picture": "/places/crystal_core_depths.png",
+    "description": "The deepest accessible point of the lattice, where the crystal formations grow largest and most unstable. The concentrated resonance can amplify a Singer's power tenfold or shatter their mind. Good for high-stakes power moments and terrible sacrifices."
+  },
+  {
+    "id": "place_floating_necropolis",
+    "name": "The Floating Necropolis",
+    "picture": "/places/floating_necropolis.png",
+    "description": "A skycity abandoned after a plague, now inhabited only by the dead and those who tend them. The mourning songs of the caretakers create a haunting ambient tone throughout. Good for ghost stories, memorials, and confronting mortality."
+  },
+  {
+    "id": "place_resonance_forge",
+    "name": "The Resonance Forge",
+    "picture": "/places/resonance_forge.png",
+    "description": "A hidden workshop where illegal resonance devices are crafted. The constant hammering and tonal calibration create a deafening environment. Good for gear acquisition, meeting rebels, and learning forbidden technology."
+  },
+  {
+    "id": "place_skybridge_terminals",
+    "name": "Skybridge Terminals",
+    "picture": "/places/skybridge_terminals.png",
+    "description": "The vast network of cable bridges connecting the skycities at their closest points. Wind howls through the suspension cables creating an ever-present whistling drone. Good for perilous crossings, ambushes, and vertigo-inducing vistas."
+  },
+  {
+    "id": "place_order_citadel",
+    "name": "The Order Citadel",
+    "picture": "/places/order_citadel.png",
+    "description": "The imposing headquarters of the Tonal Orders, a fortress of smooth black stone that absorbs all unauthorized sound. Good for political intrigue, trials, imprisonment sequences, and confrontations with authority."
+  },
+  {
+    "id": "place_the_shimmering_sea",
+    "name": "The Shimmering Sea",
+    "picture": "/places/shimmering_sea.png",
+    "description": "A vast region where the lattice surface has liquefied into a reflective ocean of liquid crystal. Ships sail on its surface harvesting rare resonance pearls. Good for nautical adventures, beauty, and encounters with sea creatures adapted to lattice."
+  },
+  {
+    "id": "place_wind_shear_cliffs",
+    "name": "Wind Shear Cliffs",
+    "picture": "/places/wind_shear_cliffs.png",
+    "description": "The broken edge of a skycity that sheared off during a lattice storm. Jagged platforms and unstable debris float in a chaotic pattern. Good for survival scenarios, scavenging, and environmental hazards."
+  },
+  {
+    "id": "place_chromatic_grotto",
+    "name": "The Chromatic Grotto",
+    "picture": "/places/chromatic_grotto.png",
+    "description": "A natural cave within a floating island where lattice crystal formations refract light into impossible colors. The tonal resonance here produces polyphonic effects. Good for Duangjai's people, mysterious rituals, and transcendent experiences."
   }
 ]
