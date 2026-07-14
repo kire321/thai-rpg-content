@@ -2,9 +2,13 @@
 
 > **SELF-UPDATE RULE**: Every agent working on this project MUST update this skill file before finishing. Add anything you learned, any user instructions given, any tricky bugs found, and any workflow changes. The next agent starts fresh with only this file and the code. Delete outdated info. This rule applies to YOU right now — update this file before you finish your task.
 
+> **⚠️ SECRETS RULE — NEVER PUBLISH API KEYS**: NEVER commit API keys, tokens, or credentials to this repository or publish them anywhere (code, docs, skill files, comments, git history). If a key appears in any file you are about to push, replace it with a placeholder (e.g. `os.environ["FIREWORKS_API_KEY"]` or `<substitute the real key at runtime>`) before pushing. If a key was ever committed, treat it as compromised: rotate it and scrub it from every branch. This rule applies to YOU right now.
+
 ## Project Overview
 
-You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app deployed to Cloudflare Pages. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
+You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
+
+> **DEPLOYMENT STATUS (corrected 2026-07-14)**: The CMS has **NOT** yet been deployed to Cloudflare — earlier versions of this file claimed otherwise; that was a hallucination. The first Cloudflare deployment (staging) is being set up now. Until Cloudflare URLs are confirmed live, treat any `*.pages.dev` URLs in this file as aspirational, not real.
 
 **Repo**: `https://github.com/kire321/thai-rpg-content`  
 **Frontend repo (reference)**: `https://github.com/kire321/thai-rpg`
@@ -16,8 +20,8 @@ You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The
 | Episodes | `public/episodes.json` | 340 | 4 acts each — the big one |
 | Tags | `public/tags.json` | 340 | Each links to 5 vocab items |
 | Vocab Items | `public/vocab_items.json` | 340 | Thai word + phonetics + English |
-| Characters | `public/characters.json` | 10 | 4 party + 5 NPC types + 1 narrator |
-| Places | `public/places.json` | 10 | Locations in the Chantara world |
+| Characters | `public/characters.json` | 20 | 4 party + 5 generic NPC types + 10 named NPCs + 1 narrator |
+| Places | `public/places.json` | 20 | Locations in the Chantara world |
 | Subplots | `public/subplots.json` | 5 | Recurring story threads |
 
 ### Episode Structure
@@ -68,8 +72,9 @@ interface Outcome {
 ## Git Workflow
 
 **Branch strategy:**
-- `master` — production CMS. Deployed to `thai-rpg-cms.pages.dev`
-- `staging` — development/staging. Deployed to `thai-rpg-cms-staging.pages.dev`
+- `master` — production CMS content. Cloudflare deployment: pending (not yet deployed as of 2026-07-14)
+- `staging` — development/staging. Cloudflare deployment: being set up (first agent deployment in progress)
+- `segments_failed` — archive of the failed v2 segments migration (do not delete; ACT_FORMAT_V2.md spec recovered from here)
 - `bad_merge` — archive of failed merges (do not delete)
 - Feature branches — for large changes, branch from staging
 
@@ -83,16 +88,16 @@ interface Outcome {
 
 ### Cloudflare Pages
 
-Two separate Cloudflare Pages projects:
+> **NOTE**: As of 2026-07-14 no Cloudflare Pages projects exist yet. The planned layout is:
 
 | Environment | Branch | Pages Project | URL |
 |-------------|--------|---------------|-----|
-| Production | `master` | `thai-rpg-cms` | `thai-rpg-cms.pages.dev` |
-| Staging | `staging` | `thai-rpg-cms-staging` | `thai-rpg-cms-staging.pages.dev` |
+| Production | `master` | `thai-rpg-cms` | `thai-rpg-cms.pages.dev` (planned, not live) |
+| Staging | `staging` | `thai-rpg-cms-staging` | `thai-rpg-cms-staging.pages.dev` (planned, not live) |
 
 **Deployment method:**
-1. **Build**: `cd app && npm run build` — must succeed with zero errors.
-2. **Deploy static files**: Use `mshtools-deploy_website` tool with `type: "static"` and `local_dir` pointing to `app/dist`.
+1. **Build**: `npm run build` from the **repo root** (the React app lives at the root; there is no `app/` subdirectory) — must succeed with zero errors.
+2. **Deploy static files**: Use `mshtools-deploy_website` tool with `type: "static"` and `local_dir` pointing to `dist/`.
 3. **Update Cloudflare proxy**: The Cloudflare Pages project uses a `_worker.js` that proxies to the deploy URL. Update via Cloudflare MCP:
    ```javascript
    export default {
@@ -174,14 +179,14 @@ GOOD: "Malee: The prosthetic locks onto a buried harmonic node. There's structur
 
 When adding new NPCs, they should be **generic types** the party can encounter in many episodes (e.g., "Sky City Guard", "Lattice Fisher", "Tonal Order Enforcer"), NOT named individuals.
 
-### Places (10)
+### Places (20 on master)
 
-`place_khrueang_market`, `place_anchor_spire`, `place_phrao_monastery`, `place_lattice_surface`, `place_resonance_ship`, `place_tha_khwae_scrapyard`, `place_the_hollow`, `place_mae_rim_gardens`, `place_silent_zone`, `place_tonal_archives`
+`place_khrueang_market`, `place_anchor_spire`, `place_phrao_monastery`, `place_lattice_surface`, `place_resonance_ship`, `place_tha_khwae_scrapyard`, `place_the_hollow`, `place_mae_rim_gardens`, `place_silent_zone`, `place_tonal_archives`, `place_sri_thep_ruins`, `place_wharf_of_echoes`, `place_crystal_core_depths`, `place_floating_necropolis`, `place_resonance_forge`, `place_skybridge_terminals`, `place_order_citadel`, `place_the_shimmering_sea`, `place_wind_shear_cliffs`, `place_chromatic_grotto`
 
 ### Fireworks API — Episode Generation
 
 **API**: `https://api.fireworks.ai/inference/v1/chat/completions`  
-**Key**: `fw_7ej5HFDDaF4Pm8SJ7QMJ1R`  
+**Key**: NOT STORED IN THIS FILE — substitute the real Fireworks API key at runtime (the user provides it in the task prompt; pass it via env var `FIREWORKS_API_KEY`). **Never commit or publish the key.**  
 **Model**: `accounts/fireworks/models/glm-5p2` — best narrative quality on Fireworks  
 **Rate limits**: High enough for 10 parallel workers  
 **Cost**: ~$0.0025 per episode (12 choices via 4 API calls)
@@ -197,7 +202,7 @@ Use threaded workers for speed. 10 workers calling Fireworks in parallel process
 ```python
 import json, re, requests, time, os, threading, queue
 
-FIREWORKS_KEY = "fw_7ej5HFDDaF4Pm8SJ7QMJ1R"
+FIREWORKS_KEY = os.environ["FIREWORKS_API_KEY"]  # real key provided by user at runtime; NEVER commit it
 NUM_WORKERS = 10
 
 def generate_act_choices(episode, act_idx):
@@ -346,7 +351,7 @@ Use these as reference when generating new content to maintain world consistency
 2. Read the current state of the relevant JSON files
 3. Make changes (generate, edit, fix)
 4. Run `python validate.py`
-5. `npm run build` in `app/` — must succeed
+5. `npm run build` from the repo root — must succeed
 6. `mshtools-deploy_website` to deploy
 7. Update Cloudflare proxy if URL changed
 8. Push to GitHub (staging unless user says otherwise)
