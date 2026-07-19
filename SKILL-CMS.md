@@ -254,7 +254,7 @@ def parse_choices(text):
     for line in text.split('\n'):
         line = line.strip()
         if not line: continue
-        m = re.search(r'CHOICE\s+(\d+)[:\.]\s*\*?\*?\s*\?([^\]]+)\]?', line, re.IGNORECASE)
+        m = re.search(r'CHOICE\s+(\d+)[:\.]\s*\*?\*?\s*\[?([^\]]+)\]?', line, re.IGNORECASE)
         if m:
             if current and 'description' in current:
                 choices.append(current)
