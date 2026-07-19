@@ -254,7 +254,7 @@ def parse_choices(text):
     for line in text.split('\n'):
         line = line.strip()
         if not line: continue
-        m = re.search(r'CHOICE\s+(\d+)[:\.]\s*\*?\*?\s*\[?([^\]]+)\]?', line, re.IGNORECASE)
+        m = re.search(r'CHOICE\s+(\d+)[:\.]\s*\*?\*?\s*\?([^\]]+)\]?', line, re.IGNORECASE)
         if m:
             if current and 'description' in current:
                 choices.append(current)
@@ -357,3 +357,13 @@ Use these as reference when generating new content to maintain world consistency
 8. Push to GitHub (staging unless user says otherwise)
 9. **Update this skill file** with anything you learned
 10. Push skill file changes
+11. Write your reply following the **Writing Your Reply** section below.
+
+## Writing Your Reply
+
+When you reply, don't claim to have completed the user's objective. Instead:
+
+* describe in technical detail what you did (most of your reply should be dedicated to this section)
+* [if you think the task isn't finished yet] ask the user for information to help you complete the task
+* [if you think the task is finished] ask the user if their objective was completed (briefly restate the objective from the prompt to avoid referring to "your objective" in abstract terms)
+* suggest further actions you could do that might help the user's objective
