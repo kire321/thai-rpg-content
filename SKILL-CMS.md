@@ -8,7 +8,7 @@
 
 You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
 
-> **DEPLOYMENT STATUS (corrected 2026-07-14)**: The CMS has **NOT** yet been deployed to Cloudflare — earlier versions of this file claimed otherwise; that was a hallucination. The first Cloudflare deployment (staging) is being set up now. Until Cloudflare URLs are confirmed live, treat any `*.pages.dev` URLs in this file as aspirational, not real.
+> **DEPLOYMENT STATUS (2026-07-28)**: CMS content is published as a **same-origin mirror at `https://kire321.github.io/cms/`** (GitHub Pages, durable, no Kimi-agent dependency). The old `*.kimi.page` CMS URLs are agent-instance-tied legacy — do not use or reference them. The Cloudflare plans below are obsolete. The CMS **editor UI** (the React app in this repo) currently has no durable deployment — only `public/` data is mirrored.
 
 **Repo**: `https://github.com/kire321/thai-rpg-content`  
 **Frontend repo (reference)**: `https://github.com/kire321/thai-rpg`
@@ -78,49 +78,46 @@ interface Outcome {
 - `bad_merge` — archive of failed merges (do not delete)
 - Feature branches — for large changes, branch from staging
 
+**Branch reality (2026-07-28) — READ CAREFULLY:** `main` is the repo's DEFAULT branch but its content history diverged: `main` has **510 episodes** (ep_001–ep_510, v2 expansion output) while `master` has **340 episodes** plus newer quality work (Fireworks choice regeneration "97.2% unique choices", storytelling/ refs, this skill file's updates). `master` is ahead of `main` by 9 real commits; `main`'s only unique commits are 2 obsolete workflow-file commits from 2026-07-28. **Which branch is canonical for publishing is an OPEN QUESTION — ask the user before switching the mirror source.** The publisher currently mirrors `main` (510 episodes).
+
 **Rules:**
 - Do work on `staging`. Push to `staging` frequently.
 - Only push to `master` when staging is verified and the user approves.
-- Use the **GitHub plugin** (MCP) to push. Do NOT use PAT-based API calls.
+- Push auth: the user provides a fine-grained PAT (contents/actions/workflows/pages RW on all three repos). Shell `git clone/push` to github.com is FLAKY from the sandbox (HTTP/2 framing errors); `api.github.com` REST is reliable — use the Contents/Git-Trees APIs (single-commit trees for multi-file changes). The GitHub MCP plugin's identity cannot see these repos (404) — do not rely on it.
 - Update this skill file on every task. Push skill file changes with your code.
 
 ## Deployment
 
-### Cloudflare Pages
+### GitHub Pages mirror (durable, current as of 2026-07-28)
 
-> **NOTE**: As of 2026-07-14 no Cloudflare Pages projects exist yet. The planned layout is:
+CMS **content** (`public/`) is published to `https://kire321.github.io/cms/` — same origin as the game app (`https://kire321.github.io/`), so no CORS is needed. The game fetches content via `DEFAULT_CMS_BASE='/cms'`; picture paths in the JSONs (`/characters/*.png`) resolve against that base.
 
-| Environment | Branch | Pages Project | URL |
-|-------------|--------|---------------|-----|
-| Production | `master` | `thai-rpg-cms` | `thai-rpg-cms.pages.dev` (planned, not live) |
-| Staging | `staging` | `thai-rpg-cms-staging` | `thai-rpg-cms-staging.pages.dev` (planned, not live) |
+**Publisher**: `.github/workflows/deploy-app.yml` in repo `kire321/kire321.github.io`. On each run it: checks out `kire321/thai-rpg@master` + builds the game, copies `kire321/thai-rpg-content@<branch>/public/` into the site folder `cms/`, commits everything to that repo's `master` — and legacy branch-based GitHub Pages redeploys automatically on that push. No secrets: checkouts of the public repos need no token, and the push uses `GITHUB_TOKEN`.
 
-**Deployment method:**
-1. **Build**: `npm run build` from the **repo root** (the React app lives at the root; there is no `app/` subdirectory) — must succeed with zero errors.
-2. **Deploy static files**: Use `mshtools-deploy_website` tool with `type: "static"` and `local_dir` pointing to `dist/`.
-3. **Update Cloudflare proxy**: The Cloudflare Pages project uses a `_worker.js` that proxies to the deploy URL. Update via Cloudflare MCP:
-   ```javascript
-   export default {
-     async fetch(request) {
-       const url = new URL(request.url);
-       const target = 'https://<deploy-url>.kimi.page' + url.pathname + url.search;
-       return fetch(new Request(target, {
-         method: request.method,
-         headers: request.headers,
-         body: request.body,
-         redirect: 'follow'
-       }));
-     }
-   };
+**Deploy procedure for content changes:**
+1. `python validate.py` — must pass.
+2. Push content to the canonical content branch (see Git Workflow — **branch canonicality is an OPEN QUESTION as of 2026-07-28, confirm with the user before large publishes**).
+3. Trigger the publisher:
    ```
-4. **Push code**: Use the GitHub plugin to push the staging or master branch.
+   curl -X POST -H "Authorization: Bearer <user's fine-grained PAT>" \
+     https://api.github.com/repos/kire321/kire321.github.io/actions/workflows/deploy-app.yml/dispatches \
+     -d '{"ref":"master"}'
+   ```
+   (or wait for its daily 04:23 UTC scheduled run). The workflow file must exist on `kire321.github.io`'s DEFAULT branch for dispatch to work.
+4. Verify (GitHub Pages CDN caches 404s — use a cache-buster and expect ~1-2 min build lag):
+   `https://kire321.github.io/cms/episodes.json?cb=$(date +%s)` → 200, and one image, e.g. `/cms/characters/ampa.png`.
+
+**Pitfalls (verified live):**
+- On a user Pages site (`*.github.io`), URL path `/<reponame>/` is RESERVED for that repo's project site. A folder named `thai-rpg-content/` would be entirely shadowed (every file 404s) — that is why the mirror lives at `/cms`. Never use repo-named paths.
+- The old flow (`mshtools-deploy_website` -> kimi.page URL -> Cloudflare `_worker.js` proxy) is OBSOLETE: kimi.page URLs die with the Kimi agent instance that created them, and `api.workers.cloudflare.com` has had a GLOBAL HTTP 522 outage since ~2026-07-26 (verified from 6 networks incl. Azure — Cloudflare-side, unlisted on their status page).
+- A `thai-rpg.pages.dev` proxy URL still fronts the game; when Cloudflare's host recovers it will be repointed as a plain passthrough to `https://kire321.github.io` (cron-automated; see the app repo's `skill 2.md`).
 
 ### Deployment Checklist
 
-1. `npm run build` — zero errors
-2. `mshtools-deploy_website` to deploy static files
-3. Update Cloudflare proxy worker if deploy URL changed
-4. Push to GitHub (staging for dev, master for production)
+1. `python validate.py` — pass
+2. Push content branch
+3. Dispatch the publisher workflow (or wait for the daily run)
+4. Verify `https://kire321.github.io/cms/` JSONs + an image with cache-busters
 
 ## Episode Generation
 
@@ -352,9 +349,8 @@ Use these as reference when generating new content to maintain world consistency
 3. Make changes (generate, edit, fix)
 4. Run `python validate.py`
 5. `npm run build` from the repo root — must succeed
-6. `mshtools-deploy_website` to deploy
-7. Update Cloudflare proxy if URL changed
-8. Push to GitHub (staging unless user says otherwise)
+6. Push to GitHub (staging unless user says otherwise)
+7. Publish: dispatch the `kire321.github.io` publisher workflow and verify `https://kire321.github.io/cms/` (see Deployment)
 9. **Update this skill file** with anything you learned
 10. Push skill file changes
 11. Write your reply following the **Writing Your Reply** section below.
