@@ -8,7 +8,7 @@
 
 You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
 
-> **DEPLOYMENT STATUS (2026-07-28)**: CMS content is published as a **same-origin mirror at `https://kire321.github.io/cms/`** (GitHub Pages, durable, no Kimi-agent dependency). The old `*.kimi.page` CMS URLs are agent-instance-tied legacy — do not use or reference them. The Cloudflare plans below are obsolete. The CMS **editor UI** (the React app in this repo) currently has no durable deployment — only `public/` data is mirrored.
+> **DEPLOYMENT STATUS (2026-07-30)**: CMS content is published as a **same-origin mirror at `https://kire321.github.io/cms/`** and the CMS **editor UI** is durably deployed at **`https://kire321.github.io/cms-ui/`** (GitHub Pages, no Kimi-agent dependency). Both mirror `master` of this repo. The old `*.kimi.page` CMS URLs are agent-instance-tied legacy — do not use or reference them. The Cloudflare plans below are obsolete.
 
 **Repo**: `https://github.com/kire321/thai-rpg-content`  
 **Frontend repo (reference)**: `https://github.com/kire321/thai-rpg`
@@ -71,14 +71,13 @@ interface Outcome {
 
 ## Git Workflow
 
-**Branch strategy:**
-- `master` — production CMS content. Cloudflare deployment: pending (not yet deployed as of 2026-07-14)
-- `staging` — development/staging. Cloudflare deployment: being set up (first agent deployment in progress)
+**Branch strategy (resolved 2026-07-30, per user decision):**
+- `master` — **canonical published content** (DEFAULT branch; 340 episodes + Fireworks quality fixes). The publisher mirrors this branch.
+- `510_episodes` — preserved v2 expansion output (ep_001–ep_510). Renamed from `main` on 2026-07-30 (user decision; `main` no longer exists). A project the user will get back to later — do NOT merge into master and do NOT delete.
+- `staging` — parked WIP (its `public/episodes.json` is a 52-byte tool-insertion stub, not real episode data). Do not treat as publishable.
 - `segments_failed` — archive of the failed v2 segments migration (do not delete; ACT_FORMAT_V2.md spec recovered from here)
 - `bad_merge` — archive of failed merges (do not delete)
 - Feature branches — for large changes, branch from staging
-
-**Branch reality (2026-07-28) — READ CAREFULLY:** `main` is the repo's DEFAULT branch but its content history diverged: `main` has **510 episodes** (ep_001–ep_510, v2 expansion output) while `master` has **340 episodes** plus newer quality work (Fireworks choice regeneration "97.2% unique choices", storytelling/ refs, this skill file's updates). `master` is ahead of `main` by 9 real commits; `main`'s only unique commits are 2 obsolete workflow-file commits from 2026-07-28. **Which branch is canonical for publishing is an OPEN QUESTION — ask the user before switching the mirror source.** The publisher currently mirrors `main` (510 episodes).
 
 **Rules:**
 - Do work on `staging`. Push to `staging` frequently.
@@ -92,11 +91,11 @@ interface Outcome {
 
 CMS **content** (`public/`) is published to `https://kire321.github.io/cms/` — same origin as the game app (`https://kire321.github.io/`), so no CORS is needed. The game fetches content via `DEFAULT_CMS_BASE='/cms'`; picture paths in the JSONs (`/characters/*.png`) resolve against that base.
 
-**Publisher**: `.github/workflows/deploy-app.yml` in repo `kire321/kire321.github.io`. On each run it: checks out `kire321/thai-rpg@master` + builds the game, copies `kire321/thai-rpg-content@<branch>/public/` into the site folder `cms/`, commits everything to that repo's `master` — and legacy branch-based GitHub Pages redeploys automatically on that push. No secrets: checkouts of the public repos need no token, and the push uses `GITHUB_TOKEN`.
+**Publisher**: `.github/workflows/deploy-app.yml` in repo `kire321/kire321.github.io`. On each run it: checks out `kire321/thai-rpg@master` + builds the game, copies `kire321/thai-rpg-content@master/public/` into the site folder `cms/`, builds the CMS editor UI from `kire321/thai-rpg-content@master` into `cms-ui/` (with duplicated data JSONs stripped — the UI fetches from `/cms/*.json`), commits everything to that repo's `master` — and legacy branch-based GitHub Pages redeploys automatically on that push. No secrets: checkouts of the public repos need no token, and the push uses `GITHUB_TOKEN`.
 
 **Deploy procedure for content changes:**
 1. `python validate.py` — must pass.
-2. Push content to the canonical content branch (see Git Workflow — **branch canonicality is an OPEN QUESTION as of 2026-07-28, confirm with the user before large publishes**).
+2. Push content to `master` (the canonical branch).
 3. Trigger the publisher:
    ```
    curl -X POST -H "Authorization: Bearer <user's fine-grained PAT>" \
@@ -105,10 +104,13 @@ CMS **content** (`public/`) is published to `https://kire321.github.io/cms/` —
    ```
    (or wait for its daily 04:23 UTC scheduled run). The workflow file must exist on `kire321.github.io`'s DEFAULT branch for dispatch to work.
 4. Verify (GitHub Pages CDN caches 404s — use a cache-buster and expect ~1-2 min build lag):
-   `https://kire321.github.io/cms/episodes.json?cb=$(date +%s)` → 200, and one image, e.g. `/cms/characters/ampa.png`.
+   `https://kire321.github.io/cms/episodes.json?cb=$(date +%s)` → 200, and one image, e.g. `/cms/characters/ampa.png`. CMS UI: `https://kire321.github.io/cms-ui/` → 200 and its `assets/*.js` bundle → 200.
+5. To confirm the mirror is byte-identical to the source without downloading 11MB, compare blob SHAs:
+   `GET /repos/kire321/thai-rpg-content/contents/public/episodes.json?ref=master` vs `GET /repos/kire321/kire321.github.io/contents/cms/episodes.json?ref=master` — the `sha` fields must match.
 
 **Pitfalls (verified live):**
 - On a user Pages site (`*.github.io`), URL path `/<reponame>/` is RESERVED for that repo's project site. A folder named `thai-rpg-content/` would be entirely shadowed (every file 404s) — that is why the mirror lives at `/cms`. Never use repo-named paths.
+- The CMS UI is served from the `/cms-ui/` subpath, so all its data fetches must be absolute to `/cms/...` (e.g. `fetch('/cms/episodes.json')`), never `fetch('/episodes.json')` — a root-relative fetch would silently load the GAME app's bundled 1-episode fixture from the site root. Fixed in commit `0f144599` (2026-07-30); keep this invariant when adding new pages/fetches.
 - The old flow (`mshtools-deploy_website` -> kimi.page URL -> Cloudflare `_worker.js` proxy) is OBSOLETE: kimi.page URLs die with the Kimi agent instance that created them, and `api.workers.cloudflare.com` has had a GLOBAL HTTP 522 outage since ~2026-07-26 (verified from 6 networks incl. Azure — Cloudflare-side, unlisted on their status page).
 - A `thai-rpg.pages.dev` proxy URL still fronts the game; when Cloudflare's host recovers it will be repointed as a plain passthrough to `https://kire321.github.io` (cron-automated; see the app repo's `skill 2.md`).
 
