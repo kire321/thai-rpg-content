@@ -99,8 +99,8 @@ export default function EpisodeDetail() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/episodes.json').then((res) => res.json()),
-      fetch('/tags.json').then((res) => res.json()),
+      fetch('/cms/episodes.json').then((res) => res.json()),
+      fetch('/cms/tags.json').then((res) => res.json()),
     ])
       .then(([epData, tagsData]) => {
         const ep = epData.find((e: Episode) => e.id === episodeId)

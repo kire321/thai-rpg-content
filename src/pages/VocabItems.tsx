@@ -23,8 +23,8 @@ export default function VocabItems() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/vocab_items.json').then((res) => res.json()),
-      fetch('/tags.json').then((res) => res.json()),
+      fetch('/cms/vocab_items.json').then((res) => res.json()),
+      fetch('/cms/tags.json').then((res) => res.json()),
     ])
       .then(([vocabData, tagsData]) => {
         setItems(vocabData)

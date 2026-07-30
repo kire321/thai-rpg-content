@@ -22,8 +22,8 @@ export default function Tags() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/tags.json').then((res) => res.json()),
-      fetch('/vocab_items.json').then((res) => res.json()),
+      fetch('/cms/tags.json').then((res) => res.json()),
+      fetch('/cms/vocab_items.json').then((res) => res.json()),
     ])
       .then(([tagsData, vocabData]) => {
         setTags(tagsData)

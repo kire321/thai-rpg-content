@@ -16,7 +16,7 @@ export default function Episodes() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/episodes.json')
+    fetch('/cms/episodes.json')
       .then((res) => res.json())
       .then((data) => {
         setEpisodes(data)

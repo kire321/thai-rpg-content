@@ -12,7 +12,7 @@ export default function Subplots() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/subplots.json')
+    fetch('/cms/subplots.json')
       .then((res) => res.json())
       .then((data) => {
         setSubplots(data)

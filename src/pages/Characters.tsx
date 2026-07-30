@@ -14,7 +14,7 @@ export default function Characters() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/characters.json')
+    fetch('/cms/characters.json')
       .then((res) => res.json())
       .then((data) => {
         setCharacters(data)

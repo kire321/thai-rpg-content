@@ -13,7 +13,7 @@ export default function Places() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/places.json')
+    fetch('/cms/places.json')
       .then((res) => res.json())
       .then((data) => {
         setPlaces(data)
