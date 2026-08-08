@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { fetchCmsJson } from '../lib/cms'
 
 interface Episode {
   id: string
@@ -9,6 +10,7 @@ interface Episode {
 
 interface Act {
   segments?: unknown[]
+  steps?: unknown[]
 }
 
 export default function Episodes() {
@@ -16,8 +18,7 @@ export default function Episodes() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/episodes.json')
-      .then((res) => res.json())
+    fetchCmsJson<Episode[]>('episodes.json')
       .then((data) => {
         setEpisodes(data)
         setLoading(false)
@@ -99,7 +100,7 @@ export default function Episodes() {
                   >
                     {ep.title}
                   </Link>
-                  {ep.acts && ep.acts.length > 0 && 'segments' in ep.acts[0] && (
+                  {ep.acts && ep.acts.length > 0 && (ep.acts[0].segments || ep.acts[0].steps) && (
                     <span style={{
                       marginLeft: '0.5rem', fontSize: '0.65rem',
                       padding: '0.1rem 0.35rem', borderRadius: '4px',
