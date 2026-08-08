@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { cmsAsset, fetchCmsJson } from '../lib/cms'
 
 interface Place {
   id: string
@@ -13,8 +14,7 @@ export default function Places() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/places.json')
-      .then((res) => res.json())
+    fetchCmsJson<Place[]>('places.json')
       .then((data) => {
         setPlaces(data)
         setLoading(false)
@@ -48,7 +48,7 @@ export default function Places() {
               }}
             >
               <img
-                src={place.picture}
+                src={cmsAsset(place.picture)}
                 alt={place.name}
                 style={{ width: '100%', height: '240px', objectFit: 'cover', display: 'block' }}
               />
