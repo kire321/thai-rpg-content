@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { fetchCmsJson } from '../lib/cms'
 
 interface Subplot {
   id: string
@@ -12,8 +13,7 @@ export default function Subplots() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/subplots.json')
-      .then((res) => res.json())
+    fetchCmsJson<Subplot[]>('subplots.json')
       .then((data) => {
         setSubplots(data)
         setLoading(false)
