@@ -1,0 +1,27 @@
+[
+  {
+    "id": "subplot_frequency_map",
+    "name": "The Open Frequency Map",
+    "description": "Chanida is secretly building a public frequency map that would make safe routes accessible to everyone, challenging the Tonal Orders' monopoly on navigation knowledge. This creates tension between her idealism and the practical dangers of releasing sensitive information. It intersects with Pichit's philosophical questions about who should control knowledge, and puts the party in conflict with powerful guilds."
+  },
+  {
+    "id": "subplot_haunted_ship",
+    "name": "The Echo of the Lost Ship",
+    "description": "Arthit keeps hearing the specific tonal signature of his destroyed ship emanating from the lattice in different locations, as if the lattice remembered it. This explores survivor's guilt and the question of whether the lattice is truly alive. It drives Arthit to investigate increasingly dangerous silent zones where the signal seems strongest."
+  },
+  {
+    "id": "subplot_crystal_leg",
+    "name": "The Resonant Prosthetic",
+    "description": "Malee's prosthetic leg contains a crystal fragment that sometimes resonates unpredictably with the lattice, causing her pain and occasional involuntary movements. This explores themes of bodily autonomy and adaptation. It creates both disadvantages in tonal-sensitive situations and unexpected advantages when the resonance aligns with party needs."
+  },
+  {
+    "id": "subplot_listener_warning",
+    "name": "The Lattice's Warning",
+    "description": "Pichit left Phrao monastery after receiving a fragmentary communication from the lattice that suggested an impending catastrophe. The monastery officially dismissed it as hallucination. This involves Pichit's increasingly desperate attempts to decode the warning, seeking help from both official and underground sources, and the growing suspicion that the Tonal Orders know more than they admit."
+  },
+  {
+    "id": "subplot_groundless",
+    "name": "The Groundless Movement",
+    "description": "A political movement seeking to colonize the lattice surface rather than remaining dependent on the skycities. This creates a backdrop of social tension that the party must navigate in every settlement. Different characters have different sympathies - Malee understands the appeal, Chanida admires their defiance of the Orders, while Arthit knows from experience how dangerous the surface truly is."
+  }
+]
