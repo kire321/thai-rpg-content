@@ -1,124 +1,104 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
+import { fetchCmsJson } from '../lib/cms'
+import type {
+  Act,
+  ActSegment,
+  CatalogCharacter,
+  CatalogPlace,
+  CatalogTag,
+  Choice,
+  Decision,
+  Episode,
+  Line,
+} from '../types/content'
 
-interface Line {
-  character: string
-  place: string
-  dialogue: string
-  stage_directions: string
-}
-
-interface Choice {
-  description: string
-  difficulty: string
-  subplot: string
-  pass_outcome: Outcome
-  fail_outcome: Outcome
-}
-
-interface Outcome {
-  line: Line
-  subplot: string
-  delta: number
-}
-
-interface Decision {
-  line: Line
-  choices: Choice[]
-}
-
-// Old format: single tag with lines_before / lines_after
-interface OldAct {
-  id: string
-  title: string
-  lines_before: Line[]
-  tag: string
-  lines_after: Line[]
-  decision: Decision
-}
-
-// New format V2: segments array with variable tags
-interface NarrativeSegment {
-  type: 'narrative'
+interface RenderNarrative {
+  kind: 'narrative'
   lines: Line[]
 }
 
-interface TagSegment {
-  type: 'tag'
+interface RenderTag {
+  kind: 'tag'
   tag: string
 }
 
-type Segment = NarrativeSegment | TagSegment
+type RenderSegment = RenderNarrative | RenderTag
 
-interface NewAct {
-  id: string
-  title: string
-  segments: Segment[]
-  decision: Decision
+function isSegmentedAct(act: Act): act is Extract<Act, { segments: ActSegment[] }> {
+  return 'segments' in act && Array.isArray(act.segments)
 }
 
-type Act = OldAct | NewAct
-
-interface Episode {
-  id: string
-  title: string
-  acts: Act[]
+function isSteppedAct(act: Act): act is Extract<Act, { steps: ActSegment[] }> {
+  return 'steps' in act && Array.isArray(act.steps)
 }
 
-// Helper: Detect old vs new format
-function isOldAct(act: Act): act is OldAct {
-  return 'lines_before' in act && 'tag' in act && 'lines_after' in act
-}
-
-// Helper: Normalize act to render segments
-type RenderSegment =
-  | { kind: 'narrative'; lines: Line[] }
-  | { kind: 'tag'; tag: string }
-
+/** Normalize legacy and ordered-list acts into one renderable sequence. */
 function normalizeAct(act: Act): RenderSegment[] {
-  if (isOldAct(act)) {
-    return [
-      { kind: 'narrative', lines: act.lines_before },
-      { kind: 'tag', tag: act.tag },
-      { kind: 'narrative', lines: act.lines_after },
-    ]
+  if (isSegmentedAct(act)) {
+    return act.segments.flatMap<RenderSegment>((segment): RenderSegment[] =>
+      segment.type === 'narrative'
+        ? [{ kind: 'narrative' as const, lines: segment.lines }]
+        : [{ kind: 'tag' as const, tag: segment.tag }],
+    )
   }
-  return act.segments.map((seg) => {
-    if (seg.type === 'narrative') {
-      return { kind: 'narrative' as const, lines: seg.lines }
-    }
-    return { kind: 'tag' as const, tag: seg.tag }
-  })
+
+  if (isSteppedAct(act)) {
+    return act.steps.flatMap<RenderSegment>((segment): RenderSegment[] =>
+      segment.type === 'narrative'
+        ? [{ kind: 'narrative' as const, lines: segment.lines }]
+        : [{ kind: 'tag' as const, tag: segment.tag }],
+    )
+  }
+
+  return [
+    { kind: 'narrative', lines: act.lines_before },
+    { kind: 'tag', tag: act.tag },
+    { kind: 'narrative', lines: act.lines_after },
+  ]
 }
 
 export default function EpisodeDetail() {
   const { episodeId } = useParams<{ episodeId: string }>()
   const [episode, setEpisode] = useState<Episode | null>(null)
-  const [tags, setTags] = useState<Record<string, { id: string; name: string }>>({})
+  const [tags, setTags] = useState<Record<string, CatalogTag>>({})
+  const [characters, setCharacters] = useState<Record<string, CatalogCharacter>>({})
+  const [places, setPlaces] = useState<Record<string, CatalogPlace>>({})
+  const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     Promise.all([
-      fetch('/episodes.json').then((res) => res.json()),
-      fetch('/tags.json').then((res) => res.json()),
+      fetchCmsJson<Episode[]>('episodes.json'),
+      fetchCmsJson<CatalogTag[]>('tags.json'),
+      fetchCmsJson<CatalogCharacter[]>('characters.json'),
+      fetchCmsJson<CatalogPlace[]>('places.json'),
     ])
-      .then(([epData, tagsData]) => {
-        const ep = epData.find((e: Episode) => e.id === episodeId)
-        setEpisode(ep || null)
-        const tagMap: Record<string, { id: string; name: string }> = {}
-        tagsData.forEach((t: { id: string; name: string }) => {
-          tagMap[t.id] = t
-        })
+      .then(([episodeData, tagData, characterData, placeData]) => {
+        const found = episodeData.find((candidate) => candidate.id === episodeId)
+        const tagMap: Record<string, CatalogTag> = {}
+        const characterMap: Record<string, CatalogCharacter> = {}
+        const placeMap: Record<string, CatalogPlace> = {}
+
+        tagData.forEach((tag) => { tagMap[tag.id] = tag })
+        characterData.forEach((character) => { characterMap[character.id] = character })
+        placeData.forEach((place) => { placeMap[place.id] = place })
+
+        setEpisode(found || null)
         setTags(tagMap)
+        setCharacters(characterMap)
+        setPlaces(placeMap)
         setLoading(false)
       })
-      .catch((err) => {
-        console.error('Failed to load episode:', err)
+      .catch((loadError: unknown) => {
+        console.error('Failed to load episode:', loadError)
+        setError(loadError instanceof Error ? loadError.message : 'Unable to load CMS data')
         setLoading(false)
       })
   }, [episodeId])
 
   if (loading) return <div style={{ padding: '2rem', fontFamily: 'system-ui, sans-serif' }}><p>Loading...</p></div>
+  if (error) return <div style={{ padding: '2rem', fontFamily: 'system-ui, sans-serif' }}><p>Unable to load episode: {error}</p></div>
   if (!episode) return <div style={{ padding: '2rem', fontFamily: 'system-ui, sans-serif' }}><p>Episode not found.</p></div>
 
   return (
@@ -135,6 +115,7 @@ export default function EpisodeDetail() {
 
       {episode.acts.map((act, actIdx) => {
         const segments = normalizeAct(act)
+        let quizNumber = 0
         return (
           <div
             key={act.id}
@@ -150,17 +131,26 @@ export default function EpisodeDetail() {
               Act {actIdx + 1}: {act.title}
             </h2>
 
-            {/* Render segments in order */}
-            {segments.map((seg, segIdx) =>
-              seg.kind === 'narrative' ? (
-                <div key={segIdx} style={{ marginBottom: '1rem' }}>
-                  {seg.lines.map((line, lineIdx) => (
-                    <LineBlock key={`${segIdx}-${lineIdx}`} line={line} />
-                  ))}
-                </div>
-              ) : (
+            {segments.map((segment, segmentIndex) => {
+              if (segment.kind === 'narrative') {
+                return (
+                  <div key={segmentIndex} style={{ marginBottom: '1rem' }}>
+                    {segment.lines.map((line, lineIndex) => (
+                      <LineBlock
+                        key={`${segmentIndex}-${lineIndex}`}
+                        line={line}
+                        characters={characters}
+                        places={places}
+                      />
+                    ))}
+                  </div>
+                )
+              }
+
+              quizNumber += 1
+              return (
                 <div
-                  key={segIdx}
+                  key={segmentIndex}
                   style={{
                     backgroundColor: '#dbeafe',
                     padding: '0.6rem 0.9rem',
@@ -169,19 +159,22 @@ export default function EpisodeDetail() {
                     fontSize: '0.85rem',
                   }}
                 >
-                  <strong style={{ color: '#1e40af' }}>Vocab Review:</strong>{' '}
+                  <strong style={{ color: '#1e40af' }}>Vocab Quiz {quizNumber}:</strong>{' '}
                   <Link
-                    to={`/tags?highlight=${seg.tag}`}
+                    to={`/tags?highlight=${segment.tag}`}
                     style={{ color: '#1e40af', textDecoration: 'underline' }}
                   >
-                    {tags[seg.tag]?.name || seg.tag}
+                    {tags[segment.tag]?.name || segment.tag}
                   </Link>
                 </div>
               )
-            )}
+            })}
 
-            {/* Decision */}
-            <DecisionBlock decision={act.decision} />
+            <DecisionBlock
+              decision={'decision' in act ? act.decision : undefined}
+              characters={characters}
+              places={places}
+            />
           </div>
         )
       })}
@@ -189,7 +182,18 @@ export default function EpisodeDetail() {
   )
 }
 
-function LineBlock({ line }: { line: Line }) {
+function LineBlock({
+  line,
+  characters,
+  places,
+}: {
+  line: Line
+  characters: Record<string, CatalogCharacter>
+  places: Record<string, CatalogPlace>
+}) {
+  const characterName = characters[line.character]?.name || line.character
+  const placeName = places[line.place]?.name
+
   return (
     <div style={{ marginBottom: '0.85rem' }}>
       {line.stage_directions && (
@@ -198,14 +202,27 @@ function LineBlock({ line }: { line: Line }) {
         </p>
       )}
       <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.5' }}>
-        <strong style={{ color: '#374151' }}>{line.character}:</strong>{' '}
+        <strong style={{ color: '#374151' }}>{characterName}:</strong>{' '}
         {line.dialogue}
       </p>
+      {placeName && (
+        <span style={{ color: '#9ca3af', fontSize: '0.7rem' }}>at {placeName}</span>
+      )}
     </div>
   )
 }
 
-function DecisionBlock({ decision }: { decision: Decision }) {
+function DecisionBlock({
+  decision,
+  characters,
+  places,
+}: {
+  decision: Decision | undefined
+  characters: Record<string, CatalogCharacter>
+  places: Record<string, CatalogPlace>
+}) {
+  if (!decision) return null
+
   return (
     <div
       style={{
@@ -216,19 +233,29 @@ function DecisionBlock({ decision }: { decision: Decision }) {
       }}
     >
       <h3 style={{ fontSize: '0.9rem', fontWeight: 'bold', margin: '0 0 0.5rem 0', color: '#92400e' }}>
-        Decision
+        Options
       </h3>
-      <LineBlock line={decision.line} />
+      <LineBlock line={decision.line} characters={characters} places={places} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.75rem' }}>
-        {decision.choices.map((choice, i) => (
-          <ChoiceBlock key={i} choice={choice} index={i} />
+        {decision.choices.map((choice, index) => (
+          <ChoiceBlock key={index} choice={choice} index={index} characters={characters} places={places} />
         ))}
       </div>
     </div>
   )
 }
 
-function ChoiceBlock({ choice, index }: { choice: Choice; index: number }) {
+function ChoiceBlock({
+  choice,
+  index,
+  characters,
+  places,
+}: {
+  choice: Decision['choices'][number]
+  index: number
+  characters: Record<string, CatalogCharacter>
+  places: Record<string, CatalogPlace>
+}) {
   const diffColor =
     choice.difficulty === 'easy'
       ? { bg: '#dcfce7', text: '#166534' }
@@ -266,13 +293,25 @@ function ChoiceBlock({ choice, index }: { choice: Choice; index: number }) {
           {choice.subplot}
         </Link>
       </p>
-      <OutcomeBlock label="Pass" outcome={choice.pass_outcome} bg="#dcfce7" />
-      <OutcomeBlock label="Fail" outcome={choice.fail_outcome} bg="#fee2e2" />
+      <OutcomeBlock label="Pass" outcome={choice.pass_outcome} bg="#dcfce7" characters={characters} places={places} />
+      <OutcomeBlock label="Fail" outcome={choice.fail_outcome} bg="#fee2e2" characters={characters} places={places} />
     </div>
   )
 }
 
-function OutcomeBlock({ label, outcome, bg }: { label: string; outcome: Outcome; bg: string }) {
+function OutcomeBlock({
+  label,
+  outcome,
+  bg,
+  characters,
+  places,
+}: {
+  label: string
+  outcome: Choice['pass_outcome']
+  bg: string
+  characters: Record<string, CatalogCharacter>
+  places: Record<string, CatalogPlace>
+}) {
   return (
     <div
       style={{
@@ -286,7 +325,7 @@ function OutcomeBlock({ label, outcome, bg }: { label: string; outcome: Outcome;
       <strong>
         {label} ({outcome.delta > 0 ? '+' : ''}{outcome.delta})
       </strong>
-      <p style={{ margin: '0.2rem 0 0 0', lineHeight: '1.4' }}>{outcome.line.dialogue}</p>
+      <LineBlock line={outcome.line} characters={characters} places={places} />
     </div>
   )
 }
