@@ -1,25 +1,34 @@
-# Act Format V2 Specification
+# Act Format V2 — ordered narrative and vocabulary checkpoints
 
-## Overview
+## Why this format exists
 
-The new act format generalizes the episode structure to support a variable number of tag/vocab quizzes per act. This enables richer pacing (narrative → quiz → narrative → quiz → decision) while remaining backward-compatible with the old format.
+The original CMS act shape had one fixed vocabulary checkpoint:
 
-## Old Format (lines_before / tag / lines_after)
-
-```typescript
-interface OldAct {
-  id: string;           // e.g., "act_001"
-  title: string;        // e.g., "The Market Confrontation"
-  lines_before: Line[]; // narrative lines before the tag quiz
-  tag: string;          // e.g., "tag_001" - single tag ID
-  lines_after: Line[];  // narrative lines after the tag quiz
-  decision: Decision;   // 3 choices with outcomes
+```json
+{
+  "lines_before": [],
+  "tag": "tag_042",
+  "lines_after": [],
+  "decision": { "line": {}, "choices": [] }
 }
 ```
 
-## New Format V2 (segments array)
+That shape makes a second review awkward because it cannot express where the
+second quiz belongs in the story. V2 stores the playable part of an act as an
+ordered `segments` array. A segment can be narrative or a vocabulary tag, so a
+producer can insert any number of quizzes without adding new fields or changing
+the renderer.
+
+## Canonical V2 shape
 
 ```typescript
+interface Line {
+  character: string;
+  place: string;
+  dialogue: string;
+  stage_directions: string;
+}
+
 interface NarrativeSegment {
   type: "narrative";
   lines: Line[];
@@ -27,107 +36,151 @@ interface NarrativeSegment {
 
 interface TagSegment {
   type: "tag";
-  tag: string;          // tag/vocab ID, e.g., "tag_042"
+  tag: string; // ID in public/tags.json
 }
 
-type Segment = NarrativeSegment | TagSegment;
+type ActSegment = NarrativeSegment | TagSegment;
 
-interface NewAct {
+interface Act {
   id: string;
   title: string;
-  segments: Segment[];  // ordered array of narrative + tag segments
-  decision: Decision;
+  segments: ActSegment[]; // ordered; any length and any number of tag segments
+  decision: Decision;      // the options and their pass/fail outcomes
 }
 ```
 
-## Example Act with 2 Tags
+`segments` is deliberately not constrained to five entries. A valid act may
+contain one tag, two tags, or more. Narrative segments may contain one or many
+lines. For readable pacing, each tag should be surrounded by narrative and the
+act should end with a narrative segment before the decision.
+
+The staging batch uses this sequence twice per act:
+
+1. narrative steps
+2. tag/vocabulary quiz
+3. narrative steps
+4. tag/vocabulary quiz
+5. narrative steps
+6. options (`decision.line` and `decision.choices`)
+7. outcomes (`pass_outcome` and `fail_outcome` on each choice)
+
+Example:
 
 ```json
 {
-  "id": "act_001",
-  "title": "The Whispering Garden",
+  "id": "act_1",
+  "title": "The Delayed Echo",
   "segments": [
     {
       "type": "narrative",
       "lines": [
-        { "text": "Bussaba leads you through rows of crystal-blooming flowers.", "character": "char_narrator" },
-        { "text": "Each blossom hums at a different frequency.", "character": "char_narrator" }
+        {
+          "character": "char_narrator",
+          "place": "place_moonwell_platform",
+          "dialogue": "The well returns the crew's footsteps after a long pause.",
+          "stage_directions": "A pale ring of light travels down the crystal shaft."
+        },
+        {
+          "character": "char_kanya",
+          "place": "place_moonwell_platform",
+          "dialogue": "I already know that echo; it is warning us about the eastern tether.",
+          "stage_directions": "Kanya steadies a tuning weight."
+        }
       ]
     },
-    {
-      "type": "tag",
-      "tag": "tag_042"
-    },
+    { "type": "tag", "tag": "tag_000" },
     {
       "type": "narrative",
       "lines": [
-        { "text": "She touches a purple bloom and it sings a greeting.", "character": "char_narrator" },
-        { "text": "Welcome to my garden, travelers.", "character": "char_bussaba" }
+        {
+          "character": "char_chanida",
+          "place": "place_moonwell_platform",
+          "dialogue": "If we listen before the next pulse, we can find the answer without forcing the lattice.",
+          "stage_directions": "Chanida lowers her voice."
+        }
       ]
     },
-    {
-      "type": "tag",
-      "tag": "tag_017"
-    },
+    { "type": "tag", "tag": "tag_001" },
     {
       "type": "narrative",
       "lines": [
-        { "text": "The flowers nearest you begin to dim.", "character": "char_narrator" },
-        { "text": "Something is wrong with the lattice here.", "character": "char_chanida" }
+        {
+          "character": "char_narrator",
+          "place": "place_moonwell_platform",
+          "dialogue": "The delayed note opens one maintenance path and seals another.",
+          "stage_directions": "The platform tilts toward the open route."
+        }
       ]
     }
   ],
   "decision": {
-    "prompt": "What do you do?",
+    "line": {
+      "character": "char_chanida",
+      "place": "place_moonwell_platform",
+      "dialogue": "Which frequency do we follow?",
+      "stage_directions": "The next echo is already forming."
+    },
     "choices": [
-      { "text": "Investigate the dimming flowers", "outcome": "pass", "next": "act_002" },
-      { "text": "Ask Bussaba about the resonance", "outcome": "pass", "next": "act_002" },
-      { "text": "Ignore it and move on", "outcome": "fail", "next": "act_003" }
+      {
+        "description": "Map the eastern tether while Kanya holds the delayed tone steady",
+        "difficulty": "medium",
+        "subplot": "subplot_frequency_map",
+        "pass_outcome": {
+          "line": {
+            "character": "char_chanida",
+            "place": "place_moonwell_platform",
+            "dialogue": "I have the route. The echo is showing everyone the safe channel now.",
+            "stage_directions": "The lattice settles into a clear chord."
+          },
+          "subplot": "subplot_frequency_map",
+          "delta": 1
+        },
+        "fail_outcome": {
+          "line": {
+            "character": "char_chanida",
+            "place": "place_moonwell_platform",
+            "dialogue": "I lost the timing. The platform is drifting, but the map can still be repaired.",
+            "stage_directions": "A low note shakes the anchor."
+          },
+          "subplot": "subplot_frequency_map",
+          "delta": -1
+        }
+      }
     ]
   }
 }
 ```
 
-## Frontend Rendering Strategy
+The example shows one choice for brevity; production acts retain the existing
+three-choice decision contract.
 
-The EpisodeDetail page uses a `normalizeAct()` helper to render both formats uniformly:
+## Backward compatibility
 
-```typescript
-// Helper: Detect old vs new format
-function isOldAct(act: Act): act is OldAct {
-  return 'lines_before' in act && 'tag' in act && 'lines_after' in act;
-}
+The frontend's `normalizeAct()` accepts all of these forms:
 
-// Helper: Normalize act to render segments
-type RenderSegment =
-  | { kind: 'narrative'; lines: Line[] }
-  | { kind: 'tag'; tag: string };
+- V2: `segments: ActSegment[]`
+- importer alias: `steps: ActSegment[]`
+- legacy: `lines_before`, `tag`, and `lines_after`
 
-function normalizeAct(act: Act): RenderSegment[] {
-  if (isOldAct(act)) {
-    return [
-      { kind: 'narrative', lines: act.lines_before },
-      { kind: 'tag', tag: act.tag },
-      { kind: 'narrative', lines: act.lines_after },
-    ];
-  }
-  return act.segments.map((seg) => {
-    if (seg.type === 'narrative') {
-      return { kind: 'narrative' as const, lines: seg.lines };
-    }
-    return { kind: 'tag' as const, tag: seg.tag };
-  });
-}
-```
+Legacy episodes do not need to be rewritten. They render as three normalized
+segments (`lines_before`, the single tag, and `lines_after`). New content must
+use `segments`, never a hard-coded `tag_1`/`tag_2` field pair.
 
-## Episode Identification
+## Validation invariants
 
-- Episodes using the new format should be numbered starting from `ep_341` (after the existing 340 episodes)
-- New episodes have `id`, `title`, `acts[]` structure identical to old episodes
-- The act format is detected at render time by checking for the `segments` property
+`validate.py` checks the following without assuming a fixed segment count:
 
-## Tag Distribution for New Episodes
+- every narrative segment has valid, four-field `Line` objects;
+- every tag segment references an existing tag;
+- tag and narrative segments are ordered, and a tag is not adjacent to another
+  tag;
+- every new episode (`ep_341` onward) has four acts and exactly two tag
+  segments per act;
+- every act has three choices, valid subplot IDs, and valid pass/fail outcome
+  lines;
+- no placeholder dialogue, leaked `char_` IDs, or empty choice text appears in
+  generated content.
 
-Each new episode has 4 acts, each with 2 tags = 8 tags per episode.
-170 episodes × 8 tags = 1,360 tag slots total.
-The generation script uses a least-used-first algorithm to distribute tags evenly.
+The number of tag checkpoints is data, not a frontend constant. A future act
+with three tags only adds another `{ "type": "tag", "tag": "..." }` entry and
+its surrounding narrative segment.
