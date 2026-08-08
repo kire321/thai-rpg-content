@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
+import { fetchCmsJson } from '../lib/cms'
 
 interface Tag {
   id: string
@@ -22,13 +23,13 @@ export default function Tags() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/tags.json').then((res) => res.json()),
-      fetch('/vocab_items.json').then((res) => res.json()),
+      fetchCmsJson<Tag[]>('tags.json'),
+      fetchCmsJson<VocabItem[]>('vocab_items.json'),
     ])
       .then(([tagsData, vocabData]) => {
         setTags(tagsData)
         const vocabMap: Record<string, VocabItem> = {}
-        vocabData.forEach((item: VocabItem & { tag_ids: string[]; phonetics: string }) => {
+        vocabData.forEach((item) => {
           vocabMap[item.id] = { id: item.id, thai: item.thai, english: item.english }
         })
         setVocabMap(vocabMap)
