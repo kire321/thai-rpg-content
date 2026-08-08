@@ -35,3 +35,20 @@ Hardy individuals living on fortified mobile platforms on the lattice surface, h
 
 ### The Chronicler
 An unnamed observer who records the party's journey, providing context, exposition, and occasional commentary on the ethical implications of their choices.
+
+## Staging Recurring NPCs
+
+The staging expansion adds named contacts with a repeatable role and a clear
+relationship to the lattice. They are not party members; an episode may use
+one as a featured contact and another as local support.
+
+- **Kanya — Anchor Keeper:** hears failing tethers as changes in a platform's pulse and records warnings the Orders dismiss.
+- **Wichai — Resonance Diver:** descends temporary channels for crystal cores and returns with unsettling memories of the lattice.
+- **Maliwan — Surface Medic:** runs a mobile clinic and teaches skycity patients to recognize resonance sickness.
+- **Jintana — Order Clerk:** copies route permits while leaking censored frequencies to people the Orders would silence.
+- **Sakchai — Pirate Navigator:** reads storms from ship rails and searches for a way out of an old raiding debt.
+- **Pailin — Crystal Artisan:** makes bowls that preserve a spoken tone and hides a workshop for Groundless families.
+- **Rung — Groundless Organizer:** builds surface shelters and advocates for permanent settlement without gambling with volunteers' lives.
+- **Nop — Archive Conservator:** repairs route tablets and tracks the deliberate gaps in pre-Silencing records.
+- **Chaiyo — Storm Cartographer:** maps wind shear with singing glass kites and trades forecasts for uncensored charts.
+- **Lalida — Skybridge Courier:** moves letters and endangered people through the private entrances of cable terminals.
