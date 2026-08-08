@@ -94,7 +94,13 @@ rather than an unrelated review interruption.
 The prompt assigns exact tags, NPCs, places, and the V2 schema. API responses are
 sanitized and rejected unless they have four acts, the assigned two tags per
 act, three choices, valid IDs, and usable narrative. `generate_episodes_v2.py`
-and `generate_episodes.py` are compatibility entry points.
+and `generate_episodes.py` are compatibility entry points. To replace this
+batch with API-only output after receiving a key, run:
+
+```bash
+OPENROUTER_API_KEY=... python generate_episodes_v3.py --start 341 --count 170 \
+  --replace-existing --require-openrouter
+```
 
 For offline review/CI, run:
 
