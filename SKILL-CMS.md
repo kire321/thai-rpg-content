@@ -148,14 +148,23 @@ The publisher normally mirrors `thai-rpg-content@master` to:
 - CMS data: `https://kire321.github.io/cms/`
 - CMS UI: `https://kire321.github.io/cms-ui/`
 
-The staging branch contains `.github/workflows/deploy-staging-pages.yml`,
-which builds the CMS UI with `VITE_CMS_BASE=.` and deploys a standalone preview
-artifact through the `github-pages` environment. A push to `staging` triggers it
-(or it can be dispatched manually). The resulting project-site URL is exposed
-as the workflow's `page_url`; verify JSON, an image, the UI HTML, and its JS
-bundle with cache-busting query strings. GitHub Pages can take one to two
-minutes to update. This leaves the publisher's production `/cms/` and
-`/cms-ui/` paths untouched.
+For staging previews, build with `VITE_CMS_BASE=.` and publish the complete
+`dist/` tree to the `staging-preview` branch. `staging-preview` is reset to the
+current `staging` source commit before the built files are overlaid, so the
+preview has traceable source ancestry. The live preview is served through
+RawGitHack at:
+
+`https://raw.githack.com/kire321/thai-rpg-content/staging-preview/index.html`
+
+An immutable URL can use the `staging-preview` commit SHA on
+`https://rawcdn.githack.com/`. Verify the HTML, JS bundle, `episodes.json`, and a
+new image independently after every publish. The current fine-grained PAT is
+content-only in practice: GitHub rejects workflow-file writes, Actions
+workflow dispatches, Publisher-repository writes, and Pages configuration with
+HTTP 403. Do not spend time retrying those endpoints without a replacement PAT
+that explicitly grants Workflows, Actions, and Pages write permissions. The
+RawGitHack preview leaves the publisher's production `/cms/` and `/cms-ui/`
+paths untouched.
 
 ## Content quality rules
 
@@ -177,5 +186,5 @@ minutes to update. This leaves the publisher's production `/cms/` and
 3. Run `python validate.py` and `npm run build`.
 4. Review generated samples and distribution statistics.
 5. Push a verified change to `staging`, never `master` without approval.
-6. Dispatch/verify the staging publisher preview.
+6. Build/publish `staging-preview` and verify the RawGitHack preview.
 7. Update this file with anything learned before replying.
