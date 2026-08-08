@@ -794,19 +794,31 @@ def validate_generated_episode(episode: dict, expected_pairs: list[tuple[str, st
     return errors
 
 
-def generate_one(episode_number: int, pairs: list[tuple[str, str]], rng, *, api_key: str, model: str, offline: bool) -> tuple[dict, str]:
+def generate_one(
+    episode_number: int,
+    pairs: list[tuple[str, str]],
+    rng,
+    *,
+    api_key: str,
+    model: str,
+    offline: bool,
+    require_openrouter: bool,
+) -> tuple[dict, str]:
     if not offline and api_key:
         system, user = build_prompts(episode_number, pairs)
-        response = call_openrouter(api_key, model, system, user)
-        if response:
-            parsed = extract_json(response)
-            if parsed:
-                sanitized = sanitize_api_episode(parsed, episode_number, pairs, rng)
-                if sanitized:
-                    validation_errors = validate_generated_episode(sanitized, pairs)
-                    if not validation_errors:
-                        return sanitized, "openrouter"
-                    print(f"  rejected API episode: {'; '.join(validation_errors[:3])}", file=sys.stderr)
+        for candidate_model in dict.fromkeys([model, FALLBACK_MODEL]):
+            response = call_openrouter(api_key, candidate_model, system, user)
+            if response:
+                parsed = extract_json(response)
+                if parsed:
+                    sanitized = sanitize_api_episode(parsed, episode_number, pairs, rng)
+                    if sanitized:
+                        validation_errors = validate_generated_episode(sanitized, pairs)
+                        if not validation_errors:
+                            return sanitized, f"openrouter:{candidate_model}"
+                        print(f"  rejected API episode: {'; '.join(validation_errors[:3])}", file=sys.stderr)
+    if require_openrouter:
+        raise RuntimeError(f"ep_{episode_number:03d} did not receive a valid OpenRouter response")
     return fallback_episode(episode_number, pairs, rng), "deterministic-fallback"
 
 
@@ -817,6 +829,16 @@ def parse_args():
     parser.add_argument("--seed", type=int, default=20260808, help="stable content seed")
     parser.add_argument("--model", default=DEFAULT_MODEL, help="OpenRouter model ID")
     parser.add_argument("--offline", action="store_true", help="skip OpenRouter and use the reviewed local writer")
+    parser.add_argument(
+        "--require-openrouter",
+        action="store_true",
+        help="fail instead of using local fallback when OpenRouter is unavailable or invalid",
+    )
+    parser.add_argument(
+        "--replace-existing",
+        action="store_true",
+        help="replace IDs in the requested --start/--count range (requires --start)",
+    )
     return parser.parse_args()
 
 
@@ -824,15 +846,36 @@ def main():
     args = parse_args()
     if args.count < 0:
         raise SystemExit("--count must be non-negative")
+    if args.replace_existing and args.start is None:
+        raise SystemExit("--replace-existing requires an explicit --start")
+    if args.require_openrouter and args.offline:
+        raise SystemExit("--require-openrouter and --offline cannot be used together")
+
     episodes = load(EPISODES_PATH)
-    existing_ids = {episode.get("id") for episode in episodes}
-    start = args.start if args.start is not None else (max([int(match.group(1)) for episode in episodes if (match := re.fullmatch(r"ep_(\d+)", str(episode.get('id', ''))))] or [0]) + 1)
+    episode_numbers = [
+        int(match.group(1))
+        for episode in episodes
+        if (match := re.fullmatch(r"ep_(\d+)", str(episode.get("id", ""))))
+    ]
+    start = args.start if args.start is not None else max(episode_numbers or [0]) + 1
     target = start + args.count
     if args.count == 0:
         print("Nothing to generate")
         return
+    if args.replace_existing:
+        episodes = [
+            episode
+            for episode in episodes
+            if not (
+                (match := re.fullmatch(r"ep_(\d+)", str(episode.get("id", ""))))
+                and start <= int(match.group(1)) < target
+            )
+        ]
 
+    existing_ids = {episode.get("id") for episode in episodes}
     api_key = "" if args.offline else __import__("os").environ.get("OPENROUTER_API_KEY", "")
+    if args.require_openrouter and not api_key:
+        raise SystemExit("OPENROUTER_API_KEY is required when --require-openrouter is set")
     if not args.offline and not api_key:
         print("OPENROUTER_API_KEY is not set; using the deterministic offline writer.", file=sys.stderr)
     usage = get_tag_usage(episodes)
@@ -855,6 +898,7 @@ def main():
             api_key=api_key,
             model=args.model,
             offline=args.offline,
+            require_openrouter=args.require_openrouter,
         )
         episode["id"] = episode_id
         validation_errors = validate_generated_episode(episode, pairs)
