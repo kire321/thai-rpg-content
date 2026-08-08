@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
+import { fetchCmsJson } from '../lib/cms'
 
 interface VocabItem {
   id: string
@@ -23,8 +24,8 @@ export default function VocabItems() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/vocab_items.json').then((res) => res.json()),
-      fetch('/tags.json').then((res) => res.json()),
+      fetchCmsJson<VocabItem[]>('vocab_items.json'),
+      fetchCmsJson<Tag[]>('tags.json'),
     ])
       .then(([vocabData, tagsData]) => {
         setItems(vocabData)
