@@ -35,3 +35,39 @@ A dead region where the lattice does not respond to sound. The unnatural quiet i
 
 ### The Tonal Archives
 The great library where all known safe routes and tonal patterns are recorded. The hushed reverence and precise acoustic design create a focused environment. Good for research, planning, and uncovering lost knowledge.
+
+## Staging Locations
+
+The second catalog expansion adds locations with a distinct acoustic rule. Each
+can support investigation, a vocabulary-linked exchange, and a concrete player
+choice rather than serving as a visual backdrop only.
+
+### Moonwell Platform
+A delayed crystal well repeats sound after a luminous pause, exposing hidden conversations and punishing hurried tonal work.
+
+### Iron Kite Docks
+Cargo-kite cables sing under load above a roaring updraft; repairs, bargains, and rescue decisions happen in the same narrow airspace.
+
+### Singing Rice Terraces
+Floating rice beds produce a living chord in the wind, giving farmers an early warning for lattice storms.
+
+### Undertone Bazaar
+A suspended market amplifies low voices and swallows high ones, creating a natural meeting place for informants and smugglers.
+
+### Lattice Fisheries
+Resonance fish follow familiar melodies through liquid-crystal shelves, forcing harvesters to keep a steady call while they work.
+
+### Bellflower Observatory
+Bell-shaped instruments ring when the lattice geometry shifts, while the Orders try to control what the measurements reveal.
+
+### Broken Tether Field
+Fragments of failed anchors drift in a spiral, each carrying a remembered tone that makes navigation an act of listening.
+
+### Echo Cistern
+A clean underground reservoir returns speech from the wrong direction and has begun answering questions no one asked.
+
+### Cloudstep Village
+Buoyant stone steps sway with every footfall; communal songs keep the homes aligned and make disputes physically immediate.
+
+### Resonant Greenhouse
+Crystal-veined plants filter harmful frequencies, while a locked inner room preserves a living record of the Silencing.
