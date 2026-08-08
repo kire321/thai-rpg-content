@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { cmsAsset, fetchCmsJson } from '../lib/cms'
 
 interface Character {
   id: string
@@ -14,8 +15,7 @@ export default function Characters() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/characters.json')
-      .then((res) => res.json())
+    fetchCmsJson<Character[]>('characters.json')
       .then((data) => {
         setCharacters(data)
         setLoading(false)
@@ -58,7 +58,7 @@ export default function Characters() {
               }}
             >
               <img
-                src={char.picture}
+                src={cmsAsset(char.picture)}
                 alt={char.name}
                 style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }}
               />
