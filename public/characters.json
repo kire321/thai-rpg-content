@@ -1,142 +1,205 @@
 [
   {
-    "id": "char_chanida",
-    "name": "Chanida",
-    "picture": "/characters/chanida.png",
-    "type": "party",
-    "description": "A Singer-in-training from Khrueang who possesses an undocumented tonal range allowing her to hear lattice frequencies others cannot. She is impatient with the Tonal Orders' secrecy and believes resonance knowledge should be shared freely."
-  },
-  {
-    "id": "char_pichit",
-    "name": "Pichit",
-    "picture": "/characters/pichit.png",
-    "type": "party",
-    "description": "A former Listener monk from Phrao who left the monastery after a spiritual crisis. He carries a resonant staff that allows short-distance communication through the lattice. His measured, philosophical approach balances the party."
-  },
-  {
-    "id": "char_malee",
-    "name": "Malee",
-    "picture": "/characters/malee.png",
-    "type": "party",
-    "description": "A scavenger from the lattice surface who grew up on mobile platforms. She has a prosthetic leg made from harvested crystal core and can repair any resonance engine with scavenged parts. She is pragmatic and suspicious of skycity people."
-  },
-  {
-    "id": "char_arthit",
-    "name": "Arthit",
-    "picture": "/characters/arthit.png",
-    "type": "party",
-    "description": "A former resonance ship captain who lost his vessel and crew to a catastrophic lattice surge. He carries maps of forgotten routes tattooed on his skin in ancient tonal notation. He is haunted but determined."
-  },
-  {
-    "id": "char_villager",
-    "name": "Skycity Resident",
-    "picture": "/characters/npc_villager.png",
-    "type": "npc",
-    "description": "An ordinary person living on a floating skycity - a farmer, craftsperson, or shopkeeper who knows little of the lattice beyond what the Tonal Orders tell them."
-  },
-  {
-    "id": "char_bandit",
-    "name": "Sky Pirate",
-    "picture": "/characters/npc_bandit.png",
-    "type": "npc",
-    "description": "A bandit who operates a modified resonance ship, attacking trade vessels between skycities. They know secret frequencies that can destabilize another ship's safe channel."
-  },
-  {
-    "id": "char_merchant",
-    "name": "Trade Negotiator",
-    "picture": "/characters/npc_merchant.png",
-    "type": "npc",
-    "description": "A merchant who brokers deals between isolated skycities, traveling with Singer escorts. They carry news, letters, and rare goods from city to city."
-  },
-  {
-    "id": "char_monk",
-    "name": "Listener Monk",
-    "picture": "/characters/npc_monk.png",
-    "type": "npc",
-    "description": "A member of the religious order studying the lattice's natural sounds, seeking to decode what they believe is the lattice's attempt to communicate with humanity."
-  },
-  {
-    "id": "char_scavenger",
-    "name": "Surface Scavenger",
-    "picture": "/characters/npc_scavenger.png",
-    "type": "npc",
-    "description": "A hardy individual living on a fortified mobile platform on the lattice surface, harvesting crystal fragments and searching for pre-Silencing artifacts."
-  },
-  {
     "id": "char_narrator",
     "name": "The Chronicler",
     "picture": "/characters/narrator.png",
     "type": "narrator",
-    "description": "An unnamed observer who records the party's journey, providing context, exposition, and occasional commentary on the ethical implications of their choices."
+    "description": "The voice of the canal — an old temple chronicler who has watched three reigns from the same veranda and expects the water to outlast them all."
   },
   {
-    "id": "char_ratana",
-    "name": "Ratana",
-    "picture": "/characters/ratana.png",
-    "type": "npc",
-    "description": "A blind archivist at the Tonal Archives who 'sees' through resonance echoes. She can read the emotional history of any object by touch and guards forbidden knowledge about the Silencing's true cause."
+    "id": "char_pricha",
+    "name": "Pricha (Lek)",
+    "picture": "/characters/pricha.png",
+    "type": "player",
+    "description": "The temple school's teacher and clerk, a steward's son who grew up inside the Prince's household. He keeps the school's books in a tin box, reads letters for whoever cannot, and collects foreign and formal words in a little notebook. A voice trained to carry across a schoolroom, and badly suited to being told it's wrong."
   },
   {
-    "id": "char_kamon",
-    "name": "Kamon",
-    "picture": "/characters/kamon.png",
-    "type": "npc",
-    "description": "A disgraced Tonal Order enforcer who now sells his combat skills to the highest bidder. His resonance-hardened armor can absorb lattice surges, but the voices of those he silenced haunt his dreams."
+    "id": "char_sangwan",
+    "name": "Sangwan (Wan)",
+    "picture": "/characters/sangwan.png",
+    "type": "party",
+    "description": "A Bangkok man in his forties who rents the shady end of the school veranda and writes letters for whoever cannot — love letters, remittance letters, letters to sons in the mines and mothers in the shophouses. He keeps his ink stone wrapped in a press-clipping so old the paper has gone soft, and he drinks only after the last envelope is sealed. He always has exact change for the money-letter fee, and he never lets anyone read over his shoulder when he writes his own."
   },
   {
-    "id": "char_bussaba",
-    "name": "Bussaba",
-    "picture": "/characters/bussaba.png",
-    "type": "npc",
-    "description": "A lattice-florist from Mae Rim's Hanging Gardens who cultivates crystal-blooming plants that respond to specific tonal frequencies. Her gardens hold the key to healing resonance sickness."
+    "id": "char_phum",
+    "name": "Phum",
+    "picture": "/characters/phum.png",
+    "type": "party",
+    "description": "A quiet man who sits at the edge of the temple-school veranda, mending broken spectacles with wire and spit. He once worked in the royal print room but now says little, though villagers still bring him letters they want read in a voice that won’t shame anyone. His hands move carefully, as if handling something already cracked."
   },
   {
-    "id": "char_thanet",
-    "name": "Thanet",
-    "picture": "/characters/thanet.png",
-    "type": "npc",
-    "description": "A child prodigy who can instinctively navigate the lattice without instruments, a gift that hasn't been seen since before the Silencing. The Tonal Orders want to study him; the pirates want to sell him."
+    "id": "char_phra_kam",
+    "name": "Phra Kam",
+    "picture": "/characters/phra_kam.png",
+    "type": "party",
+    "description": "A wandering monk who sits quietly by the temple pond, counting breaths instead of merits. He refuses donations but records every alms bowl received in a small ledger. Villagers whisper that he's cursed — his presence makes their merit totals feel hollow."
   },
   {
-    "id": "char_suda",
-    "name": "Suda",
-    "picture": "/characters/suda.png",
-    "type": "npc",
-    "description": "The last survivor of a skycity that fell to the surface. She carries a fragment of her city's resonance core and speaks to it like an old friend. She knows the location of the lost city of Sri Thep."
+    "id": "char_mor_duang",
+    "name": "Kamnan Noi",
+    "picture": "/characters/mor_duang.png",
+    "type": "party",
+    "description": "The village’s quiet astrologer, always found near the temple veranda with a worn ledger and brass compass. He reads birth charts for weddings, funerals, and boat-launchings, murmuring about auspicious hours. Though respected, he never sets his own clock by the stars."
   },
   {
-    "id": "char_prayut",
-    "name": "Prayut",
-    "picture": "/characters/prayut.png",
-    "type": "npc",
-    "description": "A former resonance ship engineer turned saboteur who builds devices that can disrupt a city's tether to the lattice. He claims the skycities are parasites draining the lattice's life force."
+    "id": "char_pornchai",
+    "name": "Pornchai 'Pom' Boonyakam",
+    "picture": "/characters/pornchai.png",
+    "type": "party",
+    "description": "The temple veranda's quiet scribe, always jotting in a worn notebook with a steel pen. He speaks so softly he's often asked to repeat himself, yet villagers still seek his help drafting letters, especially those needing careful wording. Pom moves at half the village's speed, and when disputes flare he is the first to suggest everyone sit and sip tea. There is a stillness about him, the stillness of something held under pressure."
   },
   {
-    "id": "char_duangjai",
-    "name": "Duangjai",
-    "picture": "/characters/duangjai.png",
-    "type": "npc",
-    "description": "A Singer from a rival tradition that uses harmonic layering rather than the Tonal Orders' individual resonance approach. Her polyphonic singing can achieve effects impossible for single-channel Singers."
+    "id": "char_rangsri",
+    "name": "Rangsri",
+    "picture": "/characters/rangsri.png",
+    "type": "party",
+    "description": "A quiet woman in her late thirties who sits cross-legged on the temple veranda each morning, waiting. She carries a small lacquered box and wears a faded silk scarf no one else is allowed to touch. Villagers come to her for spirit letters and dream readings, though she never advertises. She speaks only when spoken to, and always in full sentences."
   },
   {
-    "id": "char_somsak",
-    "name": "Somsak",
-    "picture": "/characters/somsak.png",
+    "id": "char_delivery_boy",
+    "name": "The Delivery Boy",
+    "picture": "/characters/delivery_boy.png",
     "type": "npc",
-    "description": "A smuggler who trades in contraband resonance artifacts from the surface. He has a network of informants in every skycity and knows which officials can be bribed and which must be avoided."
+    "description": "A quiet youth in a frayed blue tunic who sits motionless at the river post from dawn to noon. He handles envelopes like eggs, rotating them slightly in the light before clipping them to the pole. Speaks only to confirm receipt."
   },
   {
-    "id": "char_niran",
-    "name": "Niran",
-    "picture": "/characters/niran.png",
+    "id": "char_salt_clerk",
+    "name": "The Salt Clerk",
+    "picture": "/characters/salt_clerk.png",
     "type": "npc",
-    "description": "A hermit who lives in the Silent Zone, the one place where lattice resonance cannot penetrate. He has achieved a state of perfect mental silence and can teach others to shield their minds from lattice influence."
+    "description": "A woman in a grey sash who measures salt in a slow scoop-and-level rhythm. She wears no scales, judging by eye alone. Her left hand is stained red from chalk, never washed. Records entries without looking up."
   },
   {
-    "id": "char_ampa",
-    "name": "Ampa",
-    "picture": "/characters/ampa.png",
+    "id": "char_mirror_mender",
+    "name": "The Mirror Mender",
+    "picture": "/characters/mirror_mender.png",
     "type": "npc",
-    "description": "A young cartographer mapping the lattice's shifting geometry. Her maps are illegal because the Tonal Orders control all spatial knowledge. She believes the lattice is growing, not dying."
+    "description": "An elderly woman with silvered fingertips who works without glasses, pressing silver leaf over cracks with her breath. She hums a single note while working. Customers leave coins in a bowl without counting change."
+  },
+  {
+    "id": "char_urn_keeper",
+    "name": "The Urn Keeper",
+    "picture": "/characters/urn_keeper.png",
+    "type": "npc",
+    "description": "An old woman in a gray sari, counting dust on unmarked jars. She places a spoonful of rice beside each urn every dawn. She says the dead eat memory, not food."
+  },
+  {
+    "id": "char_mirror_tender",
+    "name": "The Mirror Tender",
+    "picture": "/characters/mirror_tender.png",
+    "type": "npc",
+    "description": "A one-eyed man in a patched uniform, polishing the donation mirror’s frame with vinegar and cloth. He collects nothing. He says the mirror feeds on shame, not gold."
+  },
+  {
+    "id": "char_pond_diver",
+    "name": "The Pond Diver",
+    "picture": "/characters/pond_diver.png",
+    "type": "npc",
+    "description": "A mute boy who dives for lost offerings in the silent pond. He surfaces with spoons, belts, prayer beads — never sells them. Lines his hut with the things that sink."
+  },
+  {
+    "id": "char_wai_khru_caretaker",
+    "name": "The Caretaker of the Mound",
+    "picture": "/characters/wai_khru_caretaker.png",
+    "type": "npc",
+    "description": "An old woman in faded indigo who sweeps the mound daily, lights the first incense, and remembers every offering left and by whom. She speaks to the trees as if they hold accounts."
+  },
+  {
+    "id": "char_rain_gauge_keeper",
+    "name": "The Rain Gauge Keeper",
+    "picture": "/characters/rain_gauge_keeper.png",
+    "type": "npc",
+    "description": "A wiry man in a green armband who sits by the glass column from dawn to dusk. He carries a stopwatch on a chain and a whistle he only blows at 6:00 AM and when the first drop hits. He never blinks during rain."
+  },
+  {
+    "id": "char_funeral_timekeeper",
+    "name": "The Funeral Timekeeper",
+    "picture": "/characters/funeral_timekeeper.png",
+    "type": "npc",
+    "description": "An elderly woman with ink-stained fingers who sits behind the red-black ledger. She wears earplugs during the day but removes them at night. She writes all death times in red first, then black, never erasing."
+  },
+  {
+    "id": "char_water_blessing_drummer",
+    "name": "The Water Blessing Drummer",
+    "picture": "/characters/water_blessing_drummer.png",
+    "type": "npc",
+    "description": "A young temple boy who strikes the drum every 13 minutes at the ghat. He never looks at the water. His hands move without counting. When the king is rumored to be dying, he strikes the drum at 12-minute intervals—just once, then returns to 13."
+  },
+  {
+    "id": "char_tax_clerk",
+    "name": "The Tax Clerk",
+    "picture": "/characters/tax_clerk.png",
+    "type": "npc",
+    "description": "A civil servant in a starched collar, stationed at the Rice Ledger. He speaks in clipped tones, measuring each sentence against an unseen standard. He wears a wristband made of dried rice stalks—his father was a peasant, his son attends Bangkok university. He never drinks tea during work hours."
+  },
+  {
+    "id": "char_fire_stoker",
+    "name": "The Fire Stoker",
+    "picture": "/characters/fire_stoker.png",
+    "type": "npc",
+    "description": "An elderly woman who tends the Charcoal Hearth year-round. Her hands are calloused, fingers slightly curled from decades of gripping iron rods. She hums tonelessly while working, never meets eyes. Children say she can smell grief in the smoke before anyone speaks."
+  },
+  {
+    "id": "char_type_monitor",
+    "name": "The Type Monitor",
+    "picture": "/characters/type_monitor.png",
+    "type": "npc",
+    "description": "A retired teacher who oversees the Grammar Mill. She wears spectacles on a chain and carries a brass ruler to straighten misaligned type. She reads every line aloud in a monotone before allowing it into the cooling tray. She once spent six hours debating whether 'please' should be included in a tax reminder."
+  },
+  {
+    "id": "char_grain_clerk",
+    "name": "The Grain Clerk",
+    "picture": "/characters/grain_clerk.png",
+    "type": "npc",
+    "description": "A thin man in a starched collar who records each rice contribution with a dry pen. He wears a string of seed beads around his wrist, one for each name spoken correctly. He never eats during the morning count."
+  },
+  {
+    "id": "char_contract_clerk",
+    "name": "The Contract Clerk",
+    "picture": "/characters/contract_clerk.png",
+    "type": "npc",
+    "description": "A woman with ink-stained palms who works the loan window at the spirit hall. She smells of tamarind and burnt sugar. She never laughs, but her sleeves are lined with tiny bells sewn by hand."
+  },
+  {
+    "id": "char_well_keeper",
+    "name": "The Well Keeper",
+    "picture": "/characters/well_keeper.png",
+    "type": "npc",
+    "description": "An old woman who ties ribbons to the well pulley and counts echoes. She carries a notebook filled with failed jokes. Children bring her sweets; she gives nothing back but nods."
+  },
+  {
+    "id": "char_boatman",
+    "name": "The Boatman",
+    "picture": "/characters/boatman.png",
+    "type": "npc",
+    "description": "A wiry man who poles the mail-and-market boat up and down the canal on the third and the twenty-eighth. He knows every stilt house by the letters it sends and carries gossip the way he carries rice sacks — for a small consideration."
+  },
+  {
+    "id": "char_bua",
+    "name": "The Dance Teacher",
+    "picture": "/characters/bua.png",
+    "type": "npc",
+    "description": "An old woman who teaches the little stamped cycle to the temple school girls on the sala by the pond. Her knees are finished, her hands are not. She speaks in diagnoses, never complaints. The girls fear her stick and would kill for her nod."
+  },
+  {
+    "id": "char_monk",
+    "name": "The Monk",
+    "picture": "/characters/monk.png",
+    "type": "npc",
+    "description": "A middle-aged monk of the canal wat, keeper of ceremonies and the jar shelves behind the ordination hall. He notices every error in a chant and forgives most of them."
+  },
+  {
+    "id": "char_district_officer",
+    "name": "The District Officer",
+    "picture": "/characters/district_officer.png",
+    "type": "npc",
+    "description": "A young man in a pressed uniform, posted from the capital, with a file case and a motorcycle that will not start on damp mornings. He collects what the state is owed: registrations, taxes, the names of the dead. He is courteous, homesick, and exact."
+  },
+  {
+    "id": "char_pawnshop_appraiser",
+    "name": "The Pawnshop Appraiser",
+    "picture": "/characters/pawnshop_appraiser.png",
+    "type": "npc",
+    "description": "An elderly woman who runs the pawnshop at the canal landing, a wooden shophouse with brass scales, a caged counter, and bundles of other people's gold tied in red string. She can weigh a bracelet by eye, dates every ticket in a clerk's hand, and remembers each pledge by the face that brought it, not the name on the slip. Villagers bring her their chains before the rice is planted and redeem them after the boats come in."
   }
 ]

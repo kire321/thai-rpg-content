@@ -4,6 +4,8 @@
 
 > **⚠️ SECRETS RULE — NEVER PUBLISH API KEYS**: NEVER commit API keys, tokens, or credentials to this repository or publish them anywhere (code, docs, skill files, comments, git history). If a key appears in any file you are about to push, replace it with a placeholder (e.g. `os.environ["FIREWORKS_API_KEY"]` or `<substitute the real key at runtime>`) before pushing. If a key was ever committed, treat it as compromised: rotate it and scrub it from every branch. This rule applies to YOU right now.
 
+> **2026-08-20 (user decision)**: The world has been REBUILT on `master`. The old Chantara world is preserved as a museum on the `vibe-world` branch (do not delete). Work happens directly on `master` now; the old "staging first" rule is suspended for the rebuild. New world: canal-side Siam ~1910s–1950s, six orthogonal dialectics (face, merit-ledger, gratitude-debt, fate-chart, heart-temperature, guest-soul) — see `storytelling/research_dialectics.md`, `storytelling/SKILL_CHECKLIST.md` (mandatory writing rubric), `storytelling/prompts/` (generation prompt templates), `storytelling/private/` (private narrative plans). Cast: 6 recurring characters (type "party", one per dialectic) × 3 places each; 18 extras (type "npc", generic, one per place); place_veranda is the hub available in every episode but never foregrounded. `subplots` are RENAMED to `attributes` everywhere (public/attributes.json; episode choice/outcome field is `attribute`); the PC's five attributes have initial scores. Episodes use the ACT_FORMAT_V2 `segments` format, 4 acts × 2 tags. Generation model: qwen/qwen3-235b-a22b-2507 via OpenRouter (see storytelling/prompts + /model_shopping.md decision 2026-08-20; DeepSeek 3.2 is the fallback).
+
 ## Project Overview
 
 You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
@@ -22,7 +24,7 @@ You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The
 | Vocab Items | `public/vocab_items.json` | 340 | Thai word + phonetics + English |
 | Characters | `public/characters.json` | 20 | 4 party + 5 generic NPC types + 10 named NPCs + 1 narrator |
 | Places | `public/places.json` | 20 | Locations in the Chantara world |
-| Subplots | `public/subplots.json` | 5 | Recurring story threads |
+| Attributes | `public/attributes.json` | 5 | Recurring story threads |
 
 ### Episode Structure
 
@@ -57,14 +59,14 @@ interface Decision {
 interface Choice {
   description: string;     // Specific action (10-20 words)
   difficulty: "easy" | "medium" | "hard";
-  subplot: string;
+  attribute: string;
   pass_outcome: Outcome;
   fail_outcome: Outcome;
 }
 
 interface Outcome {
   line: Line;
-  subplot: string;
+  attribute: string;
   delta: number;           // +1 to +2 (pass), -1 to 0 (fail)
 }
 ```
@@ -156,12 +158,12 @@ GOOD: "Pichit: My staff pulses with clarity. The lattice is showing us a path no
 GOOD: "Malee: The prosthetic locks onto a buried harmonic node. There's structure down there — something built."
 ```
 
-**5. Subplot specificity** — Each choice advances a specific subplot:
-- `subplot_frequency_map` — Chanida's open map, hidden frequencies
-- `subplot_haunted_ship` — Arthit's lost ship echoes
-- `subplot_crystal_leg` — Malee's prosthetic resonance
-- `subplot_listener_warning` — Pichit's dismissed lattice warning
-- `subplot_groundless` — surface colonization movement
+**5. Attribute specificity** — Each choice advances a specific attribute:
+- `attribute_frequency_map` — Chanida's open map, hidden frequencies
+- `attribute_haunted_ship` — Arthit's lost ship echoes
+- `attribute_crystal_leg` — Malee's prosthetic resonance
+- `attribute_listener_warning` — Pichit's dismissed lattice warning
+- `attribute_groundless` — surface colonization movement
 
 ### Characters
 
@@ -309,7 +311,7 @@ Run `python validate.py` from the project root before every deploy. It checks:
 | `character: "char_bandit"` | Corrupted episodes | Use original `char` field; don't remap through name_map |
 | `stage_directions` as array `[]` | Some episodes | Convert to string `""` |
 | `char_` IDs in dialogue text | ~47 instances | Regex replace with character names |
-| Foreign fields leaked | `subplot`, `tag`, `voice` in lines | Remove all keys except `character`, `place`, `dialogue`, `stage_directions` |
+| Foreign fields leaked | `attribute`, `tag`, `voice` in lines | Remove all keys except `character`, `place`, `dialogue`, `stage_directions` |
 | Superposition in narrative | "either X or Y" | Rewrite to single concrete event |
 | Placeholder choices | "Pichit acts (choice N)." | Regenerate via Fireworks, never use template fallback |
 
@@ -340,7 +342,7 @@ The `storytelling/` folder contains world-building documents:
 - `world_building.md` — The Lattice, skycities, resonance ships, the Silencing
 - `characters.md` — Party members and NPC types
 - `places.md` — Locations with acoustic characteristics
-- `recurring_subplots.md` — The 5 recurring story threads
+- `recurring_attributes.md` — The 5 recurring story threads
 
 Use these as reference when generating new content to maintain world consistency.
 

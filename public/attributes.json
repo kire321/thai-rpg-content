@@ -1,0 +1,32 @@
+[
+  {
+    "id": "attr_heart_water",
+    "name": "Heart-Water (Nam Jai)",
+    "description": "How far Pricha's giving reaches and how much it is trusted. Checked when feeding someone, carrying something for another, being believed. Initial value 3 — a clerk's measured pouring.",
+    "initial_score": 3
+  },
+  {
+    "id": "attr_deference",
+    "name": "Deference (Kreng Jai)",
+    "description": "The art of not imposing; sparing face; approaching power correctly. Pricha's engine of failure: he loves the debate more than the room. Initial value 2.",
+    "initial_score": 2
+  },
+  {
+    "id": "attr_ledger",
+    "name": "The Ledger",
+    "description": "The new arithmetic: accounts, wages, interest, airmail, contracts. Checked with shopkeepers, officials, the pawnshop, the state. Initial value 4.",
+    "initial_score": 4
+  },
+  {
+    "id": "attr_word_hoard",
+    "name": "Word-Hoard",
+    "description": "Collected foreign and formal words, deployed exactly. Checked when teaching, debating, impressing the learned. Also his vanity. Initial value 4.",
+    "initial_score": 4
+  },
+  {
+    "id": "attr_merit_water",
+    "name": "Merit-Water",
+    "description": "Standing with the temple, the dead, and the pond. Ceremonies without error, the abbot's trust, vows. Initial value 3.",
+    "initial_score": 3
+  }
+]

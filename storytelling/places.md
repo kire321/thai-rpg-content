@@ -28,7 +28,7 @@ The industrial edge of the scavenger city, where old ships are broken down. The 
 A rare cave system inside a floating island with ancient pre-Silencing ruins. The natural acoustics create unusual echo patterns. Good for discovery, archaeological mystery, and encounters with the unknown.
 
 ### Mae Rim's Hanging Gardens
-Agricultural terraces on the edge of a farming skycity. The quiet, rhythmic sounds of wind through crops and flowing water create a peaceful atmosphere. Good for rest, reflection, pastoral encounters, and agricultural subplots.
+Agricultural terraces on the edge of a farming skycity. The quiet, rhythmic sounds of wind through crops and flowing water create a peaceful atmosphere. Good for rest, reflection, pastoral encounters, and agricultural attributes.
 
 ### The Silent Zone
 A dead region where the lattice does not respond to sound. The unnatural quiet is deeply unsettling to the characters. Good for horror, mystery, survival challenges, and existential unease.

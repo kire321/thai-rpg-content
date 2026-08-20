@@ -22,7 +22,7 @@ EPISODES_FILE = APP_DIR / "public" / "episodes.json"
 TAGS_FILE = APP_DIR / "public" / "tags.json"
 CHARACTERS_FILE = APP_DIR / "public" / "characters.json"
 PLACES_FILE = APP_DIR / "public" / "places.json"
-SUBPLOTS_FILE = APP_DIR / "public" / "subplots.json"
+ATTRIBUTES_FILE = APP_DIR / "public" / "attributes.json"
 
 # --- Load reference data ---
 def load_json(path):
@@ -33,11 +33,11 @@ all_episodes = load_json(EPISODES_FILE)
 tags_data = load_json(TAGS_FILE)
 characters_data = load_json(CHARACTERS_FILE)
 places_data = load_json(PLACES_FILE)
-subplots_data = load_json(SUBPLOTS_FILE)
+attributes_data = load_json(ATTRIBUTES_FILE)
 
 VALID_CHAR_IDS = {c["id"] for c in characters_data}
 VALID_PLACE_IDS = {p["id"] for p in places_data}
-VALID_SUBPLOT_IDS = {s["id"] for s in subplots_data}
+VALID_ATTRIBUTE_IDS = {s["id"] for s in attributes_data}
 VALID_TAG_IDS = {t["id"] for t in tags_data}
 
 # Character name to ID mapping (for sanitizing LLM output)
@@ -57,7 +57,7 @@ TAG_NAME_MAP = {}
 for t in tags_data:
     TAG_NAME_MAP[t["name"].lower()] = t["id"]
 
-SUBPLOT_LIST = list(VALID_SUBPLOT_IDS)
+ATTRIBUTE_LIST = list(VALID_ATTRIBUTE_IDS)
 
 # --- Tag distribution: least-used-first ---
 def get_tag_usage():
@@ -98,25 +98,25 @@ CHOICE_TEMPLATES = [
     "Search the area while {{char}} is distracted",
 ]
 
-def build_system_prompt(valid_chars, valid_places, valid_subplots):
+def build_system_prompt(valid_chars, valid_places, valid_attributes):
     return f"""You are a Thai RPG episode writer. Write episodes in valid JSON format.
 
 STRICT RULES:
 1. Use ONLY these character IDs: {', '.join(sorted(VALID_CHAR_IDS))}
 2. Use ONLY these place IDs: {', '.join(sorted(VALID_PLACE_IDS))}
-3. Use ONLY these subplot IDs: {', '.join(sorted(VALID_SUBPLOT_IDS))}
+3. Use ONLY these attribute IDs: {', '.join(sorted(VALID_ATTRIBUTE_IDS))}
 4. NEVER invent new IDs. NEVER use character names as IDs. NEVER add parenthetical notes to IDs.
 5. Each act's segments array must alternate: narrative → tag → narrative → tag → narrative
 6. The decision must have exactly 3 choices with difficulties: one easy, one medium, one hard
-7. Each choice must have pass_outcome and fail_outcome with: line (character, place, dialogue, stage_directions), subplot (from valid list), delta (-2, -1, 0, 1, or 2)
+7. Each choice must have pass_outcome and fail_outcome with: line (character, place, dialogue, stage_directions), attribute (from valid list), delta (-2, -1, 0, 1, or 2)
 8. Character IDs must be EXACTLY as listed above - never "char_017(Ratana)" or "char_ratana" - just the exact ID from the list
-9. subplot field must be exactly one of: {', '.join(sorted(VALID_SUBPLOT_IDS))} - never "None" or null
+9. attribute field must be exactly one of: {', '.join(sorted(VALID_ATTRIBUTE_IDS))} - never "None" or null
 10. place field in lines must be exactly one of: {', '.join(sorted(VALID_PLACE_IDS)[:10])} etc.
 11. NEVER use markdown code blocks in your response. Output raw JSON only.
 12. Do NOT include comments in the JSON.
 """
 
-def build_user_prompt(episode_num, tag_assignment, assigned_subplot, existing_episodes_summary):
+def build_user_prompt(episode_num, tag_assignment, assigned_attribute, existing_episodes_summary):
     ep_id = f"ep_{{episode_num:03d}}"
     
     # Pick 2-3 random characters for this episode
@@ -141,7 +141,7 @@ def build_user_prompt(episode_num, tag_assignment, assigned_subplot, existing_ep
 TAG ASSIGNMENT (you MUST use ALL of these tags exactly as assigned):
 {chr(10).join(tag_lines)}
 
-SUBPLOT: {assigned_subplot}
+ATTRIBUTE: {assigned_attribute}
 
 CHARACTERS TO FEATURE: {', '.join(char_ids)}
 PLACES: {', '.join(place_ids)}
@@ -163,9 +163,9 @@ DECISION FORMAT (3 choices, one easy, one medium, one hard):
 "decision": {{
   "line": {{"character": "...", "place": "...", "dialogue": "What do you do?", "stage_directions": ""}},
   "choices": [
-    {{"description": "...", "difficulty": "easy", "subplot": "{assigned_subplot}", "pass_outcome": {{"line": {{...}}, "subplot": "{assigned_subplot}", "delta": 1}}, "fail_outcome": {{"line": {{...}}, "subplot": "{assigned_subplot}", "delta": -1}}}},
-    {{"description": "...", "difficulty": "medium", "subplot": "{assigned_subplot}", "pass_outcome": {{...}}, "fail_outcome": {{...}}}},
-    {{"description": "...", "difficulty": "hard", "subplot": "{assigned_subplot}", "pass_outcome": {{...}}, "fail_outcome": {{...}}}}
+    {{"description": "...", "difficulty": "easy", "attribute": "{assigned_attribute}", "pass_outcome": {{"line": {{...}}, "attribute": "{assigned_attribute}", "delta": 1}}, "fail_outcome": {{"line": {{...}}, "attribute": "{assigned_attribute}", "delta": -1}}}},
+    {{"description": "...", "difficulty": "medium", "attribute": "{assigned_attribute}", "pass_outcome": {{...}}, "fail_outcome": {{...}}}},
+    {{"description": "...", "difficulty": "hard", "attribute": "{assigned_attribute}", "pass_outcome": {{...}}, "fail_outcome": {{...}}}}
   ]
 }}
 ```
@@ -192,7 +192,7 @@ IMPORTANT:
 - Output ONLY the JSON, no markdown code blocks, no explanation
 - All character IDs must be from: {', '.join(sorted(VALID_CHAR_IDS))}
 - All place IDs must be from: {', '.join(sorted(VALID_PLACE_IDS))}
-- subplot must be exactly: {assigned_subplot}
+- attribute must be exactly: {assigned_attribute}
 """
 
 # --- API call ---
@@ -287,14 +287,14 @@ def fix_place_id(raw_id):
     }
     return fixes.get(result, result)
 
-def fix_subplot_id(raw_id):
-    """Fix subplot IDs."""
+def fix_attribute_id(raw_id):
+    """Fix attribute IDs."""
     if not raw_id or str(raw_id).lower() in ("none", "null", ""):
-        return random.choice(SUBPLOT_LIST)
+        return random.choice(ATTRIBUTE_LIST)
     result = str(raw_id).strip()
-    if result in VALID_SUBPLOT_IDS:
+    if result in VALID_ATTRIBUTE_IDS:
         return result
-    return random.choice(SUBPLOT_LIST)
+    return random.choice(ATTRIBUTE_LIST)
 
 def fix_tag_id(raw_id):
     """Fix tag IDs."""
@@ -343,19 +343,19 @@ def sanitize_episode(ep, expected_tags):
                         line["character"] = new_char
             
             for choice in decision.get("choices", []):
-                old_sub = choice.get("subplot", "")
-                new_sub = fix_subplot_id(old_sub)
+                old_sub = choice.get("attribute", "")
+                new_sub = fix_attribute_id(old_sub)
                 if old_sub != new_sub:
-                    choice["subplot"] = new_sub
-                    fixes_log.append(f"subplot: {old_sub} → {new_sub}")
+                    choice["attribute"] = new_sub
+                    fixes_log.append(f"attribute: {old_sub} → {new_sub}")
                 
                 for outcome_key in ["pass_outcome", "fail_outcome"]:
                     outcome = choice.get(outcome_key, {})
                     if outcome:
-                        old_sub = outcome.get("subplot", "")
-                        new_sub = fix_subplot_id(old_sub)
+                        old_sub = outcome.get("attribute", "")
+                        new_sub = fix_attribute_id(old_sub)
                         if old_sub != new_sub:
-                            outcome["subplot"] = new_sub
+                            outcome["attribute"] = new_sub
                         
                         line = outcome.get("line", {})
                         if line:
@@ -409,15 +409,15 @@ def validate_episode(ep, expected_num_tags=8):
             if len(choices) != 3:
                 errors.append(f"Act {act.get('id', '?')} expected 3 choices, got {len(choices)}")
             for choice in choices:
-                sub = choice.get("subplot", "")
-                if sub not in VALID_SUBPLOT_IDS:
-                    errors.append(f"Invalid subplot in choice: {sub}")
+                sub = choice.get("attribute", "")
+                if sub not in VALID_ATTRIBUTE_IDS:
+                    errors.append(f"Invalid attribute in choice: {sub}")
                 for outcome_key in ["pass_outcome", "fail_outcome"]:
                     outcome = choice.get(outcome_key, {})
                     if outcome:
-                        sub = outcome.get("subplot", "")
-                        if sub not in VALID_SUBPLOT_IDS:
-                            errors.append(f"Invalid subplot in {outcome_key}: {sub}")
+                        sub = outcome.get("attribute", "")
+                        if sub not in VALID_ATTRIBUTE_IDS:
+                            errors.append(f"Invalid attribute in {outcome_key}: {sub}")
     
     if tag_count != expected_num_tags:
         errors.append(f"Expected {expected_num_tags} tags, found {tag_count}")
@@ -425,10 +425,10 @@ def validate_episode(ep, expected_num_tags=8):
     return len(errors) == 0, errors
 
 # --- Main generation ---
-def generate_episode(episode_num, tag_assignment, assigned_subplot):
+def generate_episode(episode_num, tag_assignment, assigned_attribute):
     """Generate a single episode via OpenRouter API."""
-    system_prompt = build_system_prompt(VALID_CHAR_IDS, VALID_PLACE_IDS, VALID_SUBPLOT_IDS)
-    user_prompt = build_user_prompt(episode_num, tag_assignment, assigned_subplot, "")
+    system_prompt = build_system_prompt(VALID_CHAR_IDS, VALID_PLACE_IDS, VALID_ATTRIBUTE_IDS)
+    user_prompt = build_user_prompt(episode_num, tag_assignment, assigned_attribute, "")
     
     messages = [
         {"role": "system", "content": system_prompt},
@@ -500,11 +500,11 @@ def main():
         for t in tag_pool[:8]:
             usage[t] += 1
         
-        # Pick a subplot
-        assigned_subplot = random.choice(SUBPLOT_LIST)
+        # Pick a attribute
+        assigned_attribute = random.choice(ATTRIBUTE_LIST)
         
         # Generate
-        episode, error = generate_episode(ep_num, tag_assignment, assigned_subplot)
+        episode, error = generate_episode(ep_num, tag_assignment, assigned_attribute)
         
         if episode:
             # Ensure correct ID
@@ -523,7 +523,7 @@ def main():
             # Retry once
             print(f"  🔄 Retrying {ep_id}...")
             time.sleep(5)
-            episode, error = generate_episode(ep_num, tag_assignment, assigned_subplot)
+            episode, error = generate_episode(ep_num, tag_assignment, assigned_attribute)
             if episode:
                 episode["id"] = ep_id
                 generated.append(episode)

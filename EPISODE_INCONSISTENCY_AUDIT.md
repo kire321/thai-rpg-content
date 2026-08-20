@@ -12,7 +12,7 @@
 |-------|-------------|-------------|------------|
 | dialogue: "[None]" | 11,205 | 0 | Recovered from alternate fields |
 | outcome dialogue: "[None]" | 5,976 | 0 | Generated from choice context |
-| placeholder choices | 2,990 | 0 | Generated from subplot context |
+| placeholder choices | 2,990 | 0 | Generated from attribute context |
 | char_ IDs in dialogue text | 47 | 0 | Replaced with character names |
 | wrong character mapping | 3,556 | 0 | Used original `char` field |
 | leaked fields in lines | 15,899 | 0 | Cleaned up foreign key-value pairs |
@@ -89,19 +89,19 @@ choices.append({
 
 **Impact:** All 3 choices per affected act showed "Pichit acts (choice 1).", "Pichit acts (choice 2).", "Pichit acts (choice 3)." — giving players no meaningful information.
 
-**Fix Applied:** Generated meaningful descriptions from the choice's `subplot` field:
+**Fix Applied:** Generated meaningful descriptions from the choice's `attribute` field:
 ```python
 def generate_choice_description(choice, choice_num):
-    subplot = choice.get('subplot', '')
+    attribute = choice.get('attribute', '')
     templates = {
-        'subplot_frequency_map': [
+        'attribute_frequency_map': [
             "Follow the anomalous frequency signal deeper into uncharted lattice corridors",
             "Map the harmonic patterns to trace the signal's origin point",
             ...
         ],
         ...
     }
-    return templates.get(subplot, [generic])[choice_num % len(templates)]
+    return templates.get(attribute, [generic])[choice_num % len(templates)]
 ```
 
 **Prevention for Future:**
@@ -119,7 +119,7 @@ def generate_choice_description(choice, choice_num):
 - Choice description (what the player is attempting)
 - Pass/fail status (success or failure)
 - Character speaking the outcome
-- Subplot context
+- Attribute context
 
 **Prevention for Future:**
 - Ensure the prompt explicitly requests outcome dialogue
@@ -165,8 +165,8 @@ CHAR_NAME_MAP = {
 **Fields found in line objects that don't belong:**
 | Field | Count | Belongs To |
 |-------|-------|------------|
-| `subplot` | Many | decision / choice |
-| `subplot_id` | Many | subplot table |
+| `attribute` | Many | decision / choice |
+| `attribute_id` | Many | attribute table |
 | `tag` | Many | episode / act |
 | `id` | Many | any table |
 | `notes` | Many | prompt context |

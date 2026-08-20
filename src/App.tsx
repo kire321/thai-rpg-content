@@ -4,7 +4,7 @@ import VocabItems from './pages/VocabItems'
 import Tags from './pages/Tags'
 import Characters from './pages/Characters'
 import Places from './pages/Places'
-import Subplots from './pages/Subplots'
+import Attributes from './pages/Attributes'
 import Episodes from './pages/Episodes'
 import EpisodeDetail from './pages/EpisodeDetail'
 
@@ -16,7 +16,7 @@ export default function App() {
       <Route path="/tags" element={<Tags />} />
       <Route path="/characters" element={<Characters />} />
       <Route path="/places" element={<Places />} />
-      <Route path="/subplots" element={<Subplots />} />
+      <Route path="/attributes" element={<Attributes />} />
       <Route path="/episodes" element={<Episodes />} />
       <Route path="/episodes/:episodeId" element={<EpisodeDetail />} />
     </Routes>

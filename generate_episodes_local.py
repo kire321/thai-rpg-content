@@ -13,7 +13,7 @@ EPISODES_FILE = APP_DIR / "public" / "episodes.json"
 TAGS_FILE = APP_DIR / "public" / "tags.json"
 CHARACTERS_FILE = APP_DIR / "public" / "characters.json"
 PLACES_FILE = APP_DIR / "public" / "places.json"
-SUBPLOTS_FILE = APP_DIR / "public" / "subplots.json"
+ATTRIBUTES_FILE = APP_DIR / "public" / "attributes.json"
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -23,11 +23,11 @@ all_episodes = load_json(EPISODES_FILE)
 tags_data = load_json(TAGS_FILE)
 characters_data = load_json(CHARACTERS_FILE)
 places_data = load_json(PLACES_FILE)
-subplots_data = load_json(SUBPLOTS_FILE)
+attributes_data = load_json(ATTRIBUTES_FILE)
 
 VALID_CHAR_IDS = [c["id"] for c in characters_data]
 VALID_PLACE_IDS = [p["id"] for p in places_data]
-VALID_SUBPLOT_IDS = [s["id"] for s in subplots_data]
+VALID_ATTRIBUTE_IDS = [s["id"] for s in attributes_data]
 party_chars = [c for c in characters_data if c["type"] == "party"]
 npc_chars = [c for c in characters_data if c["type"] == "npc"]
 narrator = [c for c in characters_data if c["type"] == "narrator"][0]
@@ -232,7 +232,7 @@ def make_narrative_lines(count, char_id, place_id):
     
     return lines
 
-def make_decision(char_id, place_id, subplot_id):
+def make_decision(char_id, place_id, attribute_id):
     """Generate a decision block."""
     char_name = next((c["name"] for c in characters_data if c["id"] == char_id), "Someone")
     
@@ -264,15 +264,15 @@ def make_decision(char_id, place_id, subplot_id):
         choices.append({
             "description": desc,
             "difficulty": diff,
-            "subplot": subplot_id,
+            "attribute": attribute_id,
             "pass_outcome": {
                 "line": make_line(char_id, place_id, pass_dialogue),
-                "subplot": subplot_id,
+                "attribute": attribute_id,
                 "delta": random.choice([1, 2]),
             },
             "fail_outcome": {
                 "line": make_line(char_id, place_id, fail_dialogue),
-                "subplot": subplot_id,
+                "attribute": attribute_id,
                 "delta": random.choice([-2, -1]),
             },
         })
@@ -282,7 +282,7 @@ def make_decision(char_id, place_id, subplot_id):
         "choices": choices,
     }
 
-def make_act(act_num, tag1, tag2, subplot_id):
+def make_act(act_num, tag1, tag2, attribute_id):
     """Generate one act with 2 tags in segments format."""
     char = pick_char()
     place = pick_place()
@@ -305,7 +305,7 @@ def make_act(act_num, tag1, tag2, subplot_id):
     
     decision_char = pick_char()
     decision_place = pick_place()
-    decision = make_decision(decision_char["id"], decision_place["id"], subplot_id)
+    decision = make_decision(decision_char["id"], decision_place["id"], attribute_id)
     
     return {
         "id": act_id,
@@ -314,7 +314,7 @@ def make_act(act_num, tag1, tag2, subplot_id):
         "decision": decision,
     }
 
-def make_episode(ep_num, tag_assignment, subplot_id):
+def make_episode(ep_num, tag_assignment, attribute_id):
     """Generate one complete episode."""
     ep_id = f"ep_{ep_num:03d}"
     
@@ -326,7 +326,7 @@ def make_episode(ep_num, tag_assignment, subplot_id):
     
     acts = []
     for i, (tag1, tag2) in enumerate(tag_assignment):
-        acts.append(make_act(i + 1, tag1, tag2, subplot_id))
+        acts.append(make_act(i + 1, tag1, tag2, attribute_id))
     
     return {
         "id": ep_id,
@@ -403,9 +403,9 @@ def main():
         for t in tag_pool:
             usage[t] += 1
         
-        subplot_id = random.choice(VALID_SUBPLOT_IDS)
+        attribute_id = random.choice(VALID_ATTRIBUTE_IDS)
         
-        ep = make_episode(ep_num, tag_assignment, subplot_id)
+        ep = make_episode(ep_num, tag_assignment, attribute_id)
         
         is_valid, errors = validate_episode(ep)
         if is_valid:

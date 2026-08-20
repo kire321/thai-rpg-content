@@ -17,18 +17,18 @@ def load_data():
         characters = json.load(f)
     with open('public/places.json', 'r', encoding='utf-8') as f:
         places = json.load(f)
-    with open('public/subplots.json', 'r', encoding='utf-8') as f:
-        subplots = json.load(f)
+    with open('public/attributes.json', 'r', encoding='utf-8') as f:
+        attributes = json.load(f)
     try:
         with open('public/episodes.json', 'r', encoding='utf-8') as f:
             episodes = json.load(f)
     except FileNotFoundError:
         episodes = []
-    return tags, vocab_items, characters, places, subplots, episodes
+    return tags, vocab_items, characters, places, attributes, episodes
 
 
 def validate():
-    tags, vocab_items, characters, places, subplots, episodes = load_data()
+    tags, vocab_items, characters, places, attributes, episodes = load_data()
     errors = []
     warnings = []
 
@@ -37,7 +37,7 @@ def validate():
     vocab_ids = set(v['id'] for v in vocab_items)
     char_ids = set(c['id'] for c in characters)
     place_ids = set(p['id'] for p in places)
-    subplot_ids = set(s['id'] for s in subplots)
+    attribute_ids = set(s['id'] for s in attributes)
     episode_ids = set(e['id'] for e in episodes)
 
     # === TAGS ↔ VOCAB_ITEMS ===
@@ -131,9 +131,9 @@ def validate():
                 warnings.append(f"Episode '{ep['id']}' act '{act_id}' has {len(choices)} choices (expected 3)")
 
             for choice in choices:
-                # Check subplot references
-                if choice.get('subplot') not in subplot_ids:
-                    errors.append(f"Episode '{ep['id']}' act '{act_id}' choice references non-existent subplot '{choice.get('subplot')}'")
+                # Check attribute references
+                if choice.get('attribute') not in attribute_ids:
+                    errors.append(f"Episode '{ep['id']}' act '{act_id}' choice references non-existent attribute '{choice.get('attribute')}'")
 
                 # Check pass outcome
                 pass_out = choice.get('pass_outcome', {})
@@ -142,8 +142,8 @@ def validate():
                     errors.append(f"Episode '{ep['id']}' act '{act_id}' pass_outcome references non-existent character '{pass_line.get('character')}'")
                 if pass_line.get('place') not in place_ids:
                     errors.append(f"Episode '{ep['id']}' act '{act_id}' pass_outcome references non-existent place '{pass_line.get('place')}'")
-                if pass_out.get('subplot') not in subplot_ids:
-                    errors.append(f"Episode '{ep['id']}' act '{act_id}' pass_outcome references non-existent subplot '{pass_out.get('subplot')}'")
+                if pass_out.get('attribute') not in attribute_ids:
+                    errors.append(f"Episode '{ep['id']}' act '{act_id}' pass_outcome references non-existent attribute '{pass_out.get('attribute')}'")
 
                 # Check fail outcome
                 fail_out = choice.get('fail_outcome', {})
@@ -152,11 +152,11 @@ def validate():
                     errors.append(f"Episode '{ep['id']}' act '{act_id}' fail_outcome references non-existent character '{fail_line.get('character')}'")
                 if fail_line.get('place') not in place_ids:
                     errors.append(f"Episode '{ep['id']}' act '{act_id}' fail_outcome references non-existent place '{fail_line.get('place')}'")
-                if fail_out.get('subplot') not in subplot_ids:
-                    errors.append(f"Episode '{ep['id']}' act '{act_id}' fail_outcome references non-existent subplot '{fail_out.get('subplot')}'")
+                if fail_out.get('attribute') not in attribute_ids:
+                    errors.append(f"Episode '{ep['id']}' act '{act_id}' fail_outcome references non-existent attribute '{fail_out.get('attribute')}'")
 
-    # === CHARACTERS, PLACES, SUBPLOTS basic checks ===
-    print("=== Checking characters, places, subplots ===")
+    # === CHARACTERS, PLACES, ATTRIBUTES basic checks ===
+    print("=== Checking characters, places, attributes ===")
     for c in characters:
         if not c.get('name'):
             errors.append(f"Character '{c['id']}' missing name")
@@ -167,15 +167,15 @@ def validate():
             errors.append(f"Place '{p['id']}' missing name")
         if not p.get('description'):
             errors.append(f"Place '{p['id']}' missing description")
-    for s in subplots:
+    for s in attributes:
         if not s.get('name'):
-            errors.append(f"Subplot '{s['id']}' missing name")
+            errors.append(f"Attribute '{s['id']}' missing name")
 
     # Summary
     print(f"\n=== Validation Results ===")
     print(f"Tags: {len(tags)}, Vocab items: {len(vocab_items)}")
     print(f"Characters: {len(characters)}, Places: {len(places)}")
-    print(f"Subplots: {len(subplots)}, Episodes: {len(episodes)}")
+    print(f"Attributes: {len(attributes)}, Episodes: {len(episodes)}")
     print(f"Errors: {len(errors)}, Warnings: {len(warnings)}")
 
     if errors:

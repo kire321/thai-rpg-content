@@ -22,13 +22,13 @@ def load_data():
         characters = json.load(f)
     with open("public/places.json", "r", encoding="utf-8") as f:
         places = json.load(f)
-    with open("public/subplots.json", "r", encoding="utf-8") as f:
-        subplots = json.load(f)
+    with open("public/attributes.json", "r", encoding="utf-8") as f:
+        attributes = json.load(f)
     with open("public/tags.json", "r", encoding="utf-8") as f:
         tags = json.load(f)
     with open("public/episodes.json", "r", encoding="utf-8") as f:
         episodes = json.load(f)
-    return characters, places, subplots, tags, episodes
+    return characters, places, attributes, tags, episodes
 
 
 STORY_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "storytelling")
@@ -41,9 +41,9 @@ def build_context():
         chars_md = f.read()
     with open(os.path.join(STORY_DIR, "places.md"), "r", encoding="utf-8") as f:
         places_md = f.read()
-    with open(os.path.join(STORY_DIR, "recurring_subplots.md"), "r", encoding="utf-8") as f:
-        subplots_md = f.read()
-    return world, chars_md, places_md, subplots_md
+    with open(os.path.join(STORY_DIR, "recurring_attributes.md"), "r", encoding="utf-8") as f:
+        attributes_md = f.read()
+    return world, chars_md, places_md, attributes_md
 
 
 def get_least_used_tags(tags, episodes, count=4):
@@ -81,15 +81,15 @@ def get_template():
           {
             "description": "...",
             "difficulty": "easy|medium|hard",
-            "subplot": "subplot_...",
+            "attribute": "attribute_...",
             "pass_outcome": {
               "line": {"character": "char_...", "place": "place_...", "dialogue": "...", "stage_directions": "..."},
-              "subplot": "subplot_...",
+              "attribute": "attribute_...",
               "delta": 2
             },
             "fail_outcome": {
               "line": {"character": "char_...", "place": "place_...", "dialogue": "...", "stage_directions": "..."},
-              "subplot": "subplot_...",
+              "attribute": "attribute_...",
               "delta": -1
             }
           }
@@ -101,7 +101,7 @@ def get_template():
 """
 
 
-def generate_episode(episode_num, assigned_tags, assigned_place, assigned_npcs, world, chars_md, places_md, subplots_md, existing_episodes_json):
+def generate_episode(episode_num, assigned_tags, assigned_place, assigned_npcs, world, chars_md, places_md, attributes_md, existing_episodes_json):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
@@ -126,9 +126,9 @@ CRITICAL RULES:
 1. Each act's TAG must be woven tightly into the narrative. The characters should USE the vocabulary phrases naturally in dialogue and stage directions. For example, if the tag is about "morning" phrases, the scene should take place at dawn, characters should discuss morning plans, wake up, etc.
 2. Every line of dialogue should feel natural — characters using the vocabulary as real people would, not as language exercises.
 3. Use ALL assigned characters and places throughout the episode.
-4. Each decision choice must link to a different subplot.
+4. Each decision choice must link to a different attribute.
 5. Output ONLY valid JSON. No markdown code blocks, no explanations, no extra text.
-6. All character IDs, place IDs, tag IDs, and subplot IDs must match exactly.
+6. All character IDs, place IDs, tag IDs, and attribute IDs must match exactly.
 7. The episode must be consistent with the world of Chantara."""
 
     user_prompt = f"""Write episode #{episode_num} for the Thai RPG "Chantara" as valid JSON.
@@ -151,7 +151,7 @@ PLACES:
 - place_silent_zone (dead region, lattice unresponsive)
 - place_tonal_archives (library of safe routes)
 
-SUBPLOTS: subplot_frequency_map (Chanida's open map), subplot_haunted_ship (Arthit's lost ship echoes), subplot_crystal_leg (Malee's prosthetic resonance), subplot_listener_warning (Pichit's dismissed lattice warning), subplot_groundless (surface colonization movement)
+ATTRIBUTES: attribute_frequency_map (Chanida's open map), attribute_haunted_ship (Arthit's lost ship echoes), attribute_crystal_leg (Malee's prosthetic resonance), attribute_listener_warning (Pichit's dismissed lattice warning), attribute_groundless (surface colonization movement)
 
 ASSIGNED FOR THIS EPISODE:
 Place: {assigned_place['id']} ({assigned_place['name']})
@@ -166,7 +166,7 @@ RULES:
 - 4 acts: Introduce challenge → Escalate → Crisis → Transform (avoid cheesy moral endings)
 - Each act: 5-7 lines_before, TAG, 3-4 lines_after, decision with 3 choices
 - NATURALLY weave tag vocabulary into dialogue. If tag is "morning", characters should talk about dawn, waking up, morning plans
-- Choices link to different subplots. Difficulty: easy/medium/hard. Pass: +1 to +3 delta. Fail: 0 to -2 delta
+- Choices link to different attributes. Difficulty: easy/medium/hard. Pass: +1 to +3 delta. Fail: 0 to -2 delta
 - Use char_narrator for scene transitions
 - Output ONLY JSON, no markdown, no explanation
 
@@ -211,7 +211,7 @@ Write JSON:"""
         return None
 
 
-def validate_episode_structure(episode, tag_ids, char_ids, place_ids, subplot_ids):
+def validate_episode_structure(episode, tag_ids, char_ids, place_ids, attribute_ids):
     """Basic structural validation of a generated episode."""
     errors = []
 
@@ -234,12 +234,12 @@ def validate_episode_structure(episode, tag_ids, char_ids, place_ids, subplot_id
 
         dec = act.get("decision", {})
         for choice in dec.get("choices", []):
-            if choice.get("subplot") not in subplot_ids:
-                errors.append(f"Invalid subplot in choice: {choice.get('subplot')}")
+            if choice.get("attribute") not in attribute_ids:
+                errors.append(f"Invalid attribute in choice: {choice.get('attribute')}")
             for outcome_key in ["pass_outcome", "fail_outcome"]:
                 outcome = choice.get(outcome_key, {})
-                if outcome.get("subplot") not in subplot_ids:
-                    errors.append(f"Invalid subplot in {outcome_key}: {outcome.get('subplot')}")
+                if outcome.get("attribute") not in attribute_ids:
+                    errors.append(f"Invalid attribute in {outcome_key}: {outcome.get('attribute')}")
                 line = outcome.get("line", {})
                 if line.get("character") not in char_ids:
                     errors.append(f"Invalid character in {outcome_key}: {line.get('character')}")
@@ -253,12 +253,12 @@ def main():
     n = int(os.environ.get("EPISODE_COUNT", "1"))
     print(f"Generating {n} episode(s)...")
 
-    characters, places, subplots, tags, episodes = load_data()
-    world, chars_md, places_md, subplots_md = build_context()
+    characters, places, attributes, tags, episodes = load_data()
+    world, chars_md, places_md, attributes_md = build_context()
 
     char_ids = set(c["id"] for c in characters)
     place_ids = set(p["id"] for p in places)
-    subplot_ids = set(s["id"] for s in subplots)
+    attribute_ids = set(s["id"] for s in attributes)
     tag_ids = set(t["id"] for t in tags)
 
     npcs = [c for c in characters if c["type"] == "npc"]
@@ -285,7 +285,7 @@ def main():
 
         episode = generate_episode(
             ep_num, assigned_tags, assigned_place, assigned_npcs,
-            world, chars_md, places_md, subplots_md, existing_json
+            world, chars_md, places_md, attributes_md, existing_json
         )
 
         if episode is None:
@@ -294,7 +294,7 @@ def main():
             continue
 
         # Validate structure
-        errors = validate_episode_structure(episode, tag_ids, char_ids, place_ids, subplot_ids)
+        errors = validate_episode_structure(episode, tag_ids, char_ids, place_ids, attribute_ids)
         if errors:
             print(f"  Validation errors: {len(errors)}")
             for e in errors:

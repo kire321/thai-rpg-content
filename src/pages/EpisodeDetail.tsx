@@ -11,14 +11,14 @@ interface Line {
 interface Choice {
   description: string
   difficulty: string
-  subplot: string
+  attribute: string
   pass_outcome: Outcome
   fail_outcome: Outcome
 }
 
 interface Outcome {
   line: Line
-  subplot: string
+  attribute: string
   delta: number
 }
 
@@ -261,9 +261,9 @@ function ChoiceBlock({ choice, index }: { choice: Choice; index: number }) {
         </span>
       </p>
       <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.8rem', color: '#6b7280' }}>
-        Subplot:{' '}
-        <Link to={`/subplots?highlight=${choice.subplot}`} style={{ color: '#2563eb', textDecoration: 'underline' }}>
-          {choice.subplot}
+        Attribute:{' '}
+        <Link to={`/attributes?highlight=${choice.attribute}`} style={{ color: '#2563eb', textDecoration: 'underline' }}>
+          {choice.attribute}
         </Link>
       </p>
       <OutcomeBlock label="Pass" outcome={choice.pass_outcome} bg="#dcfce7" />
