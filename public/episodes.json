@@ -1,674 +1,660 @@
 [
-  {
-    "id": "ep_001",
-    "title": "The Letters That Came Every Month",
-    "acts": [
+ {
+  "id": "ep_001",
+  "title": "One Envelope Always On Time",
+  "acts": [
+   {
+    "segments": [
+     [
       {
-        "id": "act_1",
-        "title": "The Unsent Envelope",
-        "segments": [
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "A creditor paid in his own handwriting stood at the edge of the veranda, ink-stained fingers tracing the edge of an empty envelope.",
-                "stage_directions": "The first of the month had passed. The boatman had not come."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "The veranda.",
-                "stage_directions": ""
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "Wan sat at the scribe-table, blotting sand scattered across the page.",
-                "stage_directions": "Phum repaired spectacles at the rail. Pom sat cross-legged, pen moving. Rangsri hummed into her lacquered box. Phra Kam counted breaths by the pond. The boatman stood at the steps."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_100",
-            "dialogue": "ทำหายที่ไหน — where did you lose it?",
-            "speaker": "char_boatman",
-            "stage_directions": "The boatman turned to Wan, holding up a torn envelope corner, water-stained."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_boatman",
-                "place": "place_veranda",
-                "dialogue": "The officer asked me ทำหายที่ไหน — where did you lose it? — like I’d dropped a coin wrapped in brown paper.",
-                "stage_directions": "He handed over a damp bundle tied with twine."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "Mae’s reply sat in my hand, its creases sharp.",
-                "stage_directions": "Wan did not look up."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_101",
-            "dialogue": "สนใจแค่ว่า — only interested in whether the letter went.",
-            "speaker": "char_phum",
-            "stage_directions": "Phum looked up from his lens."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_phum",
-                "place": "place_veranda",
-                "dialogue": "He’s only interested in the envelopes with money. สนใจแค่ว่า.",
-                "stage_directions": "His voice was low, even."
-              },
-              {
-                "character": "char_sangwan",
-                "place": "place_veranda",
-                "dialogue": "To my respected mother, the third of the month approaches. Your dutiful son awaits your reply.",
-                "stage_directions": "He recited it softly, as if proofreading."
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "line": {
-            "character": "char_pricha",
-            "place": "place_veranda",
-            "dialogue": "The officer has the outgoing sack. Mae writes she hasn’t received. She asks why. What do we say?",
-            "stage_directions": "Lek places the letter on the scribe-table. All turn to Wan, who stands at the scribe-table, blotting sand in hand."
-          },
-          "choices": [
-            {
-              "description": "Write the apology letter to keep the remittance going as scheduled.",
-              "difficulty": "easy",
-              "attribute": "attr_ledger",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I wrote the lines. Wan checked the date, the salutation, the amount.",
-                  "stage_directions": "He handed me four satang for the page."
-                },
-                "attribute": "attr_ledger",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I hesitated. Wan turned the page over, blank side up.",
-                  "stage_directions": "The pen lay idle."
-                },
-                "attribute": "attr_ledger",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Refuse to write the letter and let Wan face the delay directly.",
-              "difficulty": "medium",
-              "attribute": "attr_word_hoard",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I said the letter must go with the sack. Wan’s hand tightened on the sand jar.",
-                  "stage_directions": "He did not speak."
-                },
-                "attribute": "attr_word_hoard",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I opened my mouth, then closed it. Wan poured fresh sand.",
-                  "stage_directions": "The jar rattled like bones."
-                },
-                "attribute": "attr_word_hoard",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Send the boatman back to the lock with a sealed apology.",
-              "difficulty": "hard",
-              "attribute": "attr_heart_water",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I paid the boatman extra. He took the envelope without a word.",
-                  "stage_directions": "The boat groaned as it turned."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I offered the fare. The boatman shook his head.",
-                  "stage_directions": "He stepped back onto the dock."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 0
-              }
-            }
-          ]
-        }
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "Pricha — Lek to the whole landing — stood with his pen poised over the day’s ledger, the silver letter’s absence already a debt in the air.",
+       "stage_directions": ""
       },
       {
-        "id": "act_2",
-        "title": "The Blocked Sack",
-        "segments": [
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pricha",
-                "place": "place_letter_writers_landing",
-                "dialogue": "The canal's broker of other sons' devotion walked the steps to the landing, inkstone in hand.",
-                "stage_directions": "Lek, Wan, Phum, the boatman, Pom, and Rangsri moved down the path. The landing waited, silent."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_letter_writers_landing",
-                "dialogue": "The pigeonhole rack held no new envelopes. The old women sat on the reading bench, silent.",
-                "stage_directions": "The air smelled of damp paper and waiting. A single brass weight sat in the rack's center slot — 15 baht, pledged."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_letter_writers_landing",
-                "dialogue": "The boatman’s boat was tied at the steps, empty.",
-                "stage_directions": "No sack had come down from the lock."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_102",
-            "dialogue": "คุณจะเสียใจ — you'll regret it.",
-            "speaker": "char_phum",
-            "stage_directions": "He looked at Wan, then at the lock."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_phum",
-                "place": "place_letter_writers_landing",
-                "dialogue": "Push him, and you’ll regret it. คุณจะเสียใจ.",
-                "stage_directions": "Phum adjusted his lens, voice low."
-              },
-              {
-                "character": "char_sangwan",
-                "place": "place_letter_writers_landing",
-                "dialogue": "To my respected mother, your dutiful son writes: the waters are high. The boat delayed.",
-                "stage_directions": "Wan dictated to no one, pen poised over scrap paper."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_103",
-            "dialogue": "ขอบคุณที่เป็นห่วง — thanks for worrying.",
-            "speaker": "char_sangwan",
-            "stage_directions": "He said it flatly, not looking up."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_sangwan",
-                "place": "place_letter_writers_landing",
-                "dialogue": "ขอบคุณที่เป็นห่วง. But the letter must go.",
-                "stage_directions": "He did not look up."
-              },
-              {
-                "character": "char_pornchai",
-                "place": "place_letter_writers_landing",
-                "dialogue": "Delay sits heavier than debt.",
-                "stage_directions": "Pom stood at the back, steel pen in hand, not writing."
-              },
-              {
-                "character": "char_rangsri",
-                "place": "place_letter_writers_landing",
-                "dialogue": "The box hums for a laugh that hasn’t come.",
-                "stage_directions": "She placed a vial labeled *A joke not repeated* on the table."
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "line": {
-            "character": "char_pricha",
-            "place": "place_letter_writers_landing",
-            "dialogue": "The officer has the sack. The letter is evidence. We cannot send another. What do we do?",
-            "stage_directions": "Wan’s fingers tapped the inkstone — three taps, like a due date."
-          },
-          "choices": [
-            {
-              "description": "Write a second letter to send when the sack is released.",
-              "difficulty": "easy",
-              "attribute": "attr_ledger",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I wrote the second letter. Wan checked the paper's heft. Wan slipped the bracelet from his coat and turned toward the pawnshop.",
-                  "stage_directions": "He folded it precisely, creasing each edge twice."
-                },
-                "attribute": "attr_ledger",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I reached for the pen. Wan covered the paper with his hand.",
-                  "stage_directions": "The inkstone remained closed."
-                },
-                "attribute": "attr_ledger",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Confront the officer at the lock and demand the mail sack back.",
-              "difficulty": "medium",
-              "attribute": "attr_deference",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I walked to the lock. The officer returned the sack, smirking. Wan slipped the bracelet from his coat and turned toward the pawnshop.",
-                  "stage_directions": "The seal was broken."
-                },
-                "attribute": "attr_deference",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I opened my mouth. The officer turned his back.",
-                  "stage_directions": "The boatman untied his line."
-                },
-                "attribute": "attr_deference",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Go to the pawnshop to raise funds for a new delivery.",
-              "difficulty": "hard",
-              "attribute": "attr_word_hoard",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I followed Wan down the path. The pawnshop bell chimed.",
-                  "stage_directions": "The party moved toward the canal market."
-                },
-                "attribute": "attr_word_hoard",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_letter_writers_landing",
-                  "dialogue": "I suggested the pawnshop. Wan did not move.",
-                  "stage_directions": "The inkstone stayed closed."
-                },
-                "attribute": "attr_word_hoard",
-                "delta": 0
-              }
-            }
-          ]
-        }
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "The veranda breathed in the heat, its floorboards silvered with years of bare feet and temple dust.",
+       "stage_directions": ""
       },
       {
-        "id": "act_3",
-        "title": "The Gold Weight",
-        "segments": [
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pricha",
-                "place": "place_pawnshop",
-                "dialogue": "The gold bracelet entered the pawnshop on the twenty-eighth, pledged for 15 baht.",
-                "stage_directions": "Wan placed the bracelet on the glass. The appraiser did not look up."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_pawnshop",
-                "dialogue": "The pawnshop.",
-                "stage_directions": ""
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_pawnshop",
-                "dialogue": "Lek, Wan, Phum, the boatman, Pom, and Rangsri stood at the counter.",
-                "stage_directions": "The appraiser lifted the bracelet with brass tongs."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_104",
-            "dialogue": "นั่นไง — there it is!",
-            "speaker": "char_pawnshop_appraiser",
-            "stage_directions": "He pointed to the ledger entry: '28th — bracelet, 15 baht. 3rd — redeemed.'"
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pawnshop_appraiser",
-                "place": "place_pawnshop",
-                "dialogue": "นั่นไง — there it is. Same as every month.",
-                "stage_directions": "He spoke to the gold on the scales."
-              },
-              {
-                "character": "char_sangwan",
-                "place": "place_pawnshop",
-                "dialogue": "To my respected mother, your dutiful son writes: the debt is due. The gold returns.",
-                "stage_directions": "Wan’s voice was precise, like pricing a page."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_105",
-            "dialogue": "เขาวางสายไปแล้ว — he hung up.",
-            "speaker": "char_phum",
-            "stage_directions": "Phum murmured it, lens on the appraiser’s hands."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_phum",
-                "place": "place_pawnshop",
-                "dialogue": "The district speaking-tube just went silent. เขาวางสายไปแล้ว — he hung up.",
-                "stage_directions": "He did not look up."
-              },
-              {
-                "character": "char_pornchai",
-                "place": "place_pawnshop",
-                "dialogue": "Gold weighs the same whether pledged or paid.",
-                "stage_directions": "Pom watched, pen still."
-              },
-              {
-                "character": "char_rangsri",
-                "place": "place_pawnshop",
-                "dialogue": "The box hums for a sound that hasn’t come.",
-                "stage_directions": "She placed a vial labeled *The first sip after fasting* on the counter."
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "line": {
-            "character": "char_pricha",
-            "place": "place_pawnshop",
-            "dialogue": "The appraiser offers 15 baht. The officer holds the letter. We can bribe, wait, or redeem early. What do we do?",
-            "stage_directions": "Wan’s fingers tapped the counter — three taps, like a due date."
-          },
-          "choices": [
-            {
-              "description": "Accept the 15 baht and bribe the officer to release the letter.",
-              "difficulty": "easy",
-              "attribute": "attr_ledger",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I took the note. The gold vanished into the drawer.",
-                  "stage_directions": "Wan did not look at the bracelet."
-                },
-                "attribute": "attr_ledger",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I reached for the note. The appraiser closed the drawer.",
-                  "stage_directions": "The scale remained on the counter."
-                },
-                "attribute": "attr_ledger",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Wait until the third to redeem the bracelet and send a new letter.",
-              "difficulty": "medium",
-              "attribute": "attr_deference",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I closed the ledger. 'We wait,' I said.",
-                  "stage_directions": "Wan nodded once, then left without a word."
-                },
-                "attribute": "attr_deference",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I suggested waiting. Wan’s hand trembled on the door.",
-                  "stage_directions": "He did not leave."
-                },
-                "attribute": "attr_deference",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Redeem the bracelet now and send the money through the boatman.",
-              "difficulty": "hard",
-              "attribute": "attr_heart_water",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I paid the interest. The appraiser slid the bracelet back.",
-                  "stage_directions": "Wan placed it in his coat, not on his wrist."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_pawnshop",
-                  "dialogue": "I counted the baht. The appraiser shook his head.",
-                  "stage_directions": "The drawer stayed closed."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 0
-              }
-            }
-          ]
-        }
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "The boatman — the mail carrier, just arrived from the lock — held a damp cloth bundle, wanting to be believed.",
+       "stage_directions": ""
       },
       {
-        "id": "act_4",
-        "title": "The Coming Boat",
-        "segments": [
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "The letters that came every month were no longer due, and Wan stood at the rail, coat buttoned tight.",
-                "stage_directions": "The party had returned to the veranda. Wan, Lek, Phum, Pom, Rangsri, Phra Kam, Kamnan Noi, and the boatman were present."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "To my respected mother, your dutiful son writes: the boat comes. The gold is spent. The debt remains.",
-                "stage_directions": "Wan spoke to the water. No envelope. No pen."
-              },
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "The sun struck the water.",
-                "stage_directions": "No one moved toward the steps."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_106",
-            "dialogue": "เข้ามาเลย — come in.",
-            "speaker": "char_pricha",
-            "stage_directions": "Lek spoke to the empty air where the boat would dock."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_pricha",
-                "place": "place_veranda",
-                "dialogue": "เข้ามาเลย. There’s tea.",
-                "stage_directions": "He stepped to the rail."
-              },
-              {
-                "character": "char_phra_kam",
-                "place": "place_veranda",
-                "dialogue": "The pond holds what is given. It does not ask for return.",
-                "stage_directions": "He placed a grain of rice in the water. It sank."
-              },
-              {
-                "character": "char_phum",
-                "place": "place_veranda",
-                "dialogue": "The unsaid lines grow heavier with time.",
-                "stage_directions": "He added a mirror shard to his ledger."
-              }
-            ]
-          },
-          {
-            "type": "tag",
-            "tag": "tag_107",
-            "dialogue": "น่าสนใจดีนะ — that's interesting.",
-            "speaker": "char_mor_duang",
-            "stage_directions": "Kamnan Noi stepped onto the veranda, chronometer in hand."
-          },
-          {
-            "type": "narrative",
-            "lines": [
-              {
-                "character": "char_mor_duang",
-                "place": "place_veranda",
-                "dialogue": "The hour of her coming matches the king’s last breath. น่าสนใจดีนะ.",
-                "stage_directions": "He adjusted his compass to the sun’s angle."
-              },
-              {
-                "character": "char_sangwan",
-                "place": "place_veranda",
-                "dialogue": "To the stars, to the water, to the unclaimed hand: your dutiful son writes. The third of the month comes. The gold returns. The letter goes.",
-                "stage_directions": "He spoke to the horizon. No one answered."
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "line": {
-            "character": "char_pricha",
-            "place": "place_veranda",
-            "dialogue": "She is coming. The letter is gone. The gold is spent. What do we do?",
-            "stage_directions": "Wan stood at the rail, coat buttoned tight."
-          },
-          "choices": [
-            {
-              "description": "Prepare the house with food and a place for her to rest.",
-              "difficulty": "easy",
-              "attribute": "attr_deference",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I laid out the mat. The kettle sang by noon.",
-                  "stage_directions": "Wan stood at the door, watching the bend."
-                },
-                "attribute": "attr_deference",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I fetched the mat. It remained rolled.",
-                  "stage_directions": "The kettle stayed cold."
-                },
-                "attribute": "attr_deference",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Meet her boat at the bend before she reaches the landing.",
-              "difficulty": "medium",
-              "attribute": "attr_heart_water",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I walked to the bend. She saw me and slowed the oar.",
-                  "stage_directions": "Wan followed, ten paces behind."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I started down the path. My feet would not carry me.",
-                  "stage_directions": "The boat rounded the bend alone."
-                },
-                "attribute": "attr_heart_water",
-                "delta": 0
-              }
-            },
-            {
-              "description": "Let Wan meet her alone, with no one else present.",
-              "difficulty": "hard",
-              "attribute": "attr_ledger",
-              "pass_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I turned away. 'This is not for us,' I said.",
-                  "stage_directions": "Wan walked to the steps. The boat touched wood."
-                },
-                "attribute": "attr_ledger",
-                "delta": 1
-              },
-              "fail_outcome": {
-                "line": {
-                  "character": "char_pricha",
-                  "place": "place_veranda",
-                  "dialogue": "I hesitated at the rail. The boat was close.",
-                  "stage_directions": "Wan turned and said, 'Go back.'"
-                },
-                "attribute": "attr_ledger",
-                "delta": 0
-              }
-            }
-          ]
-        }
+       "character": "char_boatman",
+       "place": "place_veranda",
+       "dialogue": "I was held at the lock, Teacher. The envelope never left my bag.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_pricha",
+       "place": "place_veranda",
+       "dialogue": "Mae writes รออยู่ — still waiting — and asks why the money stopped.",
+       "stage_directions": "sets down his pen, voice tight"
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "Sangwan — Wan — the canal’s letter-writer, fingers a blank sheet, wanting the debt to stay invisible.",
+       "stage_directions": ""
       }
-    ]
-  }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_254"
+     },
+     [
+      {
+       "character": "char_sangwan",
+       "place": "place_veranda",
+       "dialogue": "It will be on time.",
+       "stage_directions": "folds the blank sheet into quarters"
+      },
+      {
+       "character": "char_pricha",
+       "place": "place_veranda",
+       "dialogue": "ผมเดาว่า — I would guess — the rains slowed the barge again.",
+       "stage_directions": "quietly"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_083"
+     },
+     [
+      {
+       "character": "char_pricha",
+       "place": "place_veranda",
+       "dialogue": "Then who writes the apology? Mae expects Nim’s hand.",
+       "stage_directions": "looks at Wan"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_veranda",
+       "dialogue": "You do. You’ve copied clean before.",
+       "stage_directions": "slides a practice sheet toward him"
+      }
+     ]
+    ],
+    "decision": {
+     "line": {
+      "character": "char_pricha",
+      "place": "place_veranda",
+      "dialogue": "I teach true things exactly — but moving her money isn’t the same as writing in another’s hand.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Write the apology letter in your own hand, telling Mae the truth",
+       "difficulty": "easy",
+       "attribute": "attr_heart_water",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I wrote it plainly — the boat was delayed, the letter delayed with it.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I wrote it plainly — and Wan folded it away without sealing.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": -1
+       }
+      },
+      {
+       "description": "Copy Nim’s hand carefully using Wan’s practice sheet as a guide",
+       "difficulty": "medium",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I copied the hand — and Wan checked each curve against the rack.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I copied the hand — and the boatman saw the tremor in the 'N'.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Pay the postage and fee from your own purse so Mae's money goes out tonight without copying any hand",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I paid it — and the envelope left with the evening tide, no signature needed.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I offered — and Wan refused, saying the hand was the debt.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "segments": [
+     [
+      {
+       "character": "char_narrator",
+       "place": "place_letter_writers_landing",
+       "dialogue": "The party moved down to the landing: Pricha, Wan, and Rangsri, who followed without a word.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_letter_writers_landing",
+       "dialogue": "Rangsri notices what people carry — today, a frayed ribbon at her wrist.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_letter_writers_landing",
+       "dialogue": "ราคาเท่าไหร่ — what's the price — For a letter that says 'apology' but keeps the hand?",
+       "stage_directions": "lays out three sheets with the same signature"
+      },
+      {
+       "character": "char_pricha",
+       "place": "place_letter_writers_landing",
+       "dialogue": "Were it for sale, it would cost a month of classes.",
+       "stage_directions": "picks up a pen"
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_letter_writers_landing",
+       "dialogue": "Wan arranged the pigeonhole rack with the precision of the brass scales, each slot holding a future salutation.",
+       "stage_directions": ""
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_167"
+     },
+     [
+      {
+       "character": "char_rangsri",
+       "place": "place_letter_writers_landing",
+       "dialogue": "กลิ่นน้ำหอม — the smell of perfume — from the paper?",
+       "stage_directions": "leans in, sniffing the edge of a sheet"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_letter_writers_landing",
+       "dialogue": "The lady Nim prefers jasmine. I keep the scent in the paper.",
+       "stage_directions": "tucks a dried petal into the margin"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_154"
+     },
+     [
+      {
+       "character": "char_pricha",
+       "place": "place_letter_writers_landing",
+       "dialogue": "One slips through, always on time — even when the hand is lent to the scales.",
+       "stage_directions": "quietly"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_letter_writers_landing",
+       "dialogue": "Always on the third. Never a day late.",
+       "stage_directions": "nods once"
+      }
+     ]
+    ],
+    "decision": {
+     "line": {
+      "character": "char_pricha",
+      "place": "place_letter_writers_landing",
+      "dialogue": "You want me called Teacher — but I can’t teach a lie and win the argument.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Insist Wan tell you why the letter was delayed before writing",
+       "difficulty": "easy",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I insisted — and Wan showed me the pawn ticket from the 28th.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I insisted — and Wan walked to the water’s edge, silent.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": -1
+       }
+      },
+      {
+       "description": "Write the letter in Nim’s hand as closely as the practice sheet allows",
+       "difficulty": "medium",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I wrote it — and Wan nodded, the first time I’ve earned it.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I wrote it — and Rangsri noticed the paper was different weight.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Challenge Wan's secrecy at the rack, telling him truth matters more than trust",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I challenged him — and the silence after was deeper than the canal.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I challenged him — and he turned away, the rack between us.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "segments": [
+     [
+      {
+       "character": "char_narrator",
+       "place": "place_pawnshop",
+       "dialogue": "เช้านี้ — this morning — the appraiser set the brass scales to zero, the same bracelet coiled in red string on the tray.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_pawnshop",
+       "dialogue": "Eighty-four thousand baht in weight, he said once — weight, never value — and the gold had passed through his hands every 28th for four years.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_pawnshop_appraiser",
+       "place": "place_pawnshop",
+       "dialogue": "The thing is lent, and lent things come back.",
+       "stage_directions": "taps the scale"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_pawnshop",
+       "dialogue": "It returns on the third. Always.",
+       "stage_directions": "hands over the pink ticket"
+      },
+      {
+       "character": "char_pricha",
+       "place": "place_pawnshop",
+       "dialogue": "Then the letter lives on this cycle, the boat only carries what the scales already paid for.",
+       "stage_directions": "watches the gold disappear into the cage"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_pawnshop",
+       "dialogue": "One comes, always on time — even when the hand is far from home.",
+       "stage_directions": "voice low"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_337"
+     },
+     [
+      {
+       "character": "char_pricha",
+       "place": "place_pawnshop",
+       "dialogue": "But Mae comes if this stops. And the 28th is tomorrow.",
+       "stage_directions": "folds his arms"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_pawnshop",
+       "dialogue": "ของหาย? Nothing is lost while the 28th holds.",
+       "stage_directions": "calmly"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_120"
+     },
+     [
+      {
+       "character": "char_pricha",
+       "place": "place_letter_writers_landing",
+       "dialogue": "One carries forward, always on time — even when the hand is pledged to the rack.",
+       "stage_directions": "walking back with Wan"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_letter_writers_landing",
+       "dialogue": "The rack holds the promise. That’s what matters.",
+       "stage_directions": "sits at the table"
+      }
+     ]
+    ],
+    "decision": {
+     "line": {
+      "character": "char_pricha",
+      "place": "place_letter_writers_landing",
+      "dialogue": "Merit is kept like water in the temple pond — but I can’t teach that when the source is a pawnshop.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Accept the cycle as it is, saying the merit is in the keeping",
+       "difficulty": "easy",
+       "attribute": "attr_merit_water",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I accepted it — and the weight of the bracelet matched the weight of the ink.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_merit_water",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I accepted it — but the paper still smelled of borrowed time.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_merit_water",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Teach the truth: that the money is cycled, not earned",
+       "difficulty": "medium",
+       "attribute": "attr_heart_water",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I taught it — and Wan’s hand didn’t tremble once.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I taught it — and the appraiser said the truth wasn’t worth the risk.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Refuse to participate, saying the cycle dishonors the temple’s merit",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I refused — and the silence after was the loudest lesson I’ve taught.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_letter_writers_landing",
+         "dialogue": "I refused — and Wan sealed the envelope without me.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "segments": [
+     [
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "The second letter came at dusk: Mae would come down the canal on the third — the same day the bracelet returned.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "One rides, always on time — but now the hand that reads it would see the table, the rack, the seat the lady Nim keeps in Bangkok.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "Phum — blunt, wants the canal’s debts settled plainly — sits on the bench watching.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_pricha",
+       "place": "place_veranda",
+       "dialogue": "ผมพูดตรงๆ — I speak plainly — the letter goes, but she’ll see the truth when she comes.",
+       "stage_directions": "hands the envelope to Wan"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_veranda",
+       "dialogue": "Then let her see it. The hand keeps time. The debt is paid.",
+       "stage_directions": "tucks the letter into his shirt"
+      },
+      {
+       "character": "char_phum",
+       "place": "place_veranda",
+       "dialogue": "You win the argument either way. But will she still call you son?",
+       "stage_directions": "quietly"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_197"
+     },
+     [
+      {
+       "character": "char_pricha",
+       "place": "place_veranda",
+       "dialogue": "ผมมีสอน — I have a class to teach at dawn. The salutation must go.",
+       "stage_directions": "adjusts his collar"
+      },
+      {
+       "character": "char_sangwan",
+       "place": "place_veranda",
+       "dialogue": "Then teach it with ink that holds.",
+       "stage_directions": "steps toward the path"
+      }
+     ],
+     {
+      "type": "tag",
+      "tag": "tag_041"
+     },
+     [
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "One drifts, always on time — the salutation carried down the steps, across the water, into the mouth of the sea, where the current turned it toward the sky.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "The ink did not fade. The fold did not open. The hand that wrote it never wavered.",
+       "stage_directions": ""
+      },
+      {
+       "character": "char_narrator",
+       "place": "place_veranda",
+       "dialogue": "And the canal carried the debt forward, light as breath on the water.",
+       "stage_directions": ""
+      }
+     ]
+    ],
+    "decision": {
+     "line": {
+      "character": "char_pricha",
+      "place": "place_veranda",
+      "dialogue": "They call me Teacher — but a teacher here can speak, share the lesson, or let silence teach.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Announce you’ll teach a class on letter-writing, honoring Wan’s craft",
+       "difficulty": "easy",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I announced the class — and Wan nodded from the steps.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I announced the class — but Phum said the students wouldn’t come.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": -1
+       }
+      },
+      {
+       "description": "Challenge Wan to teach the class with you, sharing the lesson",
+       "difficulty": "medium",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I challenged him — and he agreed, the first lesson at dawn.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I challenged him — and he said the hand doesn’t teach, only writes.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Say nothing, letting Wan’s silence be the final lesson of the day",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I said nothing — and Wan, at the steps, looked back once and touched the envelope in his shirt.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I said nothing — and the silence ate the lesson whole.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 0
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
 ]

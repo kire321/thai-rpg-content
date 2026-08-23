@@ -42,3 +42,10 @@
 ## Quality discipline
 30. The five qualities (wonder, empathy, moral ambiguity, fatalism, irony) are INSPIRED, never named or discussed in the text. If flat, add a beat that produces it — never commentary.
 31. Anti-AI discipline: no "not X but Y" habit; few similes; no em-dash chains; no narrator verdicts after rendered moments; no high-signal AI vocabulary.
+
+## Editorial gate (reviewers, before anything reaches the user)
+32. BASIC SENSE: read the draft as a naive reader. Can you state the plot in one sentence after scene 1? Do you know who each speaking character is, what they're doing there, and what they want? Does every line follow from the previous one? If any answer is NO, the draft is REJECTED without further review — send back specific incoherences.
+33. Narration is narrator-voiced only; outcomes are first-person character dialogue; no character announces locations; tags worked in are from the assigned shuffled set, not near-duplicates of one family.
+34. IDENTITY & INTRODUCTIONS: the PC's full name and nickname are bridged at first mention and one name is used consistently thereafter; every speaking character is introduced before or with their first line; act 1 segment 1 has at most 3 speakers.
+35. NO ORPHAN LINES: every line responds to something already on the page; one-word non-sequiturs ("Refused.", "Laughter at noon.") are rejections unless the antecedent is explicit in the preceding lines.
+36. LINE COUNTS EXACT: segment 1 = 4-6 lines, segments 2-3 = 2-3 lines; tag phrases sit inside the segment their tag follows; ZERO "not X but Y" constructions; similes only from the episode's own material.
