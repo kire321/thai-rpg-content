@@ -1,116 +1,116 @@
 [
-  {
-    "id": "place_veranda",
-    "name": "The School Veranda",
-    "picture": "/places/veranda.png",
-    "description": "The temple school's open veranda by the pond, where the village brings what it cannot carry alone: letters to be read, money to be held, ceremonies to be arranged, disputes to be witnessed. The same circle is always sitting there."
-  },
-  {
-    "id": "place_pawnshop",
-    "name": "The Pawnshop",
-    "picture": "/places/pawnshop.png",
-    "description": "A wooden shophouse at the canal landing with brass scales, a caged counter, and bundles of other people's gold tied in red string. Behind the appraiser, a wall of hooks hung with pink tickets, each stamped with the shop's chop. Gold comes in here and does not always come out."
-  },
-  {
-    "id": "place_ash_urn",
-    "name": "The Ash Urn",
-    "picture": "/places/ash_urn.png",
-    "description": "A small brick alcove beside the crematorium wall, open to the canal breeze. Three unmarked jars sit on a shelf, wrapped in faded cloth. A single spoon rests on the sill, rusted like old blood."
-  },
-  {
-    "id": "place_charcoal_hearth",
-    "name": "The Charcoal Hearth",
-    "picture": "/places/charcoal_hearth.png",
-    "description": "A sunken cooking pit behind the communal kitchen, lined with cracked clay bricks. Women take turns stirring buried coals with iron rods, slow-cooking rice cakes overnight. Smoke rises in thin, straight columns. No fire burns openly—only embers, held below breath-level, banked beneath ash."
-  },
-  {
-    "id": "place_donation_mirror",
-    "name": "The Donation Mirror",
-    "picture": "/places/donation_mirror.png",
-    "description": "A pavilion built of teak and broken glass, standing on stilts above the blackwater. Donors place offerings on a floating tray; their reflections ripple back, distorted. No monk receives them — only a brass funnel that drains offerings into the canal."
-  },
-  {
-    "id": "place_funeral_parlor",
-    "name": "The Funeral Parlor",
-    "picture": "/places/funeral_parlor.png",
-    "description": "A low wooden hall with paper lanterns hanging at uneven heights. Bamboo racks hold unfinished coffins. A clock ticks behind the counter, but all times written in red ink are crossed out and rewritten in black. No one speaks above a whisper, not from reverence, but because the timekeeper is hard of hearing."
-  },
-  {
-    "id": "place_grammar_mill",
-    "name": "The Grammar Mill",
-    "picture": "/places/grammar_mill.png",
-    "description": "A shuttered school annex with a hand-cranked printing press inside. Dust coats trays of metal type—each character cast separately. Students come to set letters for village notices, but every sentence must pass the 'cooling tray' first: a wire mesh where phrases sit overnight before casting. No ink flows until morning."
-  },
-  {
-    "id": "place_laughing_well",
-    "name": "The Laughing Well",
-    "picture": "/places/laughing_well.png",
-    "description": "An old stone well ringed with smooth footprints, its water said to bubble when children lie. Offerings of marbles and ribbons hang from the pulley rope. At midday, someone always drops a pebble and waits — not for sound, but for echo."
-  },
-  {
-    "id": "place_letter_writers_landing",
-    "name": "The Letter-Writer's Landing",
-    "picture": "/places/letter_writers_landing.png",
-    "description": "A stretch of canal steps where an old man keeps a folding table, an inkstone, and a tin box of pens, and writes letters for anyone who cannot. Behind him a wooden rack of pigeonholes holds envelopes, some fat with folded banknotes, some gone soft and grey from waiting. On mail days the boat ties up at the bottom step and the whole landing fills with people who have come to hear their letters read aloud. The letter-writer charges by the page, but everyone knows he charges more for the ones that must sound dutiful."
-  },
-  {
-    "id": "place_mirror_mender",
-    "name": "The Mirror Mender",
-    "picture": "/places/mirror_mender.png",
-    "description": "A narrow stall built into the temple wall’s crack, lit by reflected sunlight. Cracked mirrors lean on sandbags. An old woman taps silver leaf over fissures, sealing them with breath. Shards are stored in clay jars labeled by direction."
-  },
-  {
-    "id": "place_rain_gauge_house",
-    "name": "The Rain Gauge House",
-    "picture": "/places/rain_gauge_house.png",
-    "description": "A narrow, tin-roofed shed by the canal’s bend, where a glass column rises through the ceiling to catch rainfall. A brass plaque marks the official start of each monsoon. Villagers come to check if planting can begin, but no one touches the gauge—only the official may read it."
-  },
-  {
-    "id": "place_rice_counter",
-    "name": "The Rice Counter",
-    "picture": "/places/rice_counter.png",
-    "description": "A low wooden platform at the edge of the paddy fields where farmers gather before dawn. A ledger lies open under a lacquered lid, its pages filled with tick marks and rice grains pressed between sheets. A single brass bell hangs from a post, rung only when a sack is weighed."
-  },
-  {
-    "id": "place_rice_ledger",
-    "name": "The Rice Ledger",
-    "picture": "/places/rice_ledger.png",
-    "description": "A low-slung tax office beside the canal, its wooden ledger open under a glass case. Villagers line up to press thumbprints beside rice tallies, their voices hushed as if in temple. A government clerk stamps each entry with a red ink block shaped like a grain silo. The air smells of mildew and boiled ink."
-  },
-  {
-    "id": "place_river_post",
-    "name": "The River Post",
-    "picture": "/places/river_post.png",
-    "description": "A low wooden platform jutting into the canal, shaded by a rusted zinc roof. Three bamboo poles hold clipped envelopes, wrapped in oilskin or tied with rattan. A boy in faded blues waits all morning, never speaking unless spoken to."
-  },
-  {
-    "id": "place_salt_store",
-    "name": "The Salt Store",
-    "picture": "/places/salt_store.png",
-    "description": "Three sunken brick bins filled with coarse salt — white, grey, and pink. Women come barefoot, trading rice chits for grain. A ledger lies open under glass, entries made in red chalk. No prices are spoken aloud."
-  },
-  {
-    "id": "place_silent_pond",
-    "name": "The Silent Pond",
-    "picture": "/places/silent_pond.png",
-    "description": "A lotus pool behind the abandoned rice warehouse, its surface never broken by wind or fish. Offerings sink instantly. A single spoon rests at the bottom, visible through the water. Children dare each other to retrieve it."
-  },
-  {
-    "id": "place_spirit_hall",
-    "name": "The Spirit Hall",
-    "picture": "/places/spirit_hall.png",
-    "description": "A narrow building behind the market with red-lacquered doors always ajar. Inside, rows of small shelves hold folded paper houses, toy drums, and vials of scented oil. A curtain of silver bells separates the front room from the back, where contracts are written in disappearing ink."
-  },
-  {
-    "id": "place_wai_khru_mound",
-    "name": "The Wai Khru Mound",
-    "picture": "/places/wai_khru_mound.png",
-    "description": "A raised earth platform beneath twin frangipani trees where students place offerings to teachers: incense, betel, ink cakes. Parents bring children once a year to tap the teacher’s sandal with a ceremonial pen. The roots are said to drink merit."
-  },
-  {
-    "id": "place_water_blessing_ghat",
-    "name": "The Water Blessing Ghat",
-    "picture": "/places/water_blessing_ghat.png",
-    "description": "Three stone steps descend into the canal, worn smooth by generations of feet and boat prows. At dawn, mothers bring infants to be named under floating lotus lamps. A brass plaque marks the water level at each royal coronation. No clocks are allowed, but the temple drum strikes every 13 minutes."
-  }
+ {
+  "id": "place_veranda",
+  "name": "The School Veranda",
+  "picture": "/places/veranda.png",
+  "description": "The temple school's open veranda by the pond, where the village brings what it cannot carry alone: letters to be read, money to be held, ceremonies to be arranged, disputes to be witnessed. The same circle is always sitting there."
+ },
+ {
+  "id": "place_pawnshop",
+  "name": "The Pawnshop",
+  "picture": "/places/pawnshop.png",
+  "description": "A wooden shophouse at the canal landing with brass scales, a caged counter, and bundles of other people's gold tied in red string. Behind the appraiser, a wall of hooks hung with pink tickets, each stamped with the shop's chop. Gold comes in here and does not always come out."
+ },
+ {
+  "id": "place_ash_urn",
+  "name": "The Ash Urn",
+  "picture": "/places/ash_urn.png",
+  "description": "A small brick alcove beside the crematorium wall, open to the canal breeze. Three unmarked jars sit on a shelf, wrapped in faded cloth. A single spoon rests on the sill, rusted like old blood."
+ },
+ {
+  "id": "place_charcoal_hearth",
+  "name": "The Charcoal Hearth",
+  "picture": "/places/charcoal_hearth.png",
+  "description": "A sunken cooking pit behind the communal kitchen, lined with cracked clay bricks. Women take turns stirring buried coals with iron rods, slow-cooking rice cakes overnight. Smoke rises in thin, straight columns. No fire burns openly—only embers, held below breath-level, banked beneath ash."
+ },
+ {
+  "id": "place_donation_mirror",
+  "name": "The Donation Mirror",
+  "picture": "/places/donation_mirror.png",
+  "description": "A pavilion built of teak and broken glass, standing on stilts above the blackwater. Donors place offerings on a floating tray; their reflections ripple back, distorted. No monk receives them — only a brass funnel that drains offerings into the canal."
+ },
+ {
+  "id": "place_funeral_parlor",
+  "name": "The Funeral Parlor",
+  "picture": "/places/funeral_parlor.png",
+  "description": "A low wooden hall with paper lanterns hanging at uneven heights. Bamboo racks hold unfinished coffins. A clock ticks behind the counter, but all times written in red ink are crossed out and rewritten in black. No one speaks above a whisper, not from reverence, but because the timekeeper is hard of hearing."
+ },
+ {
+  "id": "place_grammar_mill",
+  "name": "The Grammar Mill",
+  "picture": "/places/grammar_mill.png",
+  "description": "A shuttered school annex with a hand-cranked printing press inside. Dust coats trays of metal type—each character cast separately. Students come to set letters for village notices, but every sentence must pass the 'cooling tray' first: a wire mesh where phrases sit overnight before casting. No ink flows until morning."
+ },
+ {
+  "id": "place_laughing_well",
+  "name": "The Laughing Well",
+  "picture": "/places/laughing_well.png",
+  "description": "An old stone well ringed with smooth footprints, its water said to bubble when children lie. Offerings of marbles and ribbons hang from the pulley rope. At midday, someone always drops a pebble and waits — not for sound, but for echo."
+ },
+ {
+  "id": "place_letter_writers_landing",
+  "name": "The Letter-Writer's Landing",
+  "picture": "/places/letter_writers_landing.png",
+  "description": "A stretch of canal steps where an old man keeps a folding table, an inkstone, and a tin box of pens, and writes letters for anyone who cannot. Behind him a wooden rack of pigeonholes holds envelopes, some fat with folded banknotes, some gone soft and grey from waiting. On mail days the boat ties up at the bottom step and the whole landing fills with people who have come to hear their letters read aloud. The letter-writer charges by the page, but everyone knows he charges more for the ones that must sound dutiful."
+ },
+ {
+  "id": "place_mirror_mender",
+  "name": "The Mirror Mender",
+  "picture": "/places/mirror_mender.png",
+  "description": "A narrow stall built into the temple wall’s crack, lit by reflected sunlight. Cracked mirrors lean on sandbags. An old woman taps silver leaf over fissures, sealing them with breath. Shards are stored in clay jars labeled by direction."
+ },
+ {
+  "id": "place_rain_gauge_house",
+  "name": "The Rain Gauge House",
+  "picture": "/places/rain_gauge_house.png",
+  "description": "A narrow, tin-roofed shed by the canal’s bend, where a glass column rises through the ceiling to catch rainfall. A brass plaque marks the official start of each monsoon. Villagers come to check if planting can begin, but no one touches the gauge—only the official may read it."
+ },
+ {
+  "id": "place_rice_counter",
+  "name": "The Rice Counter",
+  "picture": "/places/rice_counter.png",
+  "description": "A low wooden platform at the edge of the paddy fields where farmers gather before dawn. A ledger lies open under a lacquered lid, its pages filled with tick marks and rice grains pressed between sheets. A single brass bell hangs from a post, rung only when a sack is weighed."
+ },
+ {
+  "id": "place_rice_ledger",
+  "name": "The Rice Ledger",
+  "picture": "/places/rice_ledger.png",
+  "description": "A low-slung tax office beside the canal, its wooden ledger open under a glass case. Villagers line up to press thumbprints beside rice tallies, their voices hushed as if in temple. A government clerk stamps each entry with a red ink block shaped like a grain silo. The air smells of mildew and boiled ink."
+ },
+ {
+  "id": "place_river_post",
+  "name": "The River Post",
+  "picture": "/places/river_post.png",
+  "description": "A low wooden platform jutting into the canal, shaded by a rusted zinc roof. Three bamboo poles hold clipped envelopes, wrapped in oilskin or tied with rattan. A boy in faded blues waits all morning, never speaking unless spoken to."
+ },
+ {
+  "id": "place_salt_store",
+  "name": "The Salt Store",
+  "picture": "/places/salt_store.png",
+  "description": "Three sunken brick bins filled with coarse salt — white, grey, and pink. Women come barefoot, trading rice chits for grain. A ledger lies open under glass, entries made in red chalk. No prices are spoken aloud."
+ },
+ {
+  "id": "place_silent_pond",
+  "name": "The Silent Pond",
+  "picture": "/places/silent_pond.png",
+  "description": "A lotus pool behind the abandoned rice warehouse, its surface never broken by wind or fish. Offerings sink instantly. A single spoon rests at the bottom, visible through the water. Children dare each other to retrieve it."
+ },
+ {
+  "id": "place_spirit_hall",
+  "name": "The Spirit Hall",
+  "picture": "/places/spirit_hall.png",
+  "description": "A narrow building behind the market with red-lacquered doors always ajar. Inside, rows of small shelves hold folded paper houses, toy drums, and vials of scented oil. A curtain of silver bells separates the front room from the back, where contracts are written in disappearing ink."
+ },
+ {
+  "id": "place_wai_khru_mound",
+  "name": "The Wai Khru Mound",
+  "picture": "/places/wai_khru_mound.png",
+  "description": "A raised earth platform beneath twin frangipani trees where students place offerings to teachers: incense, betel, ink cakes. Parents bring children once a year to tap the teacher’s sandal with a ceremonial pen. The roots are said to drink merit."
+ },
+ {
+  "id": "place_water_blessing_ghat",
+  "name": "The Water Blessing Ghat",
+  "picture": "/places/water_blessing_ghat.png",
+  "description": "Three stone steps descend into the canal, worn smooth by generations of feet and boat prows. At dawn, mothers bring infants to be named under floating lotus lamps. A brass plaque marks the water level at each royal coronation. No clocks are allowed, but the temple drum strikes every 13 minutes."
+ }
 ]

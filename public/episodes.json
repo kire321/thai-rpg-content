@@ -5,80 +5,89 @@
   "acts": [
    {
     "segments": [
-     [
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "Pricha — Lek to the whole landing — stood with his pen poised over the day’s ledger, the silver letter’s absence already a debt in the air.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "The veranda breathed in the heat, its floorboards silvered with years of bare feet and temple dust.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "The boatman — the mail carrier, just arrived from the lock — held a damp cloth bundle, wanting to be believed.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_boatman",
-       "place": "place_veranda",
-       "dialogue": "I was held at the lock, Teacher. The envelope never left my bag.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_pricha",
-       "place": "place_veranda",
-       "dialogue": "Mae writes รออยู่ — still waiting — and asks why the money stopped.",
-       "stage_directions": "sets down his pen, voice tight"
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "Sangwan — Wan — the canal’s letter-writer, fingers a blank sheet, wanting the debt to stay invisible.",
-       "stage_directions": ""
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Pricha — Lek to the whole landing — stood with his pen poised over the day’s ledger, the silver letter’s absence already a debt in the air.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The veranda breathed in the heat, its floorboards silvered with years of bare feet and temple dust.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The boatman — the mail carrier, just arrived from the lock — held a damp cloth bundle, wanting to be believed.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_boatman",
+        "place": "place_veranda",
+        "dialogue": "I was held at the lock, Teacher. The envelope never left my bag.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "Mae writes รออยู่ — still waiting — and asks why the money stopped.",
+        "stage_directions": "sets down his pen, voice tight"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Sangwan — Wan — the canal’s letter-writer, fingers a blank sheet, wanting the debt to stay invisible.",
+        "stage_directions": ""
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_254"
      },
-     [
-      {
-       "character": "char_sangwan",
-       "place": "place_veranda",
-       "dialogue": "It will be on time.",
-       "stage_directions": "folds the blank sheet into quarters"
-      },
-      {
-       "character": "char_pricha",
-       "place": "place_veranda",
-       "dialogue": "ผมเดาว่า — I would guess — the rains slowed the barge again.",
-       "stage_directions": "quietly"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "It will be on time.",
+        "stage_directions": "folds the blank sheet into quarters"
+       },
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "ผมเดาว่า — I would guess — the rains slowed the barge again.",
+        "stage_directions": "quietly"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_083"
      },
-     [
-      {
-       "character": "char_pricha",
-       "place": "place_veranda",
-       "dialogue": "Then who writes the apology? Mae expects Nim’s hand.",
-       "stage_directions": "looks at Wan"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_veranda",
-       "dialogue": "You do. You’ve copied clean before.",
-       "stage_directions": "slides a practice sheet toward him"
-      }
-     ]
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "Then who writes the apology? Mae expects Nim’s hand.",
+        "stage_directions": "looks at Wan"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "You do. You’ve copied clean before.",
+        "stage_directions": "slides a practice sheet toward him"
+       }
+      ]
+     }
     ],
     "decision": {
      "line": {
@@ -164,78 +173,89 @@
        }
       }
      ]
-    }
+    },
+    "id": "act_1",
+    "title": "The Missing Silver Letter"
    },
    {
     "segments": [
-     [
-      {
-       "character": "char_narrator",
-       "place": "place_letter_writers_landing",
-       "dialogue": "The party moved down to the landing: Pricha, Wan, and Rangsri, who followed without a word.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_letter_writers_landing",
-       "dialogue": "Rangsri notices what people carry — today, a frayed ribbon at her wrist.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_letter_writers_landing",
-       "dialogue": "ราคาเท่าไหร่ — what's the price — For a letter that says 'apology' but keeps the hand?",
-       "stage_directions": "lays out three sheets with the same signature"
-      },
-      {
-       "character": "char_pricha",
-       "place": "place_letter_writers_landing",
-       "dialogue": "Were it for sale, it would cost a month of classes.",
-       "stage_directions": "picks up a pen"
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_letter_writers_landing",
-       "dialogue": "Wan arranged the pigeonhole rack with the precision of the brass scales, each slot holding a future salutation.",
-       "stage_directions": ""
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_letter_writers_landing",
+        "dialogue": "The party moved down to the landing: Pricha, Wan, and Rangsri, who followed without a word.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_letter_writers_landing",
+        "dialogue": "Rangsri notices what people carry — today, a frayed ribbon at her wrist.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_letter_writers_landing",
+        "dialogue": "ราคาเท่าไหร่ — what's the price — For a letter that says 'apology' but keeps the hand?",
+        "stage_directions": "lays out three sheets with the same signature"
+       },
+       {
+        "character": "char_pricha",
+        "place": "place_letter_writers_landing",
+        "dialogue": "Were it for sale, it would cost a month of classes.",
+        "stage_directions": "picks up a pen"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_letter_writers_landing",
+        "dialogue": "Wan arranged the pigeonhole rack with the precision of the brass scales, each slot holding a future salutation.",
+        "stage_directions": ""
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_167"
      },
-     [
-      {
-       "character": "char_rangsri",
-       "place": "place_letter_writers_landing",
-       "dialogue": "กลิ่นน้ำหอม — the smell of perfume — from the paper?",
-       "stage_directions": "leans in, sniffing the edge of a sheet"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_letter_writers_landing",
-       "dialogue": "The lady Nim prefers jasmine. I keep the scent in the paper.",
-       "stage_directions": "tucks a dried petal into the margin"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_rangsri",
+        "place": "place_letter_writers_landing",
+        "dialogue": "กลิ่นน้ำหอม — the smell of perfume — from the paper?",
+        "stage_directions": "leans in, sniffing the edge of a sheet"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_letter_writers_landing",
+        "dialogue": "The lady Nim prefers jasmine. I keep the scent in the paper.",
+        "stage_directions": "tucks a dried petal into the margin"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_154"
      },
-     [
-      {
-       "character": "char_pricha",
-       "place": "place_letter_writers_landing",
-       "dialogue": "One slips through, always on time — even when the hand is lent to the scales.",
-       "stage_directions": "quietly"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_letter_writers_landing",
-       "dialogue": "Always on the third. Never a day late.",
-       "stage_directions": "nods once"
-      }
-     ]
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_letter_writers_landing",
+        "dialogue": "One slips through, always on time — even when the hand is lent to the scales.",
+        "stage_directions": "quietly"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_letter_writers_landing",
+        "dialogue": "Always on the third. Never a day late.",
+        "stage_directions": "nods once"
+       }
+      ]
+     }
     ],
     "decision": {
      "line": {
@@ -321,84 +341,95 @@
        }
       }
      ]
-    }
+    },
+    "id": "act_2",
+    "title": "The Hand I Cannot Write"
    },
    {
     "segments": [
-     [
-      {
-       "character": "char_narrator",
-       "place": "place_pawnshop",
-       "dialogue": "เช้านี้ — this morning — the appraiser set the brass scales to zero, the same bracelet coiled in red string on the tray.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_pawnshop",
-       "dialogue": "Eighty-four thousand baht in weight, he said once — weight, never value — and the gold had passed through his hands every 28th for four years.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_pawnshop_appraiser",
-       "place": "place_pawnshop",
-       "dialogue": "The thing is lent, and lent things come back.",
-       "stage_directions": "taps the scale"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_pawnshop",
-       "dialogue": "It returns on the third. Always.",
-       "stage_directions": "hands over the pink ticket"
-      },
-      {
-       "character": "char_pricha",
-       "place": "place_pawnshop",
-       "dialogue": "Then the letter lives on this cycle, the boat only carries what the scales already paid for.",
-       "stage_directions": "watches the gold disappear into the cage"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_pawnshop",
-       "dialogue": "One comes, always on time — even when the hand is far from home.",
-       "stage_directions": "voice low"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "เช้านี้ — this morning — the appraiser set the brass scales to zero, the same bracelet coiled in red string on the tray.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "Eighty-four thousand baht in weight, he said once — weight, never value — and the gold had passed through his hands every 28th for four years.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_pawnshop_appraiser",
+        "place": "place_pawnshop",
+        "dialogue": "The thing is lent, and lent things come back.",
+        "stage_directions": "taps the scale"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_pawnshop",
+        "dialogue": "It returns on the third. Always.",
+        "stage_directions": "hands over the pink ticket"
+       },
+       {
+        "character": "char_pricha",
+        "place": "place_pawnshop",
+        "dialogue": "Then the letter lives on this cycle, the boat only carries what the scales already paid for.",
+        "stage_directions": "watches the gold disappear into the cage"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_pawnshop",
+        "dialogue": "One comes, always on time — even when the hand is far from home.",
+        "stage_directions": "voice low"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_337"
      },
-     [
-      {
-       "character": "char_pricha",
-       "place": "place_pawnshop",
-       "dialogue": "But Mae comes if this stops. And the 28th is tomorrow.",
-       "stage_directions": "folds his arms"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_pawnshop",
-       "dialogue": "ของหาย? Nothing is lost while the 28th holds.",
-       "stage_directions": "calmly"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_pawnshop",
+        "dialogue": "But Mae comes if this stops. And the 28th is tomorrow.",
+        "stage_directions": "folds his arms"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_pawnshop",
+        "dialogue": "ของหาย? Nothing is lost while the 28th holds.",
+        "stage_directions": "calmly"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_120"
      },
-     [
-      {
-       "character": "char_pricha",
-       "place": "place_letter_writers_landing",
-       "dialogue": "One carries forward, always on time — even when the hand is pledged to the rack.",
-       "stage_directions": "walking back with Wan"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_letter_writers_landing",
-       "dialogue": "The rack holds the promise. That’s what matters.",
-       "stage_directions": "sits at the table"
-      }
-     ]
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_letter_writers_landing",
+        "dialogue": "One carries forward, always on time — even when the hand is pledged to the rack.",
+        "stage_directions": "walking back with Wan"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_letter_writers_landing",
+        "dialogue": "The rack holds the promise. That’s what matters.",
+        "stage_directions": "sits at the table"
+       }
+      ]
+     }
     ],
     "decision": {
      "line": {
@@ -484,90 +515,101 @@
        }
       }
      ]
-    }
+    },
+    "id": "act_3",
+    "title": "The Scales at the Pawnshop"
    },
    {
     "segments": [
-     [
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "The second letter came at dusk: Mae would come down the canal on the third — the same day the bracelet returned.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "One rides, always on time — but now the hand that reads it would see the table, the rack, the seat the lady Nim keeps in Bangkok.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "Phum — blunt, wants the canal’s debts settled plainly — sits on the bench watching.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_pricha",
-       "place": "place_veranda",
-       "dialogue": "ผมพูดตรงๆ — I speak plainly — the letter goes, but she’ll see the truth when she comes.",
-       "stage_directions": "hands the envelope to Wan"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_veranda",
-       "dialogue": "Then let her see it. The hand keeps time. The debt is paid.",
-       "stage_directions": "tucks the letter into his shirt"
-      },
-      {
-       "character": "char_phum",
-       "place": "place_veranda",
-       "dialogue": "You win the argument either way. But will she still call you son?",
-       "stage_directions": "quietly"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The second letter came at dusk: Mae would come down the canal on the third — the same day the bracelet returned.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "One rides, always on time — but now the hand that reads it would see the table, the rack, the seat the lady Nim keeps in Bangkok.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Phum — blunt, wants the canal’s debts settled plainly — sits on the bench watching.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "ผมพูดตรงๆ — I speak plainly — the letter goes, but she’ll see the truth when she comes.",
+        "stage_directions": "hands the envelope to Wan"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "Then let her see it. The hand keeps time. The debt is paid.",
+        "stage_directions": "tucks the letter into his shirt"
+       },
+       {
+        "character": "char_phum",
+        "place": "place_veranda",
+        "dialogue": "You win the argument either way. But will she still call you son?",
+        "stage_directions": "quietly"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_197"
      },
-     [
-      {
-       "character": "char_pricha",
-       "place": "place_veranda",
-       "dialogue": "ผมมีสอน — I have a class to teach at dawn. The salutation must go.",
-       "stage_directions": "adjusts his collar"
-      },
-      {
-       "character": "char_sangwan",
-       "place": "place_veranda",
-       "dialogue": "Then teach it with ink that holds.",
-       "stage_directions": "steps toward the path"
-      }
-     ],
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "ผมมีสอน — I have a class to teach at dawn. The salutation must go.",
+        "stage_directions": "adjusts his collar"
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "Then teach it with ink that holds.",
+        "stage_directions": "steps toward the path"
+       }
+      ]
+     },
      {
       "type": "tag",
       "tag": "tag_041"
      },
-     [
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "One drifts, always on time — the salutation carried down the steps, across the water, into the mouth of the sea, where the current turned it toward the sky.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "The ink did not fade. The fold did not open. The hand that wrote it never wavered.",
-       "stage_directions": ""
-      },
-      {
-       "character": "char_narrator",
-       "place": "place_veranda",
-       "dialogue": "And the canal carried the debt forward, light as breath on the water.",
-       "stage_directions": ""
-      }
-     ]
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "One drifts, always on time — the salutation carried down the steps, across the water, into the mouth of the sea, where the current turned it toward the sky.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The ink did not fade. The fold did not open. The hand that wrote it never wavered.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "And the canal carried the debt forward, light as breath on the water.",
+        "stage_directions": ""
+       }
+      ]
+     }
     ],
     "decision": {
      "line": {
@@ -653,7 +695,9 @@
        }
       }
      ]
-    }
+    },
+    "id": "act_4",
+    "title": "One Drifts, Always On Time"
    }
   ]
  }
