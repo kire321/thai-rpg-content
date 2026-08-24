@@ -118,6 +118,35 @@ def validate():
                 if line.get('place') not in place_ids:
                     errors.append(f"Episode '{ep['id']}' act '{act_id}' lines_after references non-existent place '{line.get('place')}'")
 
+            # Check v2 segments format (narrative/tag objects) if present
+            if 'segments' in act:
+                segs = act['segments']
+                if not isinstance(segs, list) or len(segs) != 5:
+                    errors.append(f"Episode '{ep['id']}' act '{act_id}' must have exactly 5 segments (narrative/tag/narrative/tag/narrative)")
+                expected = ['narrative', 'tag', 'narrative', 'tag', 'narrative']
+                for si, seg in enumerate(segs):
+                    if not isinstance(seg, dict):
+                        errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} is a bare {type(seg).__name__}, must be an object with 'type'")
+                        continue
+                    stype = seg.get('type')
+                    if si < len(expected) and stype != expected[si]:
+                        errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has type '{stype}' (expected '{expected[si]}')")
+                    if stype == 'narrative':
+                        lines = seg.get('lines', [])
+                        lo, hi = (4, 6) if si == 0 else (2, 3)
+                        if not (lo <= len(lines) <= hi):
+                            errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has {len(lines)} lines (expected {lo}-{hi})")
+                        for line in lines:
+                            if line.get('character') not in char_ids:
+                                errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} references non-existent character '{line.get('character')}'")
+                            if line.get('place') not in place_ids:
+                                errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} references non-existent place '{line.get('place')}'")
+                            if not line.get('dialogue'):
+                                errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has a line with empty dialogue")
+                    elif stype == 'tag':
+                        if seg.get('tag') not in tag_ids:
+                            errors.append(f"Episode '{ep['id']}' act '{act_id}' references non-existent tag '{seg.get('tag')}'")
+
             # Check decision
             decision = act.get('decision', {})
             dec_line = decision.get('line', {})
