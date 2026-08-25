@@ -46,6 +46,9 @@ The prose must make all four answerable. These answers are the acceptance test; 
 What is planted (objects, schedules, signatures, silences, third-person references to "the lady" — present tense, travel-distance away) vs. what is withheld. Confirm in writing: no death-implying language anywhere ("dead", "died", "death", "ghost", "the late", "she lives in memory") — the concealed person is alive and elsewhere, always.
 
 ## TAG PLAN
+The anchor phrases are FIXED and assigned by the pipeline — use them VERBATIM, do not invent or modify them:
+{{ANCHOR_LIST}}
+
 For each of the 8 assigned tags, one bullet: the tag id and name; the exact Thai anchor phrase (Thai script — with English gloss); which act and which of the act's two tag positions it lands in (2 tags per act); and one clause on how the phrase exemplifies that tag's name. All 8 anchor phrases must be different from each other.
 
 ## HARD RULES THAT CONSTRAIN PLANNING (bind at this stage)
