@@ -1,0 +1,690 @@
+#!/usr/bin/env python3
+"""
+3-stage episode-writing pipeline driver (plan -> prose -> JSON format)
+with mechanical validation gates and a reader-comprehension probe.
+
+Stdlib + urllib only. Does NOT hand-edit generated content; it only
+re-prompts stages with deficiency notes.
+
+Usage:
+  python3 driver.py --ep-id ep_002 --foreground char_sangwan \
+      --places place_letter_writers_landing,place_pawnshop \
+      --tags tag_254,tag_083,tag_167,tag_154,tag_337,tag_120,tag_197,tag_041 \
+      --model-plan MODEL --model-prose MODEL --model-format MODEL \
+      --out /path/out.json --report /path/report.md
+"""
+
+import argparse
+import glob
+import json
+import os
+import re
+import sys
+import time
+import urllib.request
+import urllib.error
+
+WORLD_DIR = "/mnt/agents/output/world"
+REPO_PUBLIC = "/mnt/agents/thai-rpg-content/public"
+PIPELINE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROMPTS_DIR = os.path.join(PIPELINE_DIR, "prompts")
+
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# $ per 1M tokens: {"model": (prompt, completion)} — extend/override as needed.
+MODEL_PRICES = {
+    "anthropic/claude-sonnet-4": (3.0, 15.0),
+    "anthropic/claude-haiku-3.5": (0.8, 4.0),
+    "openai/gpt-4o": (2.5, 10.0),
+    "openai/gpt-4o-mini": (0.15, 0.6),
+    "google/gemini-2.5-flash": (0.3, 2.5),
+    "google/gemini-2.5-pro": (1.25, 10.0),
+    "deepseek/deepseek-chat": (0.27, 1.10),
+    "default": (1.0, 5.0),
+}
+
+MAX_TRIES = 3          # per-stage re-prompts
+MAX_RESTARTS = 2       # full plan->probe restarts after probe FAIL
+
+log_lines = []  # report buffer
+
+
+def log(msg):
+    print(msg, flush=True)
+    log_lines.append(msg)
+
+
+# ---------------------------------------------------------------- API calls
+class Usage:
+    def __init__(self):
+        self.prompt = 0
+        self.completion = 0
+        self.cost = 0.0
+
+    def add(self, model, usage):
+        p = usage.get("prompt_tokens", 0) or 0
+        c = usage.get("completion_tokens", 0) or 0
+        self.prompt += p
+        self.completion += c
+        pp, cp = MODEL_PRICES.get(model, MODEL_PRICES["default"])
+        self.cost += (p * pp + c * cp) / 1_000_000.0
+        return p, c
+
+
+def call_llm(model, system, user, temperature, max_tokens, usage, label):
+    """One OpenRouter chat completion. Returns (text, finish_reason)."""
+    key = os.environ.get("OPENROUTER_API_KEY")
+    if not key:
+        raise RuntimeError("OPENROUTER_API_KEY env var is not set")
+    # Split "SYSTEM:"/"USER:" convention used in the prompt templates.
+    payload = {
+        "model": model,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+    }
+    req = urllib.request.Request(
+        API_URL,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": "Bearer " + key,
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://localhost/thai-rpg-pipeline",
+            "X-Title": "thai-rpg-episode-pipeline",
+        },
+    )
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=600) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")[:500]
+            log(f"[api] {label}: HTTP {e.code} (attempt {attempt+1}): {body}")
+            if attempt == 2:
+                raise
+            time.sleep(5 * (attempt + 1))
+        except Exception as e:
+            log(f"[api] {label}: {type(e).__name__}: {e} (attempt {attempt+1})")
+            if attempt == 2:
+                raise
+            time.sleep(5 * (attempt + 1))
+    msg = data["choices"][0]["message"]["content"]
+    p, c = usage.add(model, data.get("usage", {}))
+    log(f"[api] {label}: model={model} tokens in={p} out={c}")
+    return msg, data["choices"][0].get("finish_reason")
+
+
+# ---------------------------------------------------------------- file input
+def read_file(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
+
+
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def find_world_file(prefix_id):
+    """char_x / place_x -> prefer <id>.md, then <id>_private.md, then <id>.json."""
+    for cand in (f"{prefix_id}.md", f"{prefix_id}_private.md", f"{prefix_id}.json"):
+        p = os.path.join(WORLD_DIR, cand)
+        if os.path.exists(p):
+            return read_file(p)
+    return None
+
+
+def load_character_text(char_id):
+    text = find_world_file(char_id)
+    if text is not None:
+        return f"### {char_id}\n{text}"
+    chars = load_json(os.path.join(REPO_PUBLIC, "characters.json"))
+    for c in chars:
+        if c.get("id") == char_id:
+            return f"### {char_id} ({c.get('name','')})\n{c.get('description','')}"
+    log(f"[warn] no data found for character {char_id}")
+    return f"### {char_id}\n(no file found)"
+
+
+def load_place_text(place_id):
+    text = find_world_file(place_id)
+    if text is not None:
+        return f"### {place_id}\n{text}"
+    places = load_json(os.path.join(REPO_PUBLIC, "places.json"))
+    for p in places:
+        if p.get("id") == place_id:
+            return f"### {place_id} ({p.get('name','')})\n{p.get('description','')}"
+    log(f"[warn] no data found for place {place_id}")
+    return f"### {place_id}\n(no file found)"
+
+
+def resolve_tags(tag_ids):
+    tags = load_json(os.path.join(REPO_PUBLIC, "tags.json"))
+    by_id = {t["id"]: t for t in tags}
+    out = []
+    for tid in tag_ids:
+        t = by_id.get(tid)
+        if t is None:
+            raise SystemExit(f"unknown tag id: {tid}")
+        out.append(f"{tid} — {t['name']}")
+    return "\n".join(out)
+
+
+def fill(template, slots):
+    out = template
+    for k, v in slots.items():
+        out = out.replace("{{%s}}" % k, v)
+    return out
+
+
+def split_sys_user(template_text):
+    """Templates start with 'SYSTEM:' ... 'USER:' sections."""
+    m = re.search(r"^USER:\s*$", template_text, re.M)
+    if m:
+        return template_text[:m.start()].replace("SYSTEM:", "", 1).strip(), template_text[m.end():].strip()
+    return "You are a helpful assistant.", template_text
+
+
+# ---------------------------------------------------------------- stage gates
+SECTION_NAMES = [
+    "STICKY SITUATION", "WHY IT MATTERS", "CENTRAL OBJECT", "ACT MAP",
+    "READER QUESTIONS", "SECRET HANDLING", "TAG PLAN",
+]
+
+
+def check_plan(plan, foreground):
+    problems = []
+    for name in SECTION_NAMES:
+        if not re.search(rf"^#{{1,4}}\s+{re.escape(name)}\b", plan, re.M):
+            problems.append(f"missing mandatory section header: '{name}'")
+    m = re.search(r"^#{1,4}\s+WHY IT MATTERS\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+    if m:
+        body = m.group(1).lower()
+        if "pricha" not in body:
+            problems.append("WHY IT MATTERS has no entry for the PC Pricha")
+        fg_name = foreground.replace("char_", "").lower()
+        if fg_name not in body and foreground not in body:
+            problems.append(f"WHY IT MATTERS has no entry for the foregrounded character ({foreground})")
+    m = re.search(r"^#{1,4}\s+CENTRAL OBJECT\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+    if m:
+        if not re.search(r"own", m.group(1), re.I):
+            problems.append("CENTRAL OBJECT does not state who owns it")
+    return problems
+
+
+BANNED_SUBSTRINGS = ["as if", "forg", "dead", "died", "death", "ghost",
+                     "the late", "not the ", "No. Only"]
+BANNED_REGEXES = [
+    (re.compile(r"\bnot\b.{0,30}\bbut\b", re.I | re.S), "'not ... but' construction"),
+    (re.compile(r"\bor\s+\w+[.?!]?\s+or\s+both", re.I), "'Or X. Or both.' fragment"),
+    (re.compile(r"(?:^|(?<=[.!?]\s))Not [A-Z]"), "sentence-opener 'Not X'"),
+]
+
+
+def extract_anchor_phrases(plan):
+    """Pull Thai-script anchor phrases out of the plan's TAG PLAN section."""
+    m = re.search(r"^#{1,4}\s+TAG PLAN\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+    text = m.group(1) if m else plan
+    phrases = []
+    for line in text.splitlines():  # never let a phrase span lines
+        phrases.extend(re.findall(r"[\u0e00-\u0e7f][\u0e00-\u0e7f \t]*[\u0e00-\u0e7f]", line))
+    # normalize whitespace, dedupe, keep order
+    seen, out = set(), []
+    for p in phrases:
+        p = re.sub(r"\s+", " ", p).strip(" —-–")
+        if p and p not in seen:
+            seen.add(p)
+            out.append(p)
+    return out
+
+
+def check_prose(prose, plan):
+    problems = []
+    low = prose.lower()
+    for s in BANNED_SUBSTRINGS:
+        if s.lower() in low:
+            idx = low.index(s.lower())
+            problems.append(f"banned string '{s}': ...{prose[max(0,idx-40):idx+40]!r}...")
+    for rx, name in BANNED_REGEXES:
+        for mm in rx.finditer(prose):
+            problems.append(f"banned pattern {name}: ...{prose[max(0,mm.start()-30):mm.end()+30]!r}...")
+            break
+    anchors = extract_anchor_phrases(plan)
+    missing = [p for p in anchors if p not in re.sub(r"\s+", " ", prose)]
+    if missing:
+        problems.append(f"missing Thai anchor phrases from the plan: {missing}")
+    if len(re.findall(r"^##\s+Act\s+\d", prose, re.M)) != 4:
+        problems.append("prose does not contain exactly four '## Act N' sections")
+    return problems
+
+
+# ---------------------------------------------------------------- JSON validation
+SEG_PATTERN = ["narrative", "tag", "narrative", "tag", "narrative"]
+ATTRIBUTES = {"attr_heart_water", "attr_deference", "attr_ledger",
+              "attr_word_hoard", "attr_merit_water"}
+
+
+def wc(s):
+    return len(s.split())
+
+
+def validate_line(line, char_ids, place_ids, where, errors):
+    if not isinstance(line, dict):
+        errors.append(f"{where}: line is not an object")
+        return
+    for key in ("character", "place", "dialogue", "stage_directions"):
+        if key not in line:
+            errors.append(f"{where}: line missing key '{key}'")
+    if line.get("character") not in char_ids:
+        errors.append(f"{where}: unknown character '{line.get('character')}'")
+    if line.get("place") not in place_ids:
+        errors.append(f"{where}: unknown place '{line.get('place')}'")
+    if not line.get("dialogue"):
+        errors.append(f"{where}: empty dialogue")
+
+
+def is_first_person(s):
+    return s.startswith("I ") or " I " in s or "'I " in s or " I'" in s
+
+
+def looks_third_person_narration(s):
+    if is_first_person(s):
+        return False
+    # heuristic on the FIRST sentence only: third-person scene description
+    # (pronoun or "The X" opener + past-tense verb), no first/second person.
+    first = re.split(r"(?<=[.!?])\s", s.strip(), 1)[0]
+    if "?" in first:
+        return False
+    third = re.search(r"\b(he|she|they|his|her|their)\b", first, re.I) or first.startswith("The ")
+    second = re.search(r"\b(you|your|yours)\b", first, re.I)
+    past = re.search(r"\b\w+(ed|stood|sat|held|watched|walked|looked|turned|came|went|took|gave|said)\b", first, re.I)
+    return bool(third and past and not second)
+
+
+def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags):
+    errors = []
+    if not isinstance(ep, dict):
+        return ["top-level JSON is not an object"]
+    if ep.get("id") != ep_id:
+        errors.append(f"id is {ep.get('id')!r}, expected {ep_id!r}")
+    acts = ep.get("acts")
+    if not isinstance(acts, list) or len(acts) != 4:
+        errors.append(f"acts must be a list of 4 (got {len(acts) if isinstance(acts, list) else type(acts).__name__})")
+        return errors
+
+    all_dialogue = []   # (text, where) for duplicate scan
+    used_tags = []
+    choice_descriptions = []
+
+    for i, act in enumerate(acts):
+        where = f"act {i+1}"
+        if act.get("id") != f"act_{i+1}":
+            errors.append(f"{where}: id is {act.get('id')!r}, expected 'act_{i+1}'")
+        if not act.get("title"):
+            errors.append(f"{where}: missing title")
+        segs = act.get("segments")
+        if not isinstance(segs, list) or len(segs) != 5:
+            errors.append(f"{where}: segments must be a list of 5 "
+                          f"(narrative,tag,narrative,tag,narrative); got "
+                          f"{len(segs) if isinstance(segs, list) else type(segs).__name__}")
+            continue
+        for si, seg in enumerate(segs):
+            sw = f"{where} segment {si+1}"
+            expect = SEG_PATTERN[si]
+            if expect == "narrative":
+                if isinstance(seg, dict):
+                    # tolerate {"type":"narrative","lines":[...]} wrappers
+                    if seg.get("type") == "narrative" and isinstance(seg.get("lines"), list):
+                        lines = seg["lines"]
+                    else:
+                        errors.append(f"{sw}: expected a narrative lines-array, got object {sorted(seg.keys())}")
+                        continue
+                elif isinstance(seg, list):
+                    lines = seg
+                else:
+                    errors.append(f"{sw}: expected a narrative lines-array, got {type(seg).__name__}")
+                    continue
+                lo, hi = (4, 6) if si == 0 else (2, 3)
+                if not (lo <= len(lines) <= hi):
+                    errors.append(f"{sw}: has {len(lines)} lines (expected {lo}-{hi})")
+                for li, line in enumerate(lines):
+                    validate_line(line, char_ids, place_ids, f"{sw} line {li+1}", errors)
+                    dlg = (line.get("dialogue") or "").strip()
+                    all_dialogue.append((dlg, f"{sw} line {li+1}"))
+                    if (line.get("character") != "char_narrator"
+                            and looks_third_person_narration(dlg)):
+                        errors.append(f"{sw} line {li+1}: third-person narration attributed "
+                                      f"to '{line.get('character')}' (narration must be char_narrator)")
+            else:  # tag
+                if not (isinstance(seg, dict) and seg.get("type") == "tag"):
+                    errors.append(f"{sw}: expected {{'type':'tag','tag':...}} object")
+                    continue
+                tid = seg.get("tag")
+                used_tags.append(tid)
+                if tid not in assigned_tags:
+                    errors.append(f"{sw}: tag '{tid}' is not in the assigned set")
+
+        # decision
+        dec = act.get("decision")
+        if not isinstance(dec, dict):
+            errors.append(f"{where}: missing decision object")
+            continue
+        validate_line(dec.get("line", {}), char_ids, place_ids, f"{where} decision.line", errors)
+        choices = dec.get("choices")
+        if not isinstance(choices, list) or len(choices) != 3:
+            errors.append(f"{where}: decision must have exactly 3 choices")
+            continue
+        diffs = sorted(c.get("difficulty", "?") for c in choices)
+        if diffs != ["easy", "hard", "medium"]:
+            errors.append(f"{where}: choice difficulties must be exactly easy/medium/hard (got {diffs})")
+        for ci, c in enumerate(choices):
+            cw = f"{where} choice {ci+1} ({c.get('difficulty','?')})"
+            desc = c.get("description", "")
+            choice_descriptions.append((desc, cw))
+            if not (10 <= wc(desc) <= 20):
+                errors.append(f"{cw}: description is {wc(desc)} words (must be 10-20)")
+            if c.get("attribute") not in ATTRIBUTES:
+                errors.append(f"{cw}: bad attribute '{c.get('attribute')}'")
+            for kind, lo_d, hi_d in (("pass_outcome", 1, 2), ("fail_outcome", -1, 0)):
+                out = c.get(kind)
+                if not isinstance(out, dict):
+                    errors.append(f"{cw}: missing {kind}")
+                    continue
+                lw = f"{cw} {kind}"
+                validate_line(out.get("line", {}), char_ids, place_ids, lw, errors)
+                if out.get("attribute") not in ATTRIBUTES:
+                    errors.append(f"{lw}: bad attribute '{out.get('attribute')}'")
+                d = out.get("delta")
+                if not isinstance(d, int) or not (lo_d <= d <= hi_d):
+                    errors.append(f"{lw}: delta must be in [{lo_d},{hi_d}], got {d!r}")
+                oline = out.get("line", {})
+                od = (oline.get("dialogue") or "").strip()
+                all_dialogue.append((od, lw))
+                if oline.get("character") == "char_narrator":
+                    errors.append(f"{lw}: outcome line must not be char_narrator")
+                if od and not is_first_person(od):
+                    errors.append(f"{lw}: outcome dialogue must be first person: {od[:60]!r}")
+            po = ((c.get("pass_outcome") or {}).get("line") or {}).get("dialogue", "").strip()
+            fo = ((c.get("fail_outcome") or {}).get("line") or {}).get("dialogue", "").strip()
+            if po and fo and po == fo:
+                errors.append(f"{cw}: pass_outcome and fail_outcome lines are identical")
+
+    # duplicates
+    seen = {}
+    for dlg, where in all_dialogue:
+        key = re.sub(r"\s+", " ", dlg.lower())
+        if key and key in seen:
+            errors.append(f"duplicate dialogue at {where} (first at {seen[key]}): {dlg[:60]!r}")
+        else:
+            seen[key] = where
+    cseen = {}
+    for desc, where in choice_descriptions:
+        key = re.sub(r"\s+", " ", desc.lower())
+        if key and key in cseen:
+            errors.append(f"duplicate choice description at {where} (first at {cseen[key]})")
+        else:
+            cseen[key] = where
+
+    if sorted(used_tags) != sorted(assigned_tags):
+        errors.append(f"tags used {sorted(used_tags)} != assigned set {sorted(assigned_tags)}")
+    return errors
+
+
+# ---------------------------------------------------------------- probe
+PROBE_QUESTIONS = """You are a naive reader who knows NOTHING about this story world. Read the episode JSON (character/place ids stripped of meaning) and answer four questions, numbered, in plain English:
+1. What is each named character trying to get or protect, and why does the situation matter to Pricha?
+2. Why does it matter to the foregrounded character (the one the story follows most closely after Pricha)?
+3. The central object — whose is it, and how do you know?
+4. What changes by the end?
+If you cannot answer a question from the text alone, say "CANNOT TELL" for it."""
+
+JUDGE_PROMPT = """You are a strict judge. Below are (A) the planned answers a reader should reach, from the episode plan's READER QUESTIONS section, and (B) the actual answers a naive reader gave after reading the episode with no context.
+
+For each of the 4 planned answers, decide PASS or FAIL: PASS only if the naive reader's corresponding answer contains the planned facts. Reply in exactly this format, four lines:
+Q1: PASS|FAIL — one-line reason
+Q2: PASS|FAIL — one-line reason
+Q3: PASS|FAIL — one-line reason
+Q4: PASS|FAIL — one-line reason"""
+
+
+def strip_ids(ep):
+    """Deep-copy episode with character/place ids removed from text surfaces
+    (keep structure; replace ids with readable placeholders)."""
+    s = json.dumps(ep, ensure_ascii=False, indent=1)
+    s = re.sub(r'"(character|place)":\s*"[a-z_0-9]+"', r'"\1": "…"', s)
+    s = re.sub(r'"(tag|attribute|id)":\s*"[a-z_0-9]+"', r'"\1": "…"', s)
+    return s
+
+
+# ---------------------------------------------------------------- stages
+def run_stage(usage, label, model, temperature, max_tokens, template_path,
+              slots, checker, extra_note=""):
+    """Generic generate->check->reprompt loop. Returns (text, attempts, problems)."""
+    template = read_file(template_path)
+    system, user = split_sys_user(fill(template, slots))
+    note = ""
+    for attempt in range(1, MAX_TRIES + 1):
+        log(f"[{label}] attempt {attempt}/{MAX_TRIES}")
+        text, _ = call_llm(model, system, user + note, temperature, max_tokens, usage, label)
+        problems = checker(text)
+        if not problems:
+            log(f"[{label}] passed gate")
+            return text, attempt, []
+        log(f"[{label}] gate problems:\n  - " + "\n  - ".join(problems))
+        note = ("\n\n## DEFICIENCIES IN YOUR PREVIOUS OUTPUT — fix exactly these, "
+                "keep everything else:\n- " + "\n- ".join(problems))
+        if extra_note:
+            note += "\n" + extra_note
+    return text, MAX_TRIES, problems
+
+
+def extract_json(text):
+    """Tolerant JSON extraction from a model response."""
+    t = text.strip()
+    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", t, flags=re.S)
+    try:
+        return json.loads(t)
+    except json.JSONDecodeError:
+        start = t.find("{")
+        depth = 0
+        for i in range(start, len(t)):
+            if t[i] == "{":
+                depth += 1
+            elif t[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    return json.loads(t[start:i + 1])
+        raise
+
+
+def reader_questions_section(plan):
+    m = re.search(r"^#{1,4}\s+READER QUESTIONS\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+    return m.group(1).strip() if m else "(not found)"
+
+
+# ---------------------------------------------------------------- main
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--ep-id", required=True)
+    ap.add_argument("--foreground", required=True, help="foregrounded character id, e.g. char_sangwan")
+    ap.add_argument("--places", required=True, help="comma-separated place ids (foregrounded locations)")
+    ap.add_argument("--tags", required=True, help="comma-separated 8 tag ids")
+    ap.add_argument("--model-plan", required=True)
+    ap.add_argument("--model-prose", required=True)
+    ap.add_argument("--model-format", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--report", required=True)
+    args = ap.parse_args()
+
+    tag_ids = [t.strip() for t in args.tags.split(",") if t.strip()]
+    if len(tag_ids) != 8:
+        raise SystemExit("exactly 8 tag ids required")
+    place_ids = [p.strip() for p in args.places.split(",") if p.strip()]
+
+    usage = Usage()
+
+    # ----- load inputs
+    shared = read_file(os.path.join(WORLD_DIR, "shared_context.md"))
+    char_ids = {c["id"] for c in load_json(os.path.join(REPO_PUBLIC, "characters.json"))}
+    place_id_set = {p["id"] for p in load_json(os.path.join(REPO_PUBLIC, "places.json"))}
+
+    # characters: PC + foreground + any character whose files exist alongside the
+    # foregrounded one's places (extras) — keep it simple: PC, foreground, and
+    # every char_*.md/json present in world dir that the driver can name.
+    char_texts = [load_character_text("char_pricha"), load_character_text(args.foreground)]
+    # include extras whose ids appear in the foreground character's file
+    fg_text = char_texts[1]
+    for cid in sorted(char_ids):
+        if cid in (fg_text) and cid not in ("char_pricha", args.foreground, "char_narrator"):
+            char_texts.append(load_character_text(cid))
+    place_texts = [load_place_text(pid) for pid in place_ids]
+    place_texts.append(load_place_text("place_veranda"))
+
+    slots = {
+        "SHARED_CONTEXT": shared,
+        "CHARACTER_FILES": "\n\n".join(char_texts),
+        "PLACE_FILES": "\n\n".join(place_texts),
+        "EP_ID": args.ep_id,
+        "TAGS_WITH_NAMES": resolve_tags(tag_ids),
+        "FOREGROUNDED": args.foreground,
+    }
+
+    restart_note = ""
+    final_ep, final_plan, final_probe = None, None, None
+    total_attempts = {"plan": 0, "prose": 0, "format": 0}
+
+    for restart in range(1, MAX_RESTARTS + 2):
+        log(f"\n===== FULL PIPELINE PASS {restart} =====")
+        # ----- STAGE 1: plan
+        plan_slots = dict(slots)
+        if restart_note:
+            plan_slots["SHARED_CONTEXT"] = shared + "\n\n## DEFICIENCY FROM PREVIOUS READER-PROBE (must fix in the new plan):\n" + restart_note
+        plan, tries, probs = run_stage(
+            usage, "plan", args.model_plan, 0.7, 6000,
+            os.path.join(PROMPTS_DIR, "plan.md"), plan_slots,
+            lambda t: check_plan(t, args.foreground))
+        total_attempts["plan"] += tries
+        if probs:
+            log("[plan] WARNING: still failing after max tries; continuing with best effort")
+
+        # ----- STAGE 2: prose
+        prose_slots = dict(slots)
+        prose_slots["PLAN"] = plan
+        prose, tries, probs = run_stage(
+            usage, "prose", args.model_prose, 0.8, 9000,
+            os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
+            lambda t: check_prose(t, plan))
+        total_attempts["prose"] += tries
+        if probs:
+            log("[prose] WARNING: still failing after max tries; continuing with best effort")
+
+        # ----- STAGE 3: format (with prose->format fallback)
+        ep = None
+        fmt_errors = []
+        for fmt_round in range(2):  # round 2 regenerates prose once
+            def fmt_checker(text, _errs=[]):
+                _errs.clear()
+                try:
+                    candidate = extract_json(text)
+                except Exception as e:
+                    _errs.append(f"JSON does not parse: {e}")
+                    return _errs
+                _errs.extend(validate_episode(candidate, args.ep_id, char_ids,
+                                              place_id_set, set(tag_ids)))
+                return _errs
+
+            fmt_slots = {"PROSE": prose, "PLAN": plan}
+            fmt_text, tries, probs = run_stage(
+                usage, "format", args.model_format, 0.2, 16000,
+                os.path.join(PROMPTS_DIR, "format.md"), fmt_slots,
+                fmt_checker,
+                extra_note="You are reformatting only: do NOT rewrite or alter any sentence content; fix structure, counts, ids, and fields.")
+            total_attempts["format"] += tries
+            try:
+                candidate = extract_json(fmt_text)
+                fmt_errors = validate_episode(candidate, args.ep_id, char_ids,
+                                              place_id_set, set(tag_ids))
+                if not fmt_errors:
+                    ep = candidate
+                    break
+            except Exception as e:
+                fmt_errors = [f"JSON does not parse: {e}"]
+            if fmt_round == 0:
+                log("[format] still failing; regenerating prose once with the format errors attached, then reformatting")
+                prose_slots["PLAN"] = plan + ("\n\n## FORMAT-STAGE FAILURES ON THE LAST PROSE — write so the formatter can hit exact segment counts and schema:\n- "
+                                              + "\n- ".join(fmt_errors))
+                prose, tries2, _ = run_stage(
+                    usage, "prose", args.model_prose, 0.8, 9000,
+                    os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
+                    lambda t: check_prose(t, plan))
+                total_attempts["prose"] += tries2
+        if ep is None:
+            log("[format] FAILED after prose+format retry; restarting whole pipeline")
+            restart_note = "The previous attempt failed mechanical JSON validation:\n- " + "\n- ".join(fmt_errors)
+            continue
+
+        # ----- READER-COMPREHENSION PROBE
+        log("[probe] zero-context reader call")
+        probe_text, _ = call_llm(
+            args.model_plan,
+            "You are a careful reader answering questions about a text.",
+            PROBE_QUESTIONS + "\n\n## EPISODE JSON\n" + strip_ids(ep),
+            0.3, 4000, usage, "probe-reader")
+        log("[probe] judge call")
+        judge_text, _ = call_llm(
+            args.model_plan,
+            "You are a strict but fair judge.",
+            JUDGE_PROMPT + "\n\n## (A) PLANNED READER ANSWERS\n" + reader_questions_section(plan)
+            + "\n\n## (B) NAIVE READER'S ANSWERS\n" + probe_text,
+            0.2, 2000, usage, "probe-judge")
+        verdicts = re.findall(r"Q(\d):\s*(PASS|FAIL)\s*—?\s*(.*)", judge_text)
+        for qn, v, reason in verdicts:
+            log(f"[probe] Q{qn}: {v} — {reason.strip()}")
+        fails = [(qn, reason.strip()) for qn, v, reason in verdicts if v == "FAIL"]
+        final_ep, final_plan = ep, plan
+        final_probe = (probe_text, judge_text, verdicts)
+        if not fails:
+            log("[probe] all reader questions PASS — episode accepted")
+            break
+        restart_note = ("The reader-comprehension probe FAILED these questions; the new episode must make these facts explicit on the page:\n"
+                        + "\n".join(f"- Q{qn}: {reason}" for qn, _, reason in fails)
+                        + "\n\nNaive reader's answers were:\n" + probe_text)
+        log(f"[probe] {len(fails)} FAIL(s); restarting from stage 1 with deficiency note")
+    else:
+        pass
+
+    # ----- outputs
+    if final_ep is not None:
+        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+        with open(args.out, "w", encoding="utf-8") as f:
+            json.dump(final_ep, f, ensure_ascii=False, indent=2)
+        log(f"[out] wrote {args.out}")
+
+    report = []
+    report.append(f"# Pipeline report — {args.ep_id}")
+    report.append(f"- models: plan={args.model_plan}, prose={args.model_prose}, format={args.model_format}")
+    report.append(f"- attempts used: plan={total_attempts['plan']}, prose={total_attempts['prose']}, format={total_attempts['format']}")
+    report.append(f"- tokens: prompt={usage.prompt}, completion={usage.completion}")
+    report.append(f"- cost estimate: ${usage.cost:.4f} (MODEL_PRICES in driver.py; update per model)")
+    report.append(f"- final status: {'SUCCESS' if final_ep is not None and final_probe and all(v=='PASS' for _,v,_ in final_probe[2]) else ('JSON OK, probe issues' if final_ep is not None else 'FAILED')}")
+    report.append("\n## Log\n```")
+    report.extend(log_lines)
+    report.append("```")
+    if final_probe:
+        report.append("\n## Probe — naive reader answers\n```\n" + final_probe[0] + "\n```")
+        report.append("\n## Probe — judge verdicts\n```\n" + final_probe[1] + "\n```")
+    os.makedirs(os.path.dirname(os.path.abspath(args.report)), exist_ok=True)
+    with open(args.report, "w", encoding="utf-8") as f:
+        f.write("\n".join(report) + "\n")
+    log(f"[out] wrote {args.report}")
+
+    if final_ep is None:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
