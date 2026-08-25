@@ -179,6 +179,27 @@ def load_place_text(place_id):
     return f"### {place_id}\n(no file found)"
 
 
+def assign_anchors(tag_ids):
+    """Pick one anchor vocab item per tag, deterministically (first item with 1-6 Thai words)."""
+    tags = load_json(os.path.join(REPO_PUBLIC, "tags.json"))
+    vocab = load_json(os.path.join(REPO_PUBLIC, "vocab_items.json"))
+    by_id = {t["id"]: t for t in tags}
+    anchors = {}
+    for tid in tag_ids:
+        t = by_id[tid]
+        cands = [v for v in vocab if v["id"] in set(t["vocab_item_ids"])]
+        pick = None
+        for v in cands:
+            thai = re.sub(r"\([^)]*\)", "", v["thai"]).strip()  # strip optional parens
+            if 1 <= len(thai.split()) <= 6 and len(re.sub(r"[^\u0e00-\u0e7f]", "", thai)) >= 4:
+                pick = (thai, v["english"]); break
+        if pick is None and cands:
+            v = cands[0]
+            pick = (re.sub(r"\([^)]*\)", "", v["thai"]).strip(), v["english"])
+        anchors[tid] = pick
+    return anchors
+
+
 def resolve_tags(tag_ids):
     tags = load_json(os.path.join(REPO_PUBLIC, "tags.json"))
     by_id = {t["id"]: t for t in tags}
@@ -280,7 +301,7 @@ def extract_anchor_phrases(plan):
     return out
 
 
-def check_prose(prose, plan):
+def check_prose(prose, plan, assigned=None):
     problems = []
     for s in BANNED_SUBSTRINGS:
         # word-boundary at the start so e.g. 'died' doesn't match 'studied';
@@ -294,8 +315,12 @@ def check_prose(prose, plan):
         for mm in rx.finditer(prose):
             problems.append(f"banned pattern {name}: ...{prose[max(0,mm.start()-30):mm.end()+30]!r}...")
             break
-    anchors = extract_anchor_phrases(plan)
-    missing = [p for p in anchors if p not in re.sub(r"\s+", " ", prose)]
+    if assigned is not None:
+        anchors = [a[0] for a in assigned.values() if a]
+    else:
+        anchors = extract_anchor_phrases(plan)
+    norm_prose = re.sub(r"\s+", " ", prose)
+    missing = [p for p in anchors if p not in norm_prose]
     if missing:
         problems.append(f"missing Thai anchor phrases from the plan: {missing}")
     similes = len(re.findall(r"\bas if\b|\blike\b", prose, re.I))
@@ -585,6 +610,8 @@ def main():
     probe_model = args.model_probe or args.model_plan
 
     tag_ids = [t.strip() for t in args.tags.split(",") if t.strip()]
+    assigned_anchors = assign_anchors(tag_ids)
+    anchor_list = "\n".join(f"{tid} ({assign_anchors([tid])[tid][1] if assign_anchors([tid])[tid] else ''}): {assigned_anchors[tid][0]}" for tid in tag_ids)
     if len(tag_ids) != 8:
         raise SystemExit("exactly 8 tag ids required")
     place_ids = [p.strip() for p in args.places.split(",") if p.strip()]
@@ -614,6 +641,7 @@ def main():
         "PLACE_FILES": "\n\n".join(place_texts),
         "EP_ID": args.ep_id,
         "TAGS_WITH_NAMES": resolve_tags(tag_ids),
+        "ANCHOR_LIST": anchor_list,
         "FOREGROUNDED": args.foreground,
     }
 
@@ -638,13 +666,12 @@ def main():
         # ----- STAGE 2: prose
         prose_slots = dict(slots)
         prose_slots["PLAN"] = plan
-        anchors = extract_anchor_phrases(plan)
-        anchor_note = ("The Thai anchor phrases you MUST include verbatim (one per pair, from the plan): "
-                       + "; ".join(anchors))
+        anchor_note = ("The 8 Thai anchor phrases you MUST include verbatim, exactly these strings: "
+                       + "; ".join(a[0] for a in assigned_anchors.values() if a))
         prose, tries, probs = run_stage(
             usage, "prose", args.model_prose, 0.8, 14000,
             os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
-            lambda t: check_prose(t, plan), extra_note=anchor_note)
+            lambda t: check_prose(t, plan, assigned_anchors), extra_note=anchor_note)
         total_attempts["prose"] += tries
         if probs:
             log("[prose] WARNING: still failing after max tries; continuing with best effort")
