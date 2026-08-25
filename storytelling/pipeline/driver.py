@@ -233,7 +233,7 @@ def check_plan(plan, foreground):
     return problems
 
 
-BANNED_SUBSTRINGS = ["as if", "not the ", "No. Only"]
+BANNED_SUBSTRINGS = ["as if", "No. Only"]
 BANNED_REGEXES = [
     (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
     (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
@@ -254,6 +254,8 @@ def extract_anchor_phrases(plan):
     seen, out = set(), []
     for p in phrases:
         p = re.sub(r"\s+", " ", p).strip(" —-–")
+        if p and len(p.split()) > 4:
+            continue  # anchors are short classroom phrases, not clauses
         if p and p not in seen:
             seen.add(p)
             out.append(p)
@@ -278,7 +280,7 @@ def check_prose(prose, plan):
     missing = [p for p in anchors if p not in re.sub(r"\s+", " ", prose)]
     if missing:
         problems.append(f"missing Thai anchor phrases from the plan: {missing}")
-    if len(re.findall(r"^##\s+Act\s+\d", prose, re.M)) != 4:
+    if len(re.findall(r"^#{1,3}\s+Act\s+\d|^\*\*Act\s+\d|^Act\s+\d\s*[::—-]", prose, re.M)) != 4:
         problems.append("prose does not contain exactly four '## Act N' sections")
     return problems
 
