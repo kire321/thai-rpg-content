@@ -187,7 +187,10 @@ def resolve_tags(tag_ids):
         t = by_id.get(tid)
         if t is None:
             raise SystemExit(f"unknown tag id: {tid}")
-        out.append(f"{tid} — {t['name']}")
+        vocab = load_json(os.path.join(REPO_PUBLIC, "vocab_items.json"))
+        items = [v for v in vocab if v["id"] in set(t["vocab_item_ids"])]
+        lines = "\n".join(f'    - {v["thai"]} = {v["english"]}' for v in items)
+        out.append(f"{tid} — {t['name']}\n  Choose this tag's Thai anchor phrase VERBATIM from these vocab items:\n{lines}")
     return "\n".join(out)
 
 
@@ -228,8 +231,16 @@ def check_plan(plan, foreground):
             problems.append(f"WHY IT MATTERS has no entry for the foregrounded character ({foreground})")
     m = re.search(r"^#{1,4}\s+CENTRAL OBJECT\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
     if m:
-        if not re.search(r"own", m.group(1), re.I):
+        if not re.search(r"own|belong|whose|hers\b|his\b|their", m.group(1), re.I):
             problems.append("CENTRAL OBJECT does not state who owns it")
+    for bs in BANNED_SUBSTRINGS:
+        if bs.lower() in plan.lower():
+            i = plan.lower().find(bs.lower())
+            problems.append(f"plan contains banned string {bs!r}: ...{plan[max(0,i-40):i+40]!r}...")
+    for rx, label in BANNED_REGEXES:
+        m2 = rx.search(plan)
+        if m2:
+            problems.append(f"plan contains banned pattern {label}: ...{plan[max(0,m2.start()-40):m2.end()+40]!r}...")
     return problems
 
 
