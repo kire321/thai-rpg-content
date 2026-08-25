@@ -336,7 +336,23 @@ def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags):
     acts = ep.get("acts")
     if not isinstance(acts, list) or len(acts) != 4:
         errors.append(f"acts must be a list of 4 (got {len(acts) if isinstance(acts, list) else type(acts).__name__})")
-        return errors
+        # banned-language scan across all dialogue/stage_directions/descriptions
+    def _walk(o):
+        if isinstance(o, dict):
+            for v in o.values(): yield from _walk(v)
+        elif isinstance(o, list):
+            for v in o: yield from _walk(v)
+        elif isinstance(o, str):
+            yield o
+    for text in _walk(ep):
+        for bs in BANNED_SUBSTRINGS:
+            if bs.lower() in text.lower():
+                errors.append(f"banned string {bs!r}: ...{text[max(0,text.lower().find(bs.lower())-40):text.lower().find(bs.lower())+40]!r}...")
+        for rx, label in BANNED_REGEXES:
+            m = rx.search(text)
+            if m:
+                errors.append(f"banned pattern {label}: ...{text[max(0,m.start()-40):m.end()+40]!r}...")
+    return errors
 
     all_dialogue = []   # (text, where) for duplicate scan
     used_tags = []
@@ -426,10 +442,10 @@ def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags):
                 oline = out.get("line", {})
                 od = (oline.get("dialogue") or "").strip()
                 all_dialogue.append((od, lw))
-                if oline.get("character") == "char_narrator":
-                    errors.append(f"{lw}: outcome line must not be char_narrator")
-                if od and not is_first_person(od):
-                    errors.append(f"{lw}: outcome dialogue must be first person: {od[:60]!r}")
+                if oline.get("character") != "char_pricha":
+                    errors.append(f"{lw}: outcome line must be spoken by char_pricha (got '{oline.get('character')}')")
+                if od and not od.startswith(("I ", "I'", "I’")):
+                    errors.append(f"{lw}: outcome dialogue must begin with 'I ' (first person PC speech): {od[:60]!r}")
             po = ((c.get("pass_outcome") or {}).get("line") or {}).get("dialogue", "").strip()
             fo = ((c.get("fail_outcome") or {}).get("line") or {}).get("dialogue", "").strip()
             if po and fo and po == fo:
@@ -622,7 +638,8 @@ def main():
                                               place_id_set, set(tag_ids)))
                 return _errs
 
-            fmt_slots = {"PROSE": prose, "PLAN": plan}
+            fmt_slots = {"PROSE": prose, "PLAN": plan,
+                         "VALID_IDS": "Valid character ids: " + ", ".join(sorted(char_ids)) + "\nValid place ids: " + ", ".join(sorted(place_id_set))}
             fmt_text, tries, probs = run_stage(
                 usage, "format", args.model_format, 0.2, 16000,
                 os.path.join(PROMPTS_DIR, "format.md"), fmt_slots,

@@ -4,6 +4,11 @@ SYSTEM: You are a meticulous formatter. You receive finished prose for a 4-act R
 
 USER:
 
+## VALID IDS
+{{VALID_IDS}}
+
+Every `character` and `place` value must come from these lists verbatim. The ONLY speaker ids you may use in outcomes is char_pricha; narration lines use char_narrator.
+
 ## The plan (reference for anchors and intent)
 {{PLAN}}
 
@@ -51,13 +56,13 @@ Hard structural facts:
 - Every `decision.choices` array has EXACTLY 3 choices: one `easy`, one `medium`, one `hard`.
 - `delta`: pass = 1 or 2; fail = -1 or 0.
 - `attribute` values come only from: attr_heart_water, attr_deference, attr_ledger, attr_word_hoard, attr_merit_water. Choose what each choice/outcome actually exercises.
-- Every outcome line's `dialogue` is first-person speech by a non-narrator character (never char_narrator, never third person).
+- Every outcome line's `character` is ALWAYS char_pricha (the PC) and its `dialogue` ALWAYS begins with "I " — first person, the PC speaking. Never char_narrator, never another character, never third person, never an unvoiced statement. If the prose's PASS:/FAIL: line is not the PC speaking in first person, rewrite it minimally so it is (this is the ONE place you may reword).
 
 ## HOW TO CONVERT
 1. Split the prose into line objects. One line = one speaker turn or one narrative sentence/beat, copied VERBATIM. Pure narration (scene description, action beats, attributions like "the boatman said" folded out) becomes `character: "char_narrator"`. Dialogue sentences keep their words verbatim (drop the "X said" wrapper into `stage_directions` if it carries gesture, else discard the wrapper but never the spoken words).
 2. `place` = the place id where the act (or travel beat) happens, per the plan's ACT MAP. Every line in an act uses a place actually occupied in the prose at that moment.
 3. Group lines into segments to hit the exact counts: segment 1 = 4–6 lines, segments 3 and 5 (the arrays after each tag object) = 2–3 lines each. Place each tag object immediately AFTER the segment whose prose contains that tag's Thai anchor phrase.
-4. The decision paragraph at the end of each act becomes the act's `decision`: the dilemma sentence → `decision.line` (spoken by a character present); each `[easy]/[medium]/[hard]` option → one choice: the action text → `description` (10–20 words), `PASS:` line → `pass_outcome.line`, `FAIL:` line → `fail_outcome.line`. Outcome lines keep the PC's first-person wording verbatim.
+4. The decision paragraph at the end of each act becomes the act's `decision`: the dilemma sentence → `decision.line` (spoken by a character present); each `[easy]/[medium]/[hard]` option → one choice: the action text → `description` (10–20 words), `PASS:` line → `pass_outcome.line`, `FAIL:` line → `fail_outcome.line`. Outcome lines keep the PC's first-person wording verbatim. CRITICAL: the PASS:/FAIL: sentences and the option text live ONLY inside the decision object — never copy them into any narrative segment's lines, and never copy a narrative line into an outcome. Every dialogue string in the episode must be unique.
 5. Do not delete prose content. Every narrative and dialogue sentence in the prose ends up either in a segment line or in the decision block.
 
 ## ADJUSTMENT LOG (mandatory when counts do not fit)
