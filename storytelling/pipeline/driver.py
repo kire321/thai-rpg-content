@@ -33,13 +33,9 @@ API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # $ per 1M tokens: {"model": (prompt, completion)} — extend/override as needed.
 MODEL_PRICES = {
-    "anthropic/claude-sonnet-4": (3.0, 15.0),
-    "anthropic/claude-haiku-3.5": (0.8, 4.0),
-    "openai/gpt-4o": (2.5, 10.0),
-    "openai/gpt-4o-mini": (0.15, 0.6),
-    "google/gemini-2.5-flash": (0.3, 2.5),
-    "google/gemini-2.5-pro": (1.25, 10.0),
-    "deepseek/deepseek-chat": (0.27, 1.10),
+    "moonshotai/kimi-k2.5": (0.6, 3.0),
+    "deepseek/deepseek-v3.2": (0.26, 0.38),
+    "qwen/qwen3-235b-a22b-2507": (0.09, 0.55),
     "default": (1.0, 5.0),
 }
 
@@ -96,22 +92,43 @@ def call_llm(model, system, user, temperature, max_tokens, usage, label):
             "X-Title": "thai-rpg-episode-pipeline",
         },
     )
-    for attempt in range(3):
+    max_api_attempts = 8
+    for attempt in range(max_api_attempts):
         try:
             with urllib.request.urlopen(req, timeout=600) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
+                raw = resp.read().decode("utf-8", "replace")
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                # some upstream providers emit raw control chars inside strings
+                try:
+                    data = json.loads(raw, strict=False)
+                except json.JSONDecodeError as je:
+                    log(f"[api] {label}: truncated/invalid JSON body "
+                        f"(len={len(raw)}): ...{raw[max(0, je.pos-80):je.pos+80]!r}")
+                    raise
+            if "error" in data:
+                raise RuntimeError(f"API error payload: {data['error']}")
+            _msg = data["choices"][0]["message"].get("content")
+            _fr = data["choices"][0].get("finish_reason")
+            if not _msg or _fr == "length":
+                log(f"[api] {label}: empty content or length-truncated (finish={_fr}, attempt {attempt+1}/{max_api_attempts})")
+                if attempt == max_api_attempts - 1:
+                    raise RuntimeError(f"{label}: model kept returning empty/truncated content")
+                time.sleep(5)
+                continue
             break
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "replace")[:500]
-            log(f"[api] {label}: HTTP {e.code} (attempt {attempt+1}): {body}")
-            if attempt == 2:
+            log(f"[api] {label}: HTTP {e.code} (attempt {attempt+1}/{max_api_attempts}): {body}")
+            if attempt == max_api_attempts - 1:
                 raise
-            time.sleep(5 * (attempt + 1))
+            time.sleep(min(120, 10 * (attempt + 1)))
         except Exception as e:
-            log(f"[api] {label}: {type(e).__name__}: {e} (attempt {attempt+1})")
-            if attempt == 2:
+            log(f"[api] {label}: {type(e).__name__}: {e} (attempt {attempt+1}/{max_api_attempts})")
+            if attempt == max_api_attempts - 1:
                 raise
-            time.sleep(5 * (attempt + 1))
+            time.sleep(min(120, 10 * (attempt + 1)))
     msg = data["choices"][0]["message"]["content"]
     p, c = usage.add(model, data.get("usage", {}))
     log(f"[api] {label}: model={model} tokens in={p} out={c}")
@@ -216,11 +233,12 @@ def check_plan(plan, foreground):
     return problems
 
 
-BANNED_SUBSTRINGS = ["as if", "forg", "dead", "died", "death", "ghost",
-                     "the late", "not the ", "No. Only"]
+BANNED_SUBSTRINGS = ["as if", "not the ", "No. Only"]
 BANNED_REGEXES = [
-    (re.compile(r"\bnot\b.{0,30}\bbut\b", re.I | re.S), "'not ... but' construction"),
-    (re.compile(r"\bor\s+\w+[.?!]?\s+or\s+both", re.I), "'Or X. Or both.' fragment"),
+    (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
+    (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
+    (re.compile(r"\bthe late\s+[A-Z]"), "'the late X' (implies death)"),
+        (re.compile(r"\bor\s+\w+[.?!]?\s+or\s+both", re.I), "'Or X. Or both.' fragment"),
     (re.compile(r"(?:^|(?<=[.!?]\s))Not [A-Z]"), "sentence-opener 'Not X'"),
 ]
 
@@ -244,10 +262,13 @@ def extract_anchor_phrases(plan):
 
 def check_prose(prose, plan):
     problems = []
-    low = prose.lower()
     for s in BANNED_SUBSTRINGS:
-        if s.lower() in low:
-            idx = low.index(s.lower())
+        # word-boundary at the start so e.g. 'died' doesn't match 'studied';
+        # 'forg' still prefix-matches forgot/forgive/forgotten as intended.
+        rx = re.compile(r"\b" + re.escape(s), re.I)
+        mm = rx.search(prose)
+        if mm:
+            idx = mm.start()
             problems.append(f"banned string '{s}': ...{prose[max(0,idx-40):idx+40]!r}...")
     for rx, name in BANNED_REGEXES:
         for mm in rx.finditer(prose):
@@ -288,7 +309,8 @@ def validate_line(line, char_ids, place_ids, where, errors):
 
 
 def is_first_person(s):
-    return s.startswith("I ") or " I " in s or "'I " in s or " I'" in s
+    return bool(re.search(r"(^|[\s'\"])(I|We|My|Mine|Me|Our|Us)\b", s)) or bool(
+        re.search(r"\b(i|we|my|mine|me|our|us)\b", s))
 
 
 def looks_third_person_narration(s):
@@ -516,9 +538,12 @@ def main():
     ap.add_argument("--model-plan", required=True)
     ap.add_argument("--model-prose", required=True)
     ap.add_argument("--model-format", required=True)
+    ap.add_argument("--model-probe", default=None,
+                    help="probe reader/judge model; defaults to --model-plan")
     ap.add_argument("--out", required=True)
     ap.add_argument("--report", required=True)
     args = ap.parse_args()
+    probe_model = args.model_probe or args.model_plan
 
     tag_ids = [t.strip() for t in args.tags.split(",") if t.strip()]
     if len(tag_ids) != 8:
@@ -554,7 +579,7 @@ def main():
     }
 
     restart_note = ""
-    final_ep, final_plan, final_probe = None, None, None
+    final_ep, final_plan, final_prose, final_probe = None, None, None, None
     total_attempts = {"plan": 0, "prose": 0, "format": 0}
 
     for restart in range(1, MAX_RESTARTS + 2):
@@ -564,7 +589,7 @@ def main():
         if restart_note:
             plan_slots["SHARED_CONTEXT"] = shared + "\n\n## DEFICIENCY FROM PREVIOUS READER-PROBE (must fix in the new plan):\n" + restart_note
         plan, tries, probs = run_stage(
-            usage, "plan", args.model_plan, 0.7, 6000,
+            usage, "plan", args.model_plan, 0.7, 8000,
             os.path.join(PROMPTS_DIR, "plan.md"), plan_slots,
             lambda t: check_plan(t, args.foreground))
         total_attempts["plan"] += tries
@@ -575,7 +600,7 @@ def main():
         prose_slots = dict(slots)
         prose_slots["PLAN"] = plan
         prose, tries, probs = run_stage(
-            usage, "prose", args.model_prose, 0.8, 9000,
+            usage, "prose", args.model_prose, 0.8, 14000,
             os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
             lambda t: check_prose(t, plan))
         total_attempts["prose"] += tries
@@ -618,7 +643,7 @@ def main():
                 prose_slots["PLAN"] = plan + ("\n\n## FORMAT-STAGE FAILURES ON THE LAST PROSE — write so the formatter can hit exact segment counts and schema:\n- "
                                               + "\n- ".join(fmt_errors))
                 prose, tries2, _ = run_stage(
-                    usage, "prose", args.model_prose, 0.8, 9000,
+                    usage, "prose", args.model_prose, 0.8, 14000,
                     os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
                     lambda t: check_prose(t, plan))
                 total_attempts["prose"] += tries2
@@ -630,13 +655,13 @@ def main():
         # ----- READER-COMPREHENSION PROBE
         log("[probe] zero-context reader call")
         probe_text, _ = call_llm(
-            args.model_plan,
+            probe_model,
             "You are a careful reader answering questions about a text.",
             PROBE_QUESTIONS + "\n\n## EPISODE JSON\n" + strip_ids(ep),
             0.3, 4000, usage, "probe-reader")
         log("[probe] judge call")
         judge_text, _ = call_llm(
-            args.model_plan,
+            probe_model,
             "You are a strict but fair judge.",
             JUDGE_PROMPT + "\n\n## (A) PLANNED READER ANSWERS\n" + reader_questions_section(plan)
             + "\n\n## (B) NAIVE READER'S ANSWERS\n" + probe_text,
@@ -645,7 +670,7 @@ def main():
         for qn, v, reason in verdicts:
             log(f"[probe] Q{qn}: {v} — {reason.strip()}")
         fails = [(qn, reason.strip()) for qn, v, reason in verdicts if v == "FAIL"]
-        final_ep, final_plan = ep, plan
+        final_ep, final_plan, final_prose = ep, plan, prose
         final_probe = (probe_text, judge_text, verdicts)
         if not fails:
             log("[probe] all reader questions PASS — episode accepted")
@@ -663,6 +688,12 @@ def main():
         with open(args.out, "w", encoding="utf-8") as f:
             json.dump(final_ep, f, ensure_ascii=False, indent=2)
         log(f"[out] wrote {args.out}")
+        base, _ = os.path.splitext(args.out)
+        for suffix, text in ((".plan.md", final_plan), (".prose.md", final_prose)):
+            if text:
+                with open(base + suffix, "w", encoding="utf-8") as f:
+                    f.write(text)
+                log(f"[out] wrote {base}{suffix}")
 
     report = []
     report.append(f"# Pipeline report — {args.ep_id}")
