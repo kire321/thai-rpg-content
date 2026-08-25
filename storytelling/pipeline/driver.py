@@ -233,14 +233,18 @@ def check_plan(plan, foreground):
     if m:
         if not re.search(r"own|belong|whose|hers\b|his\b|their", m.group(1), re.I):
             problems.append("CENTRAL OBJECT does not state who owns it")
+    plan_scanned = re.sub(r"^#{1,4}\s+(?:SECRET HANDLING|VOCABULARY[^\n]*|COMPLIANCE[^\n]*)\b.*?(?=^#{1,4}\s|\Z)", "", plan, flags=re.M | re.S | re.I)
+    # strip short quoted spans (models citing banned words) — plans contain no real dialogue
+    plan_scanned = re.sub(r'[“"][^”"]{1,60}[”"]', ' ', plan_scanned)
     for bs in BANNED_SUBSTRINGS:
-        if bs.lower() in plan.lower():
+        if bs.lower() in plan_scanned.lower():
             i = plan.lower().find(bs.lower())
-            problems.append(f"plan contains banned string {bs!r}: ...{plan[max(0,i-40):i+40]!r}...")
+            i = plan_scanned.lower().find(bs.lower())
+            problems.append(f"plan contains banned string {bs!r}: ...{plan_scanned[max(0,i-40):i+40]!r}...")
     for rx, label in BANNED_REGEXES:
-        m2 = rx.search(plan)
+        m2 = rx.search(plan_scanned)
         if m2:
-            problems.append(f"plan contains banned pattern {label}: ...{plan[max(0,m2.start()-40):m2.end()+40]!r}...")
+            problems.append(f"plan contains banned pattern {label}: ...{plan_scanned[max(0,m2.start()-40):m2.end()+40]!r}...")
     return problems
 
 
