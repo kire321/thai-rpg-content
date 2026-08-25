@@ -191,6 +191,7 @@ def assign_anchors(tag_ids):
         pick = None
         for v in cands:
             thai = re.sub(r"\([^)]*\)", "", v["thai"]).strip()  # strip optional parens
+            thai = thai.split(" / ")[0].strip()  # take first alternative
             if 1 <= len(thai.split()) <= 6 and len(re.sub(r"[^\u0e00-\u0e7f]", "", thai)) >= 4:
                 pick = (thai, v["english"]); break
         if pick is None and cands:
@@ -546,6 +547,8 @@ def strip_ids(ep):
     return s
 
 
+REPAIR_STAGES = {"prose"}
+
 # ---------------------------------------------------------------- stages
 def run_stage(usage, label, model, temperature, max_tokens, template_path,
               slots, checker, extra_note=""):
@@ -565,6 +568,19 @@ def run_stage(usage, label, model, temperature, max_tokens, template_path,
                 "keep everything else:\n- " + "\n- ".join(problems))
         if extra_note:
             note += "\n" + extra_note
+    # targeted repair pass: rewrite only offending sentences
+    if REPAIR_STAGES and label in REPAIR_STAGES and problems:
+        log(f"[{label}] targeted repair pass")
+        repair_user = ("Here is a text with specific problems.\n\nPROBLEMS (with quoted contexts):\n- "
+                       + "\n- ".join(problems)
+                       + "\n\nRewrite ONLY the sentences implicated above; keep every other sentence identical. "
+                         "Output the complete corrected text, nothing else.\n\nTEXT:\n" + text)
+        repaired, _ = call_llm(model, "You are a careful line editor.", repair_user,
+                               0.3, max_tokens, usage, label + "-repair")
+        rproblems = checker(repaired)
+        if len(rproblems) < len(problems):
+            log(f"[{label}] repair improved ({len(problems)} -> {len(rproblems)} problems)")
+            text, problems = repaired, rproblems
     return text, MAX_TRIES, problems
 
 
@@ -675,6 +691,12 @@ def main():
         total_attempts["prose"] += tries
         if probs:
             log("[prose] WARNING: still failing after max tries; continuing with best effort")
+        # checkpoint intermediates immediately (crash safety)
+        try:
+            with open(args.out + ".plan.md", "w", encoding="utf-8") as fh: fh.write(plan)
+            with open(args.out + ".prose.md", "w", encoding="utf-8") as fh: fh.write(prose)
+        except Exception as ce:
+            log(f"[checkpoint] could not save intermediates: {ce}")
 
         # ----- STAGE 3: format (with prose->format fallback)
         ep = None
@@ -722,6 +744,13 @@ def main():
             restart_note = "The previous attempt failed mechanical JSON validation:\n- " + "\n- ".join(fmt_errors)
             continue
 
+        # checkpoint the formatted episode before probing
+        try:
+            with open(args.out, "w", encoding="utf-8") as fh:
+                json.dump(ep, fh, ensure_ascii=False, indent=1)
+            log(f"[checkpoint] episode saved to {args.out} (pre-probe)")
+        except Exception as ce:
+            log(f"[checkpoint] could not save episode: {ce}")
         # ----- READER-COMPREHENSION PROBE
         log("[probe] zero-context reader call")
         probe_text, _ = call_llm(
