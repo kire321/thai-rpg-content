@@ -248,7 +248,7 @@ def check_plan(plan, foreground):
     return problems
 
 
-BANNED_SUBSTRINGS = ["as if", "No. Only"]
+BANNED_SUBSTRINGS = ["No. Only"]
 BANNED_REGEXES = [
     (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
     (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
@@ -271,6 +271,9 @@ def extract_anchor_phrases(plan):
         p = re.sub(r"\s+", " ", p).strip(" —-–")
         if p and len(p.split()) > 4:
             continue  # anchors are short classroom phrases, not clauses
+        letters = re.sub(r"[^\u0e00-\u0e7f]", "", p)
+        if len(letters) < 4 or p in {"ครับ", "ค่ะ", "คะ", "นะ", "จ้ะ"}:
+            continue  # too short / bare particle
         if p and p not in seen:
             seen.add(p)
             out.append(p)
@@ -295,6 +298,9 @@ def check_prose(prose, plan):
     missing = [p for p in anchors if p not in re.sub(r"\s+", " ", prose)]
     if missing:
         problems.append(f"missing Thai anchor phrases from the plan: {missing}")
+    similes = len(re.findall(r"\bas if\b|\blike\b", prose, re.I))
+    if similes > 2:
+        problems.append(f"too many similes ({similes}); max 2, and only from the story's own material")
     if len(re.findall(r"^#{1,3}\s+Act\s+\d|^\*\*Act\s+\d|^Act\s+\d\s*[::—-]", prose, re.M)) != 4:
         problems.append("prose does not contain exactly four '## Act N' sections")
     return problems
@@ -632,10 +638,13 @@ def main():
         # ----- STAGE 2: prose
         prose_slots = dict(slots)
         prose_slots["PLAN"] = plan
+        anchors = extract_anchor_phrases(plan)
+        anchor_note = ("The Thai anchor phrases you MUST include verbatim (one per pair, from the plan): "
+                       + "; ".join(anchors))
         prose, tries, probs = run_stage(
             usage, "prose", args.model_prose, 0.8, 14000,
             os.path.join(PROMPTS_DIR, "prose.md"), prose_slots,
-            lambda t: check_prose(t, plan))
+            lambda t: check_prose(t, plan), extra_note=anchor_note)
         total_attempts["prose"] += tries
         if probs:
             log("[prose] WARNING: still failing after max tries; continuing with best effort")
