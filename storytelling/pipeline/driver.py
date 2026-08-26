@@ -270,7 +270,7 @@ def check_plan(plan, foreground):
     return problems
 
 
-BANNED_SUBSTRINGS = ["No. Only"]
+BANNED_SUBSTRINGS = ["No. Only", "outliv", "let her rest", "let him rest", "taken from life"]
 BANNED_REGEXES = [
     (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
     (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
@@ -376,7 +376,7 @@ def looks_third_person_narration(s):
     return bool(third and past and not second)
 
 
-def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags):
+def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags, anchors=None):
     errors = []
     if not isinstance(ep, dict):
         return ["top-level JSON is not an object"]
@@ -518,24 +518,39 @@ def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags):
 
     if sorted(used_tags) != sorted(assigned_tags):
         errors.append(f"tags used {sorted(used_tags)} != assigned set {sorted(assigned_tags)}")
+
+    if anchors:
+        for ai, act in enumerate(ep.get("acts", [])):
+            segs = act.get("segments", [])
+            for si, seg in enumerate(segs):
+                if isinstance(seg, dict) and seg.get("type") == "tag" and si > 0:
+                    tid = seg.get("tag")
+                    a = anchors.get(tid)
+                    if a and a[0]:
+                        prev = segs[si - 1]
+                        prev_text = " ".join((l.get("dialogue") or "") for l in prev.get("lines", [])) if isinstance(prev, dict) else ""
+                        if a[0] not in prev_text:
+                            errors.append(f"act {ai+1}: anchor {a[0]!r} for {tid} missing from the segment preceding its tag")
     return errors
 
 
 # ---------------------------------------------------------------- probe
-PROBE_QUESTIONS = """You are a naive reader who knows NOTHING about this story world. Read the episode JSON (character/place ids stripped of meaning) and answer four questions, numbered, in plain English:
+PROBE_QUESTIONS = """You are a naive reader who knows NOTHING about this story world. Read the episode JSON (character/place ids stripped of meaning) and answer five questions, numbered, in plain English:
 1. What is each named character trying to get or protect, and why does the situation matter to Pricha?
 2. Why does it matter to the foregrounded character (the one the story follows most closely after Pricha)?
 3. The central object — whose is it, and how do you know?
 4. What changes by the end?
+5. Is there any character who is dead, or who exists only in memory? What exactly in the text makes you think so? (If the text merely says someone lives elsewhere, say so.)
 If you cannot answer a question from the text alone, say "CANNOT TELL" for it."""
 
 JUDGE_PROMPT = """You are a strict judge. Below are (A) the planned answers a reader should reach, from the episode plan's READER QUESTIONS section, and (B) the actual answers a naive reader gave after reading the episode with no context.
 
-For each of the 4 planned answers, decide PASS or FAIL: PASS only if the naive reader's corresponding answer contains the planned facts. Reply in exactly this format, four lines:
+For Q1-Q4, decide PASS or FAIL: PASS only if the naive reader's corresponding answer contains the planned facts. Q5 PASSES only if the naive reader does NOT conclude anyone is dead — "she lives elsewhere / in Bangkok" passes; any reading of death, ashes, urns, ghosts, or memory-only existence FAILS. Reply in exactly this format, five lines:
 Q1: PASS|FAIL — one-line reason
 Q2: PASS|FAIL — one-line reason
 Q3: PASS|FAIL — one-line reason
-Q4: PASS|FAIL — one-line reason"""
+Q4: PASS|FAIL — one-line reason
+Q5: PASS|FAIL — one-line reason"""
 
 
 def strip_ids(ep):
@@ -710,10 +725,14 @@ def main():
                     _errs.append(f"JSON does not parse: {e}")
                     return _errs
                 _errs.extend(validate_episode(candidate, args.ep_id, char_ids,
-                                              place_id_set, set(tag_ids)))
+                                              place_id_set, set(tag_ids), assigned_anchors))
                 return _errs
 
-            fmt_slots = {"PROSE": prose, "PLAN": plan,
+            tag_order = "\n".join(
+                f"Act {i+1}: tag {tag_ids[2*i]} (anchor {assigned_anchors[tag_ids[2*i]][0]!r}) then tag {tag_ids[2*i+1]} (anchor {assigned_anchors[tag_ids[2*i+1]][0]!r})"
+                for i in range(4))
+            fmt_slots = {"PROSE": prose, "PLAN": plan, "EP_ID": args.ep_id,
+                         "TAG_ORDER": tag_order,
                          "VALID_IDS": "Valid character ids: " + ", ".join(sorted(char_ids)) + "\nValid place ids: " + ", ".join(sorted(place_id_set))}
             fmt_text, tries, probs = run_stage(
                 usage, "format", args.model_format, 0.2, 16000,
@@ -724,7 +743,7 @@ def main():
             try:
                 candidate = extract_json(fmt_text)
                 fmt_errors = validate_episode(candidate, args.ep_id, char_ids,
-                                              place_id_set, set(tag_ids))
+                                              place_id_set, set(tag_ids), assigned_anchors)
                 if not fmt_errors:
                     ep = candidate
                     break
@@ -775,7 +794,7 @@ def main():
             log("[probe] all reader questions PASS — episode accepted")
             break
         restart_note = ("The reader-comprehension probe FAILED these questions; the new episode must make these facts explicit on the page:\n"
-                        + "\n".join(f"- Q{qn}: {reason}" for qn, _, reason in fails)
+                        + "\n".join(f"- Q{qn}: {reason}" for qn, reason in fails)
                         + "\n\nNaive reader's answers were:\n" + probe_text)
         log(f"[probe] {len(fails)} FAIL(s); restarting from stage 1 with deficiency note")
     else:

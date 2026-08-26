@@ -4,6 +4,13 @@ SYSTEM: You are a meticulous formatter. You receive finished prose for a 4-act R
 
 USER:
 
+## TAG ORDER AND ANCHORS (mechanical requirements)
+{{TAG_ORDER}}
+Each tag's `tag` segment must be IMMEDIATELY preceded by the narrative segment containing that tag's anchor Thai phrase verbatim. If the prose puts the anchor elsewhere, move the sentence containing it into the correct segment (this is the ONE structural move you may make besides grouping).
+
+## NARRATOR RULE
+Any sentence that describes scene, action, or appearance in third person (anyone "he/she/they" doing something, or no speaker) belongs to char_narrator. A character's `dialogue` is only what that character SAYS aloud, first or second person. If the prose says 'X said "..."' the quoted part is X's dialogue; the "X said" part is narration.
+
 ## VALID IDS
 {{VALID_IDS}}
 
@@ -19,7 +26,7 @@ Every `character` and `place` value must come from these lists verbatim. The ONL
 The top-level object:
 ```json
 {
-  "id": "<episode id from the plan>",
+  "id": "{{EP_ID}}",
   "title": "<short title>",
   "acts": [ <act>, <act>, <act>, <act> ]
 }

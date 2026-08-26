@@ -63,5 +63,8 @@ For each of the 8 assigned tags, one bullet: the tag id and name; the exact Thai
 
 Remember: Markdown plan only. No JSON. No prose paragraphs of the episode itself. Under ~1200 words.
 
+## SECRET IS NEVER THE SUBJECT
+The concealed person's situation is BACKGROUND LOGISTICS ONLY — she is alive, elsewhere, present-tense, and her monthly schedule is simply how the world works. BANNED STORY MOVES: urns, ashes, funerary/merit rites connected to her, "outlived", "let her rest", "taken from life", claims to "reveal the truth about her", any character demanding the truth about her, any act-4 revelation about her. Act 4 transforms the SURFACE problem (the letter, the money, the schedule, the debt) — never the secret. If your act 4 reveals anything about the concealed person, the plan has failed; rewrite it.
+
 ## VOCABULARY HYGIENE (applies to the plan AND all downstream stages)
 The following words are banned from the plan and everything derived from it — they poison the prose: "forgery", "forge/forged", "ghost", "dead/died/death", "the late X", "as if", "not X but Y" antitheses, "Or X. Or both." fragments. Frame the secret positively: Wan writes IN HIS SISTER'S HAND for a lady who lives elsewhere (present-tense, travel-distance away). Never use the word "forgery" even as a label — call it "writing in another's hand", "the copied hand", "the practiced signature". When confirming compliance anywhere in the plan, NEVER quote the banned words themselves — write "complies with the banned list" instead.
