@@ -301,7 +301,8 @@ def check_plan(plan, foreground):
     return problems
 
 
-BANNED_SUBSTRINGS = ["No. Only", "outliv", "let her rest", "let him rest", "taken from life"]
+BANNED_SUBSTRINGS = ["No. Only", "outliv", "let her rest", "let him rest", "taken from life",
+                     "years gone", "irreversible step", "lives on in", "in my memory", "in his memory", "in her memory"]
 BANNED_REGEXES = [
     (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
     (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
