@@ -75,6 +75,7 @@ def call_llm(model, system, user, temperature, max_tokens, usage, label):
     # Split "SYSTEM:"/"USER:" convention used in the prompt templates.
     payload = {
         "model": model,
+        "stream": True,
         "temperature": temperature,
         "max_tokens": max_tokens,
         "messages": [
@@ -82,9 +83,10 @@ def call_llm(model, system, user, temperature, max_tokens, usage, label):
             {"role": "user", "content": user},
         ],
     }
+    payload_json = json.dumps(payload)
     req = urllib.request.Request(
         API_URL,
-        data=json.dumps(payload).encode("utf-8"),
+        data=payload_json.encode("utf-8"),
         headers={
             "Authorization": "Bearer " + key,
             "Content-Type": "application/json",
@@ -95,11 +97,39 @@ def call_llm(model, system, user, temperature, max_tokens, usage, label):
     max_api_attempts = 8
     for attempt in range(max_api_attempts):
         try:
+            if '"stream": true' not in payload_json:
+                pass
             with urllib.request.urlopen(req, timeout=600) as resp:
                 raw = resp.read().decode("utf-8", "replace")
-            try:
+            if payload.get("stream"):
+                # parse SSE stream into a normal completion-shaped dict
+                chunks = []
+                u = {}
+                fr = None
+                for line in raw.splitlines():
+                    line = line.strip()
+                    if not line.startswith("data:"):
+                        continue
+                    payload_line = line[5:].strip()
+                    if payload_line == "[DONE]":
+                        break
+                    try:
+                        c = json.loads(payload_line)
+                    except json.JSONDecodeError:
+                        continue
+                    if "usage" in c and c["usage"]:
+                        u = c["usage"]
+                    ch = (c.get("choices") or [{}])[0]
+                    delta = ch.get("delta") or {}
+                    if delta.get("content"):
+                        chunks.append(delta["content"])
+                    if ch.get("finish_reason"):
+                        fr = ch["finish_reason"]
+                data = {"choices": [{"message": {"content": "".join(chunks)}, "finish_reason": fr}], "usage": u}
+            else:
+              try:
                 data = json.loads(raw)
-            except json.JSONDecodeError:
+              except json.JSONDecodeError:
                 # some upstream providers emit raw control chars inside strings
                 try:
                     data = json.loads(raw, strict=False)
@@ -249,7 +279,8 @@ def check_plan(plan, foreground):
         if "pricha" not in body:
             problems.append("WHY IT MATTERS has no entry for the PC Pricha")
         fg_name = foreground.replace("char_", "").lower()
-        if fg_name not in body and foreground not in body:
+        fg_nick = {"sangwan": "wan"}.get(fg_name, "")
+        if fg_name not in body and foreground not in body and (not fg_nick or fg_nick not in body):
             problems.append(f"WHY IT MATTERS has no entry for the foregrounded character ({foreground})")
     m = re.search(r"^#{1,4}\s+CENTRAL OBJECT\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
     if m:
