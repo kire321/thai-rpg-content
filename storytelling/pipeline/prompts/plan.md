@@ -26,13 +26,17 @@ Two sentences, concrete. What has physically happened, to whom, what deadline or
 One bullet per speaking character, INCLUDING the PC Pricha (char_pricha) and the foregrounded recurring character. For each:
 - the universal motivation the situation triggers (survival, status, love, duty, shame, freedom, greed, merit...);
 - the exact observable behavior, inventory, or attention that will SHOW it on the page (never tell: no "she values family" — instead "she counts the envelopes twice before answering").
+- the personal tie: the concrete named person or relationship (their mother, their sister, their creditor) that makes this stake THEIRS, and the act-1-or-2 line that will make that tie visible. A reader must be able to say WHY this character cares, in one sentence, from the text alone.
 If a character has NO motivation triggered by this situation, CUT them from the episode — do not list them.
 
 ## CENTRAL OBJECT
 Name it. State explicitly WHO OWNS IT and who possesses it right now. State HOW the reader learns both facts by the end of act 1 (which line, which gesture). The object appears early and recurs.
 
+## REFRAIN
+One line: `REFRAIN: <the refrain's exact act-1 sentence, verbatim as it will appear in the prose>`. The prose gate will check that its content words recur in all four acts, so keep the sentence short (≤12 words) and built from concrete repeatable words.
+
 ## ACT MAP
-Four subsections (### Act 1 ... ### Act 4). For each act give: location; who is present (with every entrance/exit); what changes; the wonder beat (name which of the 4 techniques: exact loving inventory / the numinous domesticated / connoisseur attention / elegiac frame); the refrain occurrence and its NEW meaning at this occurrence. Act 1 = matter arrives on the veranda, contradiction introduced, stakes clear within the first stretch; Act 2 = more urgent, party travels to the foregrounded place; Act 3 = maximally urgent, deadlines converge; Act 4 = TRANSFORMATION (the problem stops being urgent — e.g. the concealed person announces they are coming), ending back on the veranda. Never end by restating the act-1 problem.
+Four subsections (### Act 1 ... ### Act 4). For each act give: location; who is present (with every entrance/exit); what changes; the wonder beat (name which of the 4 techniques: exact loving inventory / the numinous domesticated / connoisseur attention / elegiac frame); the refrain occurrence — quote the exact sentence you will write in this act — and its NEW meaning at this occurrence. THE REFRAIN MUST APPEAR IN ALL FOUR ACTS, one occurrence each, meaning shifting each time, act-4 occurrence cosmic. Act 1 = matter arrives on the veranda, contradiction introduced, stakes clear within the first stretch; Act 2 = more urgent, party travels to the foregrounded place; Act 3 = maximally urgent, deadlines converge; Act 4 = TRANSFORMATION (the problem stops being urgent — e.g. the concealed person announces they are coming), ending back on the veranda. Never end by restating the act-1 problem.
 
 ## READER QUESTIONS
 Pre-write the answers a naive reader should be able to give after reading the finished episode:

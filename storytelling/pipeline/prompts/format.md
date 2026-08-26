@@ -6,10 +6,10 @@ USER:
 
 ## TAG ORDER AND ANCHORS (mechanical requirements)
 {{TAG_ORDER}}
-Each tag's `tag` segment must be IMMEDIATELY preceded by the narrative segment containing that tag's anchor Thai phrase verbatim. If the prose puts the anchor elsewhere, move the sentence containing it into the correct segment (this is the ONE structural move you may make besides grouping).
+Each tag's `tag` segment must be IMMEDIATELY preceded — the segment directly before it, not merely "somewhere earlier" — by the narrative segment containing that tag's anchor Thai phrase verbatim. If the prose puts the anchor anywhere else (earlier in the act, in the decision paragraph), MOVE the sentence containing it into the segment directly before its tag (this is the ONE structural move you may make besides grouping). After you finish, re-verify: for every tag, walk one segment backward and find the anchor there.
 
 ## NARRATOR RULE
-Any sentence that describes scene, action, or appearance in third person (anyone "he/she/they" doing something, or no speaker) belongs to char_narrator. A character's `dialogue` is only what that character SAYS aloud, first or second person. If the prose says 'X said "..."' the quoted part is X's dialogue; the "X said" part is narration.
+Any sentence that describes scene, action, or appearance in third person (anyone "he/she/they" doing something, or no speaker) belongs to char_narrator. A character's `dialogue` is only what that character SAYS aloud, first or second person. If the prose says 'X said "..."' the quoted part is X's dialogue; the "X said" part is narration. ACID TEST for every non-narrator line: if the dialogue text mentions its own speaker's name in third person (a char_pricha line containing "Pricha" or "Lek" as something he does), it is narration — reassign it to char_narrator, no exceptions.
 
 ## VALID IDS
 {{VALID_IDS}}

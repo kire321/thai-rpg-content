@@ -360,7 +360,31 @@ def check_prose(prose, plan, assigned=None):
         problems.append(f"too many similes ({similes}); max 2, and only from the story's own material")
     if len(re.findall(r"^#{1,3}\s+Act\s+\d|^\*\*Act\s+\d|^Act\s+\d\s*[::—-]", prose, re.M)) != 4:
         problems.append("prose does not contain exactly four '## Act N' sections")
+    # Refrain persistence: plan's REFRAIN line supplies the canonical sentence;
+    # its content words must recur in every act (meanings may shift).
+    refrain_words = extract_refrain_words(plan)
+    if refrain_words:
+        act_chunks = re.split(r"^#{1,3}\s+Act\s+\d|^\*\*Act\s+\d", prose, flags=re.M)
+        act_chunks = [c for c in act_chunks[1:]]  # drop preamble
+        for i, chunk in enumerate(act_chunks[:4]):
+            low = chunk.lower()
+            hits = sum(1 for w in refrain_words if w in low or w[: max(4, len(w) - 2)] in low)
+            if hits < 2:
+                problems.append(
+                    f"act {i+1}: refrain not recognizable (only {hits} of the refrain's content words present: {refrain_words}); "
+                    "the refrain must recur in ALL four acts with shifted meaning")
     return problems
+
+
+STOPWORDS = {"the", "and", "that", "this", "with", "from", "into", "always", "there", "here", "what", "when", "your", "yours", "mine", "ours"}
+
+
+def extract_refrain_words(plan):
+    m = re.search(r"^REFRAIN:\s*(.+)$", plan, re.M)
+    if not m:
+        return []
+    words = re.findall(r"[A-Za-z]{4,}", m.group(1).lower())
+    return [w for w in words if w not in STOPWORDS]
 
 
 # ---------------------------------------------------------------- JSON validation
@@ -377,6 +401,19 @@ def validate_line(line, char_ids, place_ids, where, errors):
     if not isinstance(line, dict):
         errors.append(f"{where}: line is not an object")
         return
+    # Narrator acid test: a non-narrator line must never mention its own
+    # speaker in third person — that is narration misattributed.
+    spk = line.get("character", "")
+    dlg = line.get("dialogue", "") or ""
+    if spk and spk != "char_narrator" and spk.startswith("char_") and dlg:
+        short = spk[len("char_"):]
+        tokens = {short} | {"char_pricha": {"lek"}, "char_sangwan": {"wan"}}.get(spk, set())
+        for tok in tokens:
+            if re.search(r"\b" + re.escape(tok) + r"\b", dlg, re.I):
+                errors.append(
+                    f"{where}: line voiced by {spk} mentions '{tok}' in third person — "
+                    "this is narration; reassign to char_narrator")
+                break
     for key in ("character", "place", "dialogue", "stage_directions"):
         if key not in line:
             errors.append(f"{where}: line missing key '{key}'")
