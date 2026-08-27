@@ -99,7 +99,7 @@ def call_llm(model, system, user, temperature, max_tokens, usage, label):
         try:
             if '"stream": true' not in payload_json:
                 pass
-            with urllib.request.urlopen(req, timeout=600) as resp:
+            with urllib.request.urlopen(req, timeout=180) as resp:
                 raw = resp.read().decode("utf-8", "replace")
             if payload.get("stream"):
                 # parse SSE stream into a normal completion-shaped dict
