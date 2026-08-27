@@ -222,6 +222,8 @@ def assign_anchors(tag_ids):
         for v in cands:
             thai = re.sub(r"\([^)]*\)", "", v["thai"]).strip()  # strip optional parens
             thai = thai.split(" / ")[0].strip()  # take first alternative
+            if thai.endswith("...") or thai.endswith("\u2026"):
+                continue  # sentence templates with trailing ellipsis are unmatchable
             if 1 <= len(thai.split()) <= 6 and len(re.sub(r"[^\u0e00-\u0e7f]", "", thai)) >= 4:
                 pick = (thai, v["english"]); break
         if pick is None and cands:
@@ -302,7 +304,8 @@ def check_plan(plan, foreground):
 
 
 BANNED_SUBSTRINGS = ["No. Only", "outliv", "let her rest", "let him rest", "taken from life",
-                     "years gone", "irreversible step", "lives on in", "in my memory", "in his memory", "in her memory"]
+                     "years gone", "irreversible step", "lives on in", "in my memory", "in his memory", "in her memory",
+                     "numinous domesticated", "wonder beat", "elegiac frame", "loving inventory", "connoisseur attention"]
 BANNED_REGEXES = [
     (re.compile(r"\bforg(ery|ed|e|es|ing)\b", re.I), "forgery-language"),
     (re.compile(r"\bdead\b|\bdied\b|\bdeath\b|\bghost", re.I), "death-language"),
@@ -692,6 +695,23 @@ def reader_questions_section(plan):
     return m.group(1).strip() if m else "(not found)"
 
 
+def normalize_episode(ep, ep_id):
+    """Metadata-only structural fixes. Never rewrites content."""
+    if not isinstance(ep, dict):
+        return ep
+    ep["id"] = ep_id
+    acts = ep.get("acts") or []
+    for a in acts:
+        if isinstance(a, dict) and isinstance(a.get("segments"), list):
+            a["segments"] = [
+                {"type": "narrative", "lines": s} if isinstance(s, list) else s
+                for s in a["segments"]]
+    if ep.get("title") in (None, "", "Sticky Situation") and acts:
+        # plan-section leak; fall back to the final act's title
+        ep["title"] = acts[-1].get("title") or ep_id
+    return ep
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -789,7 +809,7 @@ def main():
             def fmt_checker(text, _errs=[]):
                 _errs.clear()
                 try:
-                    candidate = extract_json(text)
+                    candidate = normalize_episode(extract_json(text), args.ep_id)
                 except Exception as e:
                     _errs.append(f"JSON does not parse: {e}")
                     return _errs
@@ -810,7 +830,7 @@ def main():
                 extra_note="You are reformatting only: do NOT rewrite or alter any sentence content; fix structure, counts, ids, and fields.")
             total_attempts["format"] += tries
             try:
-                candidate = extract_json(fmt_text)
+                candidate = normalize_episode(extract_json(fmt_text), args.ep_id)
                 fmt_errors = validate_episode(candidate, args.ep_id, char_ids,
                                               place_id_set, set(tag_ids), assigned_anchors)
                 if not fmt_errors:
