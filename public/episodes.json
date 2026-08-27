@@ -700,5 +700,719 @@
     "title": "One Drifts, Always On Time"
    }
   ]
+ },
+ {
+  "id": "ep_002",
+  "title": "The Letter and the Laughter",
+  "acts": [
+   {
+    "id": "act_1",
+    "title": "The Contract on the Veranda",
+    "segments": [
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The duty ledger met a child who would not speak, on the veranda by the temple pond.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Pricha — Lek to the whole landing — had been mending a split bamboo shade when the farmer arrived, his hands a vise on his son’s thin shoulders.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The boy’s eyes were fixed on the water, his mouth a silent line.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Rangsri was already there, her back to the pond, a lacquered box open on her lap.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "She did not look up as the farmer spoke.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_077"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_grain_clerk",
+        "place": "place_veranda",
+        "dialogue": "มีเรื่องจะบอก — I have something to tell you.",
+        "stage_directions": "his voice cracking"
+       },
+       {
+        "character": "char_grain_clerk",
+        "place": "place_veranda",
+        "dialogue": "He hasn’t eaten. He only laughs. It came from the river.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_208"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_rangsri",
+        "place": "place_veranda",
+        "dialogue": "อย่าไปดีกว่า — better if you don’t go.",
+        "stage_directions": "not to the farmer, but to the air around the boy"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The farmer’s knuckles were bone-white.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_grain_clerk",
+        "place": "place_veranda",
+        "dialogue": "He laughed when the water took our last seedling. Is that the joy you need?",
+        "stage_directions": ""
+       }
+      ]
+     }
+    ],
+    "decision": {
+     "line": {
+      "character": "char_grain_clerk",
+      "place": "place_veranda",
+      "dialogue": "If this is a spirit, the temple must pay. If it is sickness, I have no rice for a doctor.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Write the contract as a medical debt against the temple’s charity fund.",
+       "difficulty": "easy",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I will note the abbot’s discretion covers this.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I cannot find a line in the charity ledger for laughter.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Copy the contract onto a separate slip and seal it in your personal box.",
+       "difficulty": "medium",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I have filed it where shame cannot reach the school’s name.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "The lock sticks; the paper remains in my hand, exposed.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Tell the farmer the truth: the spirit’s price is joy, and joy has no price.",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, the river’s debt is not a debt of grain.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, and watch his face empty of hope.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": -1
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "act_2",
+    "title": "The Pawnshop Ledger",
+    "segments": [
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "The pawnshop’s air was a ledger of loss, all dust and quiet gold.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "Pricha stood before the caged counter, Rangsri a silent shape at his side.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "The appraiser — a man with fingers that knew weight by touch — laid the object on the brass scale: a set of ceremonial ankle bells tied with faded red string.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_pawnshop_appraiser",
+        "place": "place_pawnshop",
+        "dialogue": "ครูบัว — Teacher Bua — left these last week.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "His attention was a connoisseur’s discipline, assessing the weave of the string, the dull sheen of the metal.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_pawnshop_appraiser",
+        "place": "place_pawnshop",
+        "dialogue": "She said she would not dance again. The sentimental value is high. The gold weight is low.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_194"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_pawnshop",
+        "dialogue": "ต้องปรับตัว — I have to adapt.",
+        "stage_directions": "feeling the farmer’s anxious presence outside the door"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "The appraiser lifted the bells, letting them chime once, a sound like water dropping into a tin cup.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_317"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pawnshop_appraiser",
+        "place": "place_pawnshop",
+        "dialogue": "ชอบสุดๆ — I love it!!",
+        "stage_directions": "not of the sound, but of the purity"
+       },
+       {
+        "character": "char_pawnshop_appraiser",
+        "place": "place_pawnshop",
+        "dialogue": "This gold is from the old mine upriver. You won’t find its like now.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_pawnshop",
+        "dialogue": "He named a redemption price that was half a harvest.",
+        "stage_directions": ""
+       }
+      ]
+     }
+    ],
+    "decision": {
+     "line": {
+      "character": "char_pawnshop_appraiser",
+      "place": "place_pawnshop",
+      "dialogue": "The lady who lives upriver sends her letters on the new moon. But today is not the new moon.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Offer the school’s petty cash as a deposit, promising the rest after market day.",
+       "difficulty": "easy",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, the temple’s word is good for ten days.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, and he shakes his head, sliding the bells away.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Ask to hold the pink pawn ticket yourself as a personal guarantee.",
+       "difficulty": "medium",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, put my thumbprint beside Bua’s; the debt is mine until paid.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, and he smiles, tearing the ticket in two.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": -1
+       }
+      },
+      {
+       "description": "Propose a trade: your foreign-word notebook as collateral.",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, the words inside are worth more than their paper.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_pawnshop",
+         "dialogue": "I say, and he opens it, laughs at a word he cannot read.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": -1
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "act_3",
+    "title": "The Rice Ledger’s Cold Numbers",
+    "segments": [
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "The rice ledger sat behind warped glass in the district office, its columns of inked numbers wavering in the bent light.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "Pricha stood at the case in the district office, the clerk a bored silhouette at the stamp table.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "Outside, on the Cooling Bench, the farmer waited in the mandated silence.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "Pricha had come to authorize an advance against the farmer’s next harvest, to redeem the bells.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_district_officer",
+        "place": "place_rice_ledger",
+        "dialogue": "The debt stands.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_district_officer",
+        "place": "place_rice_ledger",
+        "dialogue": "One field cannot bear two loans.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_123"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_grain_clerk",
+        "place": "place_rice_ledger",
+        "dialogue": "สู้ไม่ได้ — I’m no match for him!",
+        "stage_directions": "meaning his brother, meaning the state, meaning the water"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "Pricha leaned close to the glass case, reading the brother's name in the creditor column, dated three rains back.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_000"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_rice_ledger",
+        "dialogue": "ตอนนี้ผมรู้แล้วว่า... — now I know…",
+        "stage_directions": "the truth cold in his mouth"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_rice_ledger",
+        "dialogue": "The farmer’s survival, his son’s spirit, the dance that was needed — all crashed against this prior, inked fact.",
+        "stage_directions": ""
+       }
+      ]
+     }
+    ],
+    "decision": {
+     "line": {
+      "character": "char_district_officer",
+      "place": "place_rice_ledger",
+      "dialogue": "We record weight, not will. The loan’s weight is here. Your appeal has none.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Suggest splitting the harvest between the brother’s loan and the bells.",
+       "difficulty": "easy",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, I will stand guarantor for the split.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, and the clerk points to the rule forbidding third-party guarantees.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Propose amending the ledger with a marginal note acknowledging the conflict.",
+       "difficulty": "medium",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, let the record show the human choice.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, and he refuses, his stamp hovering over the ‘denied’ ink.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Demand to see the original loan document, searching for a flaw.",
+       "difficulty": "hard",
+       "attribute": "attr_word_hoard",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, the hand here is the district officer’s, not the brother’s.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_rice_ledger",
+         "dialogue": "I say, and the clerk smiles, showing the perfect, practiced signatures.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_word_hoard",
+        "delta": -1
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "act_4",
+    "title": "The Letter and the Laughter",
+    "segments": [
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The veranda at dusk was an elegiac frame, the moonlight on the canal water broken by a passing boat, then slowly smoothing again.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The farmer and his son were there, the boy still silent.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Rangsri sat with her vial on the floor between them.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "Then the boatman came, not with goods, but with a letter.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "It was for Pricha, in a hand he knew: the lady who lived upriver, Nim.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "It contained no money. It was a permission, written in her own practiced signature, authorizing him to redeem the ankle bells from her account at the pawnshop.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_290"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "ผมดีใจที่ได้ยิน — I’m happy to hear this.",
+        "stage_directions": "the relief a cool stone in his chest"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "He went, he redeemed, he returned.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_259"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_pricha",
+        "place": "place_veranda",
+        "dialogue": "ไปเที่ยวทะเลกันดีมั้ย — shall we go to the seaside?",
+        "stage_directions": "a nascent desire, after the long silence"
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "The transformation was not in ledgers or loans.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "It was in Nim’s present-tense action, sending authority, not cash.",
+        "stage_directions": ""
+       }
+      ]
+     }
+    ],
+    "decision": {
+     "line": {
+      "character": "char_rangsri",
+      "place": "place_veranda",
+      "dialogue": "Rangsri closes her lacquered box. The boy’s laugh is inside one vial. Five remain.",
+      "stage_directions": ""
+     },
+     "choices": [
+      {
+       "description": "Thank Bua formally, offering a school stipend for a lesson given.",
+       "difficulty": "easy",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, the temple records will show your merit today.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, and she shakes her head, walking away into the dark.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Write a receipt for Nim, detailing the transaction as a ledger entry of care.",
+       "difficulty": "medium",
+       "attribute": "attr_ledger",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, your account now holds a credit of joy.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_veranda",
+         "dialogue": "I say, and the words feel empty on the page, just ink.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_ledger",
+        "delta": 0
+       }
+      },
+      {
+       "description": "Open your tin box, remove one of your father’s promissory notes, and burn it over the pond.",
+       "difficulty": "hard",
+       "attribute": "attr_heart_water",
+       "pass_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_laughing_well",
+         "dialogue": "I say, one debt is washed clean tonight.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": 2
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_pricha",
+         "place": "place_laughing_well",
+         "dialogue": "I say, and the damp paper will not catch, smoking in my hand.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_heart_water",
+        "delta": -1
+       }
+      }
+     ]
+    }
+   }
+  ]
  }
 ]
