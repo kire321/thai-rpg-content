@@ -1,0 +1,618 @@
+{
+  "id": "ep_003",
+  "title": "The Widow's Paper",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Widow’s Paper",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The widow slams a paper on the veranda rail; Lek sees the ink is smudged where someone scraped out the time.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He hears the faint rustle of the certificate’s edge, torn at one corner, as if someone had tried to peel away more than just the numbers.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "4:13",
+              "stage_directions": "adjusting his compass, murmuring the exact minute the clock in the funeral parlor stopped, his voice low, precise, like a man still waiting for the world to catch up"
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_veranda",
+              "dialogue": "The widow traded salt for silence at dawn.",
+              "stage_directions": "stepping forward, barefoot, his toes curling against the damp wood"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Who recorded the death?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_veranda",
+              "dialogue": "My ears. The crossed-out red numbers behind the counter, their stain like old blood.",
+              "stage_directions": "pointing to his own ears, then to the crossed-out red numbers behind the counter"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_089"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "The deed is co-held and the audit begins at noon.",
+              "stage_directions": "leaning in, whispering, his breath warm, his eyes dry"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "\"4:13 AM\"",
+              "stage_directions": "opening his ledger, tapping the entry written in iron gall ink, the mark unyielding"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The widow says her husband drew breath at 4:07, and the clock in the parlor jumped twice before stopping, her voice frayed but clear.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_330"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek picks up the certificate; the space for the time is torn at the corner, a small wound in the paper.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_narrator",
+          "place": "place_veranda",
+          "dialogue": "Which time goes in the school’s record?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Sign the widow’s version without checking.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I write 4:07.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I can’t hear you over the clock.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Compare the parlor clock to Kamnan Noi’s chronometer.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I’m not done with the facts.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "It’s over. I’m signing it.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Demand the district officer delay the audit.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "You must go tell him!",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I’m leaving soon.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Bent Pendulum",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I carry a lantern with a cracked glass face, lit from below.",
+              "stage_directions": "arriving, dripping, its glow uneven, like a guess at truth"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The veranda clock strikes uneven.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "It stuttered at this second.",
+              "stage_directions": "flinching, then noting the exact second, his jaw tight with the discomfort of wrong time"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Let’s go to the funeral parlor.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "Lek follows the boatman to the funeral parlor, where the coffin lid rests on sawhorses—the beginning of a journey not yet named.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_083"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "Close look at the clock: the pendulum is bent, the hands frozen at 4:13, as if force had stopped it mid-swing.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_funeral_parlor",
+              "dialogue": "I can’t hear it.",
+              "stage_directions": "covering his ears when Lek asks about the chime, his fingers pressing hard against his skull"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_288"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "The widow points to the floorboards near the bed—three dark stains in a line, like steps backward.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_funeral_parlor",
+              "dialogue": "I have the deed.",
+              "stage_directions": "standing in the doorway; his shadow hides the deed in his palm, the paper trembling slightly"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "Lek finds a chalk mark behind the counter: \"4:07\" in small script, nearly erased but not gone.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_narrator",
+          "place": "place_funeral_parlor",
+          "dialogue": "Do you file what’s true or what’s written?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Hand the sealed ledger to the Pawnshop Appraiser.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I have something to tell you.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I don’t feel the same.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Read the chalk mark aloud.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I can barely hear you.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "That’s no problem.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Break the clock’s glass to check the mechanism.",
+            "difficulty": "hard",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I knew right away.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "It’s right here.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Flame and the River",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_district_officer",
+              "place": "place_funeral_parlor",
+              "dialogue": "",
+              "stage_directions": "entering, boots loud; stands in front of the widow, blocking the door—his body a wall, his presence a command to tell nothing"
+            },
+            {
+              "character": "char_rain_gauge_keeper",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Rain started at 3:55 AM, not 4:00.",
+              "stage_directions": "calling from the landing, her voice sharp with certainty"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_funeral_parlor",
+              "dialogue": "Time still burns.",
+              "stage_directions": "stepping forward, places his chronometer on the counter—time still burning in its glass heart"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "The widow burns the certificate in the lantern; the flame dips at 4:07, a flicker of agreement.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_funeral_parlor",
+              "dialogue": "I have the deed.",
+              "stage_directions": "grabbing the deed; the ink runs where his fingers sweat, blurring one name"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "Lek sees the same time—4:07—scratched inside the coffin rim, a secret kept in wood.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_230"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_boatman",
+              "place": "place_funeral_parlor",
+              "dialogue": "The river rose at 4:08, just before dawn.",
+              "stage_directions": "his voice low, like water finding its level"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_funeral_parlor",
+              "dialogue": "",
+              "stage_directions": "not answering the Monk’s claim that the chart is blind"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_198"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "The Monk says the chart is blind.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "Kamnan Noi does not answer.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_narrator",
+          "place": "place_funeral_parlor",
+          "dialogue": "Which record do you submit to the school?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Submit the monk’s version.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "It’s the best way.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I’m not finished yet.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Submit both times with a note.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "Now I know.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "Don’t throw it away!",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Refuse to file until the district officer leaves.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I believe you can do it.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "Are you finished yet?",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Last Tick",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The veranda is empty except for Kamnan Noi, writing in his sealed ledger—the last entry made, the book nearly finished.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I return with the school ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "I accept the ledger.",
+              "stage_directions": "nodding without looking up"
+            },
+            {
+              "character": "char_fire_stoker",
+              "place": "place_veranda",
+              "dialogue": "The widow’s house caught at 3:58 AM, the flames quick in the dry wind.",
+              "stage_directions": "arriving"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "Here.",
+              "stage_directions": "closing his book, hands Lek a key—cold iron, unmarked"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The sky turns paper-white as the sun clears the trees, the light flat and waiting.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_059"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I pocket the key.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_letter_writers_landing",
+              "dialogue": "I nod.",
+              "stage_directions": "from the landing, his lantern now dark"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_288"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "The chart is blind.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The veranda clock ticks once, then stops.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": null
+    }
+  ]
+}

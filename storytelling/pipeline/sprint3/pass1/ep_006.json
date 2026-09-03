@@ -1,0 +1,738 @@
+{
+  "id": "ep_006",
+  "title": "The Departure",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Wai Khru Mound at Dawn",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_boatman",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Give me the sealed letter by the turn of the tide, or it stays here and her son never knows.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The ink on the envelope's address is smudged; Pom does not pick up the pen.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The widow's pyre will be lit at first light.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_wai_khru_mound",
+              "dialogue": "I cannot wait; the tide turns.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek looks at Pom, who stares at his pen. He remembers the widow asking him to be a friend to her quiet clerk.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Convince your friend, or take the letter yourself.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_065"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek picks up the envelope; the paper feels thin and brittle.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom reaches out and places a finger on the envelope, stopping Lek. The Funeral Timekeeper counts the hour with three taps, then seven, then three again.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek cannot remember her final instruction.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_182"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek stands at the Wai Khru Mound, watching the canal; Pom sits at a low desk with a steel pen on an open notebook.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Funeral Timekeeper taps the frangipani tree, the Boatman holds a travel pass, and the Monk waits by a pillar.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Funeral Timekeeper's rhythmic tapping is the only sound. Lek strains to remember the widow's exact words about the letter's importance.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_wai_khru_mound",
+          "dialogue": "Do I press Pom to seal the letter now, or take the unfinished letter to the Boatman myself?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Press Pom with the Monk's reminder about the pyre and the thin envelope.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see Pom's hand tighten on his pen.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see Pom turn his face away from me.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Take the envelope directly to the Boatman and ask him to wait one moment more.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the Boatman glance at the tide and nod once.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the Boatman shake his head and point to his boat.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Open the envelope myself to see the widow's words and judge their tone.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the smudged ink form a clear, simple sentence.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the writing is a blur I cannot read.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Salt Store",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "A word can be perfect and still cut the reader.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_salt_store",
+              "dialogue": "Why is the letter not ready?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "The spelling is correct, but the tone is wrong.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Salt Clerk slides the salt into a sack, then steps forward, eyeing the envelope.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Salt Clerk looks from the envelope to Lek; his eyes say he doesn't want people finding out about a clerk's failure.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_salt_store",
+              "dialogue": "Some things are better kept from people.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_151"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Clerk sees the exact weight where the scale's brass arm hangs level, a stillness of white grains; his silent judgment hangs in the dry air as Lek watches Pom, shoulders slumped.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom isn't careful with his words, and now the letter may never go.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_284"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Lek and Pom enter the salt store; the air is thick and dry. The Salt Clerk weighs salt without speaking, writes a figure in red chalk.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom stands by a brick bin and runs his fingers through the pink salt.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_salt_store",
+          "dialogue": "Do I challenge Pom's hesitation, or seek the Salt Clerk's judgment on the letter?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Ask Pom to show me the exact word in the letter with the wrong tone.",
+            "difficulty": "easy",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see Pom point to a single character in his notebook.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see Pom close his notebook and look at the salt.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask the Salt Clerk if a dry letter is a faithful one, showing him the envelope.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the Clerk tap the glass over his ledger thoughtfully.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the Clerk turn back to his scale without answering.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Press the envelope into the coarse pink salt to dry the smudged ink fully.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the address emerge sharp and dark from the salt.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the ink fade further into the paper grain.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Wai Khru Mound",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Fire Stoker tends a low brazier, preparing incense for the funeral. The first hint of sun bleeds at the horizon.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Caretaker offers a ceremonial pen wrapped in silk; Pom declines with a shake of his head.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek holds out the widow's envelope to Pom and tells him the Boatman leaves now, with or without it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Fire Stoker feeds a stick of incense to the coals; a thin line of smoke rises straight up.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom holds the envelope near the brazier. The Fire Stoker watches the paper, his eyes sharp.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_fire_stoker",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lift the letter carefully over the heat.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_108"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom takes the envelope, walks to the brazier, and holds it over the heat. The paper does not burn.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom turns and hands the envelope back to Lek. \"You choose the heat.\"",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Nobody would believe a letter could be this difficult to send.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_010"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Lek and Pom arrive at the Wai Khru Mound beneath the frangipani trees; the Caretaker sweeps fallen flowers into a pile.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The thin line of incense smoke rises through the frangipani branches without bending, a straight pillar everyone ignores. Pom watches the unburning paper, his face the look of a man feeling a perfect cut.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom looks at the straight smoke, then at the horizon. His expression is distant, seeing the widow from that day.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_wai_khru_mound",
+          "dialogue": "Do I use the ceremonial pen to seal the letter, or place it in the brazier's smoke?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Take the ceremonial pen from the Caretaker and offer it to Pom one last time.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see Pom's eyes soften as he looks at the silk wrap.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see Pom's hand remains at his side, refusing.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Hold the envelope in the thin line of incense smoke from the brazier.",
+            "difficulty": "medium",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the paper absorb the scent and become rigid.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the smoke curl away without touching the envelope.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Lay the envelope on the pile of swept frangipani flowers at the mound's base.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see a flower petal stick to the dried ink.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the breeze scatter the flowers and envelope apart.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Departure",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Monk chants softly, facing the direction of the widow's house.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Boatman holds out his hand. Lek gives him the envelope.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Boatman examines the address, now dry and crisp. He nods, tucks it inside his shirt, and pushes off into the canal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Monk finishes his chant. Pom opens his notebook to a fresh page.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom looks at Lek. The silence between them is heavy with what hasn't been said.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom has something to tell Lek about the letter.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_077"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "He writes a single line, then closes the book. He places his steel pen on the cover. The pen-resting clerk is present.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Lek watches the boat grow small. He thinks of the widow's son in Bangkok, a man he's never seen before.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The son has never seen his mother's final words before.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_006"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Lek and Pom return to the salt store.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The first full light of dawn falls across the salt store, silent except for the water against the boat hull.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The steel pen on the closed notebook holds the last of the ink that will never write that widow's tone again. The tide turns, the boat moves, the world's turning edge a cut between knowing and not.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_salt_store",
+          "dialogue": "Do I ask Pom what he wrote, or remain silent as the boat departs?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Ask Pom if the single line in his notebook corrects the widow's tone.",
+            "difficulty": "easy",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see Pom open the book to show me a clean, clear line.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see Pom keep the book closed and look at the canal.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask the Monk to bless the letter's journey now that it is gone.",
+            "difficulty": "medium",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the Monk chant a short blessing toward the departing boat.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the Monk continue his silence, his chant complete.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Take Pom's steel pen from the notebook and place it in his hand.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I feel Pom's fingers close around the pen firmly.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I feel the pen stay cold and loose in his grasp.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

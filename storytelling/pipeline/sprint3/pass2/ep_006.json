@@ -1,0 +1,835 @@
+{
+  "id": "ep_006",
+  "title": "The Veranda Lamp",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Veranda Alarm",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek stands on the veranda, watching the canal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Pom sits on the veranda bench, a notebook open on his lap, a pen in his hand.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Wan leans against the veranda rail, holding a basket of folded cloth.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Monk kneels on a mat, a ceramic water bowl beside him.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Dance Teacher walks onto the veranda, her steps unsteady, and places a single frangipani blossom on the bench in front of Pom.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Correct the words or the ceremony dies. The Dance Teacher whispers a phrase, her voice thin, struggling to remember the exact words.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_182"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Pom’s pen stops moving over his notebook.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He writes the phrase down.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Bua slumps against the veranda post. Wan catches her before she falls. The Monk pours water into a bowl. Lek asks Pom what she said. Pom reads from his notebook: “Jai ron khaeng din.” The District Officer arrives by boat, his clerk carrying a leather folder. The District Officer steps onto the veranda, adjusting his uniform jacket. “What is this disturbance about?” the officer asks, his tone sharp, though his face attempts a friendly expression.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_284"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Wan explains Bua fell ill. The officer sees Pom’s notebook open to the phrase. He laughs and calls it superstitious noise.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_veranda",
+              "dialogue": "It is not metaphor. It is measurement.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The officer’s smile vanishes. He declares the phrase incites unrest. He states the annual Wai Khru performance at the mound, which Bua leads, is hereby banned. Bua stirs and whispers, “The children have practiced for months.” The officer says a formal, written appeal may be submitted to his office. He says the appeal must be perfectly neutral in tone. He gives a deadline: the appeal must be delivered before the ceremony begins tomorrow evening. He leaves. The Monk helps Bua to her feet to take her home. Bua looks at Pom and then at Lek. The words are not hot. The heart is. Write them cool. She leaves with The Monk.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "The entire village expects the ceremony to happen.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Pom tears the page with the phrase from his notebook, folds it twice, and tucks it into his shirt pocket. He closes his notebook and looks at Lek.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_veranda",
+              "dialogue": "I will draft the appeal. You must choose which one to send.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "Do we confront the officer's ruling now, or tend to the teacher first?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Ask The Monk to help Bua home while we discuss the appeal here on the veranda.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I ensure Bua rests, and we keep the phrase page safe.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I delay Bua's care, and the folded page falls into the canal water.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Send Wan to follow the officer's boat and note where his office stores its documents.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I learn the office layout, and Wan returns with a district folder sample.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I alert the officer's clerk, and he posts a guard at the veranda.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have Pom write the seditious phrase on a cloth from Wan's basket for the children to hide.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I preserve the words, and the children fold the cloth into a dance sash.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I am seen, and the officer confiscates the entire basket of cloth.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Salt Store Scales",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Lek and Pom walk to the salt store. The Salt Clerk is weighing coarse grey salt into a cloth sack. The Salt Clerk stands behind the counter, a brass scale in front of him. Pom sits on a brick ledge, opens a fresh page, and begins to write. Pom writes three separate sheets of paper. Lek watches the salt pour. Pom writes three separate sheets of paper. He lays them side by side on the ledge.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "This one uses only district office vocabulary. It mentions no phrase, no heart, no heat. This one describes the cultural importance of the ceremony. It calls the phrase a traditional blessing.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "He points to the third. It is blank.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_salt_store",
+              "dialogue": "What is the blank page for?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "A silent appeal. We submit nothing. We hold the ceremony anyway.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Salt Clerk finishes his work and watches them. The pink salt is all gone. The officer’s men bought the last of it yesterday. Pom gathers the three drafts, handling each sheet as if he has seen it before.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_006"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "Each version is a measurement. Each has a different temperature.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom holds the papers near the brazier, judging their warmth.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "“Which one should I prepare for final submission?” Pom asks Lek, his eyes bright with focus.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_108"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Salt Clerk adds that without the performance, the parents will not bring their rice chits for the school fund this season.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Pom stands and walks to the store’s small brazier, used for melting resin. He holds the drafts near the coals.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_salt_store",
+              "dialogue": "Choose. I will burn the other two.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_salt_store",
+          "dialogue": "Which draft do we risk burning, and which do we save for the appeal?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Choose the blank page draft, burning the other two in the salt store's brazier.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I submit nothing, and the Salt Clerk gives us a sack of grey salt for the ceremony.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I submit nothing, and the officer's clerk finds the ashes and reports our defiance.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Choose the district vocabulary draft, burning the cultural and blank drafts in the brazier.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I send the cold appeal, and Pom's pen does not break as he writes the final copy.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I send the cold appeal, and the brazier smoke stains the final paper with soot.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Choose the cultural importance draft, burning the district and blank drafts in the brazier.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I send the warm appeal, and the phrase 'traditional blessing' is entered into the district record.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I send the warm appeal, and the burning drafts ignite the salt clerk's sack cloth.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Mound's Incense",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "At the Wai Khru mound, The Caretaker is sweeping dried frangipani leaves from the earth platform.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Children are practicing a slow dance step under a tree.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Water Blessing Drummer tests the tension of his drum skin.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Caretaker sweeps the platform, a short broom in his hands.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "The Drummer sits on a stool, a long drum between his knees.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Pom gives Lek the final, chosen appeal, written neatly on official paper. The Caretaker says the incense and betel offerings are ready. He asks if the permit has been granted. The District Officer’s boat is seen moving up the canal toward the mound. The children stop dancing and watch the boat. The officer steps onto the bank, his clerk behind him. He holds out his hand for the appeal. Lek hands him the paper. The officer reads it silently, his face unreadable, making Lek believe the appeal might fail.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_010"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "He looks from the paper to Pom, then to the children.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "This is acceptable.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "He folds the paper and puts it in his folder. He says the performance may proceed. He adds one condition: no one may speak the old phrase during the ceremony. Not in song, not in recitation. The drummer’s hand stills on his drum. The officer turns to leave, his back to the children, as if the people here no longer matter to him.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_151"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "One child asks if they can still sing the blessing song.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "Sing whatever you like. Just do not say those words.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_wai_khru_mound",
+              "dialogue": "His boat pulls away. The Caretaker lights the incense. Pom walks to the edge of the mound, near the temple’s brazier for burning old offerings. He takes the two unused draft appeals from his pocket. He feeds them into the fire. He does not watch them burn.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_wai_khru_mound",
+          "dialogue": "Do we let the children hum the melody, or find another way to hold the words?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Tell the children to hum the melody but keep the words in their thoughts only.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I hear the hummed song, and the incense smoke rises in a straight column.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I hear the hummed song, and a child trips over a frangipani root during the dance.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have the Water Blessing Drummer beat the rhythm of the phrase on his drum for the children.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I hear the coded drumbeats, and the Caretaker nods while sweeping the platform.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I hear the coded drumbeats, and the officer's clerk, still on the bank, makes a note in his folder.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Write the phrase in the earth of the mound with the end of the Caretaker's broom.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the words written in dirt, and the children step over them during the dance.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_wai_khru_mound",
+                "dialogue": "I see the words written in dirt, and the next boat washes a wave that erases them.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Veranda Lamp",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Back on the veranda, the evening air carries the smell of incense from the mound. The Monk pours tea for Lek and Wan. Pom’s cup sits empty in front of him. The Caretaker arrives, holding a small ink cake, an offering from the ceremony. He gives it to Lek for the school. He says the ceremony was quiet, but complete.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "Did the children sing?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Caretaker says they hummed the melody. No one spoke the words. Pom opens his notebook. He writes a single line. He closes the book.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Is the appeal now part of the district record?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pornchai",
+              "place": "place_veranda",
+              "dialogue": "The words we sent are cold. The ones we kept are safe.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He takes the folded page from his shirt pocket, the original one with the phrase, holding it like a secret from a friend.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_065"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He does not unfold it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He holds it over the veranda’s lamp.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The edge of the paper browns and curls. He blows out the flame and puts the charred paper back in his pocket, his movements deliberate, as if to tell the page it is now safe.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_077"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Monk says, “Sometimes a silent heart is the loudest.”",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Pom picks up his pen and begins to write again, his hand moving steadily.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The night sky holds the day's heat, the canal carries the moon's cool reflection, and the charred page in Pom's pocket is the exact warmth of a held breath. The veranda is quiet except for the sound of his pen and the distant beat of one drum from the mound.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "Do we preserve the charred phrase page, or let Pom write a new record now?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Let Pom keep the charred page in his pocket and continue writing in his notebook.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see Pom write a new line, and the veranda lamp burns steadily without flickering.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see Pom write a new line, and a breeze blows his notebook page into the empty tea cup.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask Wan to sew the charred page into a fold of her cloth for safekeeping.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I give Wan the page, and she stitches it into the hem of her sleeve with strong thread.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I give Wan the page, and the charred edge crumbles into ash on the veranda floor.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Bury the charred page in the ink cake from the Caretaker, then store it in the school.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I seal the words in ink, and the cake hardens without a crack overnight.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I seal the words in ink, and the ink cake melts in the night's humidity, staining the school floor.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "_format_log": [
+    "act 1: markers repositioned deterministically (tag_182: line 7->7, tag_284: line 17->17) — anchor words preserved, no text changed",
+    "act 1 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_pornchai lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3: markers repositioned deterministically (tag_010: line 14->14, tag_151: line 22->22) — anchor words preserved, no text changed",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4: markers repositioned deterministically (tag_065: line 15->15, tag_077: line 19->19) — anchor words preserved, no text changed",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)"
+  ]
+}

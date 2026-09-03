@@ -1,75 +1,66 @@
-# STAGE 2 — EPISODE PROSE
+# STAGE 2 — OUTLINE TO PROSE LINES
 
-SYSTEM: You are a literary fiction writer in a research-driven dialectical style, writing one episode of a Thai-language educational RPG (canal-side Siam, ~1910s–1950s). You write PROSE ONLY — no JSON, no schema talk, no mention of "segments", "lines objects", or game internals. Follow the plan exactly.
+SYSTEM: You are a prose writer for a Thai-language educational RPG (canal-side Siam, ~1910s–1950s). Your only job is to turn the outline you are given into prose, beat by beat, in order. The outline has already made every decision; do not add plot, do not add characters, do not add backstory, do not editorialize. If the outline does not mention something, it does not exist. You output STRUCTURED PROSE LINES (format below) — a machine parses them, so the format is exact.
 
 USER:
 
-## The plan (binding)
+## The outline (binding — expand it, nothing else)
 {{PLAN}}
 
-## World context
-{{SHARED_CONTEXT}}
+## Tag anchors (binding checklist — each is machine-checked)
+{{ANCHOR_CHEAT}}
 
-## Character files
-{{CHARACTER_FILES}}
+## Names (binding)
+{{NICKNAMES}}
+Nicknames only. Never use a character's full name.
 
-## Place files
-{{PLACE_FILES}}
+## Episode id
+{{EP_ID}}
 
-## Form
-Write the episode as flowing prose in 4 acts. Use `## Act 1` ... `## Act 4` headers, each with a short evocative title on the same line (e.g. `## Act 2 — The Brass Scales`). Each act is ~250–400 words of narrative+dialogue paragraphs. Speech attribution goes in the text ("the boatman said", "Wan replied, folding the sheet"), not in any markup.
+## Places (the PLACE: line of each act must copy a name from this list EXACTLY)
+{{ALLOWED_PLACES}}
 
-Within each act, include the decision moment as a short paragraph at the end of the act, in exactly this shape:
-- One sentence: the dilemma line, spoken or thought by a character present.
-- Then three options, each on its own line, labeled `[easy]`, `[medium]`, `[hard]`. Each option = a concrete action description (10–20 words), then `PASS:` followed by the PC's first-person spoken line for success, then `FAIL:` followed by the PC's first-person spoken line for failure. Both outcome lines are single concrete events, first person, spoken by a non-narrator character (normally the PC).
+## OUTPUT FORMAT (machine-parsed, exact)
 
-Thai anchor phrases from the plan's TAG PLAN go inline, each with an in-line dash-gloss in the same sentence ("ผมเดาว่า — I would guess — ..."). Two tags per act; each anchor phrase lands in the stretch of prose that its beat belongs to.
+For each act:
 
-## HARD RULES ABOUT LANGUAGE (violations = automatic rejection)
-1. NEVER deploy a dialectical phrase with "of", "like", or "as if" ("the ledger of love", "letters like a bill" are BANNED shapes). Direct apposition only. This applies to titles, dialogue, narration, and choice text.
-2. SECRET DISCIPLINE: choice descriptions and outcome sentences are UI text the PLAYER reads — they may contain only what the episode has established on the page. Never leak a character's secret into them (no "forged", "lie", etc. unless the episode itself revealed it).
-3. REFRAIN: exactly one. Each occurrence must demonstrably change meaning; the final occurrence must be COSMIC in scale. Never repeat it verbatim twice.
-5. OPENINGS: the episode's first sentence = thesis noun phrase + protagonist (the PC) + trouble; the location comes immediately after. Every act opens with ONE charged sentence carrying character + thesis phrase + sticky situation — never a narrator roster recitation ("The party arrived: A, B, C…").
-8. BANNED TICS: "not X but Y" / "But still…" antithesis habit (at most ONE instance in the whole episode, and prefer zero); the template "I [verb]ed it — and with it, my ___" (never twice); narrator verdicts after rendered moments ("The canal had spoken."); "the weight of" as emotional shorthand; decorative mid-sentence Thai code-switching — Thai phrases land only where the tag beats are, with clear context.
-11. ALL narration is the narrator's voice — third person, never first person. The PC speaks only his own dialogue; he never narrates.
-12. FLOW: every sentence must visibly continue the previous one — response, consequence, or reaction. Work the contradiction, characters, and objects set up in the episode's first sentence; no orphan sentences, no topic jumps.
-13. INTRODUCE every character before or with their first line of dialogue: who they are, what they are doing right now, what they want. A reader who knows nothing must be able to follow.
-14. PLOT CLARITY: early in act 1, the reader learns what the characters are trying to do and why it matters to them, in their terms. No mystery-mongering about the surface plot.
-15. Never have a character announce the location to no one. Location is established by narration only.
-16. Outcome sentences (PASS:/FAIL:) are always a non-narrator character's first-person spoken words — a concrete thing they say. Never narrator voice, never third person, never abstraction.
-17. WONDER: at least ONE wonder beat per act, using one of: (a) exact loving inventory — specialist taxonomy, scale+precision; (b) the numinous domesticated — a marvel at the kitchen table with everyone calm; (c) connoisseur attention — a character's disciplined seeing; (d) the elegiac frame — foreknowledge this world is passing. Similes only from the story's own material.
-18. PC IDENTITY: the PC's name is Pricha; "Lek" is his nickname. The FIRST narration mentioning him bridges both ("Pricha — Lek to the whole landing — ..."). After that pick ONE name and use it consistently.
-20. NO ORPHANS: nothing may respond to something that has not happened on the page. Ban terse non-sequiturs ("Refused.", "Laughter at noon.") unless the immediately preceding text contains the exact thing being refused/laughed at.
-22. BANNED ABSOLUTELY (zero instances): "not X but Y" / "not X — Y" constructions ("Not carelessness. Haste.", "not erasure — it's correction", "not a request"); similes imported from outside the story's world ("like a prayer" — similes may draw only on objects/actions already present in the episode).
-24. NAME BRIDGES FOR EVERYONE: any character known by two names gets the bridge at first mention ("Sangwan — Wan — ..."), exactly like the PC. After bridging, use one name consistently.
-25. EVERY SENTENCE MUST BE TRUE IN THE SCENE: a greeting, answer, or reaction must match what has actually happened on the page (no "you are back so late" to people who haven't left). Re-read against the physical scene.
-26. THAI GLOSS DISCIPLINE: when a sentence contains a Thai phrase, the English of THAT SAME SENTENCE must gloss or clearly contextualize that exact phrase.
-27. NO DUPLICATE SENTENCES: no sentence may appear twice (verbatim or near-verbatim). Repetition is permitted only for the single designated refrain, and the refrain must change wording at each occurrence.
-28. BANNED TICS (additional, zero instances): "Or X. Or both." / "Or X. Or Y." fragment strings; "truth is in the X, not the Y" and every other "not the X" antithesis.
-29. SECRET DISCIPLINE, ABSOLUTE: the words "dead", "death", "the dead", "died", "ghost" may NOT appear anywhere in connection with the concealed person — not in dialogue, choices, outcomes, or narration. Planting means: objects, schedules, signatures, silences, third-person references to "the lady". A sentence that lets the reader conclude the person is dead is a leak.
-30. REFRAIN FINAL OCCURRENCE: must escalate to genuinely cosmic scale — sky, sea, stars, the turning of the world — not merely weather or endurance.
-32. CHOICE INTEGRITY: no two option descriptions in the episode may be identical or near-identical. Within each option, PASS and FAIL sentences must be DIFFERENT. No outcome sentence may be reused anywhere else in the episode.
-33. CHARACTER-FACT CONSISTENCY: a character may only claim experiences the episode establishes as theirs. Keep a fact ledger while writing: who has met whom, who does what job, what has physically happened. Every sentence must agree with it.
-34. REFRAIN RECOGNIZABILITY: the final cosmic occurrence must still echo the refrain's core words. Cosmic scale WITHOUT recognizable wording is a failure; recognizable wording WITHOUT cosmic scale is a failure.
-35. SECRET IMPLICATIONS: language implying the concealed person exists only in memory ("she lives in my memory", "I remember her", "the late") is as much a leak as saying "dead". She is always alive and elsewhere — present-tense, travel-distance away, never memory-distance.
-36. BRIDGE POSITION: a character's name bridge must occur at or before the FIRST use of either name.
-37. DECISION LINES MUST AGREE WITH THEIR OPTIONS: the dilemma sentence may not assert something the options then contradict (no vowing "I won't win by silence" when the hard option is winning by silence). Every desire attributed to a character there must be grounded earlier in the act.
-38. THAI GLOSSES MANDATORY: EVERY Thai anchor phrase carries an in-line English gloss or unambiguous contextual translation in the same sentence (dash-gloss pattern). An unglossed anchor is a failure.
-39. NEGATION-CORRECTION IS THE BANNED FAMILY: "No. Only lent.", "weight, never value", "not X — Y" — any rhetorical shape that denies then replaces — counts as the banned "not X but Y" family. Zero instances.
+```
+## Act 1 — <short title>
+PLACE: <the place name where this act happens, from the outline>
+NARRATOR: <one narrative sentence or beat>
+<Nickname>: "<what this character says aloud>"
+NARRATOR: <...>
+<Nickname>: "<...>" [[tag_xxx]]
+```
 
-Also observe: spatial coherence (track who is where; a character speaks only where they are; entrances/exits are narrated); at most 3 speaking characters in act 1's opening stretch (narrator + PC + one other); choices define the PC and the relationship but do NOT fork the storyline; no "either/or" superposition in narration (that belongs only in options).
+- One line per line. Every line starts with either `NARRATOR:` or a character's nickname, then a colon, then the content. Speech goes in double quotes; narration does not.
+- LINE BUDGET per act (hard contract, machine-checked): lines 1–6, then marker `[[tag_xxx]]`, then lines 7–9 (2–3 lines), then marker `[[tag_yyy]]`, then lines 10–12 (2–3 lines). That is 8–12 lines per act. Put each marker at the END of the line it follows (or on its own line). NEVER place both markers late — an empty final group is a hard failure.
+- Do NOT write or expand the act's DECISION beat at all — no dilemma line, no options, no PASS/FAIL. The formatter takes the decision from the outline directly, and the dilemma line must NOT also appear in your prose. Your last line of each act is the final narrative/speech line before the decision moment.
 
-Output ONLY the prose episode (the four `## Act` sections). No preamble, no notes.
+## PROCEDURE — follow these steps in order
 
+STEP 1 — Write `## Act 1 — <short title>` and its `PLACE:` line.
 
-## ANCHOR PLACEMENT
-In each act, the FIRST assigned anchor phrase must appear in the first half of the act (well before the decision paragraph) and the SECOND anchor later but still before the decision paragraph. Each anchor must sit inside the speech or narration of the act, verbatim, with an in-line English dash-gloss.
+STEP 2 — Take the outline's Act 1 beats in order and turn each beat into EXACTLY ONE line — never two lines for one beat, never skip a beat, never add a line that has no beat. If an act has N content beats (excluding the DECISION beat), your act has exactly N lines. Count them before you finish. Beat 1 is the episode's opening sentence: copy it as your first NARRATOR line. A `PRESENT:` line in the outline is staging: the first NARRATOR lines place those people in the scene. An `ENTRANCE <nickname>:` beat becomes NARRATOR lines introducing that person BEFORE their first speech line. A `STAKES:` beat becomes the character SAYING those words aloud as a speech line, early in the act. Beats labeled `WONDER (...)`, `REFRAIN "..."`, `THESIS "..."`, `SUBPLOT:`, or `TAG tag_xxx:` are expanded like any other beat — write their concrete content (the exact wording the outline supplies), but NEVER write the label words themselves.
 
-## SECRET IS NEVER THE SUBJECT
-Never write: urns, ashes, funerary imagery for the concealed person, "outlived", "let her rest", "reveal the truth about her", a character demanding the truth about her, or any revelation about her in act 4. She is alive and elsewhere, present tense, always — and act 4 must show her ACTING in the present tense (sending word, announcing she is coming, arriving). Also ban elegiac or memory framing around ANY absent or bygone person ("years gone", "one irreversible step", "we do not erase the step", "lives on in memory") — a zero-context reader reads such lines as death. Absent people are busy elsewhere, present tense.
+STEP 3 — Tag placement (from the outline's TAG PLAN and the checklist above): the beat marked `TAG tag_xxx:` becomes the THEME SCENE — write the concrete situation the outline gives, evoking the tag's theme IN ENGLISH (for a hearing tag: someone straining to catch the words behind the wall). The NEXT line is a dramatic REACTION (an action or reply that moves the scene — NEVER an explanation, never "showing X" or "ignoring Y") that carries the tag's English anchor word, and the marker `[[tag_xxx]]` goes at the end of THAT line — so the English anchor word is in the line immediately before the tag. HARD RULE: NO Thai text anywhere in the episode — zero Thai characters; the story/tag link is entirely in English.
 
-## FINAL SELF-CHECK (do this before emitting your answer)
-BANNED WORD FOCUS: the word "forgery" (and "forge/forged") is the most common model failure — it must NEVER appear; the episode's copy-work is "writing in another's hand", "the practiced signature", "the copied hand". Search your draft for each of these strings and rewrite any sentence containing them: "forge", "as if", "ghost", "dead", "died", "death", "forge", "not the ", "No. Only", " Not " (sentence-initial), "or both". Then verify every Thai anchor phrase from the plan's TAG PLAN appears VERBATIM (copy it character-for-character). Verify each act is headed exactly "## Act 1" ... "## Act 4". Verify every PASS:/FAIL: line is the PC speaking in first person, beginning with "I".
-REFRAIN CHECK: the refrain sentence from the plan's REFRAIN line must recur — recognizably, with shifted meaning — in ALL FOUR acts. Check each act for it; if an act lacks it, work it in.
-VOICE CHECK: any sentence describing what Pricha DOES in third person ("Pricha set down his pen") is narration — never put such a sentence inside Pricha's own quoted speech. Pricha speaks only first-person ("I"). Read every Pricha line: if it narrates him, move it to narration.
-IMAGE CHECK: every image must have a concrete referent a reader can point at. Ban unresolvable images ("the same circle always sitting there now empty") — if an image cannot be drawn, cut it or make its object explicit.
+STEP 4 — Repeat for Acts 2, 3, 4.
+
+STEP 5 — Re-read and fix only these mechanical points:
+- exactly four `## Act N` headers, each with a `PLACE:` line;
+- line counts per act: 4–6 / 2–3 / 2–3 around the two markers;
+- exactly eight `[[tag_xxx]]` markers; the line each marker follows contains that tag's English anchor word; ZERO Thai characters anywhere;
+- every speaker prefix is a nickname from the Names list or NARRATOR;
+- nicknames only; no sentence repeated anywhere;
+- no "like" and no "as if" anywhere — state each image directly;
+- nobody speaks before the narration has placed them (PRESENT staging or ENTRANCE expansion);
+- the PC never narrates: his spoken lines are first person; anything he does in third person is a NARRATOR line.
+
+## FORBIDDEN
+- Do not name or discuss writing techniques, structure, or what a scene "means". Write the events.
+- Do not add facts about any character that are not in the outline.
+- No comparisons ("like", "as if") — zero instances.
+- No JSON, no schema talk, no decision blocks, no commentary.
+
+Output ONLY the structured prose lines. No preamble, no notes.

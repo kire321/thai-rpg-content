@@ -1,0 +1,719 @@
+{
+  "id": "ep_003",
+  "title": "The Red Ink",
+  "_format_log": [
+    "act_1 segment 1: merged two short sentences to reach 4 lines",
+    "act_2 segment 5: merged two short sentences to reach 2 lines",
+    "act_3 segment 5: merged two short sentences to reach 2 lines"
+  ],
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Red Ink",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Funeral Timekeeper stands on the school veranda with a red-ink correction in hand, and I know right away it’s about the widow’s husband.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "I hear the soft tap of his sandal against the wood, and I look up to see a small man in grey cloth, holding a ledger open to a line crossed out in red, then rewritten in black.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He steps forward without greeting.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_veranda",
+              "dialogue": "The death was at 4:07 AM, not 4:13, and the land audit begins tomorrow.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Why the record changed now, six days after the coffin left?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_veranda",
+              "dialogue": "The tide log shows the boat arrived at 4:08, so the body must have died earlier. That’s no problem — the water doesn’t lie.",
+              "stage_directions": "tapping the red ink"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_288"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "I feel the weight of his words, but the doubt stays.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_veranda",
+              "dialogue": "She needs it true. But only if it’s written.",
+              "stage_directions": "leaning in"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I’ll need proof — a tide stamp, a boat log.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_330"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_veranda",
+              "dialogue": "The boatman burned his log. He said the water lied.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I hear that, and I’m happy to hear it — because if the water lied, then maybe the ink can too.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_funeral_timekeeper",
+          "place": "place_veranda",
+          "dialogue": "Will you file it or not?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Accept the red ink without proof",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I file the correction and the Timekeeper bows, hand over heart.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hesitate and he snatches the paper back.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Demand the boatman’s testimony",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I say I need the boatman’s word and the Timekeeper frowns.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I say I need the boatman’s word and he spits into the pond.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask Kamnan Noi to verify the sky",
+            "difficulty": "hard",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I turn to Kamnan Noi and he opens his chronometer.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I turn to Kamnan Noi and he closes his ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Salt and the Fire",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Present: Lek, Kamnan Noi, The Funeral Timekeeper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I burned the log because the widow paid me double to lie.",
+              "stage_directions": "entering barefoot, salt-crusted shirt clinging to his shoulders, carrying a splintered oar wrapped in cloth"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Why are you telling me now?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "The fire scared me — the house fell at 3:58, same as the tide.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi writes the fire’s time in his small ledger.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_083"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_salt_clerk",
+              "place": "place_veranda",
+              "dialogue": "The widow traded her last rice chits for salt the night before the fire.",
+              "stage_directions": "arriving barefoot, holding a pink salt chit, pressing it into the Boatman’s palm"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Did you see the clock?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_veranda",
+              "dialogue": "I don’t read time — only salt — but the lantern was lit when I left.",
+              "stage_directions": "a woman with cracked heels"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_230"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "The land was already mortgaged — the widow knew she’d lose.",
+              "stage_directions": "walking up, holding a deed, waving it with a pawn string still tied"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Why did she burn the house?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "Maybe she wanted the truth to burn too.",
+              "stage_directions": "a man in a stiff collar"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "That’s really easy to guess, I think — but I say nothing.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "Whose time do you write?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "File the widow’s version",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I write 4:07 and the Appraiser pockets the deed.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I write 4:07 and the Boatman spits on the floor.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Record both times",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I write both times and the Salt Clerk nods.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I write both times and the Appraiser tears the page.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": -1
+            }
+          },
+          {
+            "description": "Hand the ledger to Kamnan Noi",
+            "difficulty": "hard",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hand him the ledger and he writes nothing.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hand him the ledger and he walks away.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Stopped Clock",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Present: Lek, Kamnan Noi, The Funeral Timekeeper, The Boatman, The Pawnshop Appraiser.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "The widow’s son will inherit if the time is 4:07.",
+              "stage_directions": "whispering to the Appraiser, a man in saffron, fingers pressed together, not looking at the fire site"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Why do you care?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "The boy is my nephew — born under Rahu.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "The naming was already carved — on the prow, in the salt.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "The naming means nothing if the land is gone.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_250"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "I look at Kamnan Noi — he is writing in his sealed ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I don’t feel the same as before — something in the air has shifted.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_198"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_fire_stoker",
+              "place": "place_veranda",
+              "dialogue": "The clock stopped at 3:58 — same as Kamnan’s record.",
+              "stage_directions": "arriving covered in ash, a man with soot on his arms, holding a bent clock hand"
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Does that prove the fire started then?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_fire_stoker",
+              "place": "place_veranda",
+              "dialogue": "Time burns. But paper lies.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "Do you burn the record or save it?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Hand the record to the Fire Stoker",
+            "difficulty": "easy",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I hand over the record and he burns it in the brazier.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I hand over the record and the Monk snatches it first.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Lock it in the tin box",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I lock it in the tin box and Kamnan Noi nods.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I lock it in the tin box and the Appraiser kicks it.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": -1
+            }
+          },
+          {
+            "description": "Read it aloud at the funeral parlor",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I walk to the funeral parlor and read it aloud.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I walk to the funeral parlor and the Timekeeper silences me.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Rising Water",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Present: Lek, Kamnan Noi.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The rain starts — soft on the veranda roof.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I open my notebook — the word “sequence” is underlined.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phra_kam",
+              "place": "place_veranda",
+              "dialogue": "I have something to tell you.",
+              "stage_directions": "placing his brass compass on the table, pointing west"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_059"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "I’m not finished yet — the words sharp between us.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phra_kam",
+              "place": "place_veranda",
+              "dialogue": "Time is.",
+              "stage_directions": "sliding the key to the sealed ledger across the wood"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_198"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "He walks to the riverbank. I watch him stand at the edge — water rising. …standing right in front of the flood.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_river_post",
+              "dialogue": "I pocket the key. The rain keeps falling.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_phra_kam",
+          "place": "place_veranda",
+          "dialogue": "I have something to tell you.",
+          "stage_directions": "placing his brass compass on the table, pointing west"
+        },
+        "choices": [
+          {
+            "description": "Press for the full story",
+            "difficulty": "easy",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I demand the rest and he tells me everything.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I demand the rest and he turns away silently.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Wait in silence",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I wait and he finally speaks.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I wait and he says nothing more.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Leave before he speaks",
+            "difficulty": "hard",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I leave and he does not follow.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 2
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I leave and he calls after me.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": -1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
