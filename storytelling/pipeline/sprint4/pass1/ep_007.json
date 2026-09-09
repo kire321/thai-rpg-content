@@ -1,0 +1,780 @@
+{
+  "id": "ep_007",
+  "title": "The Stamped Settlement",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Stained Grain",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Salt Clerk arrives on the veranda with his hands stained red from the broken chalk block, and he places a single grain of pink salt on the ledger Lek is writing in.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_veranda",
+              "dialogue": "The pink salt bin was found empty this morning, the lock unbroken but the lid left open. Bring the school's tin box to the Rice Ledger before the sun touches the canal's far bank, or the district will seal the salt store and fine the temple.",
+              "stage_directions": "stands before Lek"
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "The temple school's records of salt chits must be checked against my own ledger at the Rice Ledger.",
+              "stage_directions": "stands behind the Clerk, tapping his boot against a veranda post"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Rangsri sits at the edge of the veranda with her lacquered box open on her lap, humming a low, unfinished tune, and does not look up.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I can take you now, but the water is falling.",
+              "stage_directions": "waits by his boat, one foot on the gunwale, holding a bamboo pole"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The canal water laps against the veranda posts, and the Boatman's pole drips with the falling water. Lek strains to hear the muffled conversation between The District Officer and The Salt Clerk as they step behind a veranda post.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_veranda",
+              "dialogue": "I overheard the assistant laughing about it yesterday.",
+              "stage_directions": "turns back, his voice clear"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_146"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek opens the school's tin box and begins sorting through the bundled salt chits, his fingers moving quickly over the rice paper slips: three bundles of ten, two loose chits, one torn half.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Rangsri closes her box and looks directly at The District Officer for the first time.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_rangsri",
+              "place": "place_veranda",
+              "dialogue": "Everyone knows your assistant was at the salt store after dark.",
+              "stage_directions": "her tone flat"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_113"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek slips a single chit from the school's box into his own sleeve, a chit marked with a date two days from now.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "How to prepare for the ledger check?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Quickly recount the salt chits with Rangsri, using the veranda rail to sort them.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I have a clean count ready for the Boatman.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I drop a bundle of chits into the canal water.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask The Salt Clerk to describe the lock and the bin’s lid before we leave.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I note the Clerk’s exact words about the lock.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the Clerk grow nervous and refuse to speak further.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Press The District Officer on why his assistant was not sent to collect the records.",
+            "difficulty": "hard",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I get the Officer to reveal his assistant is at the Rice Ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear the Officer threaten to shorten the deadline.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Disputed Ledger",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "The Rice Ledger office is quiet, the glass case over the main ledger gleaming under a single oil lamp. The Grain Clerk slides Lek's tin box across the counter and points to a line in the government ledger where the pink salt tallies should be. The Grain Clerk stands behind the counter, his fingers stained with ink. Lek's own records show three chits for pink salt issued in the last month; the government ledger shows five. The Tax Clerk enters from the back room, carrying a pot of boiled ink and a stamp.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_tax_clerk",
+              "place": "place_rice_ledger",
+              "dialogue": "The discrepancy must be resolved before the stamp can be pressed.",
+              "stage_directions": "sets the pot on the counter"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "Rangsri walks to the open door and looks out at the canal, her back to the room.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_rangsri",
+              "place": "place_rice_ledger",
+              "dialogue": "Did anyone laugh in this office yesterday?",
+              "stage_directions": "without turning"
+            },
+            {
+              "character": "char_grain_clerk",
+              "place": "place_rice_ledger",
+              "dialogue": "The Mirror Mender's son was here, giggling at his own reflection in the glass case before his mother dragged him out.",
+              "stage_directions": "frowns"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "The Tax Clerk mutters numbers under his breath as he mixes ink; Lek leans closer, trying to catch the figures.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_grain_clerk",
+              "place": "place_rice_ledger",
+              "dialogue": "I didn't catch the full amount myself. The boy was too loud.",
+              "stage_directions": "taps the ledger"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_029"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "Rangsri takes a vial from her box, uncorks it, and holds it to the doorway for a moment before sealing it again.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "Lek studies the forged chits, his brow furrowed.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_grain_clerk",
+              "place": "place_rice_ledger",
+              "dialogue": "You still don't understand the procedure here.",
+              "stage_directions": "sighs"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_252"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "Lek compares the handwriting on the two extra chits in the government ledger; his eyes trace the red chalk strokes, seeing the lighter pressure where the forger's hand hesitated on the final loop of the numeral five.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_rice_ledger",
+              "dialogue": "Rangsri watches the canal's slow current from the doorway, her stillness a mirror to the water falling.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_rice_ledger",
+          "dialogue": "How to address the ledger discrepancy?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Point out the pressure difference on the two extra chits to The Grain Clerk.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I get the Clerk to agree the entries look added.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I hear the Clerk say all government entries are valid.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask The Tax Clerk to compare the stamp’s ink with the ink on the extra chits.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I get the Clerk to confirm the ink matches the office pot.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I see the Clerk refuse to examine the chits further.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have Rangsri show her vial to The Grain Clerk and ask what sound it caught.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I see the Clerk recall the boy’s laugh and re-check the ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "I see the Clerk become unsettled and stop cooperating.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Spilled Salt",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The sun is low, casting long shadows across the salt store's three brick bins.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_salt_store",
+              "dialogue": "My count was correct. The pink salt was there at closing.",
+              "stage_directions": "raises his hands"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Mirror Mender arrives with her son, who clutches a small, grimy cloth bag.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mirror_mender",
+              "place": "place_salt_store",
+              "dialogue": "My son found the bag by the canal path this morning and has been carrying it all day.",
+              "stage_directions": "gestures to the bag"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The boy opens the bag and pours out a handful of coarse pink salt onto the ground. Rangsri kneels, not touching the salt, and hums the same unfinished tune from the veranda. The boy stops fidgeting and watches her.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_delivery_boy",
+              "place": "place_salt_store",
+              "dialogue": "I'll get the rest of the salt from where I saw it hidden.",
+              "stage_directions": "runs up, holding out the grimy cloth bag to Lek"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_215"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Delivery Boy runs up from the landing, out of breath, and says he saw the District Officer's assistant at the salt store after hours two nights ago.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_salt_store",
+              "dialogue": "What was the assistant doing?",
+              "stage_directions": "asks"
+            },
+            {
+              "character": "char_delivery_boy",
+              "place": "place_salt_store",
+              "dialogue": "He was writing in a small book, not the ledger.",
+              "stage_directions": "responds"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Mirror Mender puts a hand on her son's shoulder, looking at The Salt Clerk.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mirror_mender",
+              "place": "place_salt_store",
+              "dialogue": "He's an old friend of the assistant. They talk by the canal.",
+              "stage_directions": "her voice low"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_065"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_boatman",
+              "place": "place_salt_store",
+              "dialogue": "The light is nearly gone; the sun touches the far bank.",
+              "stage_directions": "calls from the canal"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Rangsri opens her lacquered box and removes the vial she filled at the Rice Ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_rangsri",
+              "place": "place_salt_store",
+              "dialogue": "The laugh has been accounted for.",
+              "stage_directions": "places the vial beside the spilled salt"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The spilled pink salt glints in the last sun, each grain holding a tiny, perfect sunset, and everyone treats it as just spilled salt.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_salt_store",
+          "dialogue": "How to secure the evidence before the deadline?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Collect the spilled salt back into the cloth bag for The Salt Clerk to hold.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I hand the bag to the Clerk, who accepts it as returned inventory.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I watch the salt scatter further into the dirt.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask The Delivery Boy to describe the assistant’s small book in detail.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I hear the boy recall a red cover and a brass clasp on the book.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I ask about the book, but the boy becomes confused and contradicts himself.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have Rangsri use her vial’s captured sound to calm the Mirror Mender’s son for a clear account.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the boy quietly show where he found the bag.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the boy cry and his mother take him away.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Stamped Settlement",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Back on the veranda, the light is fading to blue. Lek lays the two disputed salt chits and the school's matching records side by side on the floorboards.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "I demand the stamped inventory.",
+              "stage_directions": "arrives, bootsteps heavy"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek points to the pressure marks on the chits, the way the red chalk smudges on only the two extra entries.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "The school's records are clean, and the stolen salt was found, not spent.",
+              "stage_directions": "his voice steady"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Salt Clerk picks up the cloth bag from the veranda step, the remaining pink salt inside. The District Officer glares at his assistant, who looks at the ground.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "I don't know where this false ledger began.",
+              "stage_directions": "his tone cold"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_007"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The District Officer takes the school's ledger, hesitates, then presses his stamp into the corner without a word.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He leaves, his assistant trailing behind him without looking back. Rangsri opens her box and takes out a fresh slip of rice paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_rangsri",
+              "place": "place_veranda",
+              "dialogue": "How do you write 'account settled'?",
+              "stage_directions": "hands Lek a charcoal pencil"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_303"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Rangsri sits again at the edge of the veranda, her box open.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "She places the vial labeled *A gift given without reason* into Lek's tin box, among the salt chits, and closes the lid for him.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The stars appear over the canal, and the whole turning world is water falling through the dark. Lek watches the District Officer's boat vanish into the twilight, knowing this world of chalk ledgers and canal deadlines is already passing into a different kind of silence.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "How to respond after the stamp is pressed?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Thank The Salt Clerk for his vigilance and return the cloth bag to him.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the Clerk nod and lock the salt store.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the Clerk refuse the bag, saying the matter is closed.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask Rangsri what the vial in the tin box is meant to do now.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear her say it will keep the records from attracting false laughter.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see her say nothing and watch the canal.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Confront The District Officer’s assistant about the small book before he leaves.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the assistant drop the book, revealing blank pages.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the assistant deny everything and walk faster.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "_format_log": [
+    "act 1: markers repositioned deterministically (tag_146: line 9->9, tag_113: line 12->12) — anchor words preserved, no text changed",
+    "act 1 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 1 segment 1: merged two adjacent char_salt_clerk lines (verbatim concatenation)",
+    "act 2: markers repositioned deterministically (tag_029: line 11->11, tag_252: line 14->14) — anchor words preserved, no text changed",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 2 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3: markers repositioned deterministically (tag_215: line 8->8, tag_065: line 13->13) — anchor words preserved, no text changed",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 3 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4: markers repositioned deterministically (tag_007: line 8->8, tag_303: line 12->12) — anchor words preserved, no text changed",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 1: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 3: merged two adjacent char_narrator lines (verbatim concatenation)",
+    "act 4 segment 5: merged two adjacent char_narrator lines (verbatim concatenation)"
+  ]
+}

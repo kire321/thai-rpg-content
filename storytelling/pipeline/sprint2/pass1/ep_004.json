@@ -1,0 +1,938 @@
+{
+  "id": "ep_004",
+  "title": "The Incomplete Record",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The Blank Plate",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The envelope from Bangkok lies on the veranda floorboards between Lek’s feet and Phum’s stool.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Pond Diver picks it up, turns it over, and places it on Lek’s open ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The print bureau’s seal is intact, but the paper around it is soft from handling.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "Do you expect correspondence?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum cleans his lens on his sleeve and looks at the envelope but does not touch it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_veranda",
+              "dialogue": "I want to know what they are asking for, and it will cost me a trip to the letter-writer.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He says he does not.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Monk arrives from the temple hall, holding a palm-leaf manuscript.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "Let us open it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek breaks the seal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pond_diver",
+              "place": "place_veranda",
+              "dialogue": "โทรกลับหาพี่ด้วยนะ.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek gives a call to him, but receives no answer.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_020"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Inside is a photographic plate, wrapped in black paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The plate is smooth and blank.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "No letter accompanies it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "A separate slip of paper bears a date: the next mail boat’s arrival, two days hence.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "The plate is blank, but the bureau demands a reply. How do we proceed?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pond_diver",
+              "place": "place_veranda",
+              "dialogue": "ไม่เหนื่อยเหรอ?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The question hangs in the humid air as Phum looks tired.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_284"
+        },
+        {
+          "type": "narrative",
+          "lines": []
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_monk",
+          "place": "place_veranda",
+          "dialogue": "The plate is blank, but the bureau demands a reply. How do we proceed?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Ask The Monk to consult his palm-leaf manuscripts for any precedent about photographic plates.",
+            "difficulty": "easy",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I find a passage about undeveloped plates being used as receipts.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I find only prayers for the dead, unrelated to the bureau's demand.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have The Pond Diver submerge the plate in a bowl of canal water to see if any hidden writing appears.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see a faint registry number surface on the wet glass, revealed by the canal water.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see only my own reflection, the plate unchanged.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Send the blank plate back immediately with The Mirror Mender, claiming it is the complete reply.",
+            "difficulty": "hard",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I place the sealed plate in The Mirror Mender's hands for the mail boat.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I drop the plate, and it cracks on the veranda floorboards.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The Fixed Plate",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The District Officer arrives at the veranda, holding a folded government circular.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He stands between Lek and the canal steps.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "Has any reply been prepared for the bureau?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum picks up the blank plate and holds it to the light.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_veranda",
+              "dialogue": "The plate is not blank; it has been fixed.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_veranda",
+              "dialogue": "I need a developing tray.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "The bureau requires an answer about the registry of plates from the fifth reign.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum places the plate back into its black paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_veranda",
+              "dialogue": "I will need to visit the letter-writer’s landing to prepare a reply.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek closes the ledger over the envelope.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "I will accompany you to ensure the reply is timely.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum gathers his mending tools into a cloth bundle.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The three of them walk down to the canal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "ชอบสุดๆ.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek nods, his expression unreadable, showing no love for the comment.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_317"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_district_officer",
+              "place": "place_veranda",
+              "dialogue": "The District Officer insists on accompanying us. How do we manage his oversight?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum squints at the path.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_veranda",
+              "dialogue": "ผมสายตาไม่ดี.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The District Officer offers no help, ignoring Phum's poor vision.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_141"
+        },
+        {
+          "type": "narrative",
+          "lines": []
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_district_officer",
+          "place": "place_veranda",
+          "dialogue": "The District Officer insists on accompanying us. How do we manage his oversight?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Show The District Officer the government circular and ask him to clarify the bureau's registry rules.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I point to a line in the circular that satisfies his query about the plate.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I misread the circular, and he demands we hurry to the landing.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Let Phum carry the plate while Lek deliberately walks slowly, noting canal water levels in his ledger.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I record a stable water mark, giving Phum time to examine the plate unseen.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I slip on the steps, spilling ink over the ledger and drawing his attention.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Suggest to The District Officer that the plate itself is the official reply, so no letter is needed.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I cite a precedent about unmarked plates, and he nods, stepping back from the bundle.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I fumble the words, and he insists on watching the letter-writer's every stroke.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The Registry Number",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "At the letter-writer’s landing, the old man has already set out his inkstone.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The District Officer stands by the pigeonhole rack.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "A clean sheet of paper and the use of your darkest ink.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "He does not write.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Instead, he unwraps the plate again and lays it flat on the table.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Lek, the school’s magnifying glass.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Lek hands it to him.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Phum tilts the plate in the sun.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "He traces his finger over a corner of the glass.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "There is a registry number etched along the edge, visible only at an angle.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The District Officer leans in to look.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Phum recites the number from memory.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Transcribe this exactly onto the clean paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The letter-writer’s hand shakes as he writes.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The plate itself is the only suitable reply.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "He rewraps it and places it back into the original envelope.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "He seals the envelope with a drop of wax from the letter-writer’s candle.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "He hands the sealed envelope to the District Officer.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "ต้องดูให้ได้นะ.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Lek meets his gaze, determined to see what Phum has found.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_219"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_phum",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The registry number is found, but how do we ensure the reply reaches the bureau correctly?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The District Officer steps closer.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_letter_writers_landing",
+              "dialogue": "ผมได้กลิ่นน้ำหอม.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The scent is faint and floral, a trace of perfume in the air.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_153"
+        },
+        {
+          "type": "narrative",
+          "lines": []
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_phum",
+          "place": "place_letter_writers_landing",
+          "dialogue": "The registry number is found, but how do we ensure the reply reaches the bureau correctly?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Let The District Officer take the sealed envelope directly to the mail boat now.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I watch him place the envelope into the boatman's pigeonhole.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see him tuck the envelope into his own pocket, not the mail slot.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have Lek write the number a second time in his ledger as a personal record before handing over the plate.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I write the number clearly, and Phum nods, confident in the duplicate.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I smudge the ink, and the letter-writer must rewrite the slip, causing delay.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Ask The Letter-Writer to add a formal greeting from the temple school to the bureau on the slip.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I dictate a polite line, and he adds it below the registry number.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I stumble over the phrasing, and he writes a confusing, incomplete sentence.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The Incomplete Record",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Back on the veranda, the District Officer is gone.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The mail boat horn sounds from down the canal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum sits back on his stool and picks up a pair of broken spectacles.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He begins winding brass wire around a hinge.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek opens the ledger to a fresh page.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He writes the date and the bureau’s name.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He writes the registry number Phum recited.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He leaves the rest of the line blank.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Pond Diver brings two cups of tea.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum accepts one but does not drink.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He looks at the canal where the boat departed.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He sets the teacup down on the floorboard beside his stool, untouched.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pond_diver",
+              "place": "place_veranda",
+              "dialogue": "ยังใช้ได้อยู่.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Phum does not reach for it, ignoring that it can still be of use.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_339"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pond_diver",
+              "place": "place_veranda",
+              "dialogue": "The reply is sent, but the ledger entry is incomplete. How do we close the record?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek closes the ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "มีเรื่องจะบอก.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The veranda falls silent, waiting for what he will tell them.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_325"
+        },
+        {
+          "type": "narrative",
+          "lines": []
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pond_diver",
+          "place": "place_veranda",
+          "dialogue": "The reply is sent, but the ledger entry is incomplete. How do we close the record?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "Ask The Pond Diver to fetch a jar of well water to clean the inkstone and close the ledger.",
+            "difficulty": "easy",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I pour the water over the stone, washing away the residue, and shut the book.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I spill the jar, soaking the ledger page and blurring the registry number.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Have Phum etch the registry number onto a spare lens with his mending tools as a keepsake.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I watch him engrave the number neatly on the glass disc.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see his hand slip, scratching the lens and making the number illegible.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "Send The Pond Diver to the canal to listen for gossip from the mail boat about the bureau's reaction.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear him return with word that the boatman accepted the envelope without question.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him come back empty-handed, the boat already around the bend.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
