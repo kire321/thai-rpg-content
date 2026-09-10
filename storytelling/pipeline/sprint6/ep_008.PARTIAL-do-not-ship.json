@@ -1,0 +1,744 @@
+{
+  "id": "ep_008",
+  "title": "PLACE: Veranda",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "PLACE: The School Veranda",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The boatman pushes a small wooden name-plate across the veranda floor; the carved letters are fresh and dark with sap.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I want my son’s name in the book tomorrow, or my family loses our rice share.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi arrives, sits at the edge of the veranda, opens his public ledger and traces a column of numbers with his finger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "The noon hour is cracked; the child’s birth minute feeds the eclipse.",
+              "stage_directions": "without looking up"
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "The name is already cut on the family boat.",
+              "stage_directions": "steps onto the veranda, hands empty"
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "A name given under a bad sky is still a name; the temple's coming blessing can cover it.",
+              "stage_directions": "sighs"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_045"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "A name given under a bad sky is still a name; the temple can bless it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi takes a smaller, private ledger from his bag and writes a single line in it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "Lek, read the district notice about the subsidy; it says the morning registration must coincide with the blessing.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_131"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek reads the notice aloud; the words about delay forfeiting allocation echo under the zinc roof. The Fire Stoker watches the sap on the name-plate, judging its darkness against the memory of other woods.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "A name is just a word; the real value is in the land title it attaches to.",
+              "stage_directions": "polishes a lens"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "stands, picks up his compass, walks to the top of the veranda steps, looks at the sun’s angle on the pond"
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I ask the monk to bless the name-plate right here on the veranda.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the monk sprinkle water over the wood; the sap darkens.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the monk shake his head and put his water bowl away.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I propose we inscribe the name in the boatman's family ledger first.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I watch the boatman open his own book and carefully write the characters.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the boatman's hands shake; he cannot make the ink stick to the page.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I suggest we place the name-plate in the pond to test the water's acceptance.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the wood float steadily; the fire stoker nods.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the wood tilt and sink a little; Kamnan Noi notes it in his ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "PLACE: River post",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The district officer arrives at the river post, his bicycle leaning against the bamboo pole holding the oilskin-wrapped letters.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_river_post",
+              "dialogue": "\"Give me the registration paper.\" [The boatman's wife hands him a folded sheet with the child's carved name.]",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_river_post",
+              "dialogue": "Is the chart cast?",
+              "stage_directions": "looks at Kamnan"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_river_post",
+              "dialogue": "I have not cast it; the sky at noon is blind.",
+              "stage_directions": "shakes his head"
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_river_post",
+              "dialogue": "Village superstition. The clock is the only chart that matters.",
+              "stage_directions": "laughs, taps his watch"
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_river_post",
+              "dialogue": "Stop. The clock is the only chart. I need a witness signature on the form by sunset today, or the rice chits for three families will be held.",
+              "stage_directions": "turns to Lek"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_209"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The boatman's wife presses the small name-plate into Lek's hands; the wood is still slightly damp.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_river_post",
+              "dialogue": "",
+              "stage_directions": "walks to the edge of the platform and takes a sidereal almanac from his sleeve"
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_river_post",
+              "dialogue": "Please—these correspond to moon-rise, not noon.",
+              "stage_directions": "shows her a page of signs, pointing to a cluster"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_161"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The bamboo pole holds seventeen oilskin-wrapped letters.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Six have red wax seals, four have blue.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The rest remain unmarked.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_river_post",
+          "dialogue": "",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I quickly sign the form before the officer changes his mind.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see the officer snap the form into his leather case with a satisfied click.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see the officer frown and point out I've signed in the wrong column.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I wade into the canal to try and retrieve the floating almanac.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I grab the sodden book and bring it back to the platform.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I slip on the muddy bank; the almanac drifts out of reach.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I ask the boatman's wife to decide if we should wait for moon-rise.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I hear her say clearly she will wait, and she takes back the name-plate.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see her look at the officer's watch and silently shake her head.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "PLACE: The Salt Store",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "At The Salt Store, the District Officer writes the child’s name in the red-chalk ledger under glass.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_salt_store",
+              "dialogue": "Sign as witness next to the entry, Lek.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The Salt Clerk measures out grey salt into a cloth bag but does not hand it over; he waits.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "The boatman’s wife stands by the brick bins, her eyes on the ledger behind the glass.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Kamnan Noi enters the store and places his brass compass on the counter beside the ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_salt_store",
+              "dialogue": "Starting now, the sequence is fixed—signing binds the name to a cracked hour forever.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_288"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_district_officer",
+              "place": "place_salt_store",
+              "dialogue": "The sequence is the subsidy—no signature, no rice.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_well_keeper",
+              "place": "place_salt_store",
+              "dialogue": "The three families are already at the granary, asking when the chits will come.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "Kamnan Noi opens his private ledger to a page filled with tiny, precise numbers and birth coordinates — a listener could hear the ghost of water in the faded ink.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_087"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_mor_duang",
+              "place": "place_salt_store",
+              "dialogue": "A name, a time, and a single word in faded ink: 'water'.",
+              "stage_directions": "shows Lek one line"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_salt_store",
+              "dialogue": "He closes the book. Lek looks at the red-chalk entry, at the wife's face, at the officer's pen waiting on the glass. Kamnan's private ledger holds the coordinates of seventeen births; the paper is brittle, the ink fading, and he knows no one will copy them out again.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_salt_store",
+          "dialogue": "",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I take the pen and sign my name in the ledger's witness column.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the salt clerk nod and push the bag of salt across the counter.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the chalk smudge under my pen; the clerk tuts and reaches for a rag.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I ask the well keeper to go tell the waiting families there will be a delay.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I watch the well keeper leave the store, heading for the granary.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the well keeper stand his ground, saying he won't carry that message.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I propose we write the name again, but on a separate slip of paper, not in the ledger.",
+            "difficulty": "hard",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see Kamnan Noi produce a clean slip and offer his fine-nib pen.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_salt_store",
+                "dialogue": "I see the officer slam his hand down on the glass, blocking the paper.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "PLACE: Veranda",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Back on the veranda, Lek signs the witness line on the district officer’s form.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The officer takes the form, nods, and cycles away toward the granary.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The boatman’s wife receives the rice chits from the delivery boy; she does not smile.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan sits in his usual spot at the edge of the veranda, his compass in his lap.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He takes out a clean sheet of paper and begins drawing two charts, side by side.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He works the fine-nib pen; the lines are exact curves and angles that will soon be burned to ash.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_269"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi labels the first chart with the name from the boat's prow.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He labels the second with a sequence of sidereal signs, holds both up to the late afternoon light, compares them, then folds the second one small.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He strikes a match and burns the folded chart over a clay dish; the ash flakes onto the floorboards, and you find yourself watching the flakes settle, knowing they will soon be part of the pond's silt.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_278"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "He sweeps the ash into his hand and lets it fall over the veranda rail into the pond.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi puts his compass away, closes all his ledgers, and watches the water until the light fails; the rice chits glow on the veranda rail, their arrival timed to the failing light.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi watches the water until the light fails, the ash from the burnt chart now part of the pond's silt, the name written under a sky only the stars now remember.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pricha",
+          "place": "place_veranda",
+          "dialogue": "",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I take a pinch of the ash from the dish before it is swept away.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I fold the ash into a scrap of paper; the fire stoker nods approval.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I fumble and spill the ash; it stains the floorboards grey.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I ask the boatman to say his son's name aloud over the pond.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear the boatman call the name; the sound carries across the water.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the boatman open his mouth but no sound comes out.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I suggest we place the rice chits on the veranda rail until the light fails.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see the wife lay the chits on the wood; they glow in the last sun.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see a breeze lift the chits; the fire stoker has to catch them.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

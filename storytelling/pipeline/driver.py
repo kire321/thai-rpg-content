@@ -587,7 +587,7 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
                     break
         # STAKES beat in act 1, early, naming a concrete cost
         if anum == 1:
-            stakes = [n for n, t in beats if t.upper().startswith("STAKES:")]
+            stakes = [n for n, t in beats if re.search(r"\bSTAKES:", t, re.I)]
             if not stakes:
                 problems.append("act 1: no beat labeled 'STAKES:' (one early beat must be a character "
                                 "stating aloud what they want and what it costs)")
@@ -595,7 +595,7 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
                 if stakes[0] > 6:
                     problems.append(f"act 1: STAKES beat is beat {stakes[0]} — it must land in the first 6 beats "
                                     "(segment 1)")
-                stext = " ".join(t for n, t in beats if t.upper().startswith("STAKES:"))
+                stext = " ".join(t for n, t in beats if re.search(r"\bSTAKES:", t, re.I))
                 if not re.search(r"\b(or|otherwise|else|if not|unless)\b", stext, re.I):
                     problems.append("act 1: STAKES beat names no concrete cost — it must say what happens "
                                     "if the characters fail (\"X, or Y happens\")")
@@ -692,7 +692,7 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
                 problems.append(f"act {anum}: DECISION beat does not name the dilemma speaker — "
                                 "expected 'DECISION — dilemma line (<nickname>): \"...\"'")
             else:
-                dilemma = head.group(2).strip()
+                dilemma = head.group(3).strip()
                 # the dilemma must be a line the character would actually say,
                 # not bare 'X or Y' imperative menu-text
                 if "?" not in dilemma and len(dilemma.split()) < 12:
@@ -734,7 +734,7 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
     # template (4-of-4 identical first-3-words = failure)
     dilemma_openings = []
     for dm in DECISION_HEAD_RE.finditer(plan):
-        words = re.findall(r"[a-z']+", dm.group(2).lower())
+        words = re.findall(r"[a-z']+", dm.group(3).lower())
         if len(words) >= 3:
             dilemma_openings.append(" ".join(words[:3]))
     if len(dilemma_openings) == 4 and len(set(dilemma_openings)) == 1:
@@ -772,6 +772,176 @@ TAG_MARKER_RE = re.compile(r"\[\[\s*(tag_\d+)\s*\]\]")
 
 
 ALLOWED_PLACES_TEXT = ""  # set by main() / caller so the prose gate can validate PLACE lines
+
+
+def segment_beats(plan, anum):
+    """Split an act's beats into the three prose segments at the TAG
+    beat-pairs (TAG beat + its reaction beat end the segment).
+    Returns [(label, beats_text, tag_id_or_None, lo, hi, is_first)]."""
+    acts = dict(_act_sections(plan))
+    body = acts.get(anum, "")
+    beats = [(n, t) for n, t in _beats(body) if not t.upper().startswith("DECISION")]
+    tag_pos = [i for i, (n, t) in enumerate(beats) if re.match(r"TAG\s+(tag_\d+):", t, re.I)]
+    if len(tag_pos) != 2:
+        # fallback: the planner didn't label TAG beats — split by budget and
+        # take this act's tags from the TAG PLAN bullets (position 1|2)
+        m_tp = re.search(r"^#{1,4}\s+TAG PLAN\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+        tp = m_tp.group(1) if m_tp else ""
+        pair = re.findall(r"-\s*(tag_\d+)\b[^\n]*?act\s*" + str(anum) +
+                          r"(?:,\s*position\s*([12]))?", tp, re.I)
+        pair = [(t, p or str(i + 1)) for i, (t, p) in enumerate(pair)]
+        pair = sorted(pair, key=lambda x: x[1])[:2]
+        if len(pair) != 2 or not beats:
+            return []
+        total = len(beats)
+        tail = 3 if total >= 11 else 2
+        cut1 = total - 2 * tail
+        if not (4 <= cut1 <= 6):
+            cut1 = min(6, max(4, total - 4))
+            tail = max(2, (total - cut1) // 2)
+        b1 = cut1
+        b2 = cut1 + tail
+        t1, t2 = pair[0][0], pair[1][0]
+    else:
+        b1, b2 = tag_pos[0] + 2, tag_pos[1] + 2
+        t1 = re.match(r"TAG\s+(tag_\d+):", beats[tag_pos[0]][1], re.I).group(1)
+        t2 = re.match(r"TAG\s+(tag_\d+):", beats[tag_pos[1]][1], re.I).group(1)
+    def fmt(bs):
+        return "\n".join(f"{n}. {t}" for n, t in bs)
+    return [("segment 1", fmt(beats[:b1]), t1, 4, 6, True),
+            ("segment 3", fmt(beats[b1:b2]), t2, 2, 3, False),
+            ("segment 5", fmt(beats[b2:]), None, 2, 3, False)]
+
+
+def check_prose_segment(text, anum, seg_label, lo, hi, tag_id, plan, name_map):
+    """Per-segment prose gate: hard line budget for this segment only,
+    its marker contract (if any), and all cheap lints."""
+    problems = []
+    where = f"act {anum} {seg_label}"
+    if re.findall(r"[฀-๿]+", text):
+        problems.append(f"{where}: Thai text present — zero Thai allowed")
+    if "*" in text:
+        problems.append(f"{where}: markdown asterisk in prose")
+    is_first = seg_label == "segment 1"
+    if is_first:
+        if not re.search(r"^#{1,3}\s+Act\s+" + str(anum) + r"\b", text, re.M):
+            problems.append(f"{where}: missing '## Act {anum} —' header line")
+        pm0 = re.search(r"^PLACE:\s*(.+?)\s*$", text, re.M)
+        if not pm0:
+            problems.append(f"{where}: no 'PLACE:' line")
+        else:
+            known_places = {re.sub(r"^the\s+", "", p.strip().lower()) for p in
+                            re.findall(r"^-\s+(.+)$", ALLOWED_PLACES_TEXT, re.M)}
+            place_got = re.sub(r"^the\s+", "", pm0.group(1).strip().lower())
+            if known_places and place_got not in known_places:
+                problems.append(f"{where}: PLACE {pm0.group(1).strip()!r} is not one of the "
+                                f"allowed places {sorted(known_places)}")
+    known = {"narrator"}
+    for cid, (full, nick) in name_map.items():
+        for nm in {full, nick} - {None}:
+            known.add(nm.lower())
+            if nm.lower().startswith("the "):
+                known.add(nm[4:].lower())
+    content = []
+    for ln in text.splitlines():
+        s = ln.strip()
+        if not s or s.startswith("#") or s.upper().startswith("PLACE:"):
+            continue
+        content.append(ln)
+        sm = re.match(r"^([^:#]{1,40}?):\s+", s)
+        if not sm:
+            problems.append(f"{where}: line has no 'Speaker:' prefix: {s[:60]!r}")
+            continue
+        if sm.group(1).strip().lower() not in known:
+            problems.append(f"{where}: speaker prefix {sm.group(1).strip()!r} maps to no character")
+        if re.match(r"^\[Choice", s) or re.match(r"^NARRATOR:\s*\[", s):
+            problems.append(f"{where}: choice/menu text written as a prose line — choices live "
+                            "in the plan's DECISION beat only, never in prose")
+        if s.upper().startswith("NARRATOR:"):
+            bd = s[len("NARRATOR:"):]
+            if '"' in bd or "“" in bd or "”" in bd:
+                problems.append(f"{where}: NARRATOR line contains quoted speech: {s[:60]!r}")
+            elif re.search(r"\b(asks|says|said|replies|replied|answers|whispers|shouts|murmurs)\b",
+                           bd, re.I):
+                problems.append(f"{where}: NARRATOR narrates speech: {s[:60]!r}")
+            if re.search(r"\b(forged|forgery|fake|stolen)\b", bd, re.I):
+                problems.append(f"{where}: NARRATOR uses spoiler word (forged/fake/stolen)")
+        for jm in re.finditer(r"\[([^\]]+)\]", s):
+            sd = jm.group(1).strip().lower()
+            if re.fullmatch(r"(asks?|asked|responds?|responded|repl(y|ies|ied)|frowns?|sighs?|nods?|"
+                            r"smiles?|says|said|murmurs?|whispers?|pauses?|continues?|adds?)", sd):
+                problems.append(f"{where}: junk stage direction [{sd}] — physical content or empty")
+    if not (lo <= len(content) <= hi):
+        problems.append(f"{where}: has {len(content)} lines (hard budget {lo}-{hi}) — this "
+                        "segment's budget is the whole contract; add or merge lines")
+    markers = TAG_MARKER_RE.findall(text)
+    if tag_id:
+        if markers != [tag_id]:
+            problems.append(f"{where}: markers {markers} — expected exactly one [[{tag_id}]] at "
+                            "the END of this segment's last line")
+        elif not content or not content[-1].strip().endswith(f"[[{tag_id}]]"):
+            problems.append(f"{where}: [[{tag_id}]] must terminate the segment's LAST line — "
+                            "no content line may follow the marker")
+        else:
+            word = extract_english_anchors(plan).get(tag_id)
+            last = content[-1] if content else ""
+            if word and not re.search(r"\b" + re.escape(word) + r"\b", last, re.I):
+                problems.append(f"{where}: the last line must carry the English anchor word "
+                                f"{word!r} before the marker (last: {last.strip()[:60]!r})")
+    elif markers:
+        problems.append(f"{where}: markers {markers} — this segment has NO tag; markers live at "
+                        "the ends of segments 1 and 3 only")
+    similes = len(re.findall(r"\bas if\b|\blike\b", text, re.I))
+    if similes > 0:
+        problems.append(f"{where}: {similes} comparison(s) — direct assertions only")
+    for fp in full_name_problems(text, name_map, where):
+        problems.append(fp)
+    low = text.lower()
+    for tv in TECHNIQUE_VOCAB:
+        if tv in low:
+            problems.append(f"{where}: technique vocabulary {tv!r}")
+    return problems
+
+
+def normalize_place_line(act_text, anum, plan):
+    """PLACE is structural metadata: if the act's PLACE line is missing or
+    unmappable (glued onto a content line, wrong name), rewrite it to the
+    act's place derived from the plan body. Logged, never silent."""
+    names = re.findall(r"^-\s+(.+)$", ALLOWED_PLACES_TEXT, re.M)
+    if not names:
+        return act_text
+    def norm(s):
+        return re.sub(r"^the\s+", "", s.strip().lower())
+    lines = act_text.splitlines()
+    for ln in lines[:4]:
+        m = re.match(r"^PLACE:\s*(.*)$", ln.strip())
+        if m:
+            if any(norm(m.group(1)) == norm(n) for n in names):
+                return act_text  # valid — untouched
+            break
+    body = dict(_act_sections(plan)).get(anum, "").lower()
+    best = None
+    for n in names:
+        toks = re.findall(r"[a-z]{3,}", norm(n))
+        if toks and all(t in body for t in toks):
+            best = n
+            break
+    if best is None:
+        best = names[0]
+    new, fixed = [], False
+    for ln in lines:
+        if re.match(r"^PLACE:", ln.strip()) and not fixed:
+            new.append(f"PLACE: {best}")
+            fixed = True
+        else:
+            new.append(ln)
+    if not fixed:
+        for i, ln in enumerate(new):
+            if ln.strip().startswith("##"):
+                new.insert(i + 1, f"PLACE: {best}")
+                break
+    log(f"[prose-a{anum}] PLACE line normalized to {best!r} (was unmappable or missing)")
+    return "\n".join(new)
 
 
 def check_prose_act(act_text, anum, plan, act_tag_ids, name_map):
@@ -1001,6 +1171,79 @@ def check_prose(prose, plan, tag_ids, name_map):
             i = low.find(tv)
             problems.append(f"technique vocabulary {tv!r} appears in the prose: ...{prose[max(0,i-40):i+40]!r}...")
     problems.extend(full_name_problems(prose, name_map, "prose"))
+
+    # ---- sprint-6 iteration 2: full-suite additions (the regressions came
+    # from gates going quiet when the pipeline shape changed)
+    # (a) POV: narrator must never address the player in second person
+    for ln in prose.splitlines():
+        if ln.strip().upper().startswith("NARRATOR:") and re.search(
+                r"\byou(rself|rs?)?\b", ln, re.I):
+            problems.append(f"prose: NARRATOR line uses second person: {ln.strip()[:70]!r}")
+    # (b) character line with neither quoted speech nor stage directions is
+    #     narration mis-attributed to a character
+    for ln in prose.splitlines():
+        s = ln.strip()
+        m = re.match(r"^([^:#]{1,40}?):\s+(.*)$", s)
+        if m and not s.upper().startswith(("NARRATOR:", "PLACE:")):
+            body = m.group(2)
+            if not re.search(r'[\"“]', body) and not re.search(r"\[[^\]]+\]", body):
+                problems.append(f"prose: line under {m.group(1).strip()!r} has neither quoted "
+                                f"speech nor a [stage direction] — narration must sit under "
+                                f"NARRATOR: {s[:70]!r}")
+    # (c) paraphrase-tolerant duplicate-line scan: exact normalized dupes OR
+    #     two lines sharing a run of >=6 consecutive content words
+    content_lines = [l.strip() for l in prose.splitlines()
+                     if l.strip() and not l.strip().startswith("#")
+                     and not l.strip().upper().startswith("PLACE:")]
+    seen_norm = {}
+    word_seqs = []
+    for l in content_lines:
+        norm = re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", "",
+                                          re.sub(r"^[^:]+:\s*", "", l.lower()))).strip()
+        if norm in seen_norm:
+            problems.append(f"prose: duplicate line: {l.strip()[:70]!r}")
+        seen_norm[norm] = True
+        word_seqs.append((l, [w for w in norm.split() if len(w) > 2]))
+    for i in range(len(word_seqs)):
+        for j in range(i + 1, len(word_seqs)):
+            a, b = word_seqs[i][1], word_seqs[j][1]
+            # any 6 consecutive content words of a appearing in b in order
+            if len(a) >= 6 and len(b) >= 6:
+                txt = " " + " ".join(b) + " "
+                for k in range(0, len(a) - 5):
+                    run = a[k:k + 6]
+                    if " " + " ".join(run) + " " in txt:
+                        problems.append(f"prose: near-duplicate lines share the run "
+                                        f"'{' '.join(run)}': {word_seqs[i][0].strip()[:50]!r} / "
+                                        f"{word_seqs[j][0].strip()[:50]!r}")
+                        break
+    # (d) refrain integrity: no refrain wording repeated verbatim; the plan
+    #     forbade it, the prose must too
+    refrains = re.findall(r'REFRAIN\s+"([^"]+)"', plan, re.I)
+    for rw in refrains:
+        if len(re.findall(re.escape(rw.strip().lower()), low)) > 1:
+            problems.append(f"prose: refrain wording {rw!r} repeated verbatim — the refrain "
+                            "must evolve in wording across its occurrences")
+    # (e) plan-beat coverage: every SUBPLOT beat and every beat a CHOICE
+    #     references must leave a trace in the prose (fuzzy: >=60% of its
+    #     content words)
+    prose_words = set(re.findall(r"[a-z]{3,}", low))
+    for n, t in _beats(plan):
+        tu = t.upper()
+        if tu.startswith("SUBPLOT"):
+            cw = [w for w in _content_words(re.sub(r"^SUBPLOT:?\s*", "", t, flags=re.I))
+                  if w not in ("carries", "intro", "setting", "stakes", "thesis", "deadline")]
+            if cw and sum(1 for w in cw if w in prose_words) / len(cw) < 0.6:
+                problems.append(f"plan beat {n} (SUBPLOT) has no trace in the prose: {t[:70]!r} — "
+                                "a planned thread was dropped, orphaning its payoff")
+    decs = parse_decisions(plan, name_map)
+    for anum, dec in decs.items():
+        for c in dec.get("choices", []):
+            cw = _content_words(c["description"])
+            if cw and sum(1 for w in cw if w in prose_words) / len(cw) < 0.5:
+                problems.append(f"act {anum} choice {c['description'][:60]!r}: its objects/acts "
+                                "appear nowhere in the prose — the choice is orphaned from the "
+                                "story it resolves")
     return problems
 
 
@@ -1041,8 +1284,10 @@ def validate_line(line, char_ids, place_ids, name_map, where, errors, allowed_pl
     elif allowed_places is not None and line.get("place") not in allowed_places:
         errors.append(f"{where}: place '{line.get('place')}' is not one of this episode's places "
                       f"({sorted(allowed_places)})")
-    if not line.get("dialogue"):
-        errors.append(f"{where}: empty dialogue")
+    if not line.get("dialogue") and not line.get("stage_directions"):
+        errors.append(f"{where}: empty dialogue AND empty stage_directions — a blank player-"
+                      "facing line; silent beats must carry a [physical action] or move to "
+                      "NARRATOR")
 
 
 def is_first_person(s):
@@ -1306,9 +1551,9 @@ def spot_edit(usage, model, artifact, problems, label, max_tokens):
 # ---------------------------------------------------------------- decisions
 DECISION_OPTION_RE = re.compile(
     r"\[(easy|medium|hard)\]\s*(.*?)\s*\((attr_\w+)\)\s*"
-    r"PASS:\s*[\"“](.*?)[\"”]\s*FAIL:\s*[\"“](.*?)[\"”](?=\s*/\s*\[|\s*$)", re.S)
+    r"PASS:\s*[\"“]?(.*?)[\"”]?\s*FAIL:\s*[\"“]?(.*?)[\"”]?(?=\s*/\s*\[|\s*$)", re.S)
 DECISION_HEAD_RE = re.compile(
-    r"DECISION\s*—\s*dilemma line\s*\(([^)]+)\):\s*[\"“](.*?)[\"”]", re.S)
+    r"DECISION\s*—\s*(?:dilemma line\s*)?(?:\(([^)]+)\)|([^:\"/]+?))\s*:\s*[\"“](.*?)[\"”]", re.S)
 
 
 def parse_decisions(plan, name_map):
@@ -1324,13 +1569,13 @@ def parse_decisions(plan, name_map):
             options = DECISION_OPTION_RE.findall(t)
             speaker = None
             if head:
-                names = _names_in(head.group(1), name_map)
+                names = _names_in(head.group(1) or head.group(2) or "", name_map)
                 speaker = sorted(names)[0] if names else None
             choices = [{"difficulty": d, "description": opt.strip(),
                         "attribute": at, "pass": p.strip(), "fail": f.strip()}
                        for d, opt, at, p, f in options]
             out[anum] = {"speaker": speaker,
-                         "dilemma": head.group(2).strip() if head else "",
+                         "dilemma": head.group(3).strip() if head else "",
                          "choices": choices}
     return out
 
@@ -1382,6 +1627,10 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
         body = act_bodies[anum]
         title_m = re.search(r"^#{1,3}\s+Act\s+%d\b\s*[—:-]?\s*(.*)$" % anum, prose, re.M)
         title = (title_m.group(1).strip() if title_m and title_m.group(1).strip() else f"Act {anum}")
+        if re.match(r"(?i)PLACE\s*:", title):  # title must never be a PLACE line
+            errors.append(f"{where}: act title is a PLACE line — header malformed; "
+                          "title sanitized")
+            title = f"Act {anum}"
         pm = re.search(r"^PLACE:\s*(.+?)\s*$", body, re.M)
         if not pm:
             fatal.append(f"{where}: no PLACE: line")
@@ -1425,6 +1674,24 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
                 continue
             who, text = sm.group(1).strip(), sm.group(2).strip()
             cid = lookup.get(who.lower())
+            if cid is None:
+                # canonicalize near-miss prefixes ("Boatman's Wife", "Salt store
+                # clerk") to a known nickname before declaring unmappable
+                wnorm = re.sub(r"^the\s+", "", who.lower()).strip("'s ").strip()
+                wtokens = set(re.findall(r"[a-z]{3,}", wnorm))
+                best, best_overlap = None, 0
+                for known_name, known_cid in lookup.items():
+                    ktokens = set(re.findall(r"[a-z]{3,}",
+                                             re.sub(r"^the\s+", "", known_name)))
+                    if not ktokens:
+                        continue
+                    ov = len(wtokens & ktokens) / max(len(wtokens), 1)
+                    if ov > best_overlap:
+                        best, best_overlap = known_cid, ov
+                if best is not None and best_overlap >= 0.5 and wtokens:
+                    cid = best
+                    errors.append(f"{where}: speaker {who!r} canonicalized to {best} "
+                                  "(fuzzy prefix match)")
             if cid is None:
                 fatal.append(f"{where}: speaker {who!r} does not map to any character id")
                 continue
@@ -1477,6 +1744,10 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
         if not dec or len(dec["choices"]) != 3:
             errors.append(f"{where}: plan has no complete DECISION beat "
                           f"({len(dec['choices']) if dec else 0}/3 choices parsed)")
+            decision = None
+        elif not dec["dilemma"].strip():
+            fatal.append(f"{where}: FATAL: empty decision.line dialogue — the dilemma was "
+                         "dropped between plan and JSON; a player-facing blank is a ship-blocker")
             decision = None
         else:
             speaker = dec["speaker"] or "char_pricha"
@@ -1764,6 +2035,64 @@ def main():
     # STAKES beat, the episode has no engine — fail loudly, do not continue
     stakes_fatal = [p for p in plan_problems
                     if "no beat labeled 'STAKES:'" in p or "STAKES beat names no concrete cost" in p]
+    # beat budget is decided AT PLAN: beats map ~1:1 to prose lines (the
+    # writer may combine two ADJACENT beats), so mild overruns are
+    # recoverable at prose; FATAL only for structural impossibilities —
+    # an empty segment, or a segment beyond combining's reach
+    # (seg1 > 8, seg2/seg3 > 4)
+    def _budget_fatal_ps(ps):
+        out = []
+        for p in ps:
+            m = re.search(r"beat budget (seg\d) has (\d+)", p)
+            if not m:
+                continue
+            cnt = int(m.group(2))
+            if m.group(1) == "seg1":
+                lo, hi = 4, 8
+            else:
+                lo, hi = 2, 4
+            if not (lo <= cnt <= hi):
+                out.append(p)
+        return out
+    budget_fatal = _budget_fatal_ps(plan_problems)
+    if budget_fatal:
+        try:
+            fixed = spot_edit(usage, args.model_edit, plan, budget_fatal,
+                              "plan-budget-repair", 12000)
+            fprobs = plan_checker(fixed)
+            if not _budget_fatal_ps(fprobs) and not mach(fprobs) \
+                    and len(fprobs) <= len(plan_problems) + 2:
+                plan, plan_problems = fixed, fprobs
+                budget_fatal = []
+                gate_results["plan (after targeted budget repair)"] = plan_problems
+                log(f"[plan] targeted beat-budget repair accepted: {len(fprobs)} problem(s)")
+            else:
+                log("[plan] beat-budget repair insufficient — discarded")
+        except RuntimeError as te:
+            log(f"[plan] beat-budget repair transport failure ({te})")
+    if budget_fatal:
+        gate_results["plan FATAL"] = budget_fatal
+        log("[plan] FATAL: beat budget out of contract — segment budgets are decided "
+            "at plan; aborting before paying for doomed prose")
+        ep = None
+        anchors = {}
+    if stakes_fatal and "no beat labeled 'STAKES:'" in " ".join(stakes_fatal):
+        # ONE targeted insert: add the missing STAKES beat (the edit pass above
+        # fixes many things at once and can miss this single insertion)
+        try:
+            fixed = spot_edit(usage, args.model_edit, plan, stakes_fatal,
+                              "plan-stakes-insert", 8000)
+            fprobs = plan_checker(fixed)
+            if not any("no beat labeled 'STAKES:'" in p for p in fprobs) \
+                    and len(fprobs) <= len(plan_problems) + 2:
+                plan, plan_problems = fixed, fprobs
+                stakes_fatal = [p for p in fprobs if "STAKES" in p and "concrete cost" in p]
+                gate_results["plan (after targeted STAKES insert)"] = plan_problems
+                log(f"[plan] targeted STAKES insert accepted: {len(fprobs)} problem(s)")
+            else:
+                log("[plan] targeted STAKES insert insufficient — discarded")
+        except RuntimeError as te:
+            log(f"[plan] STAKES insert transport failure ({te})")
     if stakes_fatal:
         gate_results["plan FATAL"] = stakes_fatal
         log("[plan] FATAL: no costed STAKES beat after spot-edit — aborting episode")
@@ -1772,6 +2101,12 @@ def main():
     # the planner's chosen 8 tags drive everything downstream; without a
     # parseable set of 8, downstream is meaningless — FATAL like STAKES
     picked, picked_acts = extract_picked_tags(plan)
+    try:  # checkpoint the plan immediately (crash/abort forensics)
+        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+        with open(args.out + ".plan.md", "w", encoding="utf-8") as fh:
+            fh.write(plan)
+    except Exception:
+        pass
     tags_fatal = stakes_fatal or len(picked) != 8
     if len(picked) != 8 and not stakes_fatal:
         gate_results["plan FATAL"] = [f"TAG PLAN did not yield exactly 8 parseable shortlist tags "
@@ -1788,89 +2123,216 @@ def main():
     # gated on arrival; a FATAL-class failure retries ONLY that act once.
     prose = ""
     ep = None
-    if not tags_fatal:
+    plan_fatal_any = bool(tags_fatal or stakes_fatal or budget_fatal)
+    if not plan_fatal_any:
         act_texts = {}
-        carryover = "(this is Act 1 — no prior acts; it opens the episode)"
-        # sprint-5 pass-3 runtime levers: 16000 caps; reasoning=low (in
-        # call_llm); temp-0.6 on transport failure; qwen fallback for
-        # prose+edit if v4-flash stays untransportable
-        act_tmpl = os.path.join(PROMPTS_DIR, "prose_act.md")
+        # sprint-6: segment-by-segment generation — 3 calls per act, each
+        # with a hard line budget for that segment only (the model never
+        # counts past ~4 lines). Carryover glue = the previous segment's
+        # last line. Fallback: a numbered-line template retry.
+        seg_tmpl = os.path.join(PROMPTS_DIR, "prose_segment.md")
         prose_model = [args.model_prose]
         edit_model = [args.model_edit]
         QWEN = "qwen/qwen3-235b-a22b-2507"
 
-        def gen_act(label, slots, checker):
+        def gen_seg(label, slots, checker, extra=""):
+            s2 = dict(slots)
+            if extra:
+                s2["SEGMENT_BEATS"] = slots["SEGMENT_BEATS"] + "\n" + extra
             try:
-                return run_stage_once(usage, label, prose_model[0], 0.8, 16000,
-                                      act_tmpl, slots, checker)
+                return run_stage_once(usage, label, prose_model[0], 0.8, 8000,
+                                      seg_tmpl, s2, checker)
             except RuntimeError:
-                log(f"[{label}] transport failure at temp 0.8 — lever 3: temp 0.6 retry")
+                log(f"[{label}] transport failure at temp 0.8 — temp 0.6 retry")
             try:
-                return run_stage_once(usage, label + "-t0.6", prose_model[0], 0.6, 16000,
-                                      act_tmpl, slots, checker)
+                return run_stage_once(usage, label + "-t0.6", prose_model[0], 0.6, 8000,
+                                      seg_tmpl, s2, checker)
             except RuntimeError:
                 if prose_model[0] != QWEN:
-                    log(f"[{label}] v4-flash untransportable — lever 4: PROSE+EDIT fall back to "
-                        f"{QWEN} (sprint-1 stable; regression risk logged)")
+                    log(f"[{label}] v4-flash untransportable — PROSE+EDIT fall back to {QWEN} "
+                        "(regression risk logged)")
                     prose_model[0] = edit_model[0] = QWEN
-                return run_stage_once(usage, label + "-qwen", prose_model[0], 0.6, 16000,
-                                      act_tmpl, slots, checker)
+                return run_stage_once(usage, label + "-qwen", prose_model[0], 0.6, 8000,
+                                      seg_tmpl, s2, checker)
 
-        def edit_act(label, text, aprobs, checker):
-            try:
-                return spot_edit(usage, edit_model[0], text, aprobs, label, 16000)
-            except RuntimeError as te:
-                log(f"[{label}] transport failure ({te}) — keeping text")
-                return None
-
+        prev_line = "(nothing precedes this — it opens the episode)"
         for anum in (1, 2, 3, 4):
-            act_tags = [t for t in tag_ids if picked_acts.get(t) == anum]
-            cheat = "\n".join(
-                f"- [[{tid}]] — English anchor word \"{anchors.get(tid, '?')}\" in the line "
-                "IMMEDIATELY before the marker; the lines before it evoke the tag's theme "
-                "IN ENGLISH (no Thai)." for tid in act_tags)
-            act_slots = {
-                "PLAN": plan,
-                "NICKNAMES": slots["NICKNAMES"],
-                "EP_ID": args.ep_id,
-                "ANCHOR_CHEAT": cheat,
-                "ALLOWED_PLACES": slots["ALLOWED_PLACES"],
-                "ACT_NUM": str(anum),
-                "CARRYOVER": carryover,
-            }
-            act_checker = lambda t, a=anum, tg=act_tags: check_prose_act(t, a, plan, tg, name_map)
-            fatal_cls = re.compile(r"no 'PLACE:'|not one of the allowed|maps to no character|"
-                                   r"tag markers|prose lines \(expected|could not split|"
-                                   r"contract 8-12")
-            text, aprobs = gen_act(f"prose-act{anum}", act_slots, act_checker)
-            gate_results[f"prose act {anum} (before spot-edit)"] = aprobs
-            for attempt in (1, 2):  # one spot-edit; then ONE act-only retry if FATAL-class remains
-                if aprobs:
-                    edited = edit_act(f"prose-act{anum}-spot-edit", text, aprobs, act_checker)
-                    if edited:
-                        eprobs = act_checker(edited)
-                        if len(eprobs) < len(aprobs):
-                            text, aprobs = edited, eprobs
-                    gate_results[f"prose act {anum} (after spot-edit)"] = aprobs
-                if not any(fatal_cls.search(p) for p in aprobs) or attempt == 2:
+            segs = segment_beats(plan, anum)
+            if not segs:
+                log(f"[prose] act {anum}: could not split beats into segments — recorded; "
+                    "format gate will decide")
+                gate_results[f"prose act {anum}"] = ["segment split failed (TAG beat-pairs missing)"]
+                continue
+            seg_texts = []
+            for seg_label, beats_txt, tid, lo, hi, is_first in segs:
+                tag_bullet = ""
+                if tid:
+                    bm = re.search(r"^-\s*" + re.escape(tid) + r"[^\n]*$", plan, re.M)
+                    tag_bullet = (" The planner's note: " + bm.group(0)[2:]) if bm else ""
+                tag_instr = (
+                    f"This segment carries tag [[{tid}]]. Its last beat is the theme scene: evoke "
+                    f"the tag's theme IN ENGLISH. The segment's LAST line carries the English "
+                    f"anchor word \"{anchors.get(tid, '?')}\" and ENDS with the marker [[{tid}]]."
+                    + tag_bullet
+                    if tid else
+                    "NO tag marker in this segment — markers live at the ends of segments 1 "
+                    "and 3 only.")
+                header_instr = (f"Start with exactly:\n## Act {anum} — <short title>\n"
+                                "PLACE: <the act's place name, copied EXACTLY from the list>\n"
+                                if is_first else
+                                "No header, no PLACE line — start directly with the first beat's "
+                                "line.")
+                seg_slots = {
+                    "PLAN_ACT": dict(_act_sections(plan)).get(anum, ""),
+                    "ACT_NUM": str(anum),
+                    "SEGMENT_LABEL": seg_label,
+                    "SEGMENT_BEATS": beats_txt,
+                    "LO": str(lo), "HI": str(hi),
+                    "TAG_INSTRUCTION": tag_instr,
+                    "PREVIOUS_LINE": prev_line,
+                    "NICKNAMES": slots["NICKNAMES"],
+                    "ALLOWED_PLACES": slots["ALLOWED_PLACES"],
+                }
+                seg_checker = lambda t, a=anum, sl=seg_label, l0=lo, h0=hi, tg=tid: \
+                    check_prose_segment(t, a, sl, l0, h0, tg, plan, name_map)
+                fatal_cls = re.compile(r"hard budget|expected exactly one|maps to no character|"
+                                       r"no 'PLACE:'|not one of the allowed|Thai text|"
+                                       r"missing '## Act|no 'Speaker:' prefix")
+                VETO = re.compile(r"maps to no character|expected exactly one")
+                def veto_count(ps):
+                    return sum(1 for p in ps if VETO.search(p))
+
+                def better(cand_probs, cur_probs):
+                    """Hard veto: invented speakers / lost markers are never
+                    tie-able — a candidate carrying them only wins by strictly
+                    reducing THAT class; otherwise fatal-class then count."""
+                    vc, vv = veto_count(cand_probs), veto_count(cur_probs)
+                    if vv == 0:
+                        return vc == 0 and (fcount(cand_probs), len(cand_probs)) < \
+                            (fcount(cur_probs), len(cur_probs))
+                    return vc < vv
+
+                def fcount(ps):
+                    return sum(1 for p in ps if fatal_cls.search(p))
+                label = f"prose-a{anum}-{seg_label.replace(' ', '')}"
+                text, sprobs = gen_seg(label, seg_slots, seg_checker)
+                gate_results[f"{label} (before spot-edit)"] = sprobs
+                if sprobs:
+                    try:
+                        edited = spot_edit(usage, edit_model[0], text, sprobs,
+                                           label + "-spot-edit", 8000)
+                        eprobs = seg_checker(edited)
+                        if better(eprobs, sprobs):
+                            text, sprobs = edited, eprobs
+                    except RuntimeError as te:
+                        log(f"[{label}] edit transport failure ({te}) — keeping text")
+                    gate_results[f"{label} (after spot-edit)"] = sprobs
+                if any(fatal_cls.search(p) for p in sprobs):
+                    log(f"[{label}] FATAL-class failures remain — ONE segment-only retry "
+                        "(numbered-line template)")
+                    extra = (f"HARD TEMPLATE: output EXACTLY {lo} lines, numbered 1..{lo} "
+                             "(strip the numbers yourself; they are for your counting only). "
+                             + ("Keep the '## Act' header and PLACE line FIRST, unnumbered; the "
+                                "numbered lines follow them." if is_first else ""))
+                    text2, p2 = gen_seg(label + "-retry", seg_slots, seg_checker, extra)
+                    if better(p2, sprobs):
+                        text, sprobs = text2, p2
+                    gate_results[f"{label} (retry)"] = sprobs
+                # hard-strip: an invented speaker that survived edit+retry is
+                # removed deterministically rather than shipped
+                inv = [p for p in sprobs if "maps to no character" in p]
+                if inv:
+                    bad_speakers = {re.search(r"speaker prefix '([^']+)'", p).group(1)
+                                    for p in inv if re.search(r"speaker prefix '([^']+)'", p)}
+                    kept = [ln for ln in text.splitlines()
+                            if not any(ln.strip().startswith(bs + ":") for bs in bad_speakers)]
+                    stripped = "\n".join(kept)
+                    sp2 = seg_checker(stripped)
+                    if veto_count(sp2) == 0:
+                        text, sprobs = stripped, sp2
+                        log(f"[{label}] hard-stripped invented-speaker lines {sorted(bad_speakers)}")
+                if fcount(sprobs):
+                    # a segment still carrying fatal-class problems after
+                    # edit+retry can only fail the formatter — abort loudly
+                    # and cheaply here rather than at the format stage
+                    log(f"[{label}] terminal fatal-class failure — aborting episode")
+                    gate_results[f"{label} (terminal)"] = sprobs
+                    act_texts[anum] = None
                     break
-                log(f"[prose-act{anum}] FATAL-class failures remain — ONE act-only retry")
-                text2, p2 = gen_act(f"prose-act{anum}-retry", act_slots, act_checker)
-                if len(p2) <= len(aprobs):
-                    text, aprobs = text2, p2
-                gate_results[f"prose act {anum} (retry)"] = aprobs
-            act_texts[anum] = text
-            # mechanical carryover: the act's last content lines glue the next
-            # act's opening
-            clines = [ln.strip() for ln in text.splitlines()
-                      if ln.strip() and not ln.strip().startswith("#")
-                      and not ln.strip().upper().startswith("PLACE:")]
-            tail = " / ".join(ln[:160] for ln in clines[-2:]) if clines else "(act ended empty)"
-            carryover = f"Act {anum} ended: {tail}"
-            log(f"[prose-act{anum}] done: {len(aprobs)} problem(s)")
-        prose = "\n\n".join(act_texts[a] for a in (1, 2, 3, 4))
+                seg_texts.append(text.strip())
+                clines = [ln.strip() for ln in text.splitlines()
+                          if ln.strip() and not ln.strip().startswith("#")
+                          and not ln.strip().upper().startswith("PLACE:")]
+                if clines:
+                    prev_line = clines[-1][:200]
+                log(f"[{label}] done: {len(sprobs)} problem(s)")
+            if act_texts.get(anum) is None:
+                continue  # terminal segment abort — this act has no prose
+            # act headers are structural metadata (like markers): if the
+            # model dropped this act's header, restore it deterministically
+            if seg_texts and not re.search(r"^#{1,3}\s+Act\s+" + str(anum) + r"\b",
+                                           seg_texts[0], re.M):
+                seg_texts[0] = f"## Act {anum}\n" + seg_texts[0]
+                log(f"[prose-a{anum}] act header restored deterministically")
+            act_texts[anum] = "\n".join(seg_texts)
+            # PLACE lines are structural metadata too: a glued/unmappable
+            # PLACE line ("PLACE: NARRATOR: ...") is rewritten to the act's
+            # place derived from the plan, logged, never silently shipped
+            act_texts[anum] = normalize_place_line(act_texts[anum], anum, plan)
+            # assembly-drift guard: re-gate the ASSEMBLED act with the
+            # marker-based per-act checker (the formatter's own counting);
+            # one act-level spot-edit if a contract failure slipped between
+            # per-segment approval and assembly
+            act_tags = [t for t in tag_ids if picked_acts.get(t) == anum]
+            aprobs = check_prose_act(act_texts[anum], anum, plan, act_tags, name_map)
+            act_fatal = [p for p in aprobs if re.search(
+                r"prose lines \(expected|could not split|no 'PLACE:'|tag markers|"
+                r"maps to no character", p)]
+            if act_fatal:
+                log(f"[prose-a{anum}] assembled act fails contract ({len(act_fatal)}) — "
+                    "ONE act-level repair")
+                try:
+                    fixed = spot_edit(usage, edit_model[0], act_texts[anum], act_fatal,
+                                      f"prose-a{anum}-assembly-repair", 10000)
+                    fprobs = check_prose_act(fixed, anum, plan, act_tags, name_map)
+                    ffatal = [p for p in fprobs if re.search(
+                        r"prose lines \(expected|could not split|no 'PLACE:'|tag markers", p)]
+                    if len(ffatal) < len(act_fatal) or \
+                            (not ffatal and len(fprobs) <= len(aprobs)):
+                        act_texts[anum] = fixed
+                        log(f"[prose-a{anum}] assembly repair kept ({len(ffatal)} fatal remain)")
+                except RuntimeError as te:
+                    log(f"[prose-a{anum}] assembly repair transport failure ({te})")
+        prose = "\n\n".join(act_texts[a] for a in (1, 2, 3, 4) if act_texts.get(a))
         prose_problems = check_prose(prose, plan, tag_ids, name_map)
         gate_results["prose (assembled, full-document checks)"] = prose_problems
+        coverage_fatal = [p for p in prose_problems
+                          if "no trace in the prose" in p or "orphaned from the story" in p]
+        for a in (1, 2, 3, 4):
+            if not act_texts.get(a):
+                coverage_fatal.append(f"act {a}: no prose was generated (segment split failed) — "
+                                      "an entire act is missing; that is a ship-blocker")
+        if coverage_fatal:
+            for p in coverage_fatal:
+                log(f"[prose] coverage failure: {p}")
+            # ONE repair pass: restore the dropped beats/choice-objects, keep
+            # only if coverage resolves and no other failure class grows
+            try:
+                repaired = spot_edit(usage, edit_model[0], prose, coverage_fatal,
+                                     "prose-coverage-repair", 16000)
+                rprobs = check_prose(repaired, plan, tag_ids, name_map)
+                rcover = [p for p in rprobs
+                          if "no trace in the prose" in p or "orphaned from the story" in p]
+                if not rcover and len(rprobs) <= len(prose_problems) + 2:
+                    prose, prose_problems, coverage_fatal = repaired, rprobs, []
+                    log("[prose] coverage repair accepted")
+                else:
+                    log(f"[prose] coverage repair insufficient ({len(rcover)} remain) — discarded")
+            except RuntimeError as te:
+                log(f"[prose] coverage repair transport failure ({te})")
+        if coverage_fatal:
+            gate_results["coverage (plan beats must reach the prose)"] = coverage_fatal
+            ep = None  # loud abort — no JSON
         # checkpoint intermediates immediately (crash safety)
         try:
             os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
@@ -1881,10 +2343,16 @@ def main():
         except Exception as ce:
             log(f"[checkpoint] could not save intermediates: {ce}")
 
-        # ----- STAGE 3: deterministic formatter (no LLM)
-        ep, fmt_errors, fmt_fatal = format_episode(prose, plan, args.ep_id, tag_ids,
-                                                   name_map, char_ids, places_json,
-                                                   allowed_place_ids)
+        if not coverage_fatal:
+            # ----- STAGE 3: deterministic formatter (no LLM)
+            ep, fmt_errors, fmt_fatal = format_episode(prose, plan, args.ep_id, tag_ids,
+                                                       name_map, char_ids, places_json,
+                                                       allowed_place_ids)
+        else:
+            log("[format] skipped: coverage FATAL (planned beats never reached the prose)")
+            gate_results["format"] = ["skipped: coverage FATAL"]
+            fmt_fatal = ["coverage FATAL"]
+            fmt_errors = []
         if fmt_fatal:
             gate_results["format"] = [f"FATAL: {f}" for f in fmt_fatal] + fmt_errors
             log(f"[format] FATAL ({len(fmt_fatal)} unmappable item(s)) — no episode written:\n  - "
