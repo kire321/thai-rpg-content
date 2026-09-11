@@ -1,0 +1,9 @@
+OFFLINE FORMATTER RERUN (decision parse fix)
+
+act 1 segment 1 line 3: third-person narration attributed to 'char_mor_duang' (narration must be char_narrator)
+act 1 segment 3 line 1: narrator line carries quoted/narrated speech — speech belongs to the speaking character (actions go in stage_directions)
+act 1 segment 3 line 2: narrator line carries quoted/narrated speech — speech belongs to the speaking character (actions go in stage_directions)
+act 2 segment 5 line 2: narrator line carries quoted/narrated speech — speech belongs to the speaking character (actions go in stage_directions)
+act 3 segment 3 line 3: narrator line carries quoted/narrated speech — speech belongs to the speaking character (actions go in stage_directions)
+act 4 segment 1 line 6: narrator line carries quoted/narrated speech — speech belongs to the speaking character (actions go in stage_directions)
+duplicate dialogue at act 2 decision.line (first at act 2 segment 5 line 3): 'My salt will spoil waiting. Do I sign this false paper or ri'

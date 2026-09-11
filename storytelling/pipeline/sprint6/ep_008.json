@@ -1,0 +1,726 @@
+{
+  "id": "ep_008",
+  "title": "Act 4",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "Act 1",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Delivery Boy arrives at the school veranda, out of breath, carrying a folded official notice and a pot of paste. The District Officer’s notice is pinned to the post, and Kamnan Noi marks the exact minute of its delivery in his ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I want my son’s boat blessed at dawn, or I lose the only auspicious hour this season.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "The notice states that any ceremony, blessing, or gathering must be registered at the river post within twenty-four hours or face a fine. But this blessing cannot be registered; the child’s birth hour aligns with an eclipse.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Pawnshop Appraiser steps onto the veranda from the shop’s back room, polishing a brass compass with a broken chain, and mentions the compass was left in his shop months ago, its chain broken.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "When is the monk coming for the dawn blessing?",
+              "stage_directions": "paces"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_045"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi’s hand goes still over his ledger as he says the monk is not coming; the river waits for no paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The District Officer returns and asks if the blessing is registered yet, and Lek says he will go to the river post to see the new ledger.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "The blessing must happen at dawn, with or without a paper—the river's blessing still works.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_269"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi closes his public ledger and picks up his private one, while The Pawnshop Appraiser winds the brass compass, testing if it still works.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Pawnshop Appraiser slides the brass compass across the veranda floor toward Kamnan Noi – it still works – but Kamnan Noi does not reach for it.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The Pawnshop Appraiser sees the broken chain of the brass compass not as damage, but as a deliberate unwinding, each separated link a measured interval of withheld time.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_boatman",
+          "place": "place_veranda",
+          "dialogue": "The river waits for no paper. Do I trust the old chart or the new ledger?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I ask Kamnan Noi to write the blessing time in his private ledger as a record.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him nod and make a single mark next to the Boatman's name.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see his hand freeze and his eyes fix on the silent compass.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I take the notice and promise the Boatman I'll find a way to register by dawn.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I watch the Boatman's shoulders relax as he sees my plan.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see his face fall as he realizes the deadline is impossible.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I pick up the brass compass and wind it, testing if it still keeps time.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear a faint, slow tick and see Kamnan Noi's eyes widen.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I feel only stillness and see the Pawnshop Appraiser shake his head.\"\nALLOCATION act 1: seg1=5, seg3=3, seg5=2",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "Act 2",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "At the river post, the new registration ledger is already half-filled with hurried entries in red chalk.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_river_post",
+              "dialogue": "A salt-trading ceremony from last week should not need a back-dated paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Lek reads the regulation again; it requires the signature of a licensed timekeeper for any event involving water.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_grain_clerk",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi is the only licensed timekeeper on this canal.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "A boy in faded blues waits by the posts in the morning light, holding an oilskin-wrapped envelope addressed to the Bureau of Celestial Timekeeping in Bangkok.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_131"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pricha",
+              "place": "place_river_post",
+              "dialogue": "Who sent this envelope?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_delivery_boy",
+              "place": "place_river_post",
+              "dialogue": "A man in a white shirt gave me a coin to wait until noon.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The sun is directly overhead, and the Grain Clerk hums without stop, in a good mood from the morning's trade.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_209"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The boy leaves the envelope on the post and walks away. Lek picks it up; the wax seal is unbroken. The half-filled ledger shows 17 entries in red chalk, 9 in black ink, 3 crossed out in blue, and 1 circled in charcoal—the charcoal circle around the phrase water blessing.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The Salt Clerk tries to stop the boy from leaving with the coin, but the boy ducks away, and the Salt Clerk shouts for him to stop.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_salt_clerk",
+              "place": "place_river_post",
+              "dialogue": "My salt will spoil waiting. Do I sign this false paper or risk the fine?",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_salt_clerk",
+          "place": "place_river_post",
+          "dialogue": "My salt will spoil waiting. Do I sign this false paper or risk the fine?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I suggest he back-date the form with today's date but last week's event.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I watch him quickly scribble and slip the form under the ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see the Grain Clerk snatch the form and tear it in two.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I offer to take his salt sample to the veranda to show Kamnan Noi.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see him wrap a small bundle in cloth and place it in my hands.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see him clutch his salt jar tighter and turn away.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I break the envelope's wax seal to see if its contents can help us.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I pull out a stamped letter excusing ceremonies for perishable goods.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I find only a blank sheet and feel the clerks' accusing stares.\"\nALLOCATION act 2: seg1=5, seg3=2, seg5=2",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "Act 3",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Back on the veranda, Lek places the unopened envelope next to Kamnan Noi’s compass while the Boatman paces, saying the monk is already at the landing with the holy water.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi opens his sealed ledger and writes a sequence of numbers in sidereal script on a slip of paper.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "This name is only valid for the seven minutes after moonrise.",
+              "stage_directions": "hands the slip to the Boatman"
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_veranda",
+              "dialogue": "Does that mean the blessing can be registered now?",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "I thought it was okay to use the sidereal chart, but no—the moonrise chart is not in the public ledger. I now know it is not; I graduate from that assumption.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_081"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The District Officer's assistant arrives and points to the noon deadline on the notice.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Lek looks from the hopeful face of the Boatman to the unmoving face of Kamnan Noi.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The assistant points to the brass compass and asks if it belongs to the licensed timekeeper, and the Pawnshop Appraiser complains a lot about the new rules.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_244"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "It belongs to the Bureau.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "Kamnan Noi picks up the compass, winds it, and holds it to his ear; it does not tick.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_mor_duang",
+              "place": "place_veranda",
+              "dialogue": "No ledger waits for the turning world.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pawnshop_appraiser",
+          "place": "place_veranda",
+          "dialogue": "This compass holds no time. Do I claim it or leave it silent?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I tell the assistant the compass is broken and worth nothing.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him lose interest and turn back to his registration form.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him note it down as evidence of improper equipment.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I take the compass and offer to mend its chain at my shop.",
+            "difficulty": "medium",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I feel the chain links warm in my hand as Kamnan Noi watches.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I fumble and drop it, hearing a dull crack on the veranda wood.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I wind the compass again and set it by the ledger, aligning it with the sun.",
+            "difficulty": "hard",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see its shadow point to the moonrise time on Kamnan Noi's slip.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see its shadow fall wrong and the Boatman's face fill with doubt.\"\nALLOCATION act 3: seg1=6, seg3=3, seg5=2",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "Act 4",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The veranda is quiet; the District Officer’s assistant has left with a promise to return at sunset, and The Boatman’s son is asleep in his arms.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The Monk sits at the edge of the veranda, his bowl of holy water covered with a cloth.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi takes the registration form from Lek and signs it with his official seal, using the time of moonrise as the event’s start.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "He does not write the child’s name on the form.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_river_post",
+              "dialogue": "The blessing is for the adventurous spirit of the child.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi hands the form to Lek and says, \"File this at the river post. You need to love yourself.\"",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_279"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "The Boatman thanks him; Kamnan Noi nods once and looks at the canal. The Monk begins to chant softly.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi can hear a strange noise from the canal.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_288"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_mor_duang",
+              "place": "place_river_post",
+              "dialogue": "You’re here?",
+              "stage_directions": "places the silent brass compass inside his sealed ledger and closes the cover"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi sits cross-legged again, adjusting his pocket chronometer against the sinking sun.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_river_post",
+              "dialogue": "Kamnan Noi knows the sidereal script in his private ledger, the language of star-time, will be obsolete within a generation, replaced by the Bureau’s single time for all canals.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_monk",
+          "place": "place_river_post",
+          "dialogue": "The holy water grows still. Do I bless now or wait for the paper's return?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I ask the Monk to chant a preliminary blessing for the sleeping child.",
+            "difficulty": "easy",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see him dip a leaf in the bowl and touch it to the boy's forehead.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see him shake his head and cover the bowl more tightly.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I take the signed form and run to the river post before sunset.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I reach the post as the last light fades and stamp the form filed.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I find the post closed and see the District Officer's assistant waiting.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I open Kamnan Noi's ledger and place the compass on the moonrise chart.",
+            "difficulty": "hard",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see the compass needle quiver and point to the exact sidereal time.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_river_post",
+                "dialogue": "I see the ledger page blur and the compass slide onto the floor.\"\nALLOCATION act 4: seg1=6, seg3=2, seg5=2",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

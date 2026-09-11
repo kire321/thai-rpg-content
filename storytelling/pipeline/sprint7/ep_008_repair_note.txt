@@ -1,0 +1,11 @@
+SPRINT-7 CONTINUATION REPAIR
+
+Remaining non-fatal (sprint-8 scope: anchor semantics, dilemma voice):
+act 1: act title is a PLACE line — header malformed; title sanitized
+act 2: act title is a PLACE line — header malformed; title sanitized
+act 2: decision.line verbatim-duplicates a narrative line — the dilemma must be written as a new line (or the prose occurrence suppressed)
+act 3: act title is a PLACE line — header malformed; title sanitized
+act 4: act title is a PLACE line — header malformed; title sanitized
+act 3 segment 4: the line immediately before tag 'tag_244' does not use its English anchor word 'complains' (last line: 'The assistant points to the brass compass and the licensed timekeeper,')
+act 4 segment 2: the line immediately before tag 'tag_279' does not use its English anchor word 'yourself' (last line: 'Kamnan Noi hands the form to Lek and tells him to file it at the river')
+duplicate dialogue at act 2 decision.line (first at act 2 segment 5 line 3): 'My salt will spoil waiting. Do I sign this false paper or ri'

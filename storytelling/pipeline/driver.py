@@ -657,24 +657,26 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
                 problems.append(f"act 1 opening stretch has {len(speakers)} non-PC speakers {sorted(speakers)}; "
                                 "budget is narrator + PC + one other — move later speakers' beats after the "
                                 "STAKES beat or into later acts")
-        # beat budget: tag beat-pairs mark the segment boundaries; beats map
-        # 1:1 to prose lines, so counts must land at seg1 4-6 / seg2 2-3 /
-        # seg3 2-3 (DECISION beats excluded)
+        # beat budget: the binding ALLOCATION lines decide the prose segment
+        # split; they must exist and land at seg1 4-8 / seg3 2-4 / seg5 2-4
+        # (the writer may combine adjacent beats; TAG positions advisory)
         content_beats = [(n, t) for n, t in beats if not t.upper().startswith("DECISION")]
+        m_al = re.search(r"ALLOCATION\s+act\s*" + str(anum) +
+                         r"\s*:\s*(?:tag_\d+\s+)?seg1\s*=\s*(\d+)\s*,\s*seg3\s*=\s*(\d+)\s*,\s*seg5\s*=\s*(\d+)",
+                         plan, re.I)
+        if not m_al:
+            problems.append(f"act {anum}: no ALLOCATION line (expected 'ALLOCATION act {anum}: "
+                            "seg1=N, seg3=N, seg5=N') — the segment split is decided here")
+        else:
+            for cnt, lo, hi, sname in ((int(m_al.group(1)), 4, 8, "seg1"),
+                                       (int(m_al.group(2)), 2, 4, "seg3"),
+                                       (int(m_al.group(3)), 2, 4, "seg5")):
+                if not (lo <= cnt <= hi):
+                    problems.append(f"act {anum}: beat budget {sname} allocated {cnt} beats "
+                                    f"(need {lo}-{hi}) — fix the ALLOCATION line")
         tag_idx = [i for i, (n, t) in enumerate(content_beats)
                    if re.match(r"TAG\s+tag_\d+:", t, re.I)]
-        if len(tag_idx) == 2:
-            # segment boundary is AFTER the reaction beat (TAG beat + 1)
-            b1 = tag_idx[0] + 2
-            b2 = tag_idx[1] + 2
-            c1 = b1
-            c2 = b2 - b1
-            c3 = len(content_beats) - b2
-            for cnt, lo, hi, sname in ((c1, 4, 6, "seg1"), (c2, 2, 3, "seg2"), (c3, 2, 3, "seg3")):
-                if not (lo <= cnt <= hi):
-                    problems.append(f"act {anum}: beat budget {sname} has {cnt} beats (need {lo}-{hi}) — "
-                                    "place each TAG pair so segment line counts land")
-        else:
+        if len(tag_idx) != 2:
             problems.append(f"act {anum}: expected exactly 2 TAG beat-pairs (found {len(tag_idx)}) — "
                             "each tag needs its 'TAG tag_xxx:' pretext beat followed by a reaction beat")
         # DECISION checks: choices built only from established facts; outcomes
@@ -773,6 +775,13 @@ TAG_MARKER_RE = re.compile(r"\[\[\s*(tag_\d+)\s*\]\]")
 
 ALLOWED_PLACES_TEXT = ""  # set by main() / caller so the prose gate can validate PLACE lines
 
+# Regression suite (sprint-7): any format/validate error matching one of
+# these accumulated ship-blocker classes is FATAL — loud abort, no JSON.
+SHIP_FATAL_RE = re.compile(
+    r"pipeline artifact|literal \\n escape|bare 'Act|title is a bare|"
+    r"narrator line carries|third-person narration attributed|"
+    r"empty dialogue AND|empty decision\.line", re.I)
+
 
 def segment_beats(plan, anum):
     """Split an act's beats into the three prose segments at the TAG
@@ -781,31 +790,45 @@ def segment_beats(plan, anum):
     acts = dict(_act_sections(plan))
     body = acts.get(anum, "")
     beats = [(n, t) for n, t in _beats(body) if not t.upper().startswith("DECISION")]
-    tag_pos = [i for i, (n, t) in enumerate(beats) if re.match(r"TAG\s+(tag_\d+):", t, re.I)]
-    if len(tag_pos) != 2:
-        # fallback: the planner didn't label TAG beats — split by budget and
-        # take this act's tags from the TAG PLAN bullets (position 1|2)
-        m_tp = re.search(r"^#{1,4}\s+TAG PLAN\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
-        tp = m_tp.group(1) if m_tp else ""
-        pair = re.findall(r"-\s*(tag_\d+)\b[^\n]*?act\s*" + str(anum) +
-                          r"(?:,\s*position\s*([12]))?", tp, re.I)
-        pair = [(t, p or str(i + 1)) for i, (t, p) in enumerate(pair)]
-        pair = sorted(pair, key=lambda x: x[1])[:2]
-        if len(pair) != 2 or not beats:
-            return []
-        total = len(beats)
-        tail = 3 if total >= 11 else 2
-        cut1 = total - 2 * tail
-        if not (4 <= cut1 <= 6):
-            cut1 = min(6, max(4, total - 4))
-            tail = max(2, (total - cut1) // 2)
-        b1 = cut1
-        b2 = cut1 + tail
-        t1, t2 = pair[0][0], pair[1][0]
+    # this act's tags from the TAG PLAN bullets (position 1|2)
+    m_tp = re.search(r"^#{1,4}\s+TAG PLAN\b(.*?)(?=^#{1,4}\s|\Z)", plan, re.M | re.S)
+    tp = m_tp.group(1) if m_tp else ""
+    pair = re.findall(r"-\s*(tag_\d+)\b[^\n]*?act\s*" + str(anum) +
+                      r"(?:,\s*position\s*([12]))?", tp, re.I)
+    pair = [(t, p or str(i + 1)) for i, (t, p) in enumerate(pair)]
+    pair = sorted(pair, key=lambda x: x[1])[:2]
+    if len(pair) != 2 or not beats:
+        return []
+    t1, t2 = pair[0][0], pair[1][0]
+    # PRIMARY: the planner's binding ALLOCATION line decides the split —
+    # TAG-beat positions in the outline are advisory only
+    m_al = re.search(r"ALLOCATION\s+act\s*" + str(anum) +
+                     r"\s*:\s*(?:tag_\d+\s+)?seg1\s*=\s*(\d+)\s*,\s*seg3\s*=\s*(\d+)\s*,\s*seg5\s*=\s*(\d+)",
+                     plan, re.I)
+    total = len(beats)
+    if m_al:
+        a1, a3, a5 = int(m_al.group(1)), int(m_al.group(2)), int(m_al.group(3))
+        if a1 + a3 + a5 == total and a1 >= 4 and a3 >= 2 and a5 >= 2:
+            b1, b2 = a1, a1 + a3
+        else:
+            # allocation doesn't match the beat count — scale it to fit
+            s = max(a1 + a3 + a5, 1)
+            a1 = max(4, min(8, round(total * a1 / s)))
+            a3 = max(2, min(4, round(total * a3 / s)))
+            a1 = min(a1, total - a3 - 2)
+            b1, b2 = a1, a1 + a3
     else:
-        b1, b2 = tag_pos[0] + 2, tag_pos[1] + 2
-        t1 = re.match(r"TAG\s+(tag_\d+):", beats[tag_pos[0]][1], re.I).group(1)
-        t2 = re.match(r"TAG\s+(tag_\d+):", beats[tag_pos[1]][1], re.I).group(1)
+        tag_pos = [i for i, (n, t) in enumerate(beats)
+                   if re.match(r"TAG\s+(tag_\d+):", t, re.I)]
+        if len(tag_pos) == 2:
+            b1, b2 = tag_pos[0] + 2, tag_pos[1] + 2
+        else:
+            tail = 3 if total >= 11 else 2
+            cut1 = total - 2 * tail
+            if not (4 <= cut1 <= 6):
+                cut1 = min(6, max(4, total - 4))
+                tail = max(2, (total - cut1) // 2)
+            b1, b2 = cut1, cut1 + tail
     def fmt(bs):
         return "\n".join(f"{n}. {t}" for n, t in bs)
     return [("segment 1", fmt(beats[:b1]), t1, 4, 6, True),
@@ -857,6 +880,11 @@ def check_prose_segment(text, anum, seg_label, lo, hi, tag_id, plan, name_map):
         if re.match(r"^\[Choice", s) or re.match(r"^NARRATOR:\s*\[", s):
             problems.append(f"{where}: choice/menu text written as a prose line — choices live "
                             "in the plan's DECISION beat only, never in prose")
+        if not s.upper().startswith("NARRATOR:"):
+            btxt = s.split(":", 1)[1] if ":" in s else ""
+            if not re.search(r'[\"“]', btxt) and not re.search(r"\[[^\]]+\]", btxt):
+                problems.append(f"{where}: line under {sm.group(1).strip()!r} has neither quoted "
+                                "speech nor a [stage direction] — narration belongs to NARRATOR")
         if s.upper().startswith("NARRATOR:"):
             bd = s[len("NARRATOR:"):]
             if '"' in bd or "“" in bd or "”" in bd:
@@ -1240,7 +1268,11 @@ def check_prose(prose, plan, tag_ids, name_map):
     for anum, dec in decs.items():
         for c in dec.get("choices", []):
             cw = _content_words(c["description"])
-            if cw and sum(1 for w in cw if w in prose_words) / len(cw) < 0.5:
+            # union-based: combined prose lines count for all their source
+            # beats; ultra-short options need only one anchor word present
+            need = 1 if len(cw) <= 2 else 0.5
+            hit = sum(1 for w in cw if w in prose_words)
+            if cw and (hit < need if need == 1 else hit / len(cw) < need):
                 problems.append(f"act {anum} choice {c['description'][:60]!r}: its objects/acts "
                                 "appear nowhere in the prose — the choice is orphaned from the "
                                 "story it resolves")
@@ -1314,6 +1346,28 @@ def validate_episode(ep, ep_id, char_ids, place_ids, assigned_tags, name_map,
     errors = []
     if not isinstance(ep, dict):
         return ["top-level JSON is not an object"]
+    # sprint-7 continuation: pipeline-artifact scan over EVERY shipped string
+    # (regression suite — ticked features stay ticked)
+    def _strings(obj, path=""):
+        if isinstance(obj, str):
+            yield obj, path
+        elif isinstance(obj, dict):
+            for k, v in obj.items():
+                yield from _strings(v, f"{path}.{k}")
+        elif isinstance(obj, list):
+            for i, v in enumerate(obj):
+                yield from _strings(v, f"{path}[{i}]")
+    for sval, path in _strings(ep):
+        if re.search(r"ALLOCATION|TAG PLAN|seg\d=\d|tag_\d{3}\s+seg", sval):
+            errors.append(f"pipeline artifact leaked into shipped string at {path}: "
+                          f"{sval[:60]!r}")
+        if "\\n" in sval:
+            errors.append(f"literal \\n escape in shipped string at {path}: {sval[:60]!r}")
+    for a in (ep.get("acts") or []):
+        if re.fullmatch(r"Act \d+", str(a.get("title", ""))):
+            errors.append(f"{a.get('id')}: bare 'Act N' title — titles must carry content")
+    if re.fullmatch(r"Act \d+", str(ep.get("title", ""))):
+        errors.append("episode title is a bare 'Act N' — derive a title from the plan")
     if ep.get("id") != ep_id:
         errors.append(f"id is {ep.get('id')!r}, expected {ep_id!r}")
     acts = ep.get("acts")
@@ -1562,7 +1616,18 @@ def parse_decisions(plan, name_map):
                        "choices": [{difficulty, description, attribute, pass, fail}]}}"""
     out = {}
     for anum, body in _act_sections(plan):
-        for n, t in _beats(body):
+        # ALLOCATION lines are pipeline metadata — never part of a beat; if one
+        # trails a DECISION beat it would leak into the last outcome's dialogue
+        body = re.sub(r"(?m)^\s*ALLOCATION\b[^\n]*\n?", "", body)
+        beats = list(_beats(body))
+        # unnumbered DECISION lines (planner sometimes drops the "N.") are
+        # still binding — pick them up line-wise
+        numbered_text = "\n".join(t for _, t in beats)
+        for m in re.finditer(r"(?m)^\s*(DECISION\s*—\s+.+?)(?=^\s*(?:\d+\.\s|DECISION\s*—)|\Z)",
+                             body, re.S):
+            if m.group(1) not in numbered_text:
+                beats.append((0, m.group(1).strip()))
+        for n, t in beats:
             if not t.upper().startswith("DECISION"):
                 continue
             head = DECISION_HEAD_RE.search(t)
@@ -1572,15 +1637,37 @@ def parse_decisions(plan, name_map):
                 names = _names_in(head.group(1) or head.group(2) or "", name_map)
                 speaker = sorted(names)[0] if names else None
             choices = [{"difficulty": d, "description": opt.strip(),
-                        "attribute": at, "pass": p.strip(), "fail": f.strip()}
+                        "attribute": at, "pass": sanitize_shipped(p), "fail": sanitize_shipped(f)}
                        for d, opt, at, p, f in options]
             out[anum] = {"speaker": speaker,
-                         "dilemma": head.group(3).strip() if head else "",
+                         "dilemma": sanitize_shipped(head.group(3)) if head else "",
                          "choices": choices}
     return out
 
 
 # ---------------------------------------------------------------- deterministic formatter
+def sanitize_shipped(s):
+    """Deterministic last-ditch scrub of pipeline artifacts from a shipped
+    string: cut at any ALLOCATION/metadata token or embedded newline."""
+    if not isinstance(s, str):
+        return s
+    out = re.split(r"ALLOCATION|TAG PLAN|seg\d=\d", s)[0]
+    out = out.split("\n")[0].split("\\n")[0]
+    return out.strip().strip('"').strip()
+
+
+def derive_title(plan, fallback):
+    """Bare/placeholder titles are a ship-blocker class: derive a real title
+    from the plan's own phrases (final refrain, else first thesis)."""
+    refs = re.findall(r'REFRAIN\s+"([^"]+)"', plan, re.I)
+    theses = re.findall(r'THESIS\s+"([^"]+)"', plan, re.I)
+    src = (refs[-1] if refs else (theses[0] if theses else "")).strip()
+    if not src:
+        return fallback
+    t = src[0].upper() + src[1:]
+    return t[:60].rstrip(" .,;:")
+
+
 def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
                    allowed_place_ids):
     """Pure-Python formatter. No LLM. The prose contract (see prompts/prose.md):
@@ -1626,11 +1713,12 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
         where = f"act {anum}"
         body = act_bodies[anum]
         title_m = re.search(r"^#{1,3}\s+Act\s+%d\b\s*[—:-]?\s*(.*)$" % anum, prose, re.M)
-        title = (title_m.group(1).strip() if title_m and title_m.group(1).strip() else f"Act {anum}")
+        title = (title_m.group(1).strip() if title_m and title_m.group(1).strip()
+                 else derive_title(plan, f"Act {anum}"))
         if re.match(r"(?i)PLACE\s*:", title):  # title must never be a PLACE line
             errors.append(f"{where}: act title is a PLACE line — header malformed; "
                           "title sanitized")
-            title = f"Act {anum}"
+            title = derive_title(plan, f"Act {anum}")
         pm = re.search(r"^PLACE:\s*(.+?)\s*$", body, re.M)
         if not pm:
             fatal.append(f"{where}: no PLACE: line")
@@ -1708,7 +1796,7 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
             if not dlg and not stage:
                 fatal.append(f"{where}: empty line for speaker {who!r}")
                 continue
-            lines.append({"character": cid, "place": place, "dialogue": dlg,
+            lines.append({"character": cid, "place": place, "dialogue": sanitize_shipped(dlg),
                           "stage_directions": stage})
             if pending_tag:
                 tags_here.append((pending_tag, len(lines)))  # tag AFTER this line
@@ -1742,8 +1830,9 @@ def format_episode(prose, plan, ep_id, tag_ids, name_map, char_ids, places_json,
         # decision from the PLAN, verbatim
         dec = decisions.get(anum)
         if not dec or len(dec["choices"]) != 3:
-            errors.append(f"{where}: plan has no complete DECISION beat "
-                          f"({len(dec['choices']) if dec else 0}/3 choices parsed)")
+            fatal.append(f"{where}: FATAL: plan has no complete DECISION beat "
+                         f"({len(dec['choices']) if dec else 0}/3 choices parsed) — an act "
+                         "without its decision is a player-facing blank")
             decision = None
         elif not dec["dilemma"].strip():
             fatal.append(f"{where}: FATAL: empty decision.line dialogue — the dilemma was "
@@ -1981,7 +2070,13 @@ def main():
          "tag's reaction must number 2–3 (segment 5). Total 8–12 content beats per act, plus the "
          "DECISION beat (which the writer never expands). If a stretch is too long, MERGE beats "
          "here in the outline — never leave the writer more beats than the budget. Number your "
-         "beats so this lands."),
+         "beats so this lands. Then, for EACH act, append one line EXACTLY of this shape "
+         "(machine-parsed and cross-checked against your actual numbered beats — the run aborts "
+         "if the numbers lie or fall outside 4-6/2-3/2-3):\n"
+         "ALLOCATION act N: seg1=A, seg3=B, seg5=C\n"
+         "where A/B/C are the real beat counts your TAG placements produce (DECISION excluded). "
+         "If your count is out of range, fix the outline BEFORE writing the line — this line is "
+         "a binding commitment, not a wish."),
             ]
     for label, instruction in step_instructions:
         step_filled = fill(step_template, {"OUTLINE": plan, "STEP_INSTRUCTION": instruction,
@@ -2043,8 +2138,13 @@ def main():
     def _budget_fatal_ps(ps):
         out = []
         for p in ps:
-            m = re.search(r"beat budget (seg\d) has (\d+)", p)
+            if "no ALLOCATION line" in p:  # missing binding allocation = fatal
+                out.append(p)
+                continue
+            m = re.search(r"beat budget (seg\d) (?:has|allocated) (\d+)", p)
             if not m:
+                if "no ALLOCATION line" in p:
+                    out.append(p)
                 continue
             cnt = int(m.group(2))
             if m.group(1) == "seg1":
@@ -2057,7 +2157,7 @@ def main():
     budget_fatal = _budget_fatal_ps(plan_problems)
     if budget_fatal:
         try:
-            fixed = spot_edit(usage, args.model_edit, plan, budget_fatal,
+            fixed = spot_edit(usage, args.model_plan, plan, budget_fatal,
                               "plan-budget-repair", 12000)
             fprobs = plan_checker(fixed)
             if not _budget_fatal_ps(fprobs) and not mach(fprobs) \
@@ -2156,6 +2256,7 @@ def main():
                                       seg_tmpl, s2, checker)
 
         prev_line = "(nothing precedes this — it opens the episode)"
+        terminal_abort = False
         for anum in (1, 2, 3, 4):
             segs = segment_beats(plan, anum)
             if not segs:
@@ -2198,7 +2299,9 @@ def main():
                 fatal_cls = re.compile(r"hard budget|expected exactly one|maps to no character|"
                                        r"no 'PLACE:'|not one of the allowed|Thai text|"
                                        r"missing '## Act|no 'Speaker:' prefix")
-                VETO = re.compile(r"maps to no character|expected exactly one")
+                VETO = re.compile(r"maps to no character|expected exactly one|"
+                                  r"NARRATOR narrates speech|NARRATOR line contains|"
+                                  r"neither quoted speech")
                 def veto_count(ps):
                     return sum(1 for p in ps if VETO.search(p))
 
@@ -2227,7 +2330,11 @@ def main():
                     except RuntimeError as te:
                         log(f"[{label}] edit transport failure ({te}) — keeping text")
                     gate_results[f"{label} (after spot-edit)"] = sprobs
-                if any(fatal_cls.search(p) for p in sprobs):
+                retryable = [p for p in sprobs if fatal_cls.search(p)
+                             and "missing '## Act" not in p
+                             and "no 'PLACE:'" not in p
+                             and "not one of the allowed" not in p]
+                if retryable:
                     log(f"[{label}] FATAL-class failures remain — ONE segment-only retry "
                         "(numbered-line template)")
                     extra = (f"HARD TEMPLATE: output EXACTLY {lo} lines, numbered 1..{lo} "
@@ -2238,6 +2345,14 @@ def main():
                     if better(p2, sprobs):
                         text, sprobs = text2, p2
                     gate_results[f"{label} (retry)"] = sprobs
+                # mechanical de-numbering: numbered-template retries sometimes
+                # keep their "1. " prefixes — strip them (structural artifact)
+                text_dn = re.sub(r"(?m)^\s*\d{1,2}\.\s+(?=(?:NARRATOR|[A-Z][^:\n]{0,30}):)", "", text)
+                if text_dn != text:
+                    dn = seg_checker(text_dn)
+                    if veto_count(dn) <= veto_count(sprobs) and len(dn) <= len(sprobs):
+                        text, sprobs = text_dn, dn
+                        log(f"[{label}] stripped template line-numbers deterministically")
                 # hard-strip: an invented speaker that survived edit+retry is
                 # removed deterministically rather than shipped
                 inv = [p for p in sprobs if "maps to no character" in p]
@@ -2251,13 +2366,21 @@ def main():
                     if veto_count(sp2) == 0:
                         text, sprobs = stripped, sp2
                         log(f"[{label}] hard-stripped invented-speaker lines {sorted(bad_speakers)}")
-                if fcount(sprobs):
+                # terminal check: only classes with NO deterministic repair
+                # downstream (headers and PLACE lines are restored/normalized
+                # at assembly; they never justify an abort)
+                terminal = [p for p in sprobs if fatal_cls.search(p)
+                            and "missing '## Act" not in p
+                            and "no 'PLACE:'" not in p
+                            and "not one of the allowed" not in p]
+                if terminal:
                     # a segment still carrying fatal-class problems after
                     # edit+retry can only fail the formatter — abort loudly
                     # and cheaply here rather than at the format stage
                     log(f"[{label}] terminal fatal-class failure — aborting episode")
                     gate_results[f"{label} (terminal)"] = sprobs
                     act_texts[anum] = None
+                    terminal_abort = True
                     break
                 seg_texts.append(text.strip())
                 clines = [ln.strip() for ln in text.splitlines()
@@ -2266,8 +2389,8 @@ def main():
                 if clines:
                     prev_line = clines[-1][:200]
                 log(f"[{label}] done: {len(sprobs)} problem(s)")
-            if act_texts.get(anum) is None:
-                continue  # terminal segment abort — this act has no prose
+            if terminal_abort:
+                break  # terminal segment abort — stop spending; episode is dead
             # act headers are structural metadata (like markers): if the
             # model dropped this act's header, restore it deterministically
             if seg_texts and not re.search(r"^#{1,3}\s+Act\s+" + str(anum) + r"\b",
@@ -2363,12 +2486,23 @@ def main():
             fmt_errors += validate_episode(ep, args.ep_id, char_ids, place_id_set,
                                            set(tag_ids), name_map, anchors_full,
                                            allowed_place_ids)
-            gate_results["format"] = fmt_errors
-            if fmt_errors:
-                log(f"[format] GATE FAILED ({len(fmt_errors)} problem(s) — recorded, episode kept as-is):\n  - "
-                    + "\n  - ".join(fmt_errors))
+            # REGRESSION SUITE: every accumulated ship-blocker class is FATAL
+            # on every episode — "non-fatal" never again hides a ticked
+            # feature's acceptance criteria
+            ship_fatal = [e for e in fmt_errors if SHIP_FATAL_RE.search(e)]
+            if ship_fatal:
+                fmt_fatal = ship_fatal
+                gate_results["format"] = [f"FATAL: {f}" for f in fmt_fatal] + fmt_errors
+                log(f"[format] FATAL (ship-blocker regression class) — no episode written:\n  - "
+                    + "\n  - ".join(ship_fatal))
+                ep = None
             else:
-                log("[format] passed gate")
+                gate_results["format"] = fmt_errors
+                if fmt_errors:
+                    log(f"[format] GATE FAILED ({len(fmt_errors)} problem(s) — recorded, episode kept as-is):\n  - "
+                        + "\n  - ".join(fmt_errors))
+                else:
+                    log("[format] passed gate")
     else:
         gate_results.setdefault("prose", []).append("skipped: plan FATAL (no costed STAKES beat)")
         gate_results.setdefault("format", []).append("skipped: plan FATAL (no costed STAKES beat)")
