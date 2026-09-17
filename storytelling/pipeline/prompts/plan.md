@@ -36,18 +36,18 @@ STEP 2 — Build the sticky situation: one concrete thing that has physically ha
 
 STEP 3 — For every feeling or motive that matters, INVENT A CONCRETE EVENT that makes it visible: an action, an object handled, a pause, a lie told out loud, a thing counted or hidden. Only the event goes in the outline — never the motive behind it.
 
-STEP 4 — Write the base outline (format below). Beats are numbered within each act, in narrative order. Each beat is ONE of:
-- an event: "Wan slides the envelope across the table; Lek does not pick it up."
-- an object detail: "Close look at the bracelet: size, dent, the pawn string still tied to it."
-- dialogue content: "Lek asks who the letter is for; Wan names a Bangkok address and goes quiet."
-- a sensory detail: "Smell of rain on hot charcoal from the landing below."
-- the first beat of Act 1 is ALWAYS the episode's opening sentence, written out in full, exactly as the writer should copy it: one charged sentence with a character and the trouble in it (no weather-report openers, no roster of who is present).
-- EVERY BEAT IS LOADED: one beat carries multiple plan elements at once (a character's presence + the setting + the trouble — "The American came in the dry season, when every heart ran shallow, and Bua stole his stakes."). Annotate each Act 1 beat with its load: append `— carries: intro:<nickname>, setting, stakes, thesis, deadline, ...`. A stretch where every beat carries only one element is machine-rejected; so is any run of 3 single-purpose beats.
+STEP 4 — Write the base outline (format below). Beats are numbered within each act, in narrative order. This is a SCRIPT, not a story: every beat names WHO speaks or acts and what they say or do — a cue a playwright could stage. Each beat is ONE of:
+- a speech cue: "Lek asks who the letter is for; Wan names a Bangkok address and goes quiet."
+- an action cue: "Wan slides the envelope across the table; Lek does not pick it up."
+- a close-up (the ONLY narrator-owned beat): "CLOSE-UP on the bracelet: size, dent, the pawn string still tied to it."
+- a sensory cue: "Smell of rain on hot charcoal from the landing below."
+- the first beat of Act 1 is ALWAYS the episode's opening script moment, written out in full: one charged sentence with a character and the trouble in it (no weather-report openers, no roster of who is present).
+- EVERY BEAT IS LOADED: one beat carries multiple plan elements at once (a character's presence + the setting + the trouble). Annotate each Act 1 beat with its load: append `— carries: intro:<nickname>, setting, stakes, thesis, deadline, ...`. A stretch where every beat carries only one element is machine-rejected; so is any run of 3 single-purpose beats.
 - Characters whose presence is OBVIOUS from the place (a clerk in a salt store, a boatman at a landing) need no introduction beat — the PRESENT line gives the general sense of who's in the scene. And nobody may be REVEALED as present late if they would obviously have been noticed from the start.
 The PC (Lek) must have an action or dialogue beat in EVERY act — he holds the central thread; the foregrounded character may help, hinder, or need him, but may NOT solve the central problem single-handedly.
-Aim for 8-12 beats per act: one beat becomes exactly one prose line, and the acts have a hard 8-12-line budget. Longer outlines fail; merge beats here, not later.
+Aim for 8-12 beats per act: one beat becomes exactly one script line, and the acts have a hard 8-12-line budget. Longer outlines fail; merge beats here, not later.
 Every beat is a DIRECT ASSERTION — state what is, never compare. The words "like" and "as if" are machine-rejected anywhere in the outline.
-NEVER write a beat that is a fact about a character ("Wan is Lek's friend"), a description of a feeling, or a statement of what a beat means.
+NEVER write a beat that is a fact about a character ("Wan is Lek's friend"), a description of a feeling, or a statement of what a beat means. NEVER write scene-description prose ("The veranda was quiet in the afternoon heat") — if nobody speaks or acts, it is not a beat.
 
 ## OUTPUT FORMAT (headers machine-checked, verbatim)
 

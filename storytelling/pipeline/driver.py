@@ -513,6 +513,18 @@ def check_plan(plan, shortlist, name_map, allowed_place_names, all_place_names):
         if not re.search(r"\b(inventory|numinous|connoisseur|elegiac)\b", ln, re.I):
             problems.append(f"act {a}: WONDER beat must name its shape "
                             "(inventory / numinous / connoisseur / elegiac) and supply the concrete content")
+        elif re.search(r"\binventory\b", ln, re.I):
+            # Feature A: an inventory WONDER names >=3 concrete items AND an
+            # explicit "shows X" motivation clause (plan-text check)
+            body = re.sub(r"^\s*(?:\d+\.\s*)?WONDER\s*\(inventory\)\s*:?\s*", "", ln, flags=re.I)
+            items = [w for w in re.split(r",|;|\band\b", body.split(" shows ")[0])
+                     if len(w.strip()) > 2]
+            if len(items) < 3:
+                problems.append(f"act {a}: WONDER (inventory) names {len(items)} concrete item(s) "
+                                "— need at least 3 (a collector's inventory lists things)")
+            if not re.search(r"\bshows?\b", body, re.I):
+                problems.append(f"act {a}: WONDER (inventory) lacks its 'shows X' motivation "
+                                "clause — the inventory must demonstrate why the collector keeps it")
     problems.extend(full_name_problems(plan, name_map, "plan"))
     # places: scene locations (PRESENT lines) may only use allowed places;
     # dialogue/beats may freely MENTION other places
@@ -779,7 +791,7 @@ ALLOWED_PLACES_TEXT = ""  # set by main() / caller so the prose gate can validat
 # these accumulated ship-blocker classes is FATAL — loud abort, no JSON.
 SHIP_FATAL_RE = re.compile(
     r"pipeline artifact|literal \\n escape|bare 'Act|title is a bare|"
-    r"narrator line carries|third-person narration attributed|"
+    r"narrator line carries|third-person narration attributed|narrator-subject leak|"
     r"empty dialogue AND|empty decision\.line", re.I)
 
 
@@ -834,6 +846,80 @@ def segment_beats(plan, anum):
     return [("segment 1", fmt(beats[:b1]), t1, 4, 6, True),
             ("segment 3", fmt(beats[b1:b2]), t2, 2, 3, False),
             ("segment 5", fmt(beats[b2:]), None, 2, 3, False)]
+
+
+def narrator_subject_problems(text, name_map, where):
+    """Detection-only FATAL (sprint-8, feature C): a NARRATOR line whose
+    sentence SUBJECT is a known character followed by an action verb means
+    the narrator is performing the character's beat. Loud abort; no
+    auto-rewrite. Possessives ('Lek's hand') and PP-embedded mentions
+    ('with Lek') are exempt — only sentence-initial subjects count."""
+    problems = []
+    names = set()
+    for full, nick in name_map.values():
+        for nm in {full, nick} - {None}:
+            names.add(nm)
+    names.add("Lek")
+    pat = re.compile(r"^NARRATOR:\s*(?:The\s+)?(" +
+                     "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True)) +
+                     r")\s+(?!['’]s\b)([a-z]+)", re.I)
+    for ln in text.splitlines():
+        s = ln.strip()
+        m = pat.match(s)
+        if m:
+            verb = m.group(2).lower()
+            if verb in ("is", "was", "has", "had"):
+                continue
+            problems.append(f"{where}: narrator-subject leak — NARRATOR performs "
+                            f"{m.group(1)!r}'s beat ({verb!r}): {s[:70]!r} — the character "
+                            "must act/speak in his own line")
+    return problems
+
+
+def repair_lines(usage, model, text, problems, label, checker):
+    """Line-level repair (sprint-8 infra): regenerate ONLY the offending
+    lines, splice them back, keep the result iff the whole text re-gates
+    strictly better. A spot-edit that cannot break neighbors."""
+    lines = text.splitlines()
+    def norm(s):
+        return re.sub(r"\s+", " ", s.lower())
+    changed = False
+    for p in problems:
+        # most gate messages quote the offending line as '...'
+        quoted = re.findall(r"'([^']{12,80})'", p)
+        idx = None
+        for q in quoted:
+            nq = norm(q).strip(" .")
+            for i, ln in enumerate(lines):
+                if nq and nq in norm(ln):
+                    idx = i
+                    break
+            if idx is not None:
+                break
+        if idx is None:
+            continue
+        instr = ("Rewrite ONE script line to fix this defect: " + p + "\n"
+                 "Keep the same speaker, the same beat, roughly the same length. "
+                 "Format: `NARRATOR: <scene content>` or `<Nickname>: [physical action] "
+                 "\"<speech>\"`. A character's words/deeds belong to his own line, never to "
+                 "NARRATOR. Output ONLY the replacement line.")
+        try:
+            msg, _ = call_llm(model, "You repair single script lines. Output one line only.",
+                              instr + "\n\nLINE:\n" + lines[idx], 0.4, 600, usage,
+                              label + "-line")
+        except RuntimeError:
+            continue
+        cand = msg.strip().splitlines()[0].strip() if msg.strip() else ""
+        if not cand or not re.match(r"^[^:]{1,40}:\s+", cand):
+            continue
+        trial = list(lines)
+        trial[idx] = cand
+        new_text = "\n".join(trial)
+        if len(checker(new_text)) < len(checker(text)):
+            text = new_text
+            lines = trial
+            changed = True
+    return text, changed
 
 
 def check_prose_segment(text, anum, seg_label, lo, hi, tag_id, plan, name_map):
@@ -922,6 +1008,7 @@ def check_prose_segment(text, anum, seg_label, lo, hi, tag_id, plan, name_map):
     similes = len(re.findall(r"\bas if\b|\blike\b", text, re.I))
     if similes > 0:
         problems.append(f"{where}: {similes} comparison(s) — direct assertions only")
+    problems.extend(narrator_subject_problems(text, name_map, where))
     for fp in full_name_problems(text, name_map, where):
         problems.append(fp)
     low = text.lower()
@@ -1063,6 +1150,7 @@ def check_prose_act(act_text, anum, plan, act_tag_ids, name_map):
     similes = len(re.findall(r"\bas if\b|\blike\b", act_text, re.I))
     if similes > 0:
         problems.append(f"{where}: {similes} comparison(s) ('like'/'as if') — direct assertions only")
+    problems.extend(narrator_subject_problems(act_text, name_map, where))
     for fp in full_name_problems(act_text, name_map, where):
         problems.append(f"{where}: {fp}")
     low = act_text.lower()
@@ -1198,6 +1286,7 @@ def check_prose(prose, plan, tag_ids, name_map):
         if tv in low:
             i = low.find(tv)
             problems.append(f"technique vocabulary {tv!r} appears in the prose: ...{prose[max(0,i-40):i+40]!r}...")
+    problems.extend(narrator_subject_problems(prose, name_map, "prose"))
     problems.extend(full_name_problems(prose, name_map, "prose"))
 
     # ---- sprint-6 iteration 2: full-suite additions (the regressions came
@@ -2041,7 +2130,10 @@ def main():
          "turning world) while echoing those core words.\n"
          "(3) WONDER: one beat per act labeled 'WONDER (<shape>):' where <shape> is one of "
          "inventory / numinous / connoisseur / elegiac, followed by the concrete content: for "
-         "inventory, supply the actual numbers or taxonomy; for numinous, a marvel everyone "
+         "inventory, list at least 3 concrete items (the actual numbers or taxonomy) AND an "
+         "explicit 'shows X' clause naming what the collection demonstrates about the collector "
+         "(e.g. 'WONDER (inventory): seventeen white sacks, three torn ledgers, one brass scale — "
+         "shows a man who trusts paper more than rain'); for numinous, a marvel everyone "
          "treats calmly; for connoisseur, a character's disciplined seeing; for elegiac, "
          "foreknowledge that this world is passing. Any comparison inside a WONDER beat must come "
          "from the story's own material."),
@@ -2180,7 +2272,12 @@ def main():
         # ONE targeted insert: add the missing STAKES beat (the edit pass above
         # fixes many things at once and can miss this single insertion)
         try:
-            fixed = spot_edit(usage, args.model_edit, plan, stakes_fatal,
+            spec = ("INSERT exactly one new numbered beat into Act 1 (position 2-6) and change "
+                    "NOTHING else. The beat's text starts with 'STAKES:' and is a character "
+                    "stating aloud what they want and what it costs, e.g. "
+                    "STAKES: Wan says, \"I need the letter delivered by Friday, or my mother "
+                    "arrives to an empty house.\" — keep every other beat byte-identical.")
+            fixed = spot_edit(usage, args.model_edit, plan, stakes_fatal + [spec],
                               "plan-stakes-insert", 8000)
             fprobs = plan_checker(fixed)
             if not any("no beat labeled 'STAKES:'" in p for p in fprobs) \
@@ -2301,7 +2398,7 @@ def main():
                                        r"missing '## Act|no 'Speaker:' prefix")
                 VETO = re.compile(r"maps to no character|expected exactly one|"
                                   r"NARRATOR narrates speech|NARRATOR line contains|"
-                                  r"neither quoted speech")
+                                  r"neither quoted speech|narrator-subject leak")
                 def veto_count(ps):
                     return sum(1 for p in ps if VETO.search(p))
 
@@ -2321,11 +2418,27 @@ def main():
                 text, sprobs = gen_seg(label, seg_slots, seg_checker)
                 gate_results[f"{label} (before spot-edit)"] = sprobs
                 if sprobs:
+                    # line-level repair first (sprint-8): regenerate only the
+                    # offending lines — a spot-edit that cannot break neighbors
+                    try:
+                        text2, did = repair_lines(usage, edit_model[0], text, sprobs,
+                                                  label + "-lines", seg_checker)
+                        if did:
+                            text, sprobs = text2, seg_checker(text2)
+                            log(f"[{label}] line-level repair applied")
+                    except Exception as le:
+                        log(f"[{label}] line repair skipped ({le})")
+                if sprobs:
                     try:
                         edited = spot_edit(usage, edit_model[0], text, sprobs,
                                            label + "-spot-edit", 8000)
                         eprobs = seg_checker(edited)
-                        if better(eprobs, sprobs):
+                        _cl = lambda t: sum(1 for ln in t.splitlines()
+                                            if ln.strip() and not ln.strip().startswith("#")
+                                            and not ln.strip().upper().startswith("PLACE:"))
+                        if _cl(edited) == 0 and _cl(text) > 0:
+                            log(f"[{label}] edit returned no content lines — keeping original")
+                        elif better(eprobs, sprobs):
                             text, sprobs = edited, eprobs
                     except RuntimeError as te:
                         log(f"[{label}] edit transport failure ({te}) — keeping text")
@@ -2342,7 +2455,13 @@ def main():
                              + ("Keep the '## Act' header and PLACE line FIRST, unnumbered; the "
                                 "numbered lines follow them." if is_first else ""))
                     text2, p2 = gen_seg(label + "-retry", seg_slots, seg_checker, extra)
-                    if better(p2, sprobs):
+                    # never accept an empty/near-empty retry over real text
+                    _cl = lambda t: sum(1 for ln in t.splitlines()
+                                        if ln.strip() and not ln.strip().startswith("#")
+                                        and not ln.strip().upper().startswith("PLACE:"))
+                    if _cl(text2) == 0 and _cl(text) > 0:
+                        log(f"[{label}] retry returned no content lines — keeping original")
+                    elif better(p2, sprobs):
                         text, sprobs = text2, p2
                     gate_results[f"{label} (retry)"] = sprobs
                 # mechanical de-numbering: numbered-template retries sometimes

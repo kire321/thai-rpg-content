@@ -1,0 +1,696 @@
+{
+  "id": "ep_009",
+  "title": "The turning world, where every debt must find its shore",
+  "acts": [
+    {
+      "id": "act_1",
+      "title": "The turning world, where every debt must find its shore",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "I must deliver this, or the lock-keeper will hold my boat for three more days.",
+              "stage_directions": "hands Wan an opened letter"
+            },
+            {
+              "character": "char_bua",
+              "place": "place_veranda",
+              "dialogue": "The lock-keeper is my cousin. I told him to hold your boat.",
+              "stage_directions": "steps onto the veranda, carrying a sheet of blank paper"
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "An unclaimed jar of a dancer’s ashes has sat at the wat for four years. Only a relative can make merit, and a woman alive on paper cannot have merit made.",
+              "stage_directions": "arrives"
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "Nim, daughter, the remittance did not come. Is your hand well? I take the morning boat. I must give the boatman an answer before the boat arrives, or our letters stop.",
+              "stage_directions": "reads the letter aloud without looking up"
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "We each know what is at stake.",
+              "stage_directions": "picks up his pen, looks at the blank paper, and puts it down"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_000"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_bua",
+              "place": "place_veranda",
+              "dialogue": "I will dictate the truth myself, but these hands cannot hold a pen now.",
+              "stage_directions": "her hands tremble as she holds the blank paper"
+            },
+            {
+              "character": "char_bua",
+              "place": "place_veranda",
+              "dialogue": "Write it for me before the boat arrives.",
+              "stage_directions": "turns to Lek"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_005"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "opens his tin box and takes out a stack of practice sheets; every line is the same signature in a woman's neat hand. — a man who trusts handwriting more than speech."
+            },
+            {
+              "character": "char_boatman",
+              "place": "place_veranda",
+              "dialogue": "A debt arrives on the third of the month. The Bangkok boat rounds the bend in an hour.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "leads Lek and The Dance Teacher away from the school veranda, down the canal-side path toward the funeral parlor."
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_boatman",
+          "place": "place_veranda",
+          "dialogue": "My boat is held on a cousin’s word. Do I wait for your letter or cast off now?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I will give the Boatman the letter to hold for one more hour.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him tie his boat to the veranda post.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I watch his boat pull away from the landing.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will ask the Boatman to tell the lock-keeper the letter is being written right now.",
+            "difficulty": "medium",
+            "attribute": "attr_word_hoard",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear him call across the water that the letter is coming.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him shake his head and begin untying the rope.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_word_hoard",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will take the practice sheets and show the Boatman the signature to prove a letter comes.",
+            "difficulty": "hard",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him nod at the signature and sit down on the gunwale to wait.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I watch him pocket the sheets and push off from the dock.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_2",
+      "title": "The turning world, where every debt must find its shore",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "",
+              "stage_directions": "stops at the pawnshop counter under the wooden awning."
+            },
+            {
+              "character": "char_pawnshop_appraiser",
+              "place": "place_letter_writers_landing",
+              "dialogue": "",
+              "stage_directions": "slides a small, square cloth bundle across the counter without being asked."
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The answer is here, in the metal and the string.",
+              "stage_directions": "unwraps the cloth: a woman’s thin gold bracelet, a faded red pawn string still knotted to one link."
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "I weighed it — the same weight, but not the same meaning.",
+              "stage_directions": "rewraps the bracelet and tucks it into his pocket."
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "The appraiser never asks why a thing comes or goes; his silence is a kind of promise.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_letter_writers_landing",
+              "dialogue": "",
+              "stage_directions": "sits behind a counter, a clock ticking beside him."
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_001"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "We need the use of your back room. For one afternoon.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_funeral_timekeeper",
+              "place": "place_letter_writers_landing",
+              "dialogue": "A ledger of love, kept in pigeonholes—the corrected price in black ink; the exact value of an afternoon's silence.",
+              "stage_directions": "quotes a price in red ink on a scrap, crosses it out, writes a lower one in black."
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "",
+              "stage_directions": "counts baht notes onto the table."
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_002"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_bua",
+              "place": "place_letter_writers_landing",
+              "dialogue": "I taught only one dancer who could copy that hand. She is ash in a jar now.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_letter_writers_landing",
+              "dialogue": "Could one of your pupils sit veiled here this afternoon? To be the lady Nim for a mother’s visit.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_letter_writers_landing",
+              "dialogue": "A small gathering. Your veranda’s letter traffic makes for interesting reading.\" \"I could strike a prison entry from the rolls… for copies of who sends money where.",
+              "stage_directions": "enters, followed by a clerk with a ledger."
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_pawnshop_appraiser",
+          "place": "place_letter_writers_landing",
+          "dialogue": "A bracelet comes and goes. Do you leave it as pledge or take it to show the mother?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I will leave the bracelet with the Appraiser as security for the funeral parlor fee.",
+            "difficulty": "easy",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see him note the bracelet in his ledger and hand me a receipt.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see him shake his head and slide the bundle back across the counter.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will show the bracelet to The Dance Teacher and ask if Nim ever wore it.",
+            "difficulty": "medium",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see her touch the gold and her eyes fill with water.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see her turn away from the bracelet and say she does not remember it.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will take the bracelet from the Appraiser and show it to the mother before I pledge it.",
+            "difficulty": "hard",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see him wrap it carefully and put it in his own pocket.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_letter_writers_landing",
+                "dialogue": "I see him hand it back, saying he cannot carry a dead woman’s gold.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_3",
+      "title": "The turning world, where every debt must find its shore",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_sangwan",
+              "place": "place_funeral_parlor",
+              "dialogue": "The veranda's letters are private stationery.",
+              "stage_directions": "lays a hand on the stack of practice sheets."
+            },
+            {
+              "character": "char_district_officer",
+              "place": "place_funeral_parlor",
+              "dialogue": "Here. The first entry is a Bangkok shophouse alley.",
+              "stage_directions": "opens the ledger on the table, pointing with a pen."
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_funeral_parlor",
+              "dialogue": "The boat will dock soon. Four satang a page to write a letter for someone else.",
+              "stage_directions": "glancing out the window."
+            },
+            {
+              "character": "char_bua",
+              "place": "place_funeral_parlor",
+              "dialogue": "Then I will go to the landing myself. I will tell the mother the truth.",
+              "stage_directions": "moving toward the door."
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_011"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_sangwan",
+              "place": "place_funeral_parlor",
+              "dialogue": "Four satang a page for a dictated letter. That is our work.",
+              "stage_directions": "stepping swiftly into her path, blocking the door."
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "The debt that flows uphill. The District Officer closes his ledger and looks toward the canal where the boat will arrive.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_008"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "The Bangkok boat, tied at the landing below.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_funeral_parlor",
+              "dialogue": "An old woman climbs the steps, holding a shophouse paper bag.",
+              "stage_directions": ""
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_district_officer",
+          "place": "place_funeral_parlor",
+          "dialogue": "My ledger is open. Do you show me the practice sheets or keep your silence?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I will show the Officer one practice sheet with the signature to satisfy his curiosity.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him nod and make a small mark in his ledger.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him take the whole stack and tuck it under his arm.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will offer to copy the shophouse alley entry from his ledger for my own records.",
+            "difficulty": "medium",
+            "attribute": "attr_ledger",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him smile and point to the entry with his pen.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him snap the ledger shut and hand it to his clerk.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_ledger",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will tell the Officer the handwriting belongs to a woman who makes merit monthly.",
+            "difficulty": "hard",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him pause, then turn the ledger page away from that entry.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_funeral_parlor",
+                "dialogue": "I see him laugh and say merit cannot be entered in a district roll.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "act_4",
+      "title": "The turning world, where every debt must find its shore",
+      "segments": [
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "places a small ceramic jar on the veranda rail."
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "An old woman calls out Nim’s name from the steps.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "Mother. The elder of the two of us is not here today.",
+              "stage_directions": "steps forward and bows deeply"
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The old woman holds out the paper bag — mangoes and a new stone; the money stopped, so she wrote, but no answer came.",
+              "stage_directions": ""
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_003"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_bua",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "takes the old woman's arm gently and guides her to sit on the veranda bench."
+            },
+            {
+              "character": "char_pricha",
+              "place": "place_veranda",
+              "dialogue": "",
+              "stage_directions": "eyes move from the practice sheets, to the small jar on the rail, to the blank paper waiting on Wan's table."
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "tag": "tag_014"
+        },
+        {
+          "type": "narrative",
+          "lines": [
+            {
+              "character": "char_sangwan",
+              "place": "place_veranda",
+              "dialogue": "Will you write the letter?",
+              "stage_directions": "lifts the pen from the inkwell."
+            },
+            {
+              "character": "char_narrator",
+              "place": "place_veranda",
+              "dialogue": "The canal carries the mother’s boat, and will carry her back, in a world where handwriting outlives the hand.",
+              "stage_directions": ""
+            },
+            {
+              "character": "char_monk",
+              "place": "place_veranda",
+              "dialogue": "Om.",
+              "stage_directions": "looks from the jar to the water."
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "line": {
+          "character": "char_monk",
+          "place": "place_veranda",
+          "dialogue": "The jar holds ash. Do you place it before the mother or keep it on the rail?",
+          "stage_directions": ""
+        },
+        "choices": [
+          {
+            "description": "I will move the jar to the writing table where the mother can see it.",
+            "difficulty": "easy",
+            "attribute": "attr_deference",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see her look at the jar and her hands go still on the paper bag.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see her glance at it and then turn her face toward the canal.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_deference",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will ask the Monk to carry the letter to the mother on the veranda.",
+            "difficulty": "medium",
+            "attribute": "attr_merit_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I hear him begin a chant and see the mother bow her head.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see him remain silent and cover the jar with his robe sleeve.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_merit_water",
+              "delta": 0
+            }
+          },
+          {
+            "description": "I will show the handwriting on the practice sheets to the Dance Teacher.",
+            "difficulty": "hard",
+            "attribute": "attr_heart_water",
+            "pass_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see her touch the ash with one finger and then nod to the mother.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 1
+            },
+            "fail_outcome": {
+              "line": {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "I see her turn away and press her shaking hands over her ears.",
+                "stage_directions": ""
+              },
+              "attribute": "attr_heart_water",
+              "delta": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
