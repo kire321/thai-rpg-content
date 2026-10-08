@@ -256,7 +256,7 @@
               {
                 "character": "char_pricha",
                 "place": "place_rice_ledger",
-                "dialogue": "Pom, your slips carry more grief than the case holds. Set one down before it cools you through.",
+                "dialogue": "Pom, your slips carry more grief than the case holds. One of them will probably outlive the glass. Set one down before it cools you through.",
                 "stage_directions": ""
               }
             ]
@@ -442,7 +442,7 @@
               {
                 "character": "char_pricha",
                 "place": "place_charcoal_hearth",
-                "dialogue": "Calm is the skin over the - ",
+                "dialogue": "I know what it means, and I say it anyway: Calm is the skin over the - ",
                 "stage_directions": "The gust comes off the river before he can finish. Pom does not look up from the lid."
               }
             ]
@@ -601,7 +601,7 @@
               {
                 "character": "char_pornchai",
                 "place": "place_veranda",
-                "dialogue": "Then hear the phrase the mill cooled this week. It goes back to the landing before it goes down the river.",
+                "dialogue": "Then hear the phrase the mill cooled this week. It goes back to the landing before it goes down the river - standing order of the floor.",
                 "stage_directions": ""
               }
             ]
