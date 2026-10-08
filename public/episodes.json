@@ -1,683 +1,752 @@
 [
- {
-  "id": "ep_010",
-  "title": "The Line the Capital Didn't Print",
-  "acts": [
-   {
-    "id": "act_1",
-    "title": "The Hour of Two Books",
-    "segments": [
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_veranda",
-        "dialogue": "Before dawn on the school veranda; the pond is black, the first lamps still lit.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "Teacher Lek. Phum's boy died in the night. The death must be registered before the body is moved — and his rice sack is already on the platform. Once the bell rings, the tax falls due on a field one pair of hands short.",
-        "stage_directions": "sets his file case on the rail"
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "A file case full of other people's names, and still the dead arrive before the ink.",
-        "stage_directions": "opens the tin box"
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "Notebook. Pen. Carbon. Ink. Grief deserves a clean page.",
-        "stage_directions": "takes up his word-notebook, a reed pen, the carbon paper, the school's second inkstone — regarding each before choosing it"
-       },
-       {
-        "character": "char_narrator",
-        "place": "place_veranda",
-        "dialogue": "The circle murmurs condolences, low.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "I can barely hear you — but I hear it.",
-        "stage_directions": "leans toward the circle"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_088"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "The motorcycle would not start in the damp. I walked.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "I have seen it before — a death and a tax arriving in the same hour.",
-        "stage_directions": "to the circle"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_291"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "The register opens at dawn.",
-        "stage_directions": "checks his watch against the sky"
-       },
-       {
-        "character": "char_narrator",
-        "place": "place_veranda",
-        "dialogue": "The first paddy-birds cross the pond, going toward the fields.",
-        "stage_directions": ""
-       }
-      ]
-     }
-    ],
-    "decision": {
-     "line": {
-      "character": "char_district_officer",
-      "place": "place_veranda",
-      "dialogue": "The register opens at dawn. Do we walk to the counter now, or wait for the family to ask for me?",
-      "stage_directions": ""
-     },
-     "choices": [
+  {
+    "id": "ep_011",
+    "title": "A Page Gone Cold",
+    "acts": [
       {
-       "description": "I will walk with him now and read the registration aloud for the family.",
-       "difficulty": "easy",
-       "attribute": "attr_deference",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see the Officer open his file case to a clean page.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_deference",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him check his watch against the lightening sky.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_deference",
-        "delta": 0
-       }
+        "id": "act_001",
+        "title": "The Cooling Tray",
+        "segments": [
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_narrator",
+                "place": "place_grammar_mill",
+                "dialogue": "An hour before dusk at the Grammar Mill; the week's last pages have gone cold on the tray, and the bell for the ferryman's mother waits in the tower.",
+                "stage_directions": "Pricha - Lek to the whole landing - sets a tin lamp on the Type Floor. Trays of metal type sit under their dust; the hand press is folded for the night."
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_grammar_mill",
+                "dialogue": "Pom, I brought the school lamp and two good hands - four rows, and the bell in between.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_grammar_mill",
+                "dialogue": "Hold nothing yet. The monitor reads every line aloud before it cools, and she has not finished the second row.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_type_monitor",
+                "place": "place_grammar_mill",
+                "dialogue": "Twelve hours on the wire, no less. A warm page casts crooked and lies forever.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_type_monitor",
+                "place": "place_grammar_mill",
+                "dialogue": "The ferryman's mother goes under the earth at dusk, and the temple expects its clerks. I keep the tray; I do not keep the bell.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_grammar_mill",
+                "dialogue": "There is a strange hush on the floor; the press knows one of us will not stay.",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_212"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_pornchai",
+                "place": "place_grammar_mill",
+                "dialogue": "Calm is not cold. Calm is the skin over the boil. Watch the tray and say when it shivers.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_grammar_mill",
+                "dialogue": "I watch. The rows sweat their heat through the mesh, one glass square at a time.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_type_monitor",
+                "place": "place_grammar_mill",
+                "dialogue": "No one goes further than the tray today. Whatever is left after dark belongs to whoever is buried.",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_307"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_pornchai",
+                "place": "place_grammar_mill",
+                "dialogue": "Four rows and one bell, Lek. I can read alone, but two voices carry a page faster than one.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_type_monitor",
+                "place": "place_grammar_mill",
+                "dialogue": "I lock the tray at the lamp, whatever the lamp thinks. Pages do not pour merit, and water does not copy pages.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_grammar_mill",
+                "dialogue": "Then hold the lamp steady for us, and we will see what two voices do.",
+                "stage_directions": ""
+              }
+            ]
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_type_monitor",
+            "place": "place_grammar_mill",
+            "dialogue": "The lamp burns till dark and the bell rings at dusk, young clerk. I hold the tray. Which of the two holds you?",
+            "stage_directions": ""
+          },
+          "choices": [
+            {
+              "description": "I will stay and copy the four rows, and let the bell ring without me.",
+              "difficulty": "easy",
+              "attribute": "attr_ledger",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I see Pom slide my copy to the tray's corner and touch the glass twice, the way the monitor blesses a cool page.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I see Pom take the pen from my hand and copy the last row himself, slower, while the bell dies over the water.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will go to the temple at dusk and pour for the ferryman's mother, and let the tray lock with a row uncopied.",
+              "difficulty": "medium",
+              "attribute": "attr_merit_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I hear Pom come in behind me at the bell and stand at my shoulder without a word.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I see the tray locked when we return, and Pom reading the last warm row through the glass by lamplight.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will ask the monitor to let the north window keep the last page overnight - ledge air is cool air - and go pour with a clear head.",
+              "difficulty": "hard",
+              "attribute": "attr_ledger",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I see the monitor lift the window latch herself, as if the ledge had always been a tray.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_grammar_mill",
+                  "dialogue": "I see the monitor shake her head at the window and lock the tray on the hour, uncopied page and all.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 0
+              }
+            }
+          ]
+        }
       },
       {
-       "description": "I will send the Delivery Boy to the counter to hold the bell while we finish on the veranda.",
-       "difficulty": "medium",
-       "attribute": "attr_word_hoard",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see the boy sprint off along the planks.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I watch the boy hesitate, unsure which platform.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 0
-       }
+        "id": "act_002",
+        "title": "Natural Variance",
+        "segments": [
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_narrator",
+                "place": "place_rice_ledger",
+                "dialogue": "The next morning at the Rice Ledger; the open book under its glass, the red block shaped like a grain silo, and a widow keeping her ten minutes on the Cooling Bench.",
+                "stage_directions": "Pom lays out his rice-paper slips. The water-clock runs."
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "Clerk, my friend copies entries for the school, and your bench runs on water-time. Give us the ten minutes and we will not breathe on your case.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_rice_ledger",
+                "dialogue": "The bench cools what the glass cannot. Sit. The widow had her say at the Stamp Table; the record will have its own.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_rice_ledger",
+                "dialogue": "Then I will copy the say and the record both, side by side, and keep them honest.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_rice_ledger",
+                "dialogue": "We record weight, not will. Her say came warm. The record is cooled to 'yield reduced by natural variance.' That is the whole of it.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_rice_ledger",
+                "dialogue": "A man I shared a school bench with wrote appeals like hers. The papers came back cooled the same way. He was the better graduate, and he is two provinces from any window now.",
+                "stage_directions": "Pom's pen stops over the slip. He does not look up when he says it."
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_079"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_tax_clerk",
+                "place": "place_rice_ledger",
+                "dialogue": "The appeal goes up the river on the evening boat. It will probably be read by the same hand that cooled it.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_rice_ledger",
+                "dialogue": "Calm is not cold, the monitor says. The skin over the boil. Down here the boil has gone to fever, and the skin holds.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "Pom, your slips carry more grief than the case holds. Set one down before it cools you through.",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_177"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_tax_clerk",
+                "place": "place_rice_ledger",
+                "dialogue": "The glass keeps one pen. I will lend it for your copies, clerk to clerk, but the line under it stands as it stands.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_rice_ledger",
+                "dialogue": "The line stands. My friend here has a voice the school trained. Let him speak the widow's measure where my pen must stay dry.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_rice_ledger",
+                "dialogue": "Her measure against your variance. That is the sum I am being asked to say aloud.",
+                "stage_directions": ""
+              }
+            ]
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_tax_clerk",
+            "place": "place_rice_ledger",
+            "dialogue": "Her say cools on the bench and my red block is warm in my hand. Speak her measure into my record and it becomes her claim, or hold your tongue and copy what stands. Which clerk are you?",
+            "stage_directions": ""
+          },
+          "choices": [
+            {
+              "description": "I will hold my tongue, copy the cooled line as it stands, and let the widow keep her measure.",
+              "difficulty": "easy",
+              "attribute": "attr_ledger",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I see Pom initial my copied slip without a correction and set it in the dry row.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I see Pom blot my copied line with his cloth and begin the slip again, slower.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_ledger",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will speak the widow's measure into the record in her own words, and let the red block fall where it falls.",
+              "difficulty": "medium",
+              "attribute": "attr_heart_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I hear the widow's measure go into the record in her own words, and Pom's pen does not stop.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I see the clerk's margin take the word 'interrupted' and Pom close his slip halfway.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will ask the clerk to read the appeal aloud once more at the bench, so the cooled line must carry her measure to the last grain.",
+              "difficulty": "hard",
+              "attribute": "attr_heart_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I see the clerk read the appeal a second time and the cooled line grow one word longer.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_rice_ledger",
+                  "dialogue": "I see the clerk refuse the second reading and stamp the cooled line as it stood.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 0
+              }
+            }
+          ]
+        }
       },
       {
-       "description": "I will draft the death entry here, in my best formal hand, for the Officer to copy into the register.",
-       "difficulty": "hard",
-       "attribute": "attr_ledger",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him read my draft and nod once.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him close my notebook gently and take out his own.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 0
-       }
+        "id": "act_003",
+        "title": "One Page in the Pit",
+        "segments": [
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_narrator",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Before sunrise at the Charcoal Hearth; the whole night's heat held under one ash lid, and Pom unfolding a page the tray never saw.",
+                "stage_directions": "The stoker hums without a tune. The smoke rises in a thin, straight column."
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Pom, tell me the pit knows we are coming.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_charcoal_hearth",
+                "dialogue": "The pit knows everything. One page, folded small. Two pages make smoke, and smoke tells.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_fire_stoker",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Sit on the Waiting Stones. The coals were fed at dusk and smothered at dark. They will take your page the way they take a rice cake, slow and all the way through.",
+                "stage_directions": "She lifts the ash lid. No flame answers; the embers lie below breath-level, banked and red."
+              },
+              {
+                "character": "char_fire_stoker",
+                "place": "place_charcoal_hearth",
+                "dialogue": "I can smell grief in the smoke before anyone speaks. Yours is folded small. Sit closer.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_charcoal_hearth",
+                "dialogue": "I am standing right in front of the pit and I cannot see the page at all.",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_198"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_fire_stoker",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Full light closes the pit, and the district counts its smoke from the river. When I say closed, I mean it.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Then the bowl pours now, and the page takes its hour from the coals.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Calm is the skin over the - ",
+                "stage_directions": "The gust comes off the river before he can finish. Pom does not look up from the lid."
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_124"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_pornchai",
+                "place": "place_charcoal_hearth",
+                "dialogue": "There is no skin here. Only what is still cooking.",
+                "stage_directions": "Pom folds the page smaller. On its back, in a younger hand, three words. He closes it before the stoker can see."
+              },
+              {
+                "character": "char_fire_stoker",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Wind off the river. The smoke column will stand up straight and tell on us.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_charcoal_hearth",
+                "dialogue": "Then the coals are faster than the morning. Do not watch my hands, Lek. Hold your bowl.",
+                "stage_directions": ""
+              }
+            ]
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_fire_stoker",
+            "place": "place_charcoal_hearth",
+            "dialogue": "The gust is on the water. Hold your bowl over the lid and let the page char, or put the bowl down and take the page back with your hands. The pit does not wait for both.",
+            "stage_directions": ""
+          },
+          "choices": [
+            {
+              "description": "I will hold the bowl steady and let the page char all the way through.",
+              "difficulty": "easy",
+              "attribute": "attr_merit_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I see Pom watch the lid through the smoke and nod once, as at a bell rung on time.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I see the gust take the page's corner and Pom's hand close on nothing.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will put the bowl down on the stones, reach in, and take the page back before it is gone.",
+              "difficulty": "medium",
+              "attribute": "attr_heart_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I hear Pom take the half-charred page from my fingers and say my name without ice.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I see Pom take the page back with two fingers and lay it in the pit a second time.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_heart_water",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will ask the stoker to bank the lid deep and let the pit close at full light with the page still charring. I will pour over the closed lid.",
+              "difficulty": "hard",
+              "attribute": "attr_merit_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I see the stoker bank the lid with her own rod, and the smoke lie down.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_charcoal_hearth",
+                  "dialogue": "I see the stoker hold the lid shut against the wind and shake her head at the sky.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "act_004",
+        "title": "The Stamp That Cooled Overnight",
+        "segments": [
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_narrator",
+                "place": "place_veranda",
+                "dialogue": "Dusk on the School Veranda; the bowls in a row for the evening pour, and the tax clerk coming up the steps with his red block.",
+                "stage_directions": "The pond keeps the same circle it keeps every evening."
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_veranda",
+                "dialogue": "The school copies ride the evening boat. My book is open and my stamp is warm.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_veranda",
+                "dialogue": "The landing sits down to hear its week first. The district can hold its book one turn of the water.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "Clerk, you are standing right here in the circle. Sit with us one turn of the water.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_veranda",
+                "dialogue": "My father pressed thumbprints on the other side of that glass. I will stand, and I will listen, and then I will stamp.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_veranda",
+                "dialogue": "Then hear the phrase the mill cooled this week. It goes back to the landing before it goes down the river.",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_202"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_pornchai",
+                "place": "place_veranda",
+                "dialogue": "That was the week, as the floor said it.",
+                "stage_directions": "He reads the week's phrase aloud, once, the way it was spoken on the mill floor. Nobody corrects him. The clerk's thumb finds the block and waits."
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_veranda",
+                "dialogue": "A phrase that cools a whole night and still sounds warm. There is something to think about in that.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pricha",
+                "place": "place_veranda",
+                "dialogue": "Think it sitting down, Clerk. Pom - the stamped copy. Where does it sleep tonight?",
+                "stage_directions": ""
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "tag": "tag_234"
+          },
+          {
+            "type": "narrative",
+            "lines": [
+              {
+                "character": "char_pornchai",
+                "place": "place_veranda",
+                "dialogue": "On the veranda bench, under the sky's own tray, until dawn. Delay is quarantine; the district's stamp can cool like anybody's sentence.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_veranda",
+                "dialogue": "The boat leaves without it, then. I will write that the stamp was warm and had to cool. My book will not lie.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_pornchai",
+                "place": "place_veranda",
+                "dialogue": "The clerk will cool the whole landing by morning, and the landing will still be warm. Calm is not cold. The skin over the boil was never the village - it is the evening itself, and the cooking goes on under every roof, and it will go on when the roofs are gone.",
+                "stage_directions": ""
+              }
+            ]
+          }
+        ],
+        "decision": {
+          "line": {
+            "character": "char_tax_clerk",
+            "place": "place_veranda",
+            "dialogue": "Young clerk, my stamp cools on your bench and my legs are tired. Do you rise and meet me with the bowl still full, or do I stand here until the water is poured?",
+            "stage_directions": ""
+          },
+          "choices": [
+            {
+              "description": "I will stay over the bowl and finish the pour, and ask the clerk's pardon from where I sit.",
+              "difficulty": "easy",
+              "attribute": "attr_merit_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I see Pom set a third stool for the clerk without looking up from the page.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I see the clerk hold his book against his chest and wait out the pour on his feet.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will set the bowl down, rise, and give the clerk the full bow a host owes a guest.",
+              "difficulty": "medium",
+              "attribute": "attr_deference",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I hear the clerk answer my bow with the deep one a guest owes a host.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_deference",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I see the clerk return my bow with the small one for a debtor.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_deference",
+                "delta": 0
+              }
+            },
+            {
+              "description": "I will greet him from where I sit, bowl in hand, and bid him take the third stool for one turn of the water.",
+              "difficulty": "hard",
+              "attribute": "attr_merit_water",
+              "pass_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I see the clerk take the stool and the water pass from my bowl to his cup.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 1
+              },
+              "fail_outcome": {
+                "line": {
+                  "character": "char_pricha",
+                  "place": "place_veranda",
+                  "dialogue": "I see the clerk stay standing, and the bowl go cool in my hands.",
+                  "stage_directions": ""
+                },
+                "attribute": "attr_merit_water",
+                "delta": 0
+              }
+            }
+          ]
+        }
       }
-     ]
-    }
-   },
-   {
-    "id": "act_2",
-    "title": "The Unrung Bell",
-    "segments": [
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_rice_counter",
-        "dialogue": "First light at the rice counter; farmers queue with sacks; the ledger waits under its lacquered lid, rice grains pressed between its pages.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "Order travels. It is the one thing from home that does.",
-        "stage_directions": "sets out the file case, the death register, his own ink block, a folding rule, the bell-rope tag — each in its place"
-       },
-       {
-        "character": "char_phum",
-        "place": "place_rice_counter",
-        "dialogue": "My boy always took the other side.",
-        "stage_directions": "grips the sack's single handle"
-       },
-       {
-        "character": "char_narrator",
-        "place": "place_rice_counter",
-        "dialogue": "A young farmer steps out of the queue.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_delivery_boy",
-        "place": "place_rice_counter",
-        "dialogue": "Let me try — wanna try it together, uncle?",
-        "stage_directions": ""
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_258"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "The bell rings when the sack is weighed. Unrung, the tally waits. But the register of the dead cannot wait past dawn prayers.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phum",
-        "place": "place_rice_counter",
-        "dialogue": "Stop. Not yet.",
-        "stage_directions": "raises his hand toward the bell"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_209"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_pricha",
-        "place": "place_rice_counter",
-        "dialogue": "Then we choose the order of the books.",
-        "stage_directions": "to Phum"
-       },
-       {
-        "character": "char_narrator",
-        "place": "place_rice_counter",
-        "dialogue": "The queue holds its breath above the platform.",
-        "stage_directions": ""
-       }
-      ]
-     }
-    ],
-    "decision": {
-     "line": {
-      "character": "char_phum",
-      "place": "place_rice_counter",
-      "dialogue": "The bell or the book, teacher. Which does my boy get first?",
-      "stage_directions": ""
-     },
-     "choices": [
-      {
-       "description": "I will ask the Officer to write the death entry first, before any weighing.",
-       "difficulty": "easy",
-       "attribute": "attr_heart_water",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see the Officer open the register to the names of the dead.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_heart_water",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him touch the bell-rope tag instead.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_heart_water",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will lift the sack's second handle myself so the weighing can wait.",
-       "difficulty": "medium",
-       "attribute": "attr_heart_water",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I feel the sack rise between us, steady.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_heart_water",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I feel the handle slip and the grain shift inside.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_heart_water",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will propose the tally record the field 'one hand short' so next season's rate is argued now, in writing.",
-       "difficulty": "hard",
-       "attribute": "attr_ledger",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see the Officer rule a new column in the ledger.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him shake his head at the lacquered lid.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 0
-       }
-      }
-     ]
-    }
-   },
-   {
-    "id": "act_3",
-    "title": "Two Baskets Short",
-    "segments": [
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_rice_counter",
-        "dialogue": "The sack rises between two men; the brass scale settles; the bell stays quiet in the Officer's hand.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "Birth. Marriage. Death. Tax. The capital prints a line for each — and no line for what the dead still do. His hand is in this harvest.",
-        "stage_directions": "writes the death entry slowly, checking each letter"
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "One book, four columns. It is not enough paper.",
-        "stage_directions": "touches each form in the register in turn"
-       },
-       {
-        "character": "char_phum",
-        "place": "place_rice_counter",
-        "dialogue": "This harvest — I did it all myself. And it weighs short.",
-        "stage_directions": "watches the scale"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_138"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_rice_counter",
-        "dialogue": "The scale reads two baskets under the tally.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "Move a bit further from the platform, please. A bit further.",
-        "stage_directions": "to the pressing queue"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_069"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_pricha",
-        "place": "place_rice_counter",
-        "dialogue": "Two baskets.",
-        "stage_directions": "reads the scale over the Officer's shoulder"
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_rice_counter",
-        "dialogue": "The scale says one thing. The field would have given another.",
-        "stage_directions": "pen above the page"
-       }
-      ]
-     }
-    ],
-    "decision": {
-     "line": {
-      "character": "char_district_officer",
-      "place": "place_rice_counter",
-      "dialogue": "Two baskets short. Do I write the weight the scale says, or the weight the field would have given?",
-      "stage_directions": ""
-     },
-     "choices": [
-      {
-       "description": "I will tell him to write the scale's weight — a register of lies feeds no one.",
-       "difficulty": "easy",
-       "attribute": "attr_ledger",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him write the true number and ring the bell once.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him hold the pen above the page.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will offer the school's rice store to make up the two baskets on paper.",
-       "difficulty": "medium",
-       "attribute": "attr_merit_water",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him note the school's seal beside the entry.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_merit_water",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him wave it off — the state counts sacks, not kindness.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_merit_water",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will argue that the son's name stays on the field's line until the harvest he planted is sold.",
-       "difficulty": "hard",
-       "attribute": "attr_word_hoard",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him write both names, the living above the dead.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_rice_counter",
-         "dialogue": "I see him strike the second name out.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 0
-       }
-      }
-     ]
-    }
-   },
-   {
-    "id": "act_4",
-    "title": "The Line the Capital Didn't Print",
-    "segments": [
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_veranda",
-        "dialogue": "Full morning on the veranda; the bell's single note still hangs over the water; the register is closed.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "I am exact because exactness travels well. Home does not.",
-        "stage_directions": "drinks tea, the file case shut at his feet"
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "Exactness is a poor traveler but a good guest.",
-        "stage_directions": "pours him more tea"
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "My posting ends with the rains. I'm leaving soon.",
-        "stage_directions": "looks at the rain-clouds"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_339"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "Not the state's register. Ours. We keep names here for reading aloud.",
-        "stage_directions": "opens the school's own book and writes the boy's name"
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "Some mornings the register makes me feel — uncomfortable.",
-        "stage_directions": "turns the register's cover without opening it"
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_250"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_veranda",
-        "dialogue": "The circle settles; the pond takes the light.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phum",
-        "place": "place_veranda",
-        "dialogue": "For the school's store. From the short field.",
-        "stage_directions": "sets a small sack of rice at Lek's feet"
-       },
-       {
-        "character": "char_district_officer",
-        "place": "place_veranda",
-        "dialogue": "Teacher. The forms have no line for the dead who still work.",
-        "stage_directions": "takes up the register at last"
-       }
-      ]
-     }
-    ],
-    "decision": {
-     "line": {
-      "character": "char_district_officer",
-      "place": "place_veranda",
-      "dialogue": "The forms have no line for the dead who still work. Do I leave the page as the capital printed it, or do you rule me a new line?",
-      "stage_directions": ""
-     },
-     "choices": [
-      {
-       "description": "I will rule him a new line in the school's book only.",
-       "difficulty": "easy",
-       "attribute": "attr_deference",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him copy the heading in his exact hand.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_deference",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him smile and say one book is burden enough.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_deference",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will propose the veranda witness such entries each quarter moon.",
-       "difficulty": "medium",
-       "attribute": "attr_merit_water",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him note the next quarter moon in his register margin.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_merit_water",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him close the register on the idea.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_merit_water",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will dare him to write the new line into the state's own register, initials small.",
-       "difficulty": "hard",
-       "attribute": "attr_word_hoard",
-       "pass_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him write the heading, initials small beneath.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_pricha",
-         "place": "place_veranda",
-         "dialogue": "I see him lock the file case on the register.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_word_hoard",
-        "delta": 0
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "_format_log": [
-   "k3 experiment: K3-native pipeline (outline+script in one pass each, deterministic format)"
-  ]
- }
+    ]
+  }
 ]
