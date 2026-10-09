@@ -13,25 +13,25 @@
               {
                 "character": "char_narrator",
                 "place": "place_grammar_mill",
-                "dialogue": "An hour before dusk at the Grammar Mill; the week's last pages have gone cold on the tray, and the bell for the ferryman's mother waits in the tower.",
+                "dialogue": "An hour before dusk at the Grammar Mill. The week's last pages lie on the cooling tray, and the bell for the ferryman's mother will ring at dusk.",
                 "stage_directions": "Pricha - Lek to the whole landing - sets a tin lamp on the Type Floor. Trays of metal type sit under their dust; the hand press is folded for the night."
               },
               {
                 "character": "char_pricha",
                 "place": "place_grammar_mill",
-                "dialogue": "Pom, I brought the school lamp and two good hands - four rows, and the bell in between.",
+                "dialogue": "I brought the lamp, Pom. Four rows are cool enough to copy. Let's finish before the bell.",
                 "stage_directions": ""
               },
               {
                 "character": "char_pornchai",
                 "place": "place_grammar_mill",
-                "dialogue": "Hold nothing yet. The monitor reads every line aloud before it cools, and she has not finished the second row.",
+                "dialogue": "Then we copy only what is cool. The school can wait one morning for the rest.",
                 "stage_directions": ""
               },
               {
                 "character": "char_type_monitor",
                 "place": "place_grammar_mill",
-                "dialogue": "Twelve hours on the wire, no less. A warm page casts crooked and lies forever.",
+                "dialogue": "Twelve hours on the tray, clerk. A page pulled early casts crooked and lies forever.",
                 "stage_directions": ""
               },
               {
@@ -43,7 +43,7 @@
               {
                 "character": "char_pricha",
                 "place": "place_grammar_mill",
-                "dialogue": "There is a strange hush on the floor; the press knows one of us will not stay.",
+                "dialogue": "It is a strange place to stand - a page on one side, a funeral on the other.",
                 "stage_directions": ""
               }
             ]
@@ -58,13 +58,13 @@
               {
                 "character": "char_pornchai",
                 "place": "place_grammar_mill",
-                "dialogue": "Calm is not cold. Calm is the skin over the boil. Watch the tray and say when it shivers.",
+                "dialogue": "The mill cools everything on a schedule - pages, rice, grief. A thing that is cooling only looks still. Underneath it is still hot enough to burn you.",
                 "stage_directions": ""
               },
               {
                 "character": "char_pricha",
                 "place": "place_grammar_mill",
-                "dialogue": "I watch. The rows sweat their heat through the mesh, one glass square at a time.",
+                "dialogue": "Then what do I do with it while it cools?",
                 "stage_directions": ""
               },
               {
@@ -97,7 +97,7 @@
               {
                 "character": "char_pricha",
                 "place": "place_grammar_mill",
-                "dialogue": "Then hold the lamp steady for us, and we will see what two voices do.",
+                "dialogue": "Then hold the lamp steady, and we will see which of us finishes first.",
                 "stage_directions": ""
               }
             ]
@@ -244,19 +244,19 @@
               {
                 "character": "char_tax_clerk",
                 "place": "place_rice_ledger",
-                "dialogue": "The appeal goes up the river on the evening boat. It will probably be read by the same hand that cooled it.",
+                "dialogue": "The appeal goes up the river on the evening boat.",
                 "stage_directions": ""
               },
               {
                 "character": "char_pornchai",
                 "place": "place_rice_ledger",
-                "dialogue": "Calm is not cold, the monitor says. The skin over the boil. Down here the boil has gone to fever, and the skin holds.",
+                "dialogue": "And it will be read by the same eyes that cooled it.",
                 "stage_directions": ""
               },
               {
-                "character": "char_pricha",
+                "character": "char_tax_clerk",
                 "place": "place_rice_ledger",
-                "dialogue": "Pom, your slips carry more grief than the case holds. One of them will probably outlive the glass. Set one down before it cools you through.",
+                "dialogue": "Probably. So speak plainly if you speak at all.",
                 "stage_directions": ""
               }
             ]
@@ -269,21 +269,21 @@
             "type": "narrative",
             "lines": [
               {
-                "character": "char_tax_clerk",
-                "place": "place_rice_ledger",
-                "dialogue": "The glass keeps one pen. I will lend it for your copies, clerk to clerk, but the line under it stands as it stands.",
-                "stage_directions": ""
-              },
-              {
                 "character": "char_pornchai",
                 "place": "place_rice_ledger",
-                "dialogue": "The line stands. My friend here has a voice the school trained. Let him speak the widow's measure where my pen must stay dry.",
+                "dialogue": "The record cools what it can, Lek. What it cannot cool, it sends up the river where nobody has to watch it cook.",
                 "stage_directions": ""
               },
               {
                 "character": "char_pricha",
                 "place": "place_rice_ledger",
-                "dialogue": "Her measure against your variance. That is the sum I am being asked to say aloud.",
+                "dialogue": "Pom, your slips carry more grief than the case holds. Set one down before it cools you through.",
+                "stage_directions": ""
+              },
+              {
+                "character": "char_tax_clerk",
+                "place": "place_rice_ledger",
+                "dialogue": "The glass keeps one pen. I will lend it for your copies, clerk to clerk, but the line under it stands as it stands.",
                 "stage_directions": ""
               }
             ]
@@ -442,8 +442,8 @@
               {
                 "character": "char_pricha",
                 "place": "place_charcoal_hearth",
-                "dialogue": "I know what it means, and I say it anyway: Calm is the skin over the - ",
-                "stage_directions": "The gust comes off the river before he can finish. Pom does not look up from the lid."
+                "dialogue": "So 'closed' means the page stays in, and 'open' means the river sees the smoke. There is no third door.",
+                "stage_directions": ""
               }
             ]
           },
@@ -457,7 +457,7 @@
               {
                 "character": "char_pornchai",
                 "place": "place_charcoal_hearth",
-                "dialogue": "There is no skin here. Only what is still cooking.",
+                "dialogue": "There is no skin here, Lek. Whatever is still cooking, the smoke will say it for you.",
                 "stage_directions": "Pom folds the page smaller. On its back, in a younger hand, three words. He closes it before the stoker can see."
               },
               {
@@ -622,13 +622,13 @@
               {
                 "character": "char_tax_clerk",
                 "place": "place_veranda",
-                "dialogue": "A phrase that cools a whole night and still sounds warm. There is something to think about in that.",
+                "dialogue": "A phrase that cools a whole night and still sounds warm.",
                 "stage_directions": ""
               },
               {
-                "character": "char_pricha",
+                "character": "char_pornchai",
                 "place": "place_veranda",
-                "dialogue": "Think it sitting down, Clerk. Pom - the stamped copy. Where does it sleep tonight?",
+                "dialogue": "The stamp thinks it is the coolest thing on the landing, but it cools on our bench like anybody's sentence.",
                 "stage_directions": ""
               }
             ]
@@ -655,7 +655,7 @@
               {
                 "character": "char_pornchai",
                 "place": "place_veranda",
-                "dialogue": "The clerk will cool the whole landing by morning, and the landing will still be warm. Calm is not cold. The skin over the boil was never the village - it is the evening itself, and the cooking goes on under every roof, and it will go on when the roofs are gone.",
+                "dialogue": "The week is copied, the page is cool, and the boat can wait for the morning water.",
                 "stage_directions": ""
               }
             ]
