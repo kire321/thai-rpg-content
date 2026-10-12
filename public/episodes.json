@@ -1,150 +1,125 @@
 [
  {
   "id": "ep_011",
-  "title": "One Word a Day",
+  "title": "One Fifty-Eight",
   "acts": [
    {
     "id": "act_001",
-    "title": "The Diver's Row",
+    "title": "The Red-Black Ledger",
     "segments": [
      {
       "type": "narrative",
       "lines": [
        {
         "character": "char_narrator",
-        "place": "place_silent_pond",
-        "dialogue": "An hour after first light at the Silent Pond. The lotus ring holds its flowers still, and the notice on the warehouse threshold carries a seal and no signature.",
+        "place": "place_funeral_parlor",
+        "dialogue": "The monsoon broke at 1:58, and the only eyes awake to see it were Kamnan Noi's; by morning the true minute sat in his sealed book like a coal - a chart gone blind - while Sangwan the letter-writer came to the funeral parlor for the boatman who carried his dead sister's letters, logged dead at 2:14.",
         "stage_directions": ""
+       },
+       {
+        "character": "char_funeral_timekeeper",
+        "place": "place_funeral_parlor",
+        "dialogue": "He came in at 2:14, soaked and cold, and I logged him at 2:14. Red is what happened. Black is what counts. Ask the widow which she wants.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_funeral_parlor",
+        "dialogue": "To the respected keeper of hours: that boatman rowed my letter to Bangkok every first of the month for four years. Tell me the mail can still travel.",
+        "stage_directions": "He catches himself mid-salutation and bows instead."
        },
        {
         "character": "char_pricha",
-        "place": "place_silent_pond",
-        "dialogue": "It says the pond is to be drained for sanitation. Everything in it must be read onto a district slate by the morning bell, and the clerk comes at noon.",
+        "place": "place_funeral_parlor",
+        "dialogue": "The mail can travel, Wan; the district will want the certificate by noon. The boatman is the part we cannot replace.",
         "stage_directions": ""
        },
        {
-        "character": "char_pond_diver",
-        "place": "place_silent_pond",
-        "dialogue": "On the diving stone the boy lays out his morning: a brass buckle, heavy, off a mill man's belt; one small left shoe; a button from a novice's shoulder; two coins kept apart, because the pond throws back whatever is round.",
+        "character": "char_mor_duang",
+        "place": "place_funeral_parlor",
+        "dialogue": "2:14. The rain's first thunder was 1:58. Two minutes are missing from this man, and nobody will miss them.",
+        "stage_directions": "He turns the Red-Black Ledger to last night's page and taps his chronometer twice before he speaks."
+       },
+       {
+        "character": "char_funeral_timekeeper",
+        "place": "place_funeral_parlor",
+        "dialogue": "Then judge him by the rain that took him, not by the clock that found him.",
+        "stage_directions": "She slides the red page across the counter toward the widow."
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_223"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_funeral_timekeeper",
+        "place": "place_funeral_parlor",
+        "dialogue": "The widow gets one time and the district gets another. Burn the red one. I don't change time. I change who believes it.",
         "stage_directions": ""
        },
        {
-        "character": "char_phra_kam",
-        "place": "place_silent_pond",
-        "dialogue": "One word a day. Today's word is not yours to ask.",
-        "stage_directions": "Phra Kam sits at the muddy edge, the black notebook open on his knee."
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_silent_pond",
-        "dialogue": "If no one reads the pond's things into the record, the clerk writes 'uncatalogued sacred rubbish' on the slate, and the drainers do the rest.",
+        "character": "char_sangwan",
+        "place": "place_funeral_parlor",
+        "dialogue": "Four years of letters, and he never once asked what was in the envelope. That is the only kind of man who can carry a lie that far.",
         "stage_directions": ""
        },
        {
-        "character": "char_phra_kam",
-        "place": "place_silent_pond",
-        "dialogue": "Decide what the district is allowed to know, clerk. You have until the morning bell.",
+        "character": "char_mor_duang",
+        "place": "place_funeral_parlor",
+        "dialogue": "Stay until the widow signs, clerk, or the hour will move without you.",
         "stage_directions": ""
        }
       ]
      },
      {
       "type": "tag",
-      "tag": "tag_133"
+      "tag": "tag_208"
      },
      {
       "type": "narrative",
       "lines": [
        {
-        "character": "char_phra_kam",
-        "place": "place_silent_pond",
-        "dialogue": "Palm up, arm straight, no bow. He handles brass the way his mother handles rice. That is how you know it mattered. The pond is not a bank. It keeps nothing and owes nothing.",
-        "stage_directions": "He watches the boy's hands, not the buckle."
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_silent_pond",
-        "dialogue": "The clerk's slate turns it into a bank whether it wills or not. On his page the buckle is brass, two ounces, one entry, and the district knows the stoker by weight.",
+        "character": "char_mor_duang",
+        "place": "place_funeral_parlor",
+        "dialogue": "Paper burns. Numbers don't. Keep them in separate rooms.",
         "stage_directions": ""
        },
        {
         "character": "char_narrator",
-        "place": "place_silent_pond",
-        "dialogue": "The stoker was a man the grammar mill fired in the rains. The mill burned a week later, and his son threw the buckle in to feel lighter.",
-        "stage_directions": ""
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_063"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_narrator",
-        "place": "place_silent_pond",
-        "dialogue": "The boy closes his fist, opens it over Lek's palm: a rusted spoon, twin to the one Phra Kam eats with.",
+        "place": "place_funeral_parlor",
+        "dialogue": "He opens the sealed book only far enough to write one line, angled away from every eye: a private arithmetic no one will ever audit.",
         "stage_directions": ""
        },
        {
-        "character": "char_phra_kam",
-        "place": "place_silent_pond",
-        "dialogue": "A thing given to the water is not given away, clerk. It comes back as rain, as rice, as a boy with a spoon. The district counts what it can see. The water counts the rest.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_silent_pond",
-        "dialogue": "Then the slate is a prayer book and I am the monk ordered to read it. Tell me what to read, Phra Kam.",
-        "stage_directions": ""
+        "character": "char_sangwan",
+        "place": "place_funeral_parlor",
+        "dialogue": "The bracelet rides to the pawnshop and back each month, clerk. The letter rides to Bangkok and back. Between them they keep one woman fed and one girl alive.",
+        "stage_directions": "He unwraps his writing kit on the coffin bench: four nibs, a stick of sealing wax, and a pawn ticket for a gold bracelet, dated the twenty-eighth."
        }
       ]
      }
     ],
     "decision": {
      "line": {
-      "character": "char_phra_kam",
-      "place": "place_silent_pond",
-      "dialogue": "The slate or the water, clerk. Read the pond into the officer's record and the pond becomes his account. Stand with the water and the district learns your name instead of its contents. My notebook has room for either word.",
+      "character": "char_funeral_timekeeper",
+      "place": "place_funeral_parlor",
+      "dialogue": "The morning is full of minutes, young clerk. Ask the headman his business here and you spend his patience. Let him keep his book and you keep his kindness. Which account do you want open by noon?",
       "stage_directions": ""
      },
      "choices": [
       {
-       "description": "I will take the clerk's slate at noon and write the inventory myself, every buckle and button, so the pond enters the record under my hand.",
+       "description": "I will let the headman keep his book and his morning; I will ask nothing at the parlor.",
        "difficulty": "easy",
-       "attribute": "attr_ledger",
-       "pass_outcome": {
-        "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see Phra Kam write 'received' and close the book before I hand the slate back.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 1
-       },
-       "fail_outcome": {
-        "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see Phra Kam turn his bowl upside down on the stone, and he says the pond is closed to him too.",
-         "stage_directions": ""
-        },
-        "attribute": "attr_ledger",
-        "delta": 0
-       }
-      },
-      {
-       "description": "I will stand with Phra Kam and tell the clerk the pond is temple ground, and its things are not district property to be counted.",
-       "difficulty": "medium",
        "attribute": "attr_deference",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see Phra Kam slide the notebook toward me, open to today's page: 'refused,' underlined once.",
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see Kamnan Noi write my name in his public ledger in full, the way he writes men he trusts.",
          "stage_directions": ""
         },
         "attribute": "attr_deference",
@@ -152,9 +127,9 @@
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see Phra Kam pick up his mat and move to the far edge, where the clerk can watch him not watching.",
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see Kamnan Noi glance at his chronometer while I speak, and correct my question by twenty seconds.",
          "stage_directions": ""
         },
         "attribute": "attr_deference",
@@ -162,27 +137,52 @@
        }
       },
       {
-       "description": "I will ask the boy to give the slate to the pond before noon, and tell the clerk the pond took his list as it takes everything.",
-       "difficulty": "hard",
-       "attribute": "attr_ledger",
+       "description": "I will ask the headman to speak the true minute now, for the dead man's sake, while the rain is fresh in everyone's memory.",
+       "difficulty": "medium",
+       "attribute": "attr_merit_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see the boy come up with the slate dripping, and Phra Kam almost smile before he writes 'received.'",
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see Kamnan Noi close the sealed book and nod once, as if I have kept the correct time for him.",
          "stage_directions": ""
         },
-        "attribute": "attr_ledger",
+        "attribute": "attr_merit_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_silent_pond",
-         "dialogue": "I see the clerk fish the slate out himself, dripping and blank, and Phra Kam write nothing at all.",
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see Kamnan Noi turn a page he is not reading, and the chronometer ticks twice before he answers.",
          "stage_directions": ""
         },
-        "attribute": "attr_ledger",
+        "attribute": "attr_merit_water",
+        "delta": 0
+       }
+      },
+      {
+       "description": "I will ask the timekeeper to hold her red page open until the gauge keeper has seen the glass column at noon.",
+       "difficulty": "hard",
+       "attribute": "attr_deference",
+       "pass_outcome": {
+        "line": {
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see the timekeeper leave the red page unruled, and Kamnan Noi's pencil stop moving for one full minute.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
+        "delta": 1
+       },
+       "fail_outcome": {
+        "line": {
+         "character": "char_mor_duang",
+         "place": "place_funeral_parlor",
+         "dialogue": "I see the timekeeper rule the red page through, and Kamnan Noi pocket his chronometer like a man done with the morning.",
+         "stage_directions": ""
+        },
+        "attribute": "attr_deference",
         "delta": 0
        }
       }
@@ -191,99 +191,99 @@
    },
    {
     "id": "act_002",
-    "title": "The Warm Jar",
+    "title": "The Fourteenth Beat",
     "segments": [
      {
       "type": "narrative",
       "lines": [
        {
         "character": "char_narrator",
-        "place": "place_ash_urn",
-        "dialogue": "Midday at the ash alcove. The Chant Ledger nailed to the wall has never held one name, and the canal grate runs under the shelf.",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "Midday at the Water Blessing Ghat, and the water stands a hand above the coronation mark. The temple boy sits at the drum post with his sticks across his knees. He has not struck since 5:52.",
         "stage_directions": ""
        },
        {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "'Light, a child. Heavy, a woodcutter. Warm, yesterday's.' She lifts each jar an inch and sets it back. 'My hands know the shelf. The district wants the shelf to know it back.'",
+        "character": "char_mor_duang",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "The water stands at fourteen-oh-two by the mark. The coronation measured thirteen-fifty-eight. The sky has out-measured the king.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_water_blessing_drummer",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "I don't count. I breathe. Since 5:52 my breath has been one beat long, and the water has been listening.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "To the respected drummer: my letter must reach Bangkok with the first rain. The boatman is dead, the boat is not. What does the drum say about a letter that leaves without its blessing?",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_water_blessing_drummer",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "The drum says nothing. The king is not dead, so the drum lies by staying quiet. When it beats again, it will lie about that too.",
         "stage_directions": ""
        },
        {
         "character": "char_pricha",
-        "place": "place_ash_urn",
-        "dialogue": "The order came with the drainage notice. At dusk the canal takes every jar with no name in the ledger.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "Forty years I have kept what the fire left, and tonight the district counts it as silt.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phra_kam",
-        "place": "place_ash_urn",
-        "dialogue": "I do not chant for the nameless. No name, no merit. Ask the keeper how long I have held that line.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "The only thing necessary to save the warm jar is a name in that ledger and one chant at dark. That is all the law asks.",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "Then we keep the naming child unnamed and the letter unblessed until somebody gives this rain a minute.",
         "stage_directions": ""
        }
       ]
      },
      {
       "type": "tag",
-      "tag": "tag_143"
+      "tag": "tag_111"
      },
      {
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
-        "place": "place_ash_urn",
-        "dialogue": "The new jar has no label. It is still warm at the rim.",
+        "character": "char_mor_duang",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "Electricity came to the village last year. I still take the stars' opinion first. Machines drift. Witnesses lie. Between them a man can keep one true thing.",
+        "stage_directions": "He unships his chronometer and holds it to the drum post's shadow."
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "The hand I copy always opened with the official minute. 'The kingdom's rain came at 2:31, Mother.' The kingdom's minute, clerk. Mae believes the kingdom's minute can carry words to the dead.",
         "stage_directions": ""
        },
        {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "I write my names in lemon juice and lamp smoke. They show when the jar sweats. The ledger wants ink, and ink is heavier than my names.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "A boatman brought it before dawn and did not wait for a receipt. The canal will take it back the same way, unwitnessed.",
+        "character": "char_water_blessing_drummer",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "The breath between beats is still breath. Tell the letter to stay on the step one more night. The water will keep it.",
         "stage_directions": ""
        }
       ]
      },
      {
       "type": "tag",
-      "tag": "tag_332"
+      "tag": "tag_298"
      },
      {
       "type": "narrative",
       "lines": [
        {
-        "character": "char_urn_keeper",
-        "place": "place_ash_urn",
-        "dialogue": "If no one claims them, I claim them. Is that sin or service?",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phra_kam",
-        "place": "place_ash_urn",
-        "dialogue": "A name is the only coin the dead can spend, keeper. Do not mint them fakes.",
+        "character": "char_mor_duang",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "Time still burning, clerk. The drum stays silent because the reign's page is turning. My chronometer stays wound so one man in this village knows when the burning began.",
         "stage_directions": ""
        },
        {
         "character": "char_pricha",
-        "place": "place_ash_urn",
-        "dialogue": "Then true coin or none. Keeper, is there a name in this alcove that is yours to give?",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "And if the page turns tonight, what happens to a letter dated by yesterday's rain?",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_water_blessing_ghat",
+        "dialogue": "Then the letter is wrong in one line, and the lady Nim has never once been wrong in four years. I will not start now.",
         "stage_directions": ""
        }
       ]
@@ -291,46 +291,46 @@
     ],
     "decision": {
      "line": {
-      "character": "char_urn_keeper",
-      "place": "place_ash_urn",
-      "dialogue": "The canal bell rings at dusk, young clerk. Write a borrowed name in the ledger and the jar stays on my shelf. Pour your own water for it and the ledger stays blank and the canal decides. Or find me a truer door. My arms cannot stop the canal.",
+      "character": "char_water_blessing_drummer",
+      "place": "place_water_blessing_ghat",
+      "dialogue": "The naming mother waits on the far step, young clerk. Beat the drum now and the blessing is a lie the sky will remember. Keep the drum silent and the child keeps its shadow another day. Or carry the water yourself and pour it where the drum's voice cannot reach. My sticks are yours to advise.",
       "stage_directions": ""
      },
      "choices": [
       {
-       "description": "I will not write a false name. I will carry merit-water from the blessing ghat and pour it for the nameless jar myself, and let the canal decide what the ledger cannot hold.",
+       "description": "I will pour the naming water for the mother myself, from the blessing bowl, and let the drum keep its silence.",
        "difficulty": "easy",
-       "attribute": "attr_merit_water",
+       "attribute": "attr_heart_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see Phra Kam take one grain of rice from his bowl and set it on the jar's lid before the water falls.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi set his chronometer by the pour, and for once he does not correct the splash.",
          "stage_directions": ""
         },
-        "attribute": "attr_merit_water",
+        "attribute": "attr_heart_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see Phra Kam hold his bowl shut while the water falls, and the jar lid stays dry as dust.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi wince at the pour's splash and murmur 'early' under his breath.",
          "stage_directions": ""
         },
-        "attribute": "attr_merit_water",
+        "attribute": "attr_heart_water",
         "delta": 0
        }
       },
       {
-       "description": "I will take a name from the canal register, a real name, a real dead man with no jar of his own, and write it in the Chant Ledger so the warm jar can stay.",
+       "description": "I will mark the child as 'named at the monsoon's true minute' in the parlor book, and let the record carry what the drum will not.",
        "difficulty": "medium",
        "attribute": "attr_ledger",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see Phra Kam read the borrowed name twice and write 'received' before the ink dries.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi read the parlor entry twice and nod at the ink, not the words.",
          "stage_directions": ""
         },
         "attribute": "attr_ledger",
@@ -338,9 +338,9 @@
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see Phra Kam close the ledger with his palm and shake his head at the shelf.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi close the parlor book with the entry still wet, and shake his head at the smudge.",
          "stage_directions": ""
         },
         "attribute": "attr_ledger",
@@ -348,27 +348,27 @@
        }
       },
       {
-       "description": "I will ask the keeper to claim the jar as her own kin before the officer. A claimed jar is paperwork enough, and her name on it is true.",
+       "description": "I will ask the drummer to beat the fourteenth beat alone, for the water only, and call it the drum's own breath - no blessing, no lie.",
        "difficulty": "hard",
-       "attribute": "attr_merit_water",
+       "attribute": "attr_heart_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see Phra Kam bow to the keeper, once, from the waist, and write 'received' in letters readable from the door.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi count the fourteenth beat on his fingers, then look at the drummer as at a fellow witness.",
          "stage_directions": ""
         },
-        "attribute": "attr_merit_water",
+        "attribute": "attr_heart_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_ash_urn",
-         "dialogue": "I see the keeper's hand shake on the claim, and Phra Kam turn away before the ink sets.",
+         "character": "char_mor_duang",
+         "place": "place_water_blessing_ghat",
+         "dialogue": "I see Kamnan Noi cover his chronometer with his palm so it cannot hear the fourteenth beat.",
          "stage_directions": ""
         },
-        "attribute": "attr_merit_water",
+        "attribute": "attr_heart_water",
         "delta": 0
        }
       }
@@ -377,99 +377,99 @@
    },
    {
     "id": "act_003",
-    "title": "The Weighing",
+    "title": "The Glass Column",
     "segments": [
      {
       "type": "narrative",
       "lines": [
        {
         "character": "char_narrator",
-        "place": "place_donation_mirror",
-        "dialogue": "Evening at the Donation Mirror. The tax clerk from the rice ledger unbars the weighing hut and sets his scales on the floating tray.",
+        "place": "place_rain_gauge_house",
+        "dialogue": "Afternoon at the Rain Gauge House. The keeper sits on the official bench with his stopwatch in his lap and his whistle on a cord. Last night's line is already in the monsoon book: 'First drop, 2:14.'",
         "stage_directions": ""
        },
        {
-        "character": "char_mirror_tender",
-        "place": "place_donation_mirror",
-        "dialogue": "Three bowls sit under the tray: gold, bone, teeth. The gold goes to the temple, the bone to the families, the teeth back to the water. That is the whole of my accounts.",
+        "character": "char_rain_gauge_keeper",
+        "place": "place_rain_gauge_house",
+        "dialogue": "I woke at 2:14 and the glass was singing. If I didn't see it, it didn't begin. The sky doesn't keep records. We do.",
         "stage_directions": ""
        },
        {
-        "character": "char_mirror_tender",
-        "place": "place_donation_mirror",
-        "dialogue": "The widow is on the third step with a golden lotus. Her husband died in prison. She will not give it to the glass. She wants the water under the mirror.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_tax_clerk",
-        "place": "place_donation_mirror",
-        "dialogue": "The temple pays me by the grain. What my scale cannot hold will be estimated, and estimation rounds to the temple.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phra_kam",
-        "place": "place_donation_mirror",
-        "dialogue": "I keep my back to the glass. It knows my face and would charge me for the showing.",
+        "character": "char_mor_duang",
+        "place": "place_rain_gauge_house",
+        "dialogue": "You slept through the kingdom's new year, keeper. The first drop entered the tube at 1:58. I was under the shed roof with my chronometer. The column sang at 1:58 and again at 2:14. Ask the glass which song it remembers.",
         "stage_directions": ""
        },
        {
         "character": "char_pricha",
-        "place": "place_donation_mirror",
-        "dialogue": "The clerk wants one answer by the second bell: the weight of everything the mirror took this month.",
+        "place": "place_rain_gauge_house",
+        "dialogue": "The replacement boat leaves at the dark tide. Whatever the letter says, it must say it by dusk.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_rain_gauge_keeper",
+        "place": "place_rain_gauge_house",
+        "dialogue": "The glass remembers nothing. I remember 2:14. That is the whole of the monsoon.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_rain_gauge_house",
+        "dialogue": "The lady Nim's hand - the younger of the two of us, clerk - every letter opens with the kingdom's rain-minute. Mae reads the minute first and the letter second. Give me the true one.",
+        "stage_directions": "He sets his writing kit on the bench and unwraps four years of copied letters, each dated by the gauge's minute."
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_276"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_mor_duang",
+        "place": "place_rain_gauge_house",
+        "dialogue": "Born 5:52:17. Drowned at 5:52:33, the year the monk would not move his naming hour. Sixteen seconds of name. I keep them the way this keeper keeps his whistle.",
+        "stage_directions": "He says it the way he reads a ledger, flat, not looking up."
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_rain_gauge_house",
+        "dialogue": "Then you know the price of a minute, headman. I am asking for one. Not for the record - for the letter. The record can keep its 2:14.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_rain_gauge_keeper",
+        "place": "place_rain_gauge_house",
+        "dialogue": "It is a scary thing, a minute that falls while the kingdom sleeps. If 1:58 is real, then every rain since the coronation began while somebody slept. Who buys those years back?",
         "stage_directions": ""
        }
       ]
      },
      {
       "type": "tag",
-      "tag": "tag_321"
+      "tag": "tag_188"
      },
      {
       "type": "narrative",
       "lines": [
        {
-        "character": "char_mirror_tender",
-        "place": "place_donation_mirror",
-        "dialogue": "The rich drop gold and see saints. The poor drop rice and see ghosts. I polish the glass so both can weep in it.",
+        "character": "char_mor_duang",
+        "place": "place_rain_gauge_house",
+        "dialogue": "The sealed book is the only honest room in this village, clerk. What enters it stays true. What leaves it becomes paper, and paper burns. I have burned once.",
         "stage_directions": ""
        },
        {
-        "character": "char_tax_clerk",
-        "place": "place_donation_mirror",
-        "dialogue": "Rice by the dry measure, clerk. Offerings by the same scale. The law does not weigh tears.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_donation_mirror",
-        "dialogue": "He expects us to believe a golden lotus weighs like rice because one scale says so.",
-        "stage_directions": ""
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_010"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_phra_kam",
-        "place": "place_donation_mirror",
-        "dialogue": "In Bangkok I passed every Pali exam and failed the test of silence. I spoke against a man who bought a hall of merit to wash his son's murder debt. My superiors silenced me, and I walked north.",
+        "character": "char_sangwan",
+        "place": "place_rain_gauge_house",
+        "dialogue": "Then burn me instead, headman. I have been paper for four years. One true minute is all I ask to carry.",
         "stage_directions": ""
        },
        {
         "character": "char_pricha",
-        "place": "place_donation_mirror",
-        "dialogue": "Then your silence is not peace, Phra Kam. It is the one debt you still refuse to pay.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_phra_kam",
-        "place": "place_donation_mirror",
-        "dialogue": "The mirror does not forgive, clerk. It refuses to remember the price. Men call that mercy, and weep.",
+        "place": "place_rain_gauge_house",
+        "dialogue": "Then the question is mine, gentlemen, and it is not about rain.",
         "stage_directions": ""
        }
       ]
@@ -477,46 +477,46 @@
     ],
     "decision": {
      "line": {
-      "character": "char_tax_clerk",
-      "place": "place_donation_mirror",
-      "dialogue": "The second bell is close, young clerk. Speak your learned words and quote the temple law, and the weighing stops for tonight, and the widow waits dry. Carry her water first and my scale finishes its number while you pour. Or show me a third door. My scales only know what they know.",
+      "character": "char_mor_duang",
+      "place": "place_rain_gauge_house",
+      "dialogue": "He wants a minute out of my book, clerk. Books that give up minutes end as ash. Write him the 2:14 and the letter rides safe. Write him the 1:58 and the letter rides armed. Or find a third ink. My book stays shut; my chronometer is not on trial.",
       "stage_directions": ""
      },
      "choices": [
       {
-       "description": "I will leave the argument and carry the evening water to the widow myself, and let the scale finish its number while the pouring still matters.",
+       "description": "I will write 2:14, the keeper's minute, in the lady Nim's hand. The letter rides safe, the record sleeps, and Mae reads the kingdom's word as she always has.",
        "difficulty": "easy",
-       "attribute": "attr_heart_water",
+       "attribute": "attr_merit_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see Phra Kam dip his spoon in the widow's cup before he eats, and write 'received.'",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi take the keeper's pen and steady it while the 2:14 is written, as if steadying a corpse.",
          "stage_directions": ""
         },
-        "attribute": "attr_heart_water",
+        "attribute": "attr_merit_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see Phra Kam eat before the widow's cup is filled, and the page stays blank.",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi check his chronometer against the monsoon book and close it with two fingers, like a man closing an eye.",
          "stage_directions": ""
         },
-        "attribute": "attr_heart_water",
+        "attribute": "attr_merit_water",
         "delta": 0
        }
       },
       {
-       "description": "I will make the clerk weigh by the temple's own rule: rice by the dry measure, offerings by no measure, and read the rule aloud until the whole landing hears it.",
+       "description": "I will write 1:58, the true minute, and let the letter carry the night's real arithmetic to Bangkok.",
        "difficulty": "medium",
        "attribute": "attr_word_hoard",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see the clerk's scale hand stop in the air, and Phra Kam write 'received' before the rule is half-read.",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi write 1:58 in the sealed book under today's date, and draw one line through nothing at all.",
          "stage_directions": ""
         },
         "attribute": "attr_word_hoard",
@@ -524,9 +524,9 @@
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see the clerk finish the number anyway and write it larger, and Phra Kam close the book.",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi take the letter to the lamp and read the minute-line twice, checking the ink for his own name.",
          "stage_directions": ""
         },
         "attribute": "attr_word_hoard",
@@ -534,27 +534,27 @@
        }
       },
       {
-       "description": "I will ask the tender for the mirror's drawer key, and take the lotus and this month's rice out of the scales' reach entirely.",
+       "description": "I will leave the minute-line blank and write only: 'The rain came while I wrote your name.' The number belongs to the gauge; the rain belongs to her.",
        "difficulty": "hard",
-       "attribute": "attr_heart_water",
+       "attribute": "attr_word_hoard",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see the tender turn the key, and Phra Kam set his palm flat on the drawer once, like a seal.",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi fold a slip of his own paper into the envelope, blank to my eyes, before the wax is set.",
          "stage_directions": ""
         },
-        "attribute": "attr_heart_water",
+        "attribute": "attr_word_hoard",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
-         "place": "place_donation_mirror",
-         "dialogue": "I see the tender refuse the key with a shake of his head, and the drawer stay shut on nothing.",
+         "character": "char_mor_duang",
+         "place": "place_rain_gauge_house",
+         "dialogue": "I see Kamnan Noi weigh the envelope in his hand like a man weighing a debt he did not agree to pay.",
          "stage_directions": ""
         },
-        "attribute": "attr_heart_water",
+        "attribute": "attr_word_hoard",
         "delta": 0
        }
       }
@@ -563,7 +563,7 @@
    },
    {
     "id": "act_004",
-    "title": "Three Papers",
+    "title": "The Dark Tide",
     "segments": [
      {
       "type": "narrative",
@@ -571,91 +571,91 @@
        {
         "character": "char_narrator",
         "place": "place_veranda",
-        "dialogue": "Night on the School Veranda. The bowls are in a row, and the tax clerk waits at the rail with three folded papers.",
+        "dialogue": "Evening on the School Veranda. The rain has settled into its work, and the replacement boatman waits at the steps with his hood up. The tide turns at the seventh bell.",
         "stage_directions": ""
        },
        {
-        "character": "char_tax_clerk",
+        "character": "char_sangwan",
         "place": "place_veranda",
-        "dialogue": "The pond, the shelf, the glass. One witness-signature on all three by the morning bell. Sign, and the district forgets your name. Refuse, and it learns yours.",
+        "dialogue": "The envelope is sealed. Whatever line it carries, it carries four years of unbroken firsts. A boatman will row through rain for a promise like that.",
         "stage_directions": ""
        },
        {
-        "character": "char_urn_keeper",
+        "character": "char_mor_duang",
         "place": "place_veranda",
-        "dialogue": "The warm jar rides on my hip. Whatever name it carries, it rides inside tonight.",
+        "dialogue": "The boat leaves at 19:12 by my instrument. The keeper's book will say 19:12. For once, two clocks will agree.",
+        "stage_directions": "He sets his chronometer against the last gray light, though the stars are hid."
+       },
+       {
+        "character": "char_narrator",
+        "place": "place_veranda",
+        "dialogue": "On the rail between them: the sealed book, the writing kit, and the pawn ticket for the gold bracelet, smoothed flat a hundred times.",
         "stage_directions": ""
        },
        {
-        "character": "char_mirror_tender",
+        "character": "char_pricha",
         "place": "place_veranda",
-        "dialogue": "The lotus rides in my sleeve until the temple forgets to ask for it.",
+        "dialogue": "Then the boat must catch the 19:12 tide, or Mae's first rain keeps nothing this year.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "My mother married in a first-rain minute, clerk. She has kept every first rain since, the way other widows keep saints.",
+        "stage_directions": ""
+       }
+      ]
+     },
+     {
+      "type": "tag",
+      "tag": "tag_294"
+     },
+     {
+      "type": "narrative",
+      "lines": [
+       {
+        "character": "char_mor_duang",
+        "place": "place_veranda",
+        "dialogue": "The envelope rides the tide; the minute rides the envelope; the truth rides the sealed book. Three boats, clerk, and only one of them is dry.",
+        "stage_directions": ""
+       },
+       {
+        "character": "char_sangwan",
+        "place": "place_veranda",
+        "dialogue": "Dry boats drown too, headman. I have rowed one for four years.",
         "stage_directions": ""
        },
        {
         "character": "char_narrator",
         "place": "place_veranda",
-        "dialogue": "The pond boy is on the steps. He sets two rusted spoons on the rail, side by side, and sits on his heels.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "Three papers, one jar, one lotus, two spoons. The district counts things, clerk. It has never once counted what they meant.",
+        "dialogue": "The boatman calls from the steps that the current will not wait twice - catch the tide now or the month is lost.",
         "stage_directions": ""
        }
       ]
      },
      {
       "type": "tag",
-      "tag": "tag_242"
+      "tag": "tag_031"
      },
      {
       "type": "narrative",
       "lines": [
        {
-        "character": "char_tax_clerk",
+        "character": "char_mor_duang",
         "place": "place_veranda",
-        "dialogue": "The officer does not judge ponds or jars, young clerk. He judges whether the veranda stands with the district or against it.",
+        "dialogue": "Sky turned paper, clerk. The rain writes on the canal and the canal keeps nothing. I am the only reader it has.",
         "stage_directions": ""
        },
        {
-        "character": "char_phra_kam",
+        "character": "char_sangwan",
         "place": "place_veranda",
-        "dialogue": "You have the words to fight one paper, clerk, and the manners to sign all three. My notebook says words cost more than you think.",
+        "dialogue": "Then read this, headman: Mae's last letter ends the same way every month. 'Your sister's hand is the only clock I trust.'",
         "stage_directions": ""
        },
        {
-        "character": "char_pricha",
+        "character": "char_narrator",
         "place": "place_veranda",
-        "dialogue": "Then let the officer judge the veranda by the word it sends back.",
-        "stage_directions": ""
-       }
-      ]
-     },
-     {
-      "type": "tag",
-      "tag": "tag_220"
-     },
-     {
-      "type": "narrative",
-      "lines": [
-       {
-        "character": "char_phra_kam",
-        "place": "place_veranda",
-        "dialogue": "Every sink is a receipt, clerk. The water wrote my two words before I was born. I copy them out fair, that is all.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_pricha",
-        "place": "place_veranda",
-        "dialogue": "One pen, three papers, the morning bell. Whatever we feed the district, we feed it tonight.",
-        "stage_directions": ""
-       },
-       {
-        "character": "char_tax_clerk",
-        "place": "place_veranda",
-        "dialogue": "The boat takes the papers at the bell. After that, the district writes the veranda itself.",
+        "dialogue": "The rain keeps no minute; the gauge keeps one; the mother keeps another. The letter carries whichever truth fits in an envelope.",
         "stage_directions": ""
        }
       ]
@@ -663,84 +663,84 @@
     ],
     "decision": {
      "line": {
-      "character": "char_phra_kam",
+      "character": "char_sangwan",
       "place": "place_veranda",
-      "dialogue": "Last choice, clerk, and it is yours. Fight the papers with your words and spend the officer's face. Sign them, and keep his face, and lose the fight you love. Or send my word down the river in place of your name, and let the district make of it what it will.",
+      "dialogue": "The boat is at the step, clerk. Send it and the letter rides tonight's rain to Mae. Hold it and the minute inside stays safe one more month, and Mae's first rain passes unmarked. Or give it to the headman to hold until the sky clears - his book is the driest boat on this canal. My letter. Your word. His book. Choose.",
       "stage_directions": ""
      },
      "choices": [
       {
-       "description": "I will sign all three papers and return the clerk's pen with both hands, and keep the officer's face for the veranda.",
+       "description": "I will hold the letter one more month. A flawed minute must not reach Mae; the lady Nim's record stays unbroken.",
        "difficulty": "easy",
-       "attribute": "attr_deference",
+       "attribute": "attr_merit_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see Phra Kam write 'received' in the margin of my signature and tap the page twice with his pencil.",
+         "dialogue": "I see Kamnan Noi nod at the held letter, once, the way a man nods at a correct correction.",
          "stage_directions": ""
         },
-        "attribute": "attr_deference",
+        "attribute": "attr_merit_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see Phra Kam close the notebook on my signature like a lid on something cooling.",
+         "dialogue": "I see Kamnan Noi write 'held' in his public ledger beside the letter's date, and the word looks like a small coffin.",
          "stage_directions": ""
         },
-        "attribute": "attr_deference",
+        "attribute": "attr_merit_water",
         "delta": 0
        }
       },
       {
-       "description": "I will refuse the signature and give the reasons one by one: the pond is temple ground, the jars are temple dead, the mirror is temple glass.",
+       "description": "I will send it tonight. A late truth is still the truth, and Mae has waited four years for rain that speaks her daughter's name.",
        "difficulty": "medium",
-       "attribute": "attr_word_hoard",
+       "attribute": "attr_heart_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see Phra Kam listen to the last reason and write 'refused' under the clerk's third question.",
+         "dialogue": "I see Kamnan Noi walk the envelope to the boat himself, holding it under his robe against the rain.",
          "stage_directions": ""
         },
-        "attribute": "attr_word_hoard",
+        "attribute": "attr_heart_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see the clerk gather his papers before my reasons are spent, and Phra Kam's page stay blank.",
+         "dialogue": "I see Kamnan Noi watch the boat go from under the eave, and write its leaving time before it clears the first bridge.",
          "stage_directions": ""
         },
-        "attribute": "attr_word_hoard",
+        "attribute": "attr_heart_water",
         "delta": 0
        }
       },
       {
-       "description": "I will ask Phra Kam to write his word on all three papers, and let the officer carry a monk's receipt or refusal in place of my name.",
+       "description": "I will ask Kamnan Noi to keep the envelope in his sealed book until the sky clears - the driest boat on the canal - and the letter goes when the record goes.",
        "difficulty": "hard",
-       "attribute": "attr_deference",
+       "attribute": "attr_merit_water",
        "pass_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see the clerk carry the three papers away like relics, and Phra Kam eat from his rusted spoon for the first time since morning.",
+         "dialogue": "I see Kamnan Noi make room in the sealed book between two true minutes, and set the envelope there like a page that learned to walk.",
          "stage_directions": ""
         },
-        "attribute": "attr_deference",
+        "attribute": "attr_merit_water",
         "delta": 1
        },
        "fail_outcome": {
         "line": {
-         "character": "char_phra_kam",
+         "character": "char_mor_duang",
          "place": "place_veranda",
-         "dialogue": "I see the clerk shake his head at the monk's word and write 'uncooperative' small in the corner, and the spoons stay on the rail.",
+         "dialogue": "I see Kamnan Noi hold the envelope to the lamplight, reading the wax for the minute it hides, and give it back.",
          "stage_directions": ""
         },
-        "attribute": "attr_deference",
+        "attribute": "attr_merit_water",
         "delta": 0
        }
       }
