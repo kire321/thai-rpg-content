@@ -4,6 +4,16 @@
 
 > **⚠️ SECRETS RULE — NEVER PUBLISH API KEYS**: NEVER commit API keys, tokens, or credentials to this repository or publish them anywhere (code, docs, skill files, comments, git history). If a key appears in any file you are about to push, replace it with a placeholder (e.g. `os.environ["FIREWORKS_API_KEY"]` or `<substitute the real key at runtime>`) before pushing. If a key was ever committed, treat it as compromised: rotate it and scrub it from every branch. This rule applies to YOU right now.
 
+> **2026-10-14 (batch rebuild — CURRENT CANONICAL EPISODE PROCESS)**: All 170 episodes (`ep_011`–`ep_180`) were regenerated in one batch by a NEW pipeline, replacing every previous generation process (sprints 1–6, all `generate_episodes*.py` / `write_episode*.py` / `storytelling/pipeline/` — those scripts are DELETED; this entry + `storytelling/llm_pipeline/` is the whole process now). The pipeline has three stages:
+>
+> 1. **DEAL** (deterministic, no LLM): `python3 storytelling/schedule_episode_elements.py --start 11 --count 170 --out packages.json`. The scheduler seeds tag usage from the current `public/episodes.json` and rotates foregrounded characters per deal, so tags (each of the 340 used 4–5×) and foregrounds (28–29× each of the 6 cast) distribute evenly across the batch. Each package = episode id + foregrounded character (full private plan) + cast priority order (full plans) + 3 places in dealt order (act 4 is always `place_veranda`) + per-act 2 tags with themes + one priority pair per act.
+> 2. **WRITE** (one LLM call per episode): `storytelling/llm_pipeline/ep_lib.py::build_prompt` renders a fully self-contained prompt (world brief, ALL blueprint text inline, fixed anchor words per tag, decision-pair orientations, craft requirements, markdown-script output contract) and calls **`deepseek/deepseek-v4-flash`** via OpenRouter (16k max tokens; ~13.4k prompt + ~6.3k completion tokens ≈ **$0.009/episode**, ~$1.6 for the batch). `ep_worker.py --index N` does up to 3 generation attempts, keeping the first parseable one. `lane_runner.py --start S --end E --parallel P --passes N` runs a resumable local pool (crashes/interrupts: just re-run the same command).
+> 3. **PARSE + FIX** (deterministic Python, no LLM): `ep_lib.py::parse_episode` converts the markdown script to CMS JSON — acts split on `## Act`, tag markers, screenplay lines mapped to canonical char/place ids via alias tables, DECISION blocks parsed with tolerant regexes (model deviates: no bullets, missing colons, nested parens, abbreviated attributes, `**bold**` noise — all handled). Then structural fixups guarantee validator compliance: block sizes forced to 4–6/2–3/2–3 (steal lines between blocks, else narrator pad lines), anchor word forced into the last dialogue line before each tag (move a containing line, else append `The word was "X."`), choice attributes forced to the dealt orientation (EASY→2nd priority, MEDIUM→1st, HARD→`attr_word_hoard`), outcome speakers forced to the foregrounded character, Thai Unicode stripped, stage-direction-only lines promoted to dialogue. Every fixup is logged per-episode in `manifest.jsonl` (`ok` vs `patched` vs `failed`).
+>
+> **Assembly & ship**: `assemble.py` merges all `episodes/*.json` into `public/episodes.json` (ordered), then `python3 validate.py` MUST pass 0 errors, then push this repo, then copy `public/episodes.json` into the site repo `kire321.github.io` under `cms/` and push (or wait for the 04:23 UTC cron). The game frontend natively supports the multi-episode array (controller picks by spaced-repetition: due tags → episodes whose first act uses them, least-played first). Verify the live game by loading `https://kire321.github.io/` in headless Chromium and checking the first episode's first dialogue line renders.
+>
+> Known quality profile of v4-flash episodes: structurally valid, mechanically compliant; craft is thinner than hand-written episodes (flat outcome lines, thin empathy payloads, repetitive pad lines where the model underfilled blocks). Benchmarked B− (2026-10-14): full spec compliance, weak literary depth. Cost/running-time levers: `--parallel` lanes (20 concurrent streams ≈ 35–50 min for 170).
+
 > **2026-08-20 (user decision)**: The world has been REBUILT on `master`. The old Chantara world is preserved as a museum on the `vibe-world` branch (do not delete). Work happens directly on `master` now; the old "staging first" rule is suspended for the rebuild. New world: canal-side Siam ~1910s–1950s, six orthogonal dialectics (face, merit-ledger, gratitude-debt, fate-chart, heart-temperature, guest-soul) — see `storytelling/research_dialectics.md`, `storytelling/SKILL_CHECKLIST.md` (mandatory writing rubric), `storytelling/prompts/` (generation prompt templates), `storytelling/private/` (private narrative plans). Cast: 6 recurring characters (type "party", one per dialectic) × 3 places each; 18 extras (type "npc", generic, one per place); place_veranda is the hub available in every episode but never foregrounded. `subplots` are RENAMED to `attributes` everywhere (public/attributes.json; episode choice/outcome field is `attribute`); the PC's five attributes have initial scores. Episodes use the ACT_FORMAT_V2 `segments` format, 4 acts × 2 tags. Generation model: qwen/qwen3-235b-a22b-2507 via OpenRouter (see storytelling/prompts + /model_shopping.md decision 2026-08-20; DeepSeek 3.2 is the fallback).
 
 > **2026-09-03 (sprint 1, pipeline iteration)**: The 3-stage pipeline in `storytelling/pipeline/` was procedurally revised (branch `sprint1-pipeline`, pushed via REST as a squashed commit — shell git push remains flaky HTTP/2). Changes: all retry/restart loops REMOVED per product-owner decision (single pass per stage; gates RECORD failures in the report but do not block — editor flagged this as the #1 bulk-readiness issue; needs PO decision); planner now emits a narrative-order OUTLINE (PRESENT/ENTRANCE/STAKES/DECISION beat grammar) + TAG PLAN (one English anchor word per tag, placed in the line immediately BEFORE the tag segment — replaces Thai-phrase-with-gloss); writer prompt fully replaced (dumb outline-expander, no technique vocab — simile flood fixed 7+→0 by keeping comparisons out of the outline); secrets routed planner-only from `storytelling/private/char_*_private.md`; nicknames always (parsed from characters.json; no more name bridges). New gates: transcription diff (formatter inventions), place/character allow-lists, Thai-phrase placement, stakes beat, speaker budget. KNOWN OPEN DEFECTS after 2 iterations (see storytelling/pipeline/sprint1/iter2/EDITOR_FEEDBACK_2.md): zero Thai shipped in both iterations (model paraphrases/drops phrases — may need code post-insertion); first-person narrator POV regression (ungated); pass/fail outcomes perform the same action; choice 10-20-word rule never yet satisfied; formatter is the least trustworthy stage (dropped best lines, hallucinated char_kam). Generation cost: ~$0.006/episode on qwen/qwen3-235b-a22b-2507 (3 calls). `public/episodes.json` on master is currently a 1-episode PREVIEW (ep_003) for the CMS GUI per sprint demo procedure; ep_001/ep_002 remain in git history and on branch sprint1-pipeline.
@@ -24,7 +34,7 @@
 
 ## Project Overview
 
-You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
+You manage the **content CMS** for a Thai vocabulary-learning RPG (current world: canal-side Siam ~1910s–1950s; "Chantara" was the old world, preserved on branch `vibe-world`). The CMS is a static React app. It generates, edits, and curates all game content: episodes (narrative + choices), characters, places, tags, and vocabulary items.
 
 > **DEPLOYMENT STATUS (2026-07-30)**: CMS content is published as a **same-origin mirror at `https://kire321.github.io/cms/`** and the CMS **editor UI** is durably deployed at **`https://kire321.github.io/cms-ui/`** (GitHub Pages, no Kimi-agent dependency). Both mirror `master` of this repo. The old `*.kimi.page` CMS URLs are agent-instance-tied legacy — do not use or reference them. The Cloudflare plans below are obsolete.
 
@@ -35,57 +45,19 @@ You manage the **content CMS** for "Chantara," a Thai language-learning RPG. The
 
 | Type | File | Count | Notes |
 |------|------|-------|-------|
-| Episodes | `public/episodes.json` | 340 | 4 acts each — the big one |
-| Tags | `public/tags.json` | 340 | Each links to 5 vocab items |
+| Episodes | `public/episodes.json` | 170 | ep_011–ep_180, 4 acts each, ACT_FORMAT_V2 segments (2026-10-14 batch) |
+| Tags | `public/tags.json` | 340 | Each links to 5–10 vocab items |
 | Vocab Items | `public/vocab_items.json` | 340 | Thai word + phonetics + English |
-| Characters | `public/characters.json` | 20 | 4 party + 5 generic NPC types + 10 named NPCs + 1 narrator |
-| Places | `public/places.json` | 20 | Locations in the Chantara world |
-| Attributes | `public/attributes.json` | 5 | Recurring story threads |
+| Characters | `public/characters.json` | 29 | 6 party + narrator + PC (char_pricha) + 21 NPCs |
+| Places | `public/places.json` | 20 | Canal-side Siam; hub is place_veranda |
+| Attributes | `public/attributes.json` | 5 | Thai-concept attributes (see Episode Generation section) |
 
 ### Episode Structure
 
-```typescript
-interface Episode {
-  id: string;       // "ep_NNN" (001-340)
-  title: string;
-  acts: Act[];      // Exactly 4 acts
-}
-
-interface Act {
-  id: string;              // "act_1" through "act_4"
-  title: string;
-  lines_before: Line[];    // 5-7 lines
-  tag: string;             // "tag_NNN" — vocab tag
-  lines_after: Line[];     // 3-4 lines
-  decision: Decision;
-}
-
-interface Line {
-  character: string;       // e.g. "char_pichit"
-  place: string;           // e.g. "place_khrueang_market"
-  dialogue: string;
-  stage_directions: string;
-}
-
-interface Decision {
-  line: Line;
-  choices: Choice[];       // Exactly 3 choices
-}
-
-interface Choice {
-  description: string;     // Specific action (10-20 words)
-  difficulty: "easy" | "medium" | "hard";
-  attribute: string;
-  pass_outcome: Outcome;
-  fail_outcome: Outcome;
-}
-
-interface Outcome {
-  line: Line;
-  attribute: string;
-  delta: number;           // +1 to +2 (pass), -1 to 0 (fail)
-}
-```
+Episodes use the ACT_FORMAT_V2 `segments` format (5 segments per act: narrative/tag/narrative/tag/narrative,
+4–6 / 2–3 / 2–3 line budgets). The full annotated schema lives in `ACT_FORMAT_V2.md` and in the
+Episode Generation section below — those are canonical; ignore any older lines_before/tag/lines_after
+documentation you may find in git history or on the vibe-world branch.
 
 ## Git Workflow
 
@@ -141,183 +113,86 @@ CMS **content** (`public/`) is published to `https://kire321.github.io/cms/` —
 
 ## Episode Generation
 
-### Narrative Quality Standards (Critical)
+> **CANONICAL PROCESS (2026-10-14)**: the sprint 1–6 pipeline, the Fireworks/GLM scripts, and every
+> `generate_episodes*.py` / `write_episode*.py` helper described in older revisions of this file are
+> DELETED. The whole process is the three-stage batch pipeline summarized in the 2026-10-14 journal
+> entry above and implemented in `storytelling/llm_pipeline/` (deal → one v4-flash call per episode →
+> deterministic parse/fix → assemble → validate → push). The narrative-standards notes below still
+> apply as quality goals; the parser's fixups enforce structure only, not these.
 
-From hard-won experience, generated episodes MUST meet these standards:
+### Narrative Quality Standards (quality goals — not parser-enforced)
 
-**1. Choice descriptions** — Concrete, specific actions (10-20 words):
-```
-GOOD: "Chanida reroutes all power to the port-side crystal, accepting starboard damage"
-BAD:  "Use Chanida's abilities to solve the problem"
-BAD:  "Pichit acts (choice 1)."
-```
+1. Choice descriptions: concrete first-person actions, each sacrificing something real; none obviously right.
+2. Outcomes: the foregrounded character speaks; regard changes (warmth, trust, distance); NEVER new plot facts — the world's state after the decision is identical on every branch.
+3. No superposition in dialogue ("either/or", "might") — one concrete event per line. Superposition lives only in choices/outcomes.
+4. Situation-relevant inventories: collections shown must bear on the episode's cross-purposes conflict.
+5. Distinct voices: every speaker identifiable from dialogue alone (tics, address-forms, pricing habits).
+6. Dialectical noun phrases: ~1 per act, no "like"/"as if", one in the first line; everything else literal.
+7. No Thai script anywhere in episode JSON (the frontend inserts the bilingual quiz at each tag).
+8. Anchor rule: each tag's fixed English anchor word appears in the last dialogue line before the tag.
 
-**2. Outcomes** — Character speaks in first person, concrete result:
-```
-GOOD: "I'm routing everything to port! Hold on — the lattice will respond to one strong frequency even if the other side is dead!"
-BAD:  "Success. The approach proves effective and the situation shifts."
-BAD:  "Pichit succeeds. The lattice responds to the harmonic manipulation."
-```
+### Canonical cast / places / attributes (canal-side Siam world)
 
-**3. NO superposition in dialogue** — Narrative lines describe ONE concrete event:
-```
-BAD:  "He either attacks or flees into the shadows"
-BAD:  "The crystal might shatter or it might sing"
-GOOD: "He attacks without warning, his disruptor aimed at the crystal core"
-GOOD: "The crystal sings — a high clear note that makes everyone's teeth ache"
-```
-Multiple possibilities belong ONLY in choices and outcomes.
+Party (foregroundable, one per episode, appears in all 4 acts, delivers all outcome lines):
+`char_sangwan` (Wan, letter-writer — love is a debt), `char_phum` (disgraced scribe — voice without consequence),
+`char_phra_kam` (monk — goodness is a ledger), `char_mor_duang` (Kamnan Noi, star-reader — fate-chart),
+`char_pornchai` (Pom — heart-temperature), `char_rangsri` (spirit-medium — the self is a guest).
+PC: `char_pricha` (Lek). Narrator: `char_narrator`.
 
-**4. Character-specific outcomes** — Outcomes reference the character who made the choice:
-```
-GOOD: "Pichit: My staff pulses with clarity. The lattice is showing us a path no chart has ever recorded."
-GOOD: "Malee: The prosthetic locks onto a buried harmonic node. There's structure down there — something built."
-```
+Attributes: `attr_heart_water`, `attr_deference`, `attr_ledger`, `attr_merit_water`, `attr_word_hoard`.
+Places/NPCs: see `public/places.json` / `public/characters.json` (20 places incl. hub `place_veranda`;
+NPC specialists such as `char_tax_clerk`, `char_fire_stoker`, `char_type_monitor` come with their place's act).
 
-**5. Attribute specificity** — Each choice advances a specific attribute:
-- `attribute_frequency_map` — Chanida's open map, hidden frequencies
-- `attribute_haunted_ship` — Arthit's lost ship echoes
-- `attribute_crystal_leg` — Malee's prosthetic resonance
-- `attribute_listener_warning` — Pichit's dismissed lattice warning
-- `attribute_groundless` — surface colonization movement
+### Episode schema (ACT_FORMAT_V2 segments — enforced by validate.py)
 
-### Characters
-
-**Party members** (4): `char_chanida` (singer), `char_pichit` (ex-monk), `char_malee` (engineer), `char_arthit` (ex-captain)
-
-**NPC types** (5 — GENERIC, not named individuals):
-- `char_villager` — ordinary islanders (farmers, craftspeople, children)
-- `char_bandit` — sky pirates with modified resonance ships
-- `char_merchant` — trade negotiators between skycities
-- `char_monk` — Listener order members who study the lattice
-- `char_scavenger` — surface harvesters from Tha Khwae
-
-**Narrator**: `char_narrator` — scene transitions only
-
-When adding new NPCs, they should be **generic types** the party can encounter in many episodes (e.g., "Sky City Guard", "Lattice Fisher", "Tonal Order Enforcer"), NOT named individuals.
-
-### Places (20 on master)
-
-`place_khrueang_market`, `place_anchor_spire`, `place_phrao_monastery`, `place_lattice_surface`, `place_resonance_ship`, `place_tha_khwae_scrapyard`, `place_the_hollow`, `place_mae_rim_gardens`, `place_silent_zone`, `place_tonal_archives`, `place_sri_thep_ruins`, `place_wharf_of_echoes`, `place_crystal_core_depths`, `place_floating_necropolis`, `place_resonance_forge`, `place_skybridge_terminals`, `place_order_citadel`, `place_the_shimmering_sea`, `place_wind_shear_cliffs`, `place_chromatic_grotto`
-
-### Fireworks API — Episode Generation
-
-**API**: `https://api.fireworks.ai/inference/v1/chat/completions`  
-**Key**: NOT STORED IN THIS FILE — substitute the real Fireworks API key at runtime (the user provides it in the task prompt; pass it via env var `FIREWORKS_API_KEY`). **Never commit or publish the key.**  
-**Model**: `accounts/fireworks/models/glm-5p2` — best narrative quality on Fireworks  
-**Rate limits**: High enough for 10 parallel workers  
-**Cost**: ~$0.0025 per episode (12 choices via 4 API calls)
-
-GLM 5.2 produces excellent first-person character dialogue for outcomes. It does chain-of-thought reasoning internally but the final output is clean markdown (CHOICE/PASS/FAIL format).
-
-**Why not DeepSeek 3.2?** DeepSeek v3.2 is available on OpenRouter but Fireworks doesn't have it. GLM 5.2 ($4.4/M output) produces better narrative quality than Qwen 3.7 Plus ($1.6/M output) which wastes tokens on thinking tags. For budget: Qwen 3.7 Plus works but needs thinking-tag cleanup. Use GLM 5.2 for quality, Qwen 3.7 Plus if budget is tight.
-
-### Fast Parallel Generation
-
-Use threaded workers for speed. 10 workers calling Fireworks in parallel processes ~10 episodes/minute.
-
-```python
-import json, re, requests, time, os, threading, queue
-
-FIREWORKS_KEY = os.environ["FIREWORKS_API_KEY"]  # real key provided by user at runtime; NEVER commit it
-NUM_WORKERS = 10
-
-def generate_act_choices(episode, act_idx):
-    """Generate 3 choices for one act via Fireworks"""
-    act = episode['acts'][act_idx]
-    lines = []
-    for line in act.get('lines_before', []):
-        char = line['character'].replace('char_', '')
-        if char != 'narrator':
-            lines.append(f"{char}: {line['dialogue'][:55]}")
-    if act.get('decision', {}).get('line'):
-        dl = act['decision']['line']
-        dc = dl['character'].replace('char_', '')
-        lines.append(f"DECIDE {dc}: {dl['dialogue'][:65]}")
-    context = " | ".join(lines[:4])
-
-    prompt = f"""Scene: {episode['id']} Act {act_idx+1} ({act['title']}) | {context}
-
-Write 3 choices:
-
-CHOICE 1: [specific action, 15 words]
-PASS: [character speaks, 1 sentence]
-FAIL: [character speaks, 1 sentence]
-
-CHOICE 2: ...
-
-CHOICE 3: ..."""
-
-    payload = {
-        "model": "accounts/fireworks/models/glm-5p2",
-        "max_tokens": 450,
-        "temperature": 0.85,
-        "messages": [
-            {"role": "system", "content": "Write vivid RPG choices. Characters speak in first person. Be specific."},
-            {"role": "user", "content": prompt}
-        ]
+```jsonc
+{
+  "id": "ep_011", "title": "…",
+  "acts": [{
+    "id": "act_001", "title": "…",
+    "segments": [                    // EXACTLY 5, types in this order
+      {"type": "narrative", "lines": [ /* 4–6 lines */ ]},
+      {"type": "tag", "tag": "tag_NNN"},
+      {"type": "narrative", "lines": [ /* 2–3 lines */ ]},
+      {"type": "tag", "tag": "tag_NNN"},
+      {"type": "narrative", "lines": [ /* 2–3 lines */ ]}
+    ],
+    "decision": {
+      "line": {"character": "…", "place": "…", "dialogue": "…", "stage_directions": ""},
+      "choices": [                   // 3: EASY, MEDIUM, HARD
+        {"description": "…", "difficulty": "easy|medium|hard", "attribute": "attr_…",
+         "pass_outcome": {"line": {"character": "…", "place": "…", "dialogue": "…", "stage_directions": ""},
+                          "attribute": "attr_…", "delta": 1},
+         "fail_outcome":  {"line": {"character": "…", "place": "…", "dialogue": "…", "stage_directions": ""},
+                          "attribute": "attr_…", "delta": 0}}
+      ]
     }
-    resp = requests.post("https://api.fireworks.ai/inference/v1/chat/completions",
-        headers={"Authorization": f"Bearer {FIREWORKS_KEY}", "Content-Type": "application/json"},
-        json=payload, timeout=30)
-    if resp.status_code == 200:
-        return resp.json()['choices'][0]['message']['content']
-    return None
-
-def parse_choices(text):
-    """Parse CHOICE N / PASS / FAIL blocks"""
-    choices = []
-    current = None
-    for line in text.split('\n'):
-        line = line.strip()
-        if not line: continue
-        m = re.search(r'CHOICE\s+(\d+)[:\.]\s*\*?\*?\s*\[?([^\]]+)\]?', line, re.IGNORECASE)
-        if m:
-            if current and 'description' in current:
-                choices.append(current)
-            current = {'description': m.group(2).strip().strip('*').strip()}
-            continue
-        m = re.match(r'\*?\*?PASS:?\s*\*?\*?\s*(.+)', line, re.IGNORECASE)
-        if m and current is not None:
-            val = m.group(1).strip().strip('*').strip()
-            val = re.sub(r'^\w+:\s*["\']?', '', val).strip().strip('"').strip("'")
-            current['pass_outcome'] = val
-            continue
-        m = re.match(r'\*?\*?FAIL:?\s*\*?\*?\s*(.+)', line, re.IGNORECASE)
-        if m and current is not None:
-            val = m.group(1).strip().strip('*').strip()
-            val = re.sub(r'^\w+:\s*["\']?', '', val).strip().strip('"').strip("'")
-            current['fail_outcome'] = val
-            continue
-    if current and 'description' in current:
-        choices.append(current)
-    return choices
+  }]
+}
 ```
 
-### Episode Structure Template
+Decision-pair orientation per act (dealt): EASY checks the pair's SECOND priority, MEDIUM the FIRST,
+HARD bypasses (attribute `attr_word_hoard`). All character/place/tag/attribute ids must exist in the
+respective public/*.json tables. Run `python3 validate.py` before every push — 0 errors required.
 
-Each episode follows a 4-act dramatic arc:
-- **Act 1**: Introduce challenge — establish situation, introduce NPCs
-- **Act 2**: Escalate — complications arise, stakes increase
-- **Act 3**: Crisis — turning point, hardest decisions
-- **Act 4**: Transform — resolution and aftermath (avoid cheesy moral endings)
+### Files
 
-Per act: 5-7 `lines_before`, TAG (vocab word used naturally), 3-4 `lines_after`, then decision with 3 choices.
+- `storytelling/schedule_episode_elements.py` — the dealer (deterministic; seeds tag usage from current `public/episodes.json`; never edit mid-batch).
+- `storytelling/llm_pipeline/ep_lib.py` — prompt builder + markdown parser + fixups (alias tables, caps, anchors, orientation, Thai-strip).
+- `storytelling/llm_pipeline/ep_worker.py` — one episode: generate (≤3 attempts) → parse → write `episodes/{id}.json` + `raw/`. Resume-safe (skips existing).
+- `storytelling/llm_pipeline/lane_runner.py` — parallel range runner: `--start S --end E --parallel P --passes N`.
+- `storytelling/llm_pipeline/assemble.py` — merge `episodes/*.json` → `public/episodes.json` (ordered by ep id).
+- LLM: `deepseek/deepseek-v4-flash` on OpenRouter; key supplied at runtime via env/secret file — NEVER commit it.
+- Working state (packages, manifest, raw, per-episode json) lives OUTSIDE the repo in persistent scratch (e.g. `/mnt/agents/work/ep170/`); only assembled `public/episodes.json` + pipeline scripts are committed.
 
-### Tag Distribution
+### Operating the batch
 
-Each of the 340 tags must be used exactly 4 times across 4 different episodes. Each episode uses 4 different tags (one per act). When adding episodes:
-1. Calculate tag usage counts
-2. Assign the least-used tags to new episodes
-3. Validate every tag is used exactly 4 times
-
-### Validation
-
-Run `python validate.py` from the project root before every deploy. It checks:
-- All IDs reference valid entities
-- 3 choices per decision
-- Correct delta values
-- Tag distribution (each tag used 4 times)
+```bash
+python3 storytelling/schedule_episode_elements.py --start 11 --count 170 --out packages.json
+python3 storytelling/llm_pipeline/lane_runner.py --start 0 --end 170 --parallel 4 --passes 3   # per lane; swarm multiple lanes for speed
+python3 storytelling/llm_pipeline/assemble.py --episodes-dir <work>/episodes --out public/episodes.json
+python3 validate.py && git push   # then mirror cms/episodes.json into kire321.github.io and push (or wait for the 04:23 UTC cron)
+```
 
 ## Known CMS Data Issues
 
@@ -343,14 +218,14 @@ Use existing places as style reference. Each needs: `id`, `name`, `picture`, `de
 
 ### For New Episodes
 
-See `generate_episodes.py` for the full script. Key prompt elements:
-- World context (crystalline lattice, floating islands, tonal language)
-- Character voice guide (who speaks how)
-- Place descriptions
-- Assigned tags (least-used first)
-- 4-act dramatic structure
-- JSON template with exact schema
-- Explicit: "Output ONLY JSON. No markdown code blocks."
+Use the batch pipeline (see Episode Generation). Key prompt elements (all rendered by `ep_lib.py::build_prompt`):
+- World context (canal-side Siam, the veranda hub, records/letters/ledgers/rites/debts)
+- Full private blueprints inline for the foregrounded character, the cast, the dealt places and their NPCs
+- The dealt tags with theme sentences and fixed anchor words; decision-pair orientations per act
+- Craft requirements (cross-purposes sticky situation, situation-relevant inventories, two-sided empathy,
+  distinct voices, ~1 dialectical phrase per act with one in the first line, literal register otherwise)
+- Markdown-script output contract ( screenplay lines, `[TAG: …]` markers, DECISION blocks with EASY/MEDIUM/HARD)
+- Explicit: "Return only the markdown episode."
 
 ## Storytelling Reference
 
