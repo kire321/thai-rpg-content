@@ -58,7 +58,7 @@ export default function Characters() {
               }}
             >
               <img
-                src={char.picture}
+                src={char.picture ? (char.picture.startsWith('/') ? `/cms${char.picture}` : char.picture) : undefined}
                 alt={char.name}
                 style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }}
               />

@@ -48,7 +48,7 @@ export default function Places() {
               }}
             >
               <img
-                src={place.picture}
+                src={place.picture ? (place.picture.startsWith('/') ? `/cms${place.picture}` : place.picture) : undefined}
                 alt={place.name}
                 style={{ width: '100%', height: '240px', objectFit: 'cover', display: 'block' }}
               />
