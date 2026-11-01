@@ -71,7 +71,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The page stays until dawn. That is the rule. After that, heat is gone. You may both watch, but you may not touch.",
         "stage_directions": "The Type Monitor clears her throat. She gestures to the cooling tray."
@@ -695,7 +695,7 @@
         "stage_directions": "He does not move."
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_silent_pond",
         "dialogue": "This one remembers hunger. This morning, I wrote 'refused.' It came up heavy.",
         "stage_directions": "The boy surfaces, dripping, holding a rusted spoon."
@@ -716,7 +716,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_silent_pond",
         "dialogue": "She who has no name — was she fired from the dance hall too?",
         "stage_directions": "He points at the jar."
@@ -890,7 +890,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "There is something in my eye — no, it's the dust. It was brought by the wind. That's no problem.",
         "stage_directions": ""
@@ -1025,7 +1025,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_donation_mirror",
         "dialogue": "I got the answer now. The mirror shows only those who wish to be seen. The answer is her.",
         "stage_directions": ""
@@ -1226,7 +1226,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_veranda",
         "dialogue": "Don't let anyone know where I placed the ash. It is under the veranda floor. Don't tell anyone.",
         "stage_directions": ""
@@ -3845,7 +3845,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "From the veranda, you hear the soft creak of a rocking chair.",
         "stage_directions": ""
@@ -4691,7 +4691,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "The pond gives back what the sky rejects. But it won't give back a name.",
         "stage_directions": "He surfaces beside the sunk spoon, holding a child's shoe. He listens, then speaks."
@@ -5021,7 +5021,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I have brought this bowl for the temple. It is for my son's merit — he died in prison. I want it placed on the altar. But I will not give while that monk sits by the pond refusing every gift. The school will lose its rice.",
         "stage_directions": ""
@@ -5060,7 +5060,7 @@
         "stage_directions": "He stops polishing. He speaks without turning."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I am only interested in his soul. I do not care for mirrors.",
         "stage_directions": ""
@@ -5897,7 +5897,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_veranda",
         "dialogue": "Rangsri does not take the vial. She opens her lacquered box, sets an empty vial beside it — labeled \"A joke not repeated.\" The boy laughs. The monk writes nothing. The rain stops.",
         "stage_directions": ""
@@ -6029,7 +6029,7 @@
         "stage_directions": "Lifts his pocket chronometer, checks it against the wall clock."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "The land officer arrives tomorrow. If I cannot show a death before 4:07, the field goes to his cousin. My son will have nothing.",
         "stage_directions": ""
@@ -6185,7 +6185,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "My husband’s death time is still disputed. The land officer postponed the inheritance. If my son is not named today, the water blessing must wait a full moon. I smelled her perfume in the wind this morning—my mother-in-law’s ghost—she said the child needs a name before the rains.",
         "stage_directions": ""
@@ -6197,7 +6197,7 @@
         "stage_directions": "He pulls out his private ledger, flips to a page marked with a dried lotus petal."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "I have carved it on the prow of the boat. His father’s name. It is already spoken in the water.",
         "stage_directions": ""
@@ -6209,7 +6209,7 @@
         "stage_directions": "Closes the ledger."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "The mother’s perfume lingers on the step. It smells of sandalwood and grief. Who am I to deny a name to a child who already lives?",
         "stage_directions": "Picks up the drumstick."
@@ -6365,13 +6365,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "I didn’t see the first drop. I was eating. The record shows rain began at 2:14 AM. Three farmers swear it was 1:58. The planting cycle depends on this. If I log the earlier time, the whole village plant early—but it’s not witnessed.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "My son’s naming depends on the official start of the monsoon. If the water blessing was valid, the title deed transfers with the planting. I need the rain to have started at 1:58, not 2:14. I need you to conserve what they saw.",
         "stage_directions": "conserve"
@@ -6383,7 +6383,7 @@
         "stage_directions": "He turns to the gauge keeper."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "The truth doesn’t plant rice. Lek—you are standing right in front of the judgment. What do you say?",
         "stage_directions": "He picks up his whistle but does not blow."
@@ -6410,7 +6410,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "I have two times for you. One for the ledger, one for the field. Every year I do this. The sky never complains.",
         "stage_directions": ""
@@ -6545,7 +6545,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I don’t care about the king. I care about my son. The district officer said the inheritance will be granted if I can prove the death and the rain and the naming align. I have all three now—but they are three different times.",
         "stage_directions": "She looks up."
@@ -6557,7 +6557,7 @@
         "stage_directions": "He is repairing a pair of spectacles on the edge of the veranda."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I don’t want your true times. I want my son to have a future. Give it to me, or stand aside.",
         "stage_directions": "She shakes her head."
@@ -6899,7 +6899,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_tax_clerk",
         "place": "place_rice_ledger",
         "dialogue": "The Tax Clerk has called Pom and Rangsri to the Rice Ledger. The laugh phrase—what little survived the hearth—has been entered as a “tonal anomaly” in the village records. The clerk wants a signature.",
         "stage_directions": ""
@@ -8069,7 +8069,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "I have already carved his name on the prow. I can still smell the perfume of the lacquer from the carving. He must be named.",
         "stage_directions": ""
@@ -8102,7 +8102,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_funeral_parlor",
         "dialogue": "The district officer says if we delay the registration, we lose the rice subsidies. We need the name now.",
         "stage_directions": ""
@@ -8117,7 +8117,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_funeral_parlor",
         "dialogue": "Kamnan looks at Lek. “The registration form is blank until you fill it. What will you put?”",
         "stage_directions": ""
@@ -8243,7 +8243,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "I already know what the chart says. But the rice subsidies will be lost if we wait another week.",
         "stage_directions": ""
@@ -8279,7 +8279,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rain_gauge_house",
         "dialogue": "Kamnan does not look at the officer. He turns to Lek. “The rain gauge is empty. The record is clear. But the officer’s answer is law. What will you tell them?",
         "stage_directions": ""
@@ -8441,7 +8441,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_water_blessing_ghat",
         "dialogue": "The drummer pauses his rhythm. Kamnan looks at Lek. “The name is on the prow. The child is at the ghat. The sky is not ready. What will you do?",
         "stage_directions": ""
@@ -8555,7 +8555,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "The naming is done. My son’s name is on the prow and in the ledger. It still works, doesn’t it? The charm?",
         "stage_directions": ""
@@ -8582,7 +8582,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_veranda",
         "dialogue": "Kamnan nods. He turns to Lek, presses a key into his palm. “Open the sealed ledger when the king dies.”",
         "stage_directions": ""
@@ -8603,7 +8603,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_veranda",
         "dialogue": "The district officer arrives with a document. “Kamnan Noi’s voluntary retirement. Sign it, Lek, and he will go quietly.",
         "stage_directions": ""
@@ -9215,7 +9215,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "The widow’s voice whispers from the letter: \"Please. My son. Tell him I loved him.\"",
         "stage_directions": ""
@@ -9410,7 +9410,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "\"He wanted to hang me—a tiger raised on the lake, they call it.\"",
         "stage_directions": "She sets a folded envelope on the reading bench."
@@ -9899,7 +9899,7 @@
         "stage_directions": "Does not turn. His voice is formal, stationery-voice, spoken into river-dark."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"Mae opens the letter. It is a letter—not the silver letter—but a note in Wan's own hand, written this morning. It says: 'She is dead. I am alive. I am still paying.'\"",
         "stage_directions": "She is dead. I am alive. I am still paying."
@@ -10067,7 +10067,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "The child cannot claim his rice ration until a name is spoken. His name is not written anywhere. You two have brought no names, only a quarrel.",
         "stage_directions": ""
@@ -10427,7 +10427,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "I do not care who wins. I only care what comes out of the well. Don't argue. Act.",
         "stage_directions": ""
@@ -10577,7 +10577,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Who is this man who wants to steal my son's laugh? And who is this woman who keeps it locked? I only want my son to speak.",
         "stage_directions": ""
@@ -11276,7 +11276,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_veranda",
         "dialogue": "Dear Wan, do not copy my hand. Write as yourself. Your voice is the only one I will hear.",
         "stage_directions": ""
@@ -11417,7 +11417,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "She says it’s for the temple school. If I accept it, the accountant can measure the gold. If I refuse, she will withdraw her support.",
         "stage_directions": "He polishes the glass with his sleeve, not looking at the bowl."
@@ -11579,7 +11579,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "She has no name in the chant ledger. Without a name, the merit cannot be sent. I have kept her four years, writing her name in invisible ink.",
         "stage_directions": "Touches the jar."
@@ -11591,7 +11591,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "I called her ‘girlfriend of the rain.’ It is not a real name. The ink disappears when the monsoon comes.",
         "stage_directions": ""
@@ -11747,7 +11747,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "I found this at the bottom, tangled in a lotus root. Same spoon the monk carries. Same scratch on the handle.",
         "stage_directions": ""
@@ -11759,7 +11759,7 @@
         "stage_directions": "Stares at the spoon. Does not move to take it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "Then it’s mine now. The pond gives back what the sky rejects.",
         "stage_directions": ""
@@ -12077,7 +12077,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rice_ledger",
         "dialogue": "The letter must go tonight. He needs to know before I'm gone.",
         "stage_directions": ""
@@ -12116,7 +12116,7 @@
         "stage_directions": "He taps the stamp."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rice_ledger",
         "dialogue": "My son left home in a hurry. He never said goodbye. This letter is the only way.",
         "stage_directions": ""
@@ -12257,7 +12257,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_charcoal_hearth",
         "dialogue": "I want to see my son one last time. I cannot go to Bangkok. I could not even finish the class I promised my granddaughter.",
         "stage_directions": ""
@@ -12581,7 +12581,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "They told me my mother wrote. I've been waiting for this letter.",
         "stage_directions": ""
@@ -12596,7 +12596,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then give it to me. I want to know what she said.",
         "stage_directions": ""
@@ -13439,7 +13439,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "The glass drinks reflection, but it cannot drink ash. If you want the merit to flow, you must drop rice, not bone.",
         "stage_directions": ""
@@ -13466,7 +13466,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "He will not let the rice pass unless he knows it is true. But the young man with the urn — he trembles. He knows her real name.",
         "stage_directions": "The Mirror Tender leans close to Lek, voice low."
@@ -13814,7 +13814,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_silent_pond",
         "dialogue": "Sangwan begins to chant in a broken voice. The syllables stumble. The pond diver lowers his head. Phra Kam remains still. After seven lines, Sangwan stops. “I’m not finished yet,” he says. “But the ash… she is finished. She has been finished four years.” He tips the urn. Gray dust falls into the water. It spreads like a slow cloud.",
         "stage_directions": ""
@@ -13829,7 +13829,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "The cloud sinks. The lotus petals do not stir. Phra Kam finally turns. He looks at the spot where the ash vanished. Then he looks at Sangwan. “You named her with your voice. That is a name I cannot refuse.” He opens his notebook. Writes: “received. (Chanted by a brother.)”",
         "stage_directions": ""
@@ -13991,7 +13991,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_veranda",
         "dialogue": "Sangwan stands. He walks to Phra Kam. He holds out a folded paper. “This is the name. Her true name. Nim. I have carried it four years. You can write it now. My mother will know tomorrow — I will tell her myself. The ledger can be closed.”",
         "stage_directions": ""
@@ -14645,13 +14645,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"The letters stopped. Then they started again. Then Bua wrote to me. Where is my daughter, Sangwan?\"",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"Where is my daughter, Sangwan?\"",
         "stage_directions": ""
@@ -14690,7 +14690,7 @@
         "stage_directions": "He finally turns. His face is bare of any stationery formality."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"Then why did you write for her.\"",
         "stage_directions": ""
@@ -14717,7 +14717,7 @@
         "stage_directions": "He kneels."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"Clerk. You wrote some of the letters, didn't you? You knew.\"",
         "stage_directions": "She looks at Lek."
@@ -14843,7 +14843,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_laughing_well",
         "dialogue": "The well answers not prayers but punchlines. The water rises when something is said fresh. The best jokers are widows and mute boys. I have heard the boy laugh — it came after the river pulled him under. That is not scary. It is the sound of a soul re-housed.",
         "stage_directions": ""
@@ -14891,7 +14891,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well keeper ties her rope to the pulley. She hums into the stone. Wan sits across from her, not touching.",
         "stage_directions": ""
@@ -14993,7 +14993,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "The grain clerk at the weighing post. A sack marked with Rangsri’s mother’s name sits unclaimed. Rangsri places her box on the name bench.",
         "stage_directions": ""
@@ -15032,7 +15032,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "The grain clerk taps the bench. Wan's hands are empty. Rangsri opens the box and holds a vial.",
         "stage_directions": ""
@@ -15059,7 +15059,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "The grain clerk rings the bell. A name must be spoken.",
         "stage_directions": ""
@@ -15173,7 +15173,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The contract clerk at the loan window. Bua, the dance teacher, collapses near shelf row of Laughter. Rangsri does not run. She steps to the open floor, counting stick tapping.",
         "stage_directions": ""
@@ -15239,7 +15239,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The dance finishes. The contract clerk writes a slip. The box is set on the loan window.",
         "stage_directions": ""
@@ -16271,7 +16271,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "He died at 4:07. I was holding his hand. The district officer arrives tomorrow. If the ledger says 4:13, the land goes to his brother. I don't need mercy—I need the minute.",
         "stage_directions": ""
@@ -16298,7 +16298,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "Yourself—you think I want to cheat? I want to inherit what he meant to give. The chart didn't love him. I did.",
         "stage_directions": ""
@@ -16439,7 +16439,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "The prow says his name. The monk will bless it. But Kamnan says the boy was born under Rahu's shadow—a name given now will feed the eclipse. I must name him today or lose the rice subsidy.",
         "stage_directions": ""
@@ -16466,7 +16466,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "You probably have your reasons, Kamnan. But my son must have a name, or the district officer will laugh at us for fools and take the subsidy.",
         "stage_directions": ""
@@ -16493,7 +16493,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "He is no match for the sky—no one is. But I am his mother. I will match the sky with his name on his boat.",
         "stage_directions": ""
@@ -16607,7 +16607,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "It began at 1:58. I felt it on my face. My field is upstream—the rain reached me before it reached this tube.",
         "stage_directions": ""
@@ -16634,7 +16634,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "When's he coming—the district officer? He'll believe the tube, not my skin. If the monsoon started at 1:58, we plant tomorrow. If it started at 2:14, we lose a week.",
         "stage_directions": ""
@@ -16781,7 +16781,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I am dying. I will not carry a false account out of the world. The truth is: Nim died four years ago, and the silver letters are your handwriting.",
         "stage_directions": "She arrives slowly, leaning on a cane, and sits beside Rangsri."
@@ -16808,7 +16808,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I cannot hold the pen anymore, Lek. Will you write the truth for me?",
         "stage_directions": ""
@@ -17633,7 +17633,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "For you. Arrived at noon.",
         "stage_directions": "He slides a sealed envelope off the clip pole and holds it toward Phum."
@@ -17840,7 +17840,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "The officer's letter is now in the store's ear. If it is not answered, the debt grows.",
         "stage_directions": "She puts down her chalk."
@@ -17993,7 +17993,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_mirror_mender",
         "dialogue": "My son. The last picture. Can you read it, like a letter?",
         "stage_directions": ""
@@ -18005,7 +18005,7 @@
         "stage_directions": "He takes the photograph, holds it to the light."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_mirror_mender",
         "dialogue": "Then he had company. That is a mercy I did not know.",
         "stage_directions": "She presses a coin into his hand."
@@ -18026,7 +18026,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "I will seal it. You can write what you wish on the back—a name, a line, a prayer.",
         "stage_directions": ""
@@ -18353,7 +18353,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rice_ledger",
         "dialogue": "The widow's son wrote yesterday. He says the city is bearable. He says he will come home for planting.",
         "stage_directions": "Does not look at Rangsri. His pen moves in slow, deliberate strokes across a slip of rice-paper."
@@ -18905,7 +18905,7 @@
         "stage_directions": "Does not look up from his paper."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "It's not done. The letter reached him. The feast held him. But he asked me—he asked me 'Did she   I wasn't coming?' And I lied. I said yes. I said she knew. And she didn't.",
         "stage_directions": "Coughs. Her voice is thin. know"
@@ -19433,7 +19433,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_silent_pond",
         "dialogue": "The district officer orders the jar thrown into the silent pond, calling it “unclaimed refuse.” The Pond Diver stands at the muddy edge.",
         "stage_directions": ""
@@ -19673,7 +19673,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_veranda",
         "dialogue": "Phra Kam dips the spoon into the jar, lets a pinch of ash fall into his palm. He chants a single line, then writes in his notebook: “received. (Unasked.)” He closes the book and hands it to Lek.",
         "stage_directions": ""
@@ -19805,7 +19805,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The ticket is old, Wan. Four years of the same gold passing through my hands. I overheard the boatman's wife say the canal is slow with the rain. Perhaps the lady's bracelet should stay here one more week—so you need not hurry.",
         "stage_directions": ""
@@ -19847,7 +19847,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "Then write the letter. But remember: a creditor who keeps the debt alive never closes the book. The lady—your sister—she is well?",
         "stage_directions": ""
@@ -19961,7 +19961,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "You asked me to keep the secret. I kept it four years. Now I am dying, and I will not carry a false account out of the world. The letter I dictated—you know what it said.",
         "stage_directions": ""
@@ -19973,13 +19973,13 @@
         "stage_directions": "He kneels on the Child's Kneeler."
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "She is ash already, Wan. You cannot keep her alive by lying to your mother. I saw her body. I prepared it. That is not a debt—that is a wound you are patching with paper.\"   \"You. Write the truth. I cannot hold the pen anymore.",
         "stage_directions": "She turns to Lek."
        },
        {
-        "character": "char_narrator",
+        "character": "char_wai_khru_caretaker",
         "place": "place_wai_khru_mound",
         "dialogue": "The Caretaker stops sweeping. She pulls a scrap of paper from her sleeve—a name, written in Wan's hand, left in the ash ring last year. \"Nim.\" She holds it up without a word.",
         "stage_directions": ""
@@ -20006,7 +20006,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "Your sister danced her last performance in this village. I have a picture of her in the costume—the one she wore for the wai khru. I kept it to remember her by, not to bargain with. But if you want the truth to stay hidden, I will give you the picture instead of the letter.\"   \"One or the other, Wan. You cannot have both.",
         "stage_directions": "She reaches into her robe."
@@ -20033,7 +20033,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "Then that is the debt you owe.",
         "stage_directions": ""
@@ -20303,7 +20303,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Where is Nim? I came to see her. The letters—they said she was well. The money came every month.\"   \"You said she was well.",
         "stage_directions": "She looks at Wan."
@@ -20315,7 +20315,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then where is she? I have traveled three days by boat. I want to see my daughter.",
         "stage_directions": ""
@@ -20369,7 +20369,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You wrote her letters for four years. You kept her alive for me.\"   \"Th under one name, then pour the water. I am her mother. I will claim her ash.",
         "stage_directions": "She looks at the monk."
@@ -20507,7 +20507,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well remembers only what is spoken over its rim. Do you remember the boy’s laugh exactly?",
         "stage_directions": ""
@@ -20729,7 +20729,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The rice will spoil if no name is spoken. But the song — if you offer it to the granary without a name, it becomes a silent ration. It feeds no one, but it also starves no one.\"",
         "stage_directions": ""
@@ -21197,7 +21197,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "Luang Phor, my son died with a debt on his name. I will not carry that debt to my own grave. If you take this bowl, his name is cleared. It is called giving when a mother buys her son's soul free.",
         "stage_directions": ""
@@ -21365,7 +21365,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "Luang Phor, I have no other son. This bowl is all I have left to give. Please, give me some time — let me leave it here until the rains end. I need some time to decide what I am without my boy.",
         "stage_directions": ""
@@ -21527,7 +21527,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "Luang Phor, I did it all myself — I raised him, buried him, bought his debt. But I cannot find him in this urn. The dancer's ashes — whose are they? If I pour rice for her, does it reach my boy?",
         "stage_directions": ""
@@ -21683,7 +21683,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Luang Phor, he was an old friend of mine — my son. He was my only friend. Are you sure — is that right — that a bowl of water cannot be a friend to the dead? ... but I don't know where to begin.",
         "stage_directions": ""
@@ -21857,7 +21857,7 @@
         "stage_directions": "a dance with no audience by"
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "Both of you want the same thing made whole. But wholeness has two meanings.",
         "stage_directions": "Exhales over a strip of silver leaf."
@@ -22271,7 +22271,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "Dawn or noon. The pole will sway either way.",
         "stage_directions": "Holds up one finger, then another."
@@ -22913,7 +22913,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The type monitor was pulling type from the cooled tray. A phrase she had blocked earlier — \"we will not pay\" — had been re-set as \"we seek to sustain.\"",
         "stage_directions": ""
@@ -23273,13 +23273,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rain_gauge_house",
         "dialogue": "\"Your husband died at 4:13. The moon-phase is clear.\"",
         "stage_directions": "He taps his private ledger."
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rain_gauge_house",
         "dialogue": "\"The moon-phase is clear. That is the only certainty.\"",
         "stage_directions": ""
@@ -23321,7 +23321,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "The widow pressed a coin into Lek's hand. \"Ask him again,\" she whispered. Lek looked at Kamnan. The rain gauge keeper stood back, wiping the glass.",
         "stage_directions": ""
@@ -24917,7 +24917,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_letter_writers_landing",
         "dialogue": "The inkstone is dry; you must add a few drops of water.",
         "stage_directions": ""
@@ -25409,7 +25409,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "The bowl is for the temple school. I will place it on the tray myself. Phra Kam, you will accept it.",
         "stage_directions": "She is not named, but her voice carries authority. She holds the bowl out."
@@ -25589,7 +25589,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "This shelf holds thirteen nameless souls. Your jar makes fourteen.",
         "stage_directions": "She takes Sangwan's jar, places it on the alcove shelf next to the others. The spoon on the sill trembles."
@@ -25955,7 +25955,7 @@
         "stage_directions": "Holds a sealed envelope tight against his chest."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "Kamnan says the shadow crosses at dawn. My husband says the name must be on the prow. Lek, I am torn between two men's certainties.",
         "stage_directions": "Stands at the Naming Step, her hands trembling."
@@ -26615,7 +26615,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well answers to surprise, not to want. Your boy's laugh was practiced. He heard a joke he already knew.",
         "stage_directions": ""
@@ -26630,7 +26630,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "You will not find it in the water. You will find it in the dust of the spirit hall. That is where laughter goes when it has no home.",
         "stage_directions": ""
@@ -26777,7 +26777,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The vial is empty. You have not filled it. The boy laughs anymore, but you say it is the wrong kind. What is your proof?",
         "stage_directions": ""
@@ -27089,7 +27089,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_veranda",
         "dialogue": "You have filled five vials. But the sixth—A dance with no audience—you have not filled it. The boy laughs, but he has not danced. The spirit will not leave until the dance is paid.",
         "stage_directions": ""
@@ -27122,7 +27122,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_veranda",
         "dialogue": "From morning until night, I taught girls to dance for audiences. This boy dances for no one. That is the only dance that pays.",
         "stage_directions": ""
@@ -27611,13 +27611,13 @@
         "stage_directions": "He enters with the son—a young man in a clerk’s uniform, his face tight."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_grammar_mill",
         "dialogue": "The prices are reasonable, for a scribe. But I did not come to pay. I came to hear.",
         "stage_directions": "He looks at Pom."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_grammar_mill",
         "dialogue": "\"I do not need a copy. I need to hear the voice you heard.\"",
         "stage_directions": "He looks at Pom."
@@ -27644,7 +27644,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_grammar_mill",
         "dialogue": "I want it. I want something I can hold. Please.",
         "stage_directions": "His voice is low."
@@ -27992,7 +27992,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "The delivery boy shifts, points to the clip pole where a single blank sheet hangs. He means: I have nothing else for you. Phum holds the envelope closed.",
         "stage_directions": ""
@@ -28625,7 +28625,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "Write to Mae in Bangkok. Tell her Nim died of fever four years ago. I will sign it.",
         "stage_directions": ""
@@ -28637,7 +28637,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "I prepared the body. I will not carry a false account out of this world.",
         "stage_directions": ""
@@ -28658,7 +28658,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_letter_writers_landing",
         "dialogue": "You remember the   they showed at the temple fair? The one about the mother who waited by the gate for twenty years? That is what you are writing every month — a movie she watches alone.",
         "stage_directions": "movie"
@@ -28685,7 +28685,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "Then you are not writing Nim's letters. You are writing your own guilt.",
         "stage_directions": ""
@@ -28799,7 +28799,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The ticket is old, mother of the pearl ring. Four years of the same bracelet, the same hand, the same redemption day. You tell me nothing, and I ask nothing. But today you bring a boy who writes letters.",
         "stage_directions": ""
@@ -28811,7 +28811,7 @@
         "stage_directions": "He places a few coins on the counter."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The lady who owns this — does she know you carry her weight through my door every month?",
         "stage_directions": "She slides the bracelet back across the wood."
@@ -28844,7 +28844,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "You are not the only one who notices when a face goes missing from the queue. Bua came here yesterday. Asked about the lady Nim's bracelet. I said nothing. But I told her the gold sleeps long.",
         "stage_directions": ""
@@ -28871,7 +28871,7 @@
         "stage_directions": "He takes the bracelet, wraps it in cloth."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "I do not ask. But the boatman says Mae has already hired a boat from Bangkok. She will be here in three days.",
         "stage_directions": ""
@@ -28979,7 +28979,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Before I die, I must clear my debt to Nim. I taught her with the counting-stick. I beat excellence into her. And when she died, I prepared her body. I owe her  : that her mother knows.",
         "stage_directions": "this"
@@ -29018,7 +29018,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "You have the pen. Write my last letter. Or help him hire a dancer to sit in a dim room for one afternoon.",
         "stage_directions": ""
@@ -29033,7 +29033,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Nim was my best student. She never missed a class — not once, not even when she had fever. I taught her the dance of the nine jewels. Now I teach her death.",
         "stage_directions": ""
@@ -29147,7 +29147,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Where is Nim? The boatman said the letters stopped. I came myself.",
         "stage_directions": ""
@@ -29159,7 +29159,7 @@
         "stage_directions": "He stands at the veranda rail, hands gripping wood."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I have something for you, Khun Mae.",
         "stage_directions": "She sits on the low bench, a leather satchel on her lap."
@@ -29186,7 +29186,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You are the clerk. You write the village's words. Tell me — what have you heard?",
         "stage_directions": "She looks from Wan to Bua, then to Lek."
@@ -29213,7 +29213,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I prepared her body. I kept the ashes. I have waited four years to give them to you.",
         "stage_directions": "She opens the satchel, takes out a folded cloth."
@@ -30905,13 +30905,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "It will wait. But not forever. Mirrors left too long become windows — and windows let things out.",
         "stage_directions": "Blows softly on the photograph, then sets it on the unhung rack."
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "Wan picks up a shard from the jar labeled Southwest and holds it to his own reflection. His face splits down the middle.",
         "stage_directions": "Southwest"
@@ -31019,7 +31019,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "Pink salt is for royal missteps. What has this to do with a king?",
         "stage_directions": ""
@@ -31073,7 +31073,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "The bracelet is an object. The ashes are a person. Which do you weigh heavier, clerk?",
         "stage_directions": ""
@@ -31724,7 +31724,7 @@
         "stage_directions": "Pauses his beat, breathes, then resumes."
        },
        {
-        "character": "char_narrator",
+        "character": "char_water_blessing_drummer",
         "place": "place_water_blessing_ghat",
         "dialogue": "\"I do not count. I breathe. The boy’s breath is the same as his father’s last breath—4:07.\"",
         "stage_directions": "Pauses his beat, breathes, then resumes."
@@ -32711,7 +32711,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I brought this bowl from Bangkok. The abbot himself said it would hold merit for my husband's rebirth. And that monk — that   monk — he looked at it like I'd offered him poison.",
         "stage_directions": "wandering"
@@ -32723,13 +32723,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "He looked at your hand, not the bowl. That's what he does.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "The price is rather expensive for Thais, this bowl. But I paid it. I paid it for him. For his temple school. For the children.",
         "stage_directions": ""
@@ -32750,13 +32750,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "You heard that, didn't you? What he said?",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I heard. 'Received. Refused.' He writes it in a book. Every dawn. I asked him — I begged him — to take the bowl. He said no.",
         "stage_directions": ""
@@ -32897,13 +32897,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I brought the bowl here because he brought the bowl to the pond. He brought the mirror to the pond. He brought his refusal to the pond. I brought him to the mirror's frame.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "Stop! That spoon — that spoon belongs to the monk in the pond. The monk who sat here for three after the mirror. The one who writes in the mirror.*",
         "stage_directions": ""
@@ -32945,7 +32945,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I don't want it back.",
         "stage_directions": ""
@@ -33053,13 +33053,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "I brought the bowl to the urn. I brought the mirror to the urn. I brought the bowl's refusal to the urn. I brought that he refused the urn.*",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "She brought the monk to the urn. I brought the mirror to the urn. He brought the dish. He brought the refusal. He brought the emptiness. She brought him.*",
         "stage_directions": ""
@@ -33071,7 +33071,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "I want the monk to conserve the energy — no funeral, no chant.\"*",
         "stage_directions": ""
@@ -33113,7 +33113,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "You can claim nothing. That is why you are here.",
         "stage_directions": ""
@@ -33239,7 +33239,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "The bowl works really well. The water in it. It works really well as a mirror. I saw my face. I saw my donation. I saw there's nothing to give.",
         "stage_directions": ""
@@ -33287,7 +33287,7 @@
         "stage_directions": "She touches the rim. The water shakes, The veranda waits."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "The ash works well. The bowl works well. The bowl works in the water. The veranda works well as the veranda itself. I'm really hurt. I'm really hurting. She says, \"I'm sorry.\"*",
         "stage_directions": ""
@@ -34097,7 +34097,7 @@
         "stage_directions": "He places the bracelet on the counter, fingers lingering on the clasp."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "That bracelet was on my student's wrist when she danced the lakhon of the weeping garuda.\"   \"I need a ticket for this — to pay for a letter.",
         "stage_directions": "She sets a lacquered comb on the counter."
@@ -34124,7 +34124,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "You cannot catch a lie with the same hand that writes it, Letter-Writer.\"   \"I was her teacher. I know what her signature looked like.",
         "stage_directions": "Her voice is dry as old joss."
@@ -34331,7 +34331,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Why are you treating me like this, Wan? I am not your enemy. I am the one who washed her body. I am the one who kept the secret all these years. But I cannot carry a false account out of this world.",
         "stage_directions": ""
@@ -34457,7 +34457,7 @@
         "stage_directions": "Takes the envelope, does not open it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "Then you have two days to decide. Do you let her see ash, or do you hire a girl to sit in a dim room?",
         "stage_directions": "Sitting on the Reading Bench, a blanket over her shoulders."
@@ -34469,7 +34469,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "Then write the truth now. I forgive you the years you borrowed. Let Nim die properly.",
         "stage_directions": ""
@@ -34517,7 +34517,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "It's not scary to tell the truth, boy. It's scary to keep a ghost alive. I have taught dance for sixty years. I know what it costs to pretend a body is still moving when it is already ash.",
         "stage_directions": ""
@@ -34637,7 +34637,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "She is dead. I will testify. Lek, write it down.",
         "stage_directions": "From the veranda bench, her voice thin."
@@ -34682,7 +34682,7 @@
         "stage_directions": "Looks at the canal."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"I am too weak. Lek — you write it.\"",
         "stage_directions": ""
@@ -34856,7 +34856,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "The rain gauge keeper pulled out a brass key. \"If I unlock the gauge, I can re-mark the time. But Kamnan will know. He counts the seconds.",
         "stage_directions": "He holds the key out, looking at Lek."
@@ -36243,7 +36243,7 @@
     ],
     "decision": {
      "line": {
-      "character": "char_narrator",
+      "character": "char_pricha",
       "place": "place_spirit_hall",
       "dialogue": "\"You are the clerk. The hall listens.\"",
       "stage_directions": ""
@@ -36405,7 +36405,7 @@
     ],
     "decision": {
      "line": {
-      "character": "char_narrator",
+      "character": "char_grain_clerk",
       "place": "place_rice_counter",
       "dialogue": "\"The grain clerk taps the ledger, waiting.\"",
       "stage_directions": ""
@@ -36567,7 +36567,7 @@
     ],
     "decision": {
      "line": {
-      "character": "char_narrator",
+      "character": "char_well_keeper",
       "place": "place_laughing_well",
       "dialogue": "\"The well's echo is patient. Your voice is not.\"",
       "stage_directions": ""
@@ -36713,7 +36713,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_veranda",
         "dialogue": "\"Two uncomfortable hearts. One empty jar. Lek, the veranda has its own record. How do you seal this evening?\"",
         "stage_directions": ""
@@ -36729,7 +36729,7 @@
     ],
     "decision": {
      "line": {
-      "character": "char_narrator",
+      "character": "char_phum",
       "place": "place_veranda",
       "dialogue": "\"The choice is yours, Lek.\"",
       "stage_directions": ""
@@ -37904,7 +37904,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_fire_stoker",
         "place": "place_charcoal_hearth",
         "dialogue": "The fire stoker stirs the embers with a chipped iron rod. “One paper. One pit. Who feeds it?”",
         "stage_directions": ""
@@ -38237,7 +38237,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "Accepted only if the volume matches. What volume does this letter claim?",
         "stage_directions": ""
@@ -38444,7 +38444,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "The envelope will be unclipped at the third bell. If you wish to swap, do it now.",
         "stage_directions": ""
@@ -38603,7 +38603,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "Stay still. I will seal the crack, but the ink — you must choose. I will not write for you.",
         "stage_directions": ""
@@ -40292,13 +40292,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I have seen this before — a donation that buys silence. You cannot put a price on a life.",
         "stage_directions": "The mirror tender lifts the bowl. Phra Kam does not move to stop him. Instead, he turns and paces back and forth along the bank, his robe brushing the silt."
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "If I place it, she will think it’s accepted.",
         "stage_directions": "Sets the bowl down. Steps back."
@@ -40433,7 +40433,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "The dancer has no kin. If you chant without a name, the spirit floats unpaid. But if you name her, the bowl can hold the merit.",
         "stage_directions": ""
@@ -40994,7 +40994,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The Type Monitor does not move. Her eyes are on the slip—a single line recorded in Pom's tight script: \"jai ron khaeng din\".",
         "stage_directions": "jai ron khaeng din"
@@ -41297,7 +41297,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_fire_stoker",
         "place": "place_charcoal_hearth",
         "dialogue": "\"The coals breathe, and the village waits.\"",
         "stage_directions": ""
@@ -41345,7 +41345,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_fire_stoker",
         "place": "place_charcoal_hearth",
         "dialogue": "\"The Fire Stoker's hand is steady. Pom's is not.\"",
         "stage_directions": ""
@@ -41648,7 +41648,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_funeral_parlor",
         "dialogue": "I overheard the timekeeper say the red ink correction is common. You can do it.",
         "stage_directions": ""
@@ -41783,7 +41783,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "My husband died at 4:07. The rain that year began at 4:07 as well. It is a sign.",
         "stage_directions": ""
@@ -41810,7 +41810,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "I didn't see the first drop. But the widow is interested in a different truth.",
         "stage_directions": "He taps the stopwatch."
@@ -41945,7 +41945,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "Let me bless my husband's name at the ghat. The water will wash away the wrong time.",
         "stage_directions": ""
@@ -41972,7 +41972,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_water_blessing_drummer",
         "place": "place_water_blessing_ghat",
         "dialogue": "I heard a strange noise from the sky last night. The drum changed its beat.",
         "stage_directions": "He strikes once."
@@ -42119,7 +42119,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "My girlfriend says I should have let it go. She is jealous of the land. But I have nothing now.",
         "stage_directions": ""
@@ -42443,7 +42443,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "The mirror tender polishes the glass. He tells me the mirror does not lie — it only reflects what is offered. The gilded bowl from the widow sits empty on the tray. Phra Kam has not touched it.",
         "stage_directions": ""
@@ -42947,7 +42947,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "No, you will not. You will write what I dictate: a daughter has been dead four years, and a mother has been fed on paper.",
         "stage_directions": "Sits on the Creditor’s Seat, her spine bent like a counting-stick left in the sun. She holds out a scrap of paper with a single sentence — the truth letter."
@@ -42986,7 +42986,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "\"You will not. The boatman is paid to carry what is sealed, not what burns.\"",
         "stage_directions": "She turns to Lek."
@@ -43649,7 +43649,7 @@
         "stage_directions": "She taps the empty vial labeled 'Child's game'. The air around the well is still, waiting."
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well returned a marble that day. It laughed with him. I count every echo—but the echo belongs to whoever catches it.",
         "stage_directions": ""
@@ -43829,7 +43829,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "I need a name. The boy has no name. The record has no name.",
         "stage_directions": ""
@@ -43856,7 +43856,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "I need a sentence. Write me one sentence.",
         "stage_directions": ""
@@ -45023,19 +45023,19 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "I don’t care about the child. My husband died at 4:07, not 4:13. Your chart gone blind is the only proof. Give me the ledger.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "And I need his chart to see if my son’s birth minute is in there. The prow name is set. If the bound book says different, I must know.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "Who would believe a ledger no one sees? Who would believe you?",
         "stage_directions": ""
@@ -45056,7 +45056,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "Then let me see the entry. Just the page for my son. Walk a bit further down the step, to the sun, so I can read it.",
         "stage_directions": ""
@@ -45347,7 +45347,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "The mouth. The wrong The clock is the right. The ledger is the page. The widow’s “The tomb is the page. The widow’s time. The.",
         "stage_directions": ""
@@ -45374,7 +45374,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "You’ll be the only one The widow wants the death’s time. I think The Widow: “I think that is right. I think so.",
         "stage_directions": ""
@@ -45395,13 +45395,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "I probably have the right time. I think she will not wait—the same river, the same second. You see, who would believe the revival the right time? You would… “Who would… what you asked?",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "The timekeeper: KAMMAN: “Everything in the ledger is honest each number. The minute’s dead man.",
         "stage_directions": ""
@@ -45536,7 +45536,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I probably won't come again. This is the final. The last of this. I can't finish all. I finish all.",
         "stage_directions": ""
@@ -46775,7 +46775,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "Phra Kam steps closer. He opens his notebook. He writes one word: \"received (unread).\"",
         "stage_directions": ""
@@ -47069,7 +47069,7 @@
         "stage_directions": "Lowers the photograph onto the silver breath tray."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_mirror_mender",
         "dialogue": "I don’t need it pretty. I need to know if he suffered.",
         "stage_directions": ""
@@ -47102,7 +47102,7 @@
         "stage_directions": "a face not forgotten"
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "One vessel, one reflection. Choose.",
         "stage_directions": "Blows softly on a shard of glass."
@@ -47258,7 +47258,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "Received. Released. Returned. Which?",
         "stage_directions": "Points to the Wet Bench."
@@ -47420,7 +47420,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "Accepted. Volume: one photograph. Bin: grey. The debt cannot be split.",
         "stage_directions": "Draws a red line on the table."
@@ -47603,7 +47603,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then I can let him go.",
         "stage_directions": "Laughs once — a sound like a bell."
@@ -48455,7 +48455,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "I will write the letter myself. I will tell Mae that Nim has been dead four years. Hand me the pen, Lek.",
         "stage_directions": ""
@@ -48467,7 +48467,7 @@
         "stage_directions": "He did not raise his voice."
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "I prepared her body. I know what a burned bone looks like. This is not killing—it is  .",
         "stage_directions": "finishing"
@@ -48500,7 +48500,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "Then let the jar have a name. The monk needs one for the merit ceremony. I have a witness. The girl's bones sit at the wat, unclaimed. That is interesting, isn't it? A daughter with no ashes, a mother who thinks she is alive. You have made her a ghost twice.",
         "stage_directions": ""
@@ -48629,13 +48629,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_letter_writers_landing",
         "dialogue": "Open it. You owe her that much—the truth of what she wrote.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_letter_writers_landing",
         "dialogue": "Tell her the truth. Or let me. I have one letter left in me. I am old. I will not carry a false account out of the world.",
         "stage_directions": ""
@@ -48785,7 +48785,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The Pawnshop Appraiser slid the gold bracelet across the counter. \"Twenty-eighth,\" she said. \"You are late. The lady Nim hasn't visited in a week.\" Wan stared at the bracelet. Bua stood in the doorway, leaning on a cane.",
         "stage_directions": ""
@@ -48803,7 +48803,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_pawnshop",
         "dialogue": "She is dead. I will tell her mother myself. The monk needs a name for the ash-jar. I will go to the wat and give it to him.",
         "stage_directions": ""
@@ -48818,7 +48818,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The Appraiser picked up the bracelet and weighed it in her palm. \"This bracelet has been in and out of my shop for four years. Every time it comes, it smells of ink. I never asked whose ink. But I hear the ticket expiring soon.\"",
         "stage_directions": ""
@@ -48953,7 +48953,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I came to see my daughter. Where is she? Where is Nim?",
         "stage_directions": ""
@@ -48965,7 +48965,7 @@
         "stage_directions": "He did not turn around."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "A letter is not a daughter. I want to see her face. I want to guess—is she happy? Is she sad? Does she remember the lullaby I sang? I can guess from her handwriting, but I cannot guess her heart.",
         "stage_directions": ""
@@ -48986,13 +48986,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_veranda",
         "dialogue": "Read this. I wrote it with my last breath. Your daughter died four years ago. I prepared her body. He never told you because he wanted you to have someone. He sent the letters. He sent the money. He is not a liar—he is a son who could not bear to orphan you.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then I have no daughter. No one to ask 'Is your girlfriend well?' No one to call my own. Just a stack of envelopes and a daughter who is a ghost.",
         "stage_directions": "She unfolded the paper. Her hands trembled."
@@ -49145,7 +49145,7 @@
         "stage_directions": "She slides a rod into the embers."
        },
        {
-        "character": "char_narrator",
+        "character": "char_fire_stoker",
         "place": "place_charcoal_hearth",
         "dialogue": "You wrote what she said six months ago. I heard it. The lady — your own notes will prove she promised the boundary on the east. Give it to the district.",
         "stage_directions": ""
@@ -49160,7 +49160,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_charcoal_hearth",
         "dialogue": "Daeng steps forward. He holds out a small pouch of coins. \"This is for your trouble. Just one page — the part about the boundary. Then you can burn the rest for all I care.\"",
         "stage_directions": ""
@@ -49313,7 +49313,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_rice_ledger",
         "dialogue": "The old lady's word is not here. The rice ledger says the west field belongs to me. That's what the tax clerk stamped.",
         "stage_directions": ""
@@ -49334,7 +49334,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_rice_ledger",
         "dialogue": "Pom reaches into his bag and pulls out a single sheet — a transcription of the old lady's statement. He places it on the cooling bench. \"This is what she said, word for word. I didn't burn this page. I kept it to myself.\"",
         "stage_directions": ""
@@ -49361,7 +49361,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_tax_clerk",
         "place": "place_rice_ledger",
         "dialogue": "The clerk pushes the cooling bench. \"You have until evening. Either submit a cooled statement, or the ledger stands as is. Daeng loses the land.",
         "stage_directions": ""
@@ -49508,7 +49508,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The type monitor crosses her arms. \"Your sister used to set type here. She was never bored by the rules. She said they kept the village from tearing itself apart.",
         "stage_directions": ""
@@ -49535,7 +49535,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The type monitor turns to Lek. \"The press is yours. You can choose to let the words be written as the law wants them, or as the old lady spoke them. Either way, someone will lose more than land.",
         "stage_directions": ""
@@ -49850,7 +49850,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "I write their names in the air. The wind takes them.",
         "stage_directions": ""
@@ -50012,7 +50012,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "The spoon remembers hunger. This box remembers a name. Drowned letters, still legible.",
         "stage_directions": "He holds up a small box, water streaming from the bamboo."
@@ -50033,7 +50033,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "The Pond Diver opens the box. Inside, a folded scrap of paper, the ink almost gone. A single word: \"Nim.\" Sangwan’s breath catches. Phra Kam does not reach for it.",
         "stage_directions": ""
@@ -51341,7 +51341,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_river_post",
         "dialogue": "“The boy is young,” Phum murmured. “Let the letter wait a breath.”",
         "stage_directions": ""
@@ -51455,7 +51455,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "The mender ignored him. She took a thin sheet of silver and began to cover the crease where the word “forgery” lay. Phum turned to face the officer.",
         "stage_directions": ""
@@ -51656,7 +51656,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_veranda",
         "dialogue": "“The ink remembers,” he whispered. “Let it speak.”",
         "stage_directions": ""
@@ -53636,7 +53636,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I have come down the canal for nothing. My daughter is ash.",
         "stage_directions": "She sits on the veranda step, not looking at Wan."
@@ -54125,7 +54125,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "\"Don’t change the subject — you have to write it down!\"",
         "stage_directions": ""
@@ -54275,7 +54275,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_veranda",
         "dialogue": "The reign is ending. I have heard the drum — it stopped for one beat at moonrise. The district officer wants Kamnan to cast the city’s succession chart. If the sky favors a republic, he will be arrested. If he lies, the rains will fail.",
         "stage_directions": ""
@@ -54467,7 +54467,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_laughing_well",
         "dialogue": "The well hears both pleas. One wants to pay a spirit's rent; the other wants to pay a mother's hope. Which of you, Lek, will tip the scale?",
         "stage_directions": "She straightens the frayed rope on the pulley."
@@ -54623,7 +54623,7 @@
         "stage_directions": "She taps the ledged stand with her fingernail."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rice_counter",
         "dialogue": "The weigh of the house is balanced on a single grain. Each of you feeds a different hunger. Lek, you hold the scale.",
         "stage_directions": ""
@@ -55154,7 +55154,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_charcoal_hearth",
         "dialogue": "The widow’s daughter pulls Lek aside. “She’ll get sick. Please—make him send it. I don’t care if the words are wrong.”",
         "stage_directions": ""
@@ -55316,7 +55316,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The Type Monitor pulls a slip from the drawer she had been holding. “Unresolved thermal load,” she says, showing a scrap with Pom’s handwriting: seventeen repetitions of ‘jai’ followed by dashes.",
         "stage_directions": ""
@@ -55337,7 +55337,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_grammar_mill",
         "dialogue": "Wan steps in front of Pom. “If you pull that letter now, she dies without a word. Let it cool. Let it go.”",
         "stage_directions": ""
@@ -55478,7 +55478,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_tax_clerk",
         "place": "place_rice_ledger",
         "dialogue": "The Tax Clerk hands Lek the stamp. “You can approve the entry as-is, or remove it. Decide.”",
         "stage_directions": ""
@@ -55640,7 +55640,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "The widow’s daughter arrives. “The doctor says she’s fading. She asks if the letter has been sent.”",
         "stage_directions": ""
@@ -55661,7 +55661,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_veranda",
         "dialogue": "Wan takes the letter and holds it out to Lek. “Seal it. Or burn it. The choice is yours now.” The monk stirs the coals on the veranda’s edge. Pom does not look at the fire.",
         "stage_directions": ""
@@ -55787,7 +55787,7 @@
         "stage_directions": "Enters with Phum."
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_salt_store",
         "dialogue": "Accepted. Volume: one jar. Bin: unclaimed. No name, no debt.",
         "stage_directions": "Does not look up."
@@ -55826,7 +55826,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_salt_store",
         "dialogue": "The urn is held in trust. It leaves only when one of you claims it with a measure of salt.",
         "stage_directions": ""
@@ -57197,7 +57197,7 @@
         "stage_directions": "Places her lacquered box on the counter. A joke not repeated"
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The vial was withdrawn by one Sangwan of the veranda. He said it was a letter to be sent. He paid the fee in ink. I issued a receipt.",
         "stage_directions": "Does not look up."
@@ -57224,7 +57224,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "Interesting that the same object can be a message and a bond. But the rule is clear: the first withdrawal has priority. Sangwan took it. The box is empty.",
         "stage_directions": "She finally looks up, hands folded."
@@ -57365,7 +57365,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "The widow's feast requires a name token. Without one, the rice cannot be distributed. The spirit of the dead husband will not accept a gift from strangers.",
         "stage_directions": "He runs a hand over a rice sack marked with Rangsri's mother's name—unclaimed, silent."
@@ -57392,7 +57392,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "Waiting is what the dead do best. The living must move. This feast has no name, no joy, and soon no rice. The widow is about to become a tenant of silence.",
         "stage_directions": "He weighs the sack, writes something in his ledger."
@@ -57539,7 +57539,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well has not laughed for two days. The water level is dropping. A joke must be told. But the joke must be new—no repetition.",
         "stage_directions": "She holds a single marble, wet, from the water. She rolls it toward Rangsri."
@@ -57572,7 +57572,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "Before the well dries up, you must choose. The boy's laugh can be poured in, and the spirit rent is paid. Or it can be kept, and the boy remains occupied, but Wan has his letter.",
         "stage_directions": "She holds up the marble."
@@ -57899,7 +57899,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "The one who knows the true story must speak. I count weight, not grief. The vessel waits.",
         "stage_directions": ""
@@ -58067,7 +58067,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "The lady Nim was brought here by the clerk's order. I will take a grain to seal a mirror. Her face will return to the living — not as truth, but as comfort.",
         "stage_directions": ""
@@ -58103,13 +58103,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "The silver decides. The ash stays. One pinch. The decision does not belong to me.",
         "stage_directions": "Blows softly on the urn's lid."
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "\"One pinch for the mirror. The rest for the river.\"",
         "stage_directions": "Blows softly on the urn's lid."
@@ -58229,7 +58229,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "One vessel. No address. I guess the sender must name a destination before the pole turns.",
         "stage_directions": ""
@@ -58553,7 +58553,7 @@
         "stage_directions": "Holds out a slip of paper with a name written in ink. He looks at Lek."
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_ash_urn",
         "dialogue": "Names written on paper are not names in the ledger.",
         "stage_directions": "Adjusts her sari."
@@ -58619,7 +58619,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_ash_urn",
         "dialogue": "Write what you will.",
         "stage_directions": "Picks up the ash between thumb and forefinger."
@@ -58739,7 +58739,7 @@
         "stage_directions": "He unfolds the paper."
        },
        {
-        "character": "char_mirror_tender",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "Who would believe this?",
         "stage_directions": "She wipes a spot."
@@ -59075,7 +59075,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_rangsri",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "She says: I don't want to see you. You must release her somehow.",
         "stage_directions": "Arrives with her lacquered box. She places a vial—Laughter at noon—on the rail between them"
@@ -60782,7 +60782,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_charcoal_hearth",
         "dialogue": "The students want a public dance. To cool the village’s heart. The district officer says no—incitement, he calls it. I need a petition.",
         "stage_directions": ""
@@ -61961,7 +61961,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_ash_urn",
         "dialogue": "Lek is standing just inside the crematorium door, still holding the district officer’s notice about the urns. He sees the urn keeper’s hand tremble over the jar’s lid. He sees Phra Kam’s notebook open to a page covered in the same word, repeated: “refused.”",
         "stage_directions": ""
@@ -63674,7 +63674,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_laughing_well",
         "dialogue": "Then choose. The boy's laugh, or your last story.\"   \"What province did that sound come from, anyway?",
         "stage_directions": "She points to the water."
@@ -63830,7 +63830,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_veranda",
         "dialogue": "\"You have what you need. The boy's body is empty again. The spirit is willing. But the signature — it must be witnessed. By someone who has no debt to the child.\"",
         "stage_directions": ""
@@ -64685,7 +64685,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_letter_writers_landing",
         "dialogue": "Lek, you are the village clerk. Write this letter for me, or refuse. I will not ask again.",
         "stage_directions": "Wan's pen hovers. Bua's counting-stick remains on the envelope. Neither will move."
@@ -64853,7 +64853,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_wai_khru_mound",
         "dialogue": "If Bua's letter goes, Nim's last four years vanish. Every meal her mother ate, every night she slept believing her daughter worked in the city—all of it becomes a lie paid for by a dead girl's gold. I cannot call that mercy.",
         "stage_directions": "Wan rises. His hand goes to the Pen Stone. He does not plead; he whispers."
@@ -65195,7 +65195,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_veranda",
         "dialogue": "Now. Let me tell you about Nim. She never blamed you for going to prison. She blamed herself for teaching you to write protest letters. She said, 'He learned it from me — the rhythm, the kick. I taught him to finish a sentence and mean it.'",
         "stage_directions": ""
@@ -65369,7 +65369,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "The boy’s mother asks Lek to decide who keeps the time. Kamnan has the true minute in his sealed ledger. Rangsri needs the astrolabe to make the spirit hear. The object that both want is the astrolabe, but Kamnan will not give it, and Rangsri will not leave without it.",
         "stage_directions": "The widow sets the chart on the counter. Both hands meet over it — one to take it, one to hold it in place."
@@ -65975,13 +65975,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I will write my name! I came all this way—do you know how much time I have spent on this?",
         "stage_directions": "He pulls his black notebook from his robe."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "\"I have earned this entry—do you know how much land I have given to this village?\"",
         "stage_directions": ""
@@ -66020,7 +66020,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I will not be compared to a spoon. I have been married twice, and both husbands left me land—land that feeds this village.",
         "stage_directions": ""
@@ -66203,7 +66203,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "The urn keeper touched the jar. ‘If no one claims her, I will claim her. Is that sin or service?’ Lek looked from Phra Kam’s notebook to Sangwan’s empty hands.",
         "stage_directions": ""
@@ -66344,7 +66344,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_donation_mirror",
         "dialogue": "The officer chuckled. He pointed at the mirror. ‘This is the problem—you villagers hide behind superstitious glass. I need a clear record. What is in that notebook?’",
         "stage_directions": ""
@@ -66851,7 +66851,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_boatman",
         "place": "place_letter_writers_landing",
         "dialogue": "\"The boatman tied his rope and waited. He did not care either way—he carried letters for a living, not the grief inside them.\"",
         "stage_directions": "either"
@@ -66995,7 +66995,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The Appraiser set a gold bracelet on the counter. “Ticket number forty-eight. Redeemed today.” She slid it back into the drawer. On the shelf behind her, a clay jar with no name.",
         "stage_directions": ""
@@ -67034,7 +67034,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "\"A woman entered, elderly, carrying a photograph. She asked: “Who is this lady? I need to know if this is my daughter Nim.” The photograph showed a dancer in old costume. Lek froze.\"",
         "stage_directions": "lady"
@@ -68237,7 +68237,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "The mender sets down the shard. She reaches for the jar labeled —.",
         "stage_directions": "Southwest"
@@ -68252,7 +68252,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_mirror_mender",
         "dialogue": "Rangsri opens her box, takes out a vial labeled  .",
         "stage_directions": "A joke not repeated"
@@ -68651,7 +68651,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_veranda",
         "dialogue": "Rangsri rises. She places a single vial— —",
         "stage_directions": "A laugh at noon"
@@ -69539,7 +69539,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_funeral_parlor",
         "dialogue": "Red is what happened. Black is what counts. The district officer will see black. The dead man’s brother will see black. But the sky sees red. You choose which truth you serve.",
         "stage_directions": ""
@@ -69680,7 +69680,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_water_blessing_drummer",
         "place": "place_water_blessing_ghat",
         "dialogue": "\"A temple boy brings a brass bowl of canal water. Mae Prang dips the lunar chart into it. The cheap paper does not dissolve. It floats, then sinks. The drummer lifts his stick.\"",
         "stage_directions": ""
@@ -69860,7 +69860,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rain_gauge_house",
         "dialogue": "\"Kamnan Noi takes the stopwatch from Khun Chai. He holds it to his ear, then sets it down. He turns to the ledger of the Rain Gauge House, open on the bench. He does not write.\"",
         "stage_directions": ""
@@ -70067,7 +70067,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_veranda",
         "dialogue": "\"She nods. She does not cry. She stands and walks to the canal, and releases the ashes into the current. The veranda watches. Kamnan Noi watches the sky. He does not look at the water.\"",
         "stage_directions": ""
@@ -71051,7 +71051,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_tax_clerk",
         "place": "place_rice_ledger",
         "dialogue": "The Tax Clerk opens his drawer. He pulls out a slip of rice-paper with Pom’s handwriting: “jai yen khaeng met.” He holds it up.",
         "stage_directions": ""
@@ -71405,7 +71405,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "My mother wrote to my brother. But he is dead too. He died in the prison yard last year. She never knew. I came to tell her, but I am too late. The letter is for no one.",
         "stage_directions": ""
@@ -71432,7 +71432,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "She worked so hard on this letter. I recognize her handwriting. She always made the loops too big when she was anxious. Please—tell me what she said.",
         "stage_directions": ""
@@ -71444,7 +71444,7 @@
         "stage_directions": "He does not open the notebook. He recites from memory."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I will not cry. My girlfriend always tells me not to make her cry. But I think she would cry too, if she heard my mother’s voice in this.",
         "stage_directions": "She presses the letter to her chest."
@@ -71591,7 +71591,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "I write their names in the air. The wind takes them. But who will write hers?",
         "stage_directions": "She wipes the jar with her sari."
@@ -71618,7 +71618,7 @@
         "stage_directions": "He opens his black notebook and writes one word: \"refused.\""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "This dust has been sitting here four years. If no one claims it, I claim it. Is that sin or service?",
         "stage_directions": "She lifts the jar."
@@ -71747,7 +71747,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "This bowl is pure gold. I offer it for my son's soul—the one who died by the canal. Accept it, monk, and the temple school will have its funds.",
         "stage_directions": ""
@@ -71759,7 +71759,7 @@
         "stage_directions": "He does not look at the bowl. He looks at her hands."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I am sorry for being late with the offering—late for my own son's merit. But I am here now. Take it, I beg you.",
         "stage_directions": "Her voice cracks."
@@ -71774,7 +71774,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "Then the school starves. The district officer will say I withdrew my pledge. Is that what you want?",
         "stage_directions": ""
@@ -71915,7 +71915,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "The mirror shows what you bring to it, sir. This monk brought nothing. Yet the mirror cracks.",
         "stage_directions": "He polishes the glass."
@@ -71957,7 +71957,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_boatman",
         "place": "place_donation_mirror",
         "dialogue": "I can take him away. The boat is ready. He can disappear like the things that sink.",
         "stage_directions": "He steps from the canal, wet."
@@ -72098,7 +72098,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_veranda",
         "dialogue": "She has a name now—the one Lek wrote. The spirit rests. Your spoon fed her, even if you did not chant.",
         "stage_directions": "She sets the dancer's jar beside Phra Kam."
@@ -73319,7 +73319,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The grain clerk's pen taps once on the ledger.\"",
         "stage_directions": ""
@@ -73595,7 +73595,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "\"I had it blessed at Wat Suthat. The gold alone—prices like the ones my husband paid for his release. Take it, Luang Ta. My son’s future is in the school.\"",
         "stage_directions": ""
@@ -73607,7 +73607,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_donation_mirror",
         "dialogue": "\"The school needs rice, not gold. Your husband’s prices were blood money. I do not feed that ledger.\"",
         "stage_directions": "He does not look at the bowl."
@@ -73628,7 +73628,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "\"Then tell me what is interesting about this bowl. It is the only thing I have left.\"",
         "stage_directions": ""
@@ -73643,7 +73643,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_donation_mirror",
         "dialogue": "\"What is interesting is that you offer me what you would not give your husband. He died alone. You will not do the same to me. But I will not be your receipt.\"",
         "stage_directions": "He writes in his notebook: “refused.”"
@@ -73763,13 +73763,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_ash_urn",
         "dialogue": "\"A name is the receipt. Without one, I cannot deposit. Your husband was a debtor to the state. I do not open an account for thieves.\"",
         "stage_directions": "He opens his notebook."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "\"This is my husband’s ash. The temple means to refuse him because he died without a name—the prison took that too. I want Phra Kam to chant. He means more than the official rite.\"",
         "stage_directions": ""
@@ -73790,7 +73790,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "\"When is he coming to the funeral? If he does not chant, my son will accuse me of wasting the ashes.\"",
         "stage_directions": ""
@@ -73805,7 +73805,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_ash_urn",
         "dialogue": "\"I am coming nowhere. Let the canal take him. The dead do not need a voice—they need a name someone will speak. You cannot speak his. I will not lie for you.\"",
         "stage_directions": ""
@@ -73919,7 +73919,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "\"This spoon probably belonged to a man who fed himself in the forest. It weighs more than your papers. I will not be registered.\"",
         "stage_directions": "He takes the spoon from the pond diver."
@@ -73946,13 +73946,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "\"I brought this from the bottom. It was brought by the water. The pond keeps what you throw away. The monk is the same.\"",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "\"I brought this spoon from my kitchen. It was my husband’s last tool. I wanted him to see—he gave up everything, even the spoon. But Phra Kam will not even take it.\"",
         "stage_directions": "She steps forward, a small cloth bundle in her hands."
@@ -73967,7 +73967,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "\"I do not take. I receive. And I have brought nothing to this pond but the refusal to be filled. The spoon is yours, Khun Yai. It does not belong to my ledger.\"",
         "stage_directions": ""
@@ -74093,7 +74093,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"I overheard what you said by the pond. You said overheard everything—that my husband’s spoon was refused. The whole village overheard too. My son will not speak to me now.\"",
         "stage_directions": ""
@@ -74108,7 +74108,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_veranda",
         "dialogue": "\"I cannot be your receipt. But I will sit here until the year ends. That is all I can overhear—the silence between your breathing and your son’s. Most Thais would accept a monk’s bowl. I am not one of them.\"",
         "stage_directions": ""
@@ -75005,13 +75005,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The clerk pulls a slip from the back room — the original spirit lease, dated weeks ago. Next to Rangsri's thumbprint, a note in charcoal: \"Vial to be returned unopened.\" Pornchai's pen hovers. The boy's mother waits outside.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "\"The clerk's lamp hisses. The charcoal note lies open on the counter.\"",
         "stage_directions": ""
@@ -75125,7 +75125,7 @@
         "stage_directions": "Turns to Rangsri."
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "\"The bucket knocks against the well wall and stills.\"",
         "stage_directions": ""
@@ -75146,7 +75146,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "\"The well rope creaks once, then goes quiet.\"",
         "stage_directions": ""
@@ -75173,7 +75173,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "\"The well keeper coils the dry rope around her elbow.\"",
         "stage_directions": ""
@@ -75287,7 +75287,7 @@
         "stage_directions": "Lifts his pen."
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The grain clerk's scoop pauses above the sack.\"",
         "stage_directions": ""
@@ -75308,7 +75308,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The brass scale trembles and settles.\"",
         "stage_directions": ""
@@ -75335,7 +75335,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The metal bowl rings once under the vial.\"",
         "stage_directions": ""
@@ -75488,7 +75488,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I hear nothing. Just the river. That laugh is gone. I feel uncomfortable — like the spirit is still waiting.",
         "stage_directions": ""
@@ -76439,7 +76439,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The pawnshop counter smells of old brass and joss. The Appraiser weighs a gold bracelet on her palm. \"This bracelet has slept here four years, mother of the letter-writer's moon,\" she says to no one.",
         "stage_directions": ""
@@ -76451,7 +76451,7 @@
         "stage_directions": "He enters, rain on his shoulders, holding the same bracelet in its red cloth."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "That bracelet is Nim's. I prepared her body. I know the clasp—the dance-rattle on the link. You are using her flesh to pay for a lie.",
         "stage_directions": "She is seated on a stool by the door, wrapped in a damp shawl."
@@ -76478,7 +76478,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "Nim was beaten into grace with this very bracelet—the counting-stick on her knuckles. I owe her the truth. We've talked about this before, Wan. Let it go.",
         "stage_directions": ""
@@ -76937,7 +76937,7 @@
         "stage_directions": "Chai"
        },
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_water_blessing_ghat",
         "dialogue": "The district officer's registration deadline is tomorrow. If the child is not named today, we lose the rice subsidy. The name is on the prow—just speak it.",
         "stage_directions": ""
@@ -76964,13 +76964,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_water_blessing_drummer",
         "place": "place_water_blessing_ghat",
         "dialogue": "I can hold the beat until the shadow passes—but the drum must match the child's breath. Your breath is already in the water.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_boatman",
         "place": "place_water_blessing_ghat",
         "dialogue": "This naming is my dream—my only chance to give him a future. Please, Lek, you are the clerk—you can write the name in the book before the shadow passes.",
         "stage_directions": ""
@@ -77267,7 +77267,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pricha",
         "place": "place_rain_gauge_house",
         "dialogue": "Then let the naming happen now, here, by the gauge—Kamnan, you can speak the syllables before the drop falls.",
         "stage_directions": ""
@@ -77294,7 +77294,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "How shall I record the rain's start? If I wait for your decision, I miss the first drop.",
         "stage_directions": ""
@@ -77435,7 +77435,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_boatman",
         "place": "place_veranda",
         "dialogue": "Two seconds—does it matter? He is named. He is my son. A child is not a second.",
         "stage_directions": ""
@@ -77585,7 +77585,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The canal's broker of other sons' devotion sat on the pawnshop step, a creditor paid in his own handwriting, as the appraiser held up the gold bracelet that had been redeemed on the third of every month for four years and asked: \"Does the lady Nim still live?",
         "stage_directions": ""
@@ -77753,7 +77753,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "I want you to write a letter, Lek. To Mae in Bangkok. Tell her that Nim died four years ago. I will not carry a false account out of this world.",
         "stage_directions": ""
@@ -77786,7 +77786,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "I need a break from this keeping of secrets. Write it, or I will dictate it to the boatman.",
         "stage_directions": "She turns to Lek."
@@ -78089,7 +78089,7 @@
         "stage_directions": "He stands on the top step, hands empty."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You kept her alive in envelopes, Sangwan. I cannot call that a lie. But I need to see the jar.",
         "stage_directions": ""
@@ -78107,7 +78107,7 @@
         "stage_directions": "She places her lacquered box on the rail, opens it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "They told me Nim is sick. That is why the money stopped. But Bua wrote me the truth. I am here to take her home.",
         "stage_directions": ""
@@ -78128,7 +78128,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You wrote for him. Did you know what you were writing?",
         "stage_directions": ""
@@ -78263,13 +78263,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rice_counter",
         "dialogue": "The laugh came at the fourth bell after dawn. I heard it myself — the boy’s first sound since the river. But the sack it was weighed against carries his father’s ancestral token. Without the token, the rice is claimed by no one.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_rice_counter",
         "dialogue": "The laugh’s exact minute is what I lack. My chart for the child’s fate is blind at that coordinate. Give me the vial — I will return the sound to you after I calibrate.",
         "stage_directions": ""
@@ -78317,7 +78317,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"No menu. Only the ledger. And the ledger says the father has no name on any sack until a token is produced.\"",
         "stage_directions": ""
@@ -78464,7 +78464,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The well answered her laugh, yes. But the rope pulley jammed at that same instant. The bucket wouldn’t budge an inch. I had to cut the rope.",
         "stage_directions": ""
@@ -78605,13 +78605,13 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_spirit_hall",
         "dialogue": "\"The dance began at sunset. I saw the shadow of the roof beam cross the threshold. That instant is marked in my ledger — but the dancer's feet never touched the floor. She danced behind the students. The movement was invisible to the eye, not to the celestial frame.\"",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_district_officer",
         "place": "place_spirit_hall",
         "dialogue": "A man called me — the district officer — asking after the dance's start time. He says it was not registered. The hall records only permitted dances.",
         "stage_directions": ""
@@ -78929,7 +78929,7 @@
         "stage_directions": "debt held in grain"
        },
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "That jar belongs to the temple's silence. You cannot carry it to the river.",
         "stage_directions": ""
@@ -78941,7 +78941,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_salt_clerk",
         "place": "place_salt_store",
         "dialogue": "Grey salt cancels debt, but it also names the debtor. You would announce her?",
         "stage_directions": ""
@@ -79097,7 +79097,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "Seal the urn’s lid with silver leaf. Let it reflect only the temple wall — no name, no face.",
         "stage_directions": ""
@@ -79259,7 +79259,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_delivery_boy",
         "place": "place_river_post",
         "dialogue": "This letter must arrive first. Tell the boatman to release the urn only after the widow’s reply comes back.",
         "stage_directions": ""
@@ -80285,7 +80285,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "He died at 4:07. I watched the clock. The district officer audits my land tomorrow. I need the earlier time — it's the only proof I held title before his death.",
         "stage_directions": ""
@@ -80297,7 +80297,7 @@
         "stage_directions": "Does not look up from the clock face."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "Then write it as 4:07 and burn the red slip. You've done it before for others.",
         "stage_directions": ""
@@ -80324,7 +80324,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "I prefer the truth. But the truth won't keep my land.",
         "stage_directions": ""
@@ -80336,7 +80336,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_funeral_parlor",
         "dialogue": "My mother was heart-broken when I married him. Now I must break the land instead.",
         "stage_directions": "Picks up the paper, folds it into her sleeve."
@@ -80351,7 +80351,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mor_duang",
         "place": "place_funeral_parlor",
         "dialogue": "I have no girlfriend to grieve with you. Only the ledger. It will remember what I cannot.",
         "stage_directions": "Kamnan does not offer his hand. He turns back to the chronometer. The widow leaves without her time."
@@ -80477,13 +80477,13 @@
         "stage_directions": "Motions to the rain gauge keeper."
        },
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "The price of the first drop is the same — it costs a witness.",
         "stage_directions": "He adjusts his stopwatch, not looking at the officer."
        },
        {
-        "character": "char_narrator",
+        "character": "char_rain_gauge_keeper",
         "place": "place_rain_gauge_house",
         "dialogue": "\"The keeper's stopwatch ticks, measuring nothing.\"",
         "stage_directions": "He adjusts his stopwatch, not looking at the officer."
@@ -80498,7 +80498,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "My husband's death is no different from this rain. You saw it or you did not. I saw his hand stop at 4:07. I was the only witness.",
         "stage_directions": ""
@@ -80510,7 +80510,7 @@
         "stage_directions": "He turns to leave."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_rain_gauge_house",
         "dialogue": "He ran out of the house when the fever broke. I stayed. I know the time.",
         "stage_directions": ""
@@ -80666,7 +80666,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_water_blessing_ghat",
         "dialogue": "I conserved my husband's name for thirty years. When he died, his name meant nothing. A child is different. A name given is a name kept.",
         "stage_directions": "Steps forward, holding the moon-phase paper."
@@ -80819,7 +80819,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "She lost her name when she danced alone. I will give her mine, if it can free her.",
         "stage_directions": ""
@@ -81506,7 +81506,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Rangsri holds the robe out. The fabric catches the lantern light. An old woman whispers: \"Remember the urns. Remember the dancer. This robe could bind his spirit.\"",
         "stage_directions": ""
@@ -82985,7 +82985,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_salt_store",
         "dialogue": "Phum held the district officer's letter like a face handed down cracked – Sangwan wanted it burned before the salt store's white bin could measure the debt.",
         "stage_directions": "The salt store's white bin gleams in the late afternoon light. The clerk stands behind the chalk table, her hands still. Phum holds a sealed envelope, the red wax unbroken. Sangwan leans against the hollow step, his breathing shallow."
@@ -83657,7 +83657,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "My husband’s soul needs the merit of this bowl.",
         "stage_directions": "She holds the gilded vessel before her."
@@ -83675,7 +83675,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I paid good prices for this bowl. The temple accountant will record it. That is the way.",
         "stage_directions": ""
@@ -83696,7 +83696,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "Which one will you accept?",
         "stage_directions": "She pleads."
@@ -84350,7 +84350,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_grammar_mill",
         "dialogue": "Pom reaches into his notebook and draws out a folded government release—yellowed, stamped. He places it beside the letter.",
         "stage_directions": "Neither he nor Sangwan looks at it."
@@ -84377,7 +84377,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_type_monitor",
         "place": "place_grammar_mill",
         "dialogue": "The Type Monitor picks up the release paper, reads it, sets it back. Pom closes his notebook.",
         "stage_directions": "She says nothing. Sangwan’s hand rests on the tray’s edge, inches from the letter."
@@ -84698,7 +84698,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_tax_clerk",
         "place": "place_rice_ledger",
         "dialogue": "The Tax Clerk takes out a slip from his own drawer—a corrected form, signed, but not stamped.",
         "stage_directions": "He slides it toward Lek."
@@ -84719,7 +84719,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_rice_ledger",
         "dialogue": "Pom picks up the widow's letter and holds it over the master ledger.",
         "stage_directions": "The Tax Clerk watches, motionless. Sangwan's hand hovers near the stamp."
@@ -84872,7 +84872,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_veranda",
         "dialogue": "Sangwan stands, walks to the brazier, and pulls out a half-charred practice-sheet—his sister's signature, burned at the edge.",
         "stage_directions": "He holds it up."
@@ -85019,7 +85019,7 @@
         "stage_directions": "She sets her lacquered box on the weighing post, the lid open to show seven empty vials."
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "This slip bears the name of a woman who died before I was born. To release rice in her name would void the tenancy of her granddaughter, who still walks the canal.",
         "stage_directions": ""
@@ -85031,7 +85031,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "Then we are both creditors of the same narrow debt.",
         "stage_directions": ""
@@ -85052,7 +85052,7 @@
         "stage_directions": "She touches the slip but does not take it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_rice_counter",
         "dialogue": "I overheard you humming at dawn. The well answered, they say.",
         "stage_directions": ""
@@ -85181,7 +85181,7 @@
         "stage_directions": "She lowers a vial into the water by a frayed rope—the vial labeled “A joke not repeated.”"
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "I have a marble that surfaced yesterday—the same one the mute boy lost at the river. It came up laughing.",
         "stage_directions": ""
@@ -85193,7 +85193,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "The marble is the joke. A child’s hand threw it, the well caught it. If I give it to you, the well will go silent for a day. I count every echo—I cannot afford to miss one.",
         "stage_directions": "is"
@@ -85214,7 +85214,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "Then you must understand: I have only this marble. The well will not rise again for two weeks if I surrender it.",
         "stage_directions": ""
@@ -85361,7 +85361,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "I have the ink vow in the back room. It expired five years ago. The pain is gone, Rangsri. The spirit has already left you.",
         "stage_directions": ""
@@ -85388,7 +85388,7 @@
         "stage_directions": "home She opens the box and takes out the vial labeled “A dance with no audience.”"
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "I cannot amend a lease that has turned to ash. But I can write a new one—if you give me the box.",
         "stage_directions": ""
@@ -86222,7 +86222,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I came for my daughter's funeral. They told me she died a dancer. But Nim is still sending me money. My son writes her letters. I have a class in grief now. I must learn it alone.",
         "stage_directions": ""
@@ -87017,7 +87017,7 @@
         "stage_directions": "Steps from behind the trunk, face grey. His hands are full of scrap paper — practice sheets for a signature."
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_wai_khru_mound",
         "dialogue": "The debt is mine to cancel, Wan. I prepared her body while you sat in a cell. I will not carry a false account out of this world.",
         "stage_directions": ""
@@ -87347,7 +87347,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "This ticket is old, Lek. The gold is tired of sleeping here. Most Thais would have let it go by now. What is the custom for a bracelet held four years? The lady who owns it — is she coming?",
         "stage_directions": ""
@@ -87359,7 +87359,7 @@
         "stage_directions": "Quietly, hands in his pockets."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The ledger says this bracelet was pawned by a clerk, not a dancer. I need a name to close the ticket. I need a picture of the lady. Is she alive or is she just ink?",
         "stage_directions": ""
@@ -87401,7 +87401,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "I am a creditor who refuses the last satang. I do not close accounts. But I cannot lend against a ghost. Give me a name I can hold.",
         "stage_directions": ""
@@ -87515,19 +87515,19 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_veranda",
         "dialogue": "The truth. Lek. Write the truth.",
         "stage_directions": "Carried out on a mat by her students. Her voice is a rasp."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Why is everyone so quiet? I feel so uncomfortable. What is happening?",
         "stage_directions": "Looks from Wan to Bua to Lek. Her hands tighten on the mangoes."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I came to see my daughter. Lek, you write her letters so beautifully. The handwriting is so neat. Where is she? Is she inside?",
         "stage_directions": ""
@@ -87569,7 +87569,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Sangwan. You are my son. Tell me where your sister is.",
         "stage_directions": ""
@@ -87905,7 +87905,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_rice_counter",
         "dialogue": "A gift given without reason is a debt.",
         "stage_directions": "Lek watches Rangsri unscrew a vial — the one labeled  . She taps it against the name bench once."
@@ -88013,7 +88013,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "\"The well keeper's shadow stretches long on the echo step.\"",
         "stage_directions": "The night before the feast. Rangsri sits on the stone lip, the vial   balanced on her knee. The well keeper watches from the echo step."
@@ -88892,7 +88892,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_veranda",
         "dialogue": "The Mirror Tender pours water into a clay bowl.",
         "stage_directions": ""
@@ -89753,7 +89753,7 @@
         "stage_directions": "Standing at the echo step, his rusted spoon tucked in his robe. He does not look at the child either — only at the bucket."
        },
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_laughing_well",
         "dialogue": "The well measures laughter, not water. Who will tell the first joke?",
         "stage_directions": "Her notebook open, a marble in her palm."
@@ -89795,7 +89795,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_laughing_well",
         "dialogue": "The water rose one inch that time. The boy laughed — or the spirit did. Which one do you record?",
         "stage_directions": "She drops the marble into the well. It clinks once, then silence."
@@ -89921,7 +89921,7 @@
         "stage_directions": "He sets the blank page beside the vial."
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "Interesting — a borrower and a landlord arguing over the same tenant. Who speaks for the child?",
         "stage_directions": "She wears bells on both wrists."
@@ -89963,7 +89963,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The terms are clear. One party must claim the child's breath as collateral. Lek — whose name do you write on the lease?",
         "stage_directions": "She rings a small bell."
@@ -90089,7 +90089,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "A name must be spoken aloud. No voice, no rice. The boy's health depends on this.",
         "stage_directions": "He taps the ledger."
@@ -90131,7 +90131,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "A borrowed voice is not the same as a tenant's. Lek — whose mouth do you authorize to speak for the rice?",
         "stage_directions": ""
@@ -90419,7 +90419,7 @@
         "stage_directions": "Does not look up."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "It is for the temple school. I will not take it back. The children’s merit is my merit.",
         "stage_directions": ""
@@ -90437,7 +90437,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "He refuses my gift. In front of the whole canal. Aren't you tired of silence, monk?",
         "stage_directions": ""
@@ -90464,7 +90464,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "They have a lot of things to discard. I am not discarding. I am giving.",
         "stage_directions": ""
@@ -90761,7 +90761,7 @@
         "stage_directions": "Does not stop polishing."
        },
        {
-        "character": "char_pricha",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "I have seen others leave offerings here. Why not mine? Is it because I am a widow? Because my husband was a gambler?",
         "stage_directions": ""
@@ -90773,7 +90773,7 @@
         "stage_directions": "He lifts the rusted spoon."
        },
        {
-        "character": "char_phra_kam",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "Your husband bought a whole hall’s merit once. Erased his son’s murder debt. I was there. I spoke. They silenced me.",
         "stage_directions": "He lifts the rusted spoon."
@@ -92423,7 +92423,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "She does not say “I will refuse.” She simply holds the bracelet, waiting. Wan’s jaw tightens.",
         "stage_directions": ""
@@ -92456,7 +92456,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The appraiser pushes a small piece of paper across the counter — a note in her own hand: “The lady Nim, last seen at the Wai Khru Mound four years ago.” She has been watching longer than Wan knew.",
         "stage_directions": ""
@@ -92609,7 +92609,7 @@
         "stage_directions": "- (keep dialogue)"
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_letter_writers_landing",
         "dialogue": "Wan opens his palm. In it is a practice sheet — the signature “Nim” written twenty times, each identical. He shows it to Bua as if offering evidence.",
         "stage_directions": ""
@@ -92945,7 +92945,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Where is my daughter? I came all the way down the canal. I have not seen her in four years. You — you are the one who writes. Where is Nim?",
         "stage_directions": ""
@@ -92957,7 +92957,7 @@
         "stage_directions": "- (keep dialogue)"
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I asked you a question. Is she sick? Did she run? Does she not want to see me? I have come so far. I waited for your letter. When it stopped, I knew something was wrong. I am home now. Where is my daughter?",
         "stage_directions": ""
@@ -92978,7 +92978,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Four years. You wrote every month?",
         "stage_directions": ""
@@ -93005,7 +93005,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You wrote every month. You remembered the way she curled her letters. You remembered the gold bracelet. You remembered everything except the one thing that mattered.",
         "stage_directions": ""
@@ -93137,7 +93137,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_salt_store",
         "dialogue": "A boat nudges its post and settles. The word was \"probably.\"",
         "stage_directions": ""
@@ -93158,7 +93158,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_salt_store",
         "dialogue": "Somewhere down the canal, a dog barks once and thinks better of it. The word was \"hear.\"",
         "stage_directions": ""
@@ -93299,7 +93299,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_mirror_mender",
         "dialogue": "Somewhere down the canal, a dog barks once and thinks better of it. The word was \"treating.\"",
         "stage_directions": ""
@@ -93320,7 +93320,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_mirror_mender",
         "dialogue": "A boat nudges its post and settles. The word was \"keep.\"",
         "stage_directions": ""
@@ -93461,7 +93461,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_river_post",
         "dialogue": "A boat nudges its post and settles. The word was \"live.\"",
         "stage_directions": ""
@@ -93482,7 +93482,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_river_post",
         "dialogue": "Somewhere down the canal, a dog barks once and thinks better of it. The word was \"only.\"",
         "stage_directions": ""
@@ -93623,7 +93623,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_veranda",
         "dialogue": "Somewhere down the canal, a dog barks once and thinks better of it. The word was \"waiting.\"",
         "stage_directions": ""
@@ -93644,7 +93644,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_veranda",
         "dialogue": "A boat nudges its post and settles. The word was \"conserve.\"",
         "stage_directions": ""
@@ -95801,7 +95801,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "And I need a hand to write a letter. My own has forgotten how to hold a pen.",
         "stage_directions": ""
@@ -95867,7 +95867,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "The lady Nim has been dead four years. I know, because I prepared her body. And I will not let my own death carry the lie.",
         "stage_directions": ""
@@ -96020,7 +96020,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "I have written my own truth. The appraiser found me a scribe. Lek — read it. See if you understand what I am trying to say.",
         "stage_directions": ""
@@ -96155,7 +96155,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Nim owed me her craft. I took her counting-stick and made her dance until her feet bled. She paid in full. But her brother owes me the truth — he has let me carry her death alone for four years.",
         "stage_directions": ""
@@ -96194,7 +96194,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Take it. It is the only thing I have left that belonged to her. If you go to your mother with this, she will know you loved her daughter. And maybe she will forgive the lie.",
         "stage_directions": ""
@@ -96329,7 +96329,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "I have the stick. I have the letters — all forty-eight of them. I have the bracelet, which the appraiser gave me. But I do not have my daughter. Tell me, son: where is Nim?",
         "stage_directions": ""
@@ -96356,7 +96356,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You wrote every one of them. I know your handwriting from when you were a boy — the way you loop the 's' in 'sister.' I knew the first month. But I kept reading because the money was real, and because I thought maybe you would tell me yourself one day.",
         "stage_directions": ""
@@ -96671,7 +96671,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_donation_mirror",
         "dialogue": "The urn keeper sent word. She wants to leave the dancer's ash on the floating tray at dawn. Says the mirror will accept any offering.",
         "stage_directions": "Polishes the brass funnel with a silk rag."
@@ -96845,7 +96845,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "This came up from the bottom just now. Identical to the one Phra Kam carries. Same weight, same hunger.",
         "stage_directions": "Holds up a rusted spoon, dripping with mud."
@@ -97727,7 +97727,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"The mother shifts her jar, water sloshing softly.\"",
         "stage_directions": ""
@@ -98780,7 +98780,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "The hall will register the vial if Lek signs as notary. The monk’s objection will be filed separately, under ‘Spiritual Dispute.’",
         "stage_directions": "She slides a paper across the window."
@@ -98948,7 +98948,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_grain_clerk",
         "place": "place_rice_counter",
         "dialogue": "This bag spoiled at dawn. No one spoke the name. The rice is not for distribution.",
         "stage_directions": "He lifts a sack marked with Rangsri’s mother’s name."
@@ -99269,7 +99269,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "The mirror reflects only the giver. Your face, Khun Mae. Not his.",
         "stage_directions": ""
@@ -99281,13 +99281,13 @@
         "stage_directions": "A crow landed on the brass funnel, tilted its head."
        },
        {
-        "character": "char_narrator",
+        "character": "char_mirror_tender",
         "place": "place_donation_mirror",
         "dialogue": "I've seen men give everything and still look hungry. You want me to set the bowl on the floating tray?",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "No. I want him to   it. I want his hand on the rim. That's how everyone knows—the bowl must be received.",
         "stage_directions": "take"
@@ -99299,7 +99299,7 @@
         "stage_directions": "The crow's shadow slid across the mirror."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "The brassy gleam of the gilded bowl caught the morning light—an offering that drowns its name, Phra Kam called it later. The widow Saeng stood before the donation mirror, her hands still trembling from the weight of the bowl. \"This is for the temple school,\" she said. \"For my husband's merit. Everyone knows it—everyone knows him.\"",
         "stage_directions": "She glanced at Phra Kam, who sat on the silted bank, back to the mirror frame."
@@ -99320,7 +99320,7 @@
         "stage_directions": "He stepped onto the bank, the mud cool under his soles."
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_donation_mirror",
         "dialogue": "A vow is just a ledger with interest.",
         "stage_directions": "He slid the mirror frame a fraction, catching Phra Kam's reflection. The monk did not move."
@@ -99461,13 +99461,13 @@
         "stage_directions": "He did not look at the bowl. He looked at the rows of unmarked jars."
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_ash_urn",
         "dialogue": "Don't tell anyone I am here. Don't tell him either—the one whose money bought this bowl. He is not dead; he is just hidden.",
         "stage_directions": "His voice was flat, like water moving under silt."
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "The Urn Keeper handed Lek a jar with no label. \"This one is the dancer Sangwan asked about. Bone-ash, four years. No name came. If the bowl stays, perhaps we can swap the gold for a chant.",
         "stage_directions": ""
@@ -99494,13 +99494,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_ash_urn",
         "dialogue": "Merit is not a loan. It is a footprint in water. The bowl or the ash—what will you feed?",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "I will take the bowl back to Bangkok. Don't let anyone know I was here. Don't tell anyone I tried.",
         "stage_directions": ""
@@ -99635,13 +99635,13 @@
         "stage_directions": "He held it up: identical to Phra Kam's."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "I see my face. Not his. Is that all it is? A bowl that shows me myself?",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "You have to see it. You must see it—the giver is the gift. The water does not save the dead; it reveals the living.",
         "stage_directions": "He opened his notebook, wrote \"refused\" under the date, then closed it."
@@ -99653,7 +99653,7 @@
         "stage_directions": "When he surfaced, he held a child's shoe."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "This one was heavy when it went in. Are you allergic to any medicine? The slit cuts sometimes. When did he get here—the monk? He has been sitting since midnight.",
         "stage_directions": ""
@@ -99680,13 +99680,13 @@
         "stage_directions": "It sank. The bowl sat in the sunlight, a perfect circle of light on its surface."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_silent_pond",
         "dialogue": "Take the bowl, Lek. I do not want it anymore. It is just a bowl.",
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_silent_pond",
         "dialogue": "You have to see it—the bowl is full. When did he arrive? The question is not time. It is where the water came from.",
         "stage_directions": ""
@@ -99839,7 +99839,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_phra_kam",
         "place": "place_veranda",
         "dialogue": "The pain is gone. It doesn't hurt anymore—not the bowl, not the name, not the refusal. The water took it.",
         "stage_directions": "He opened his notebook, wrote one word: \"given.\" Then snapped it shut."
@@ -99995,7 +99995,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_rice_ledger",
         "dialogue": "Pom held a word gone subzero — a page from his dictionary that Wan claimed was forged.",
         "stage_directions": "Pom stands at the stamp table, the page weighted under his palm."
@@ -100217,7 +100217,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_grammar_mill",
         "dialogue": "\"Wan reaches; Pom shows him the phon: 'I have to love yourself — you need — you for yourself.'\"",
         "stage_directions": ""
@@ -100325,7 +100325,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_charcoal_hearth",
         "dialogue": "\"The page is now at the hearth — Wan burns the straw tip. He has seen the 'heart hot.'\"",
         "stage_directions": "jai ron"
@@ -100379,7 +100379,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_charcoal_hearth",
         "dialogue": "\"Hot earth in a lover.\" She sees two bits of ash under the ash lid: \"The dancer's ashes, the letter — the heart bone.\"",
         "stage_directions": "She sees two bits of ash under the ash lid: \"The dancer's ashes, the letter — the heart bone"
@@ -100487,7 +100487,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pornchai",
         "place": "place_veranda",
         "dialogue": "\"The fourth act ends at the veranda. Pom sits at the edge, right hand holding a wet sheet. The page has been taken from the water of the hearth — the fire that stoker held — it burns still. She said she did not drown the word.\"",
         "stage_directions": "did not"
@@ -101381,7 +101381,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_letter_writers_landing",
         "dialogue": "\"If you tell her, then Nim is dead. As long as the letters come, she still has a daughter.\"",
         "stage_directions": "He nods toward Bua climbing from the canal boat, a folded paper in her hand."
@@ -101543,7 +101543,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The same bracelet, twenty-eighth of the month. Redeemed on the third. Four years. I never asked whose it was.",
         "stage_directions": ""
@@ -101933,7 +101933,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then write me one last letter. From Nim. Saying goodbye. And after that, no more lies.",
         "stage_directions": "She is silent a long time. Then she reaches out and touches his cheek."
@@ -102746,7 +102746,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "I write invisible names in the alcove dust. The ether will take them. The inert does not count.",
         "stage_directions": ""
@@ -102908,7 +102908,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_pond_diver",
         "place": "place_silent_pond",
         "dialogue": "I retrieve what the sky refuses to count. I do not ask for a menu—I just dive.",
         "stage_directions": ""
@@ -105551,7 +105551,7 @@
         "stage_directions": "Takes the salt, does not turn."
        },
        {
-        "character": "char_narrator",
+        "character": "char_phum",
         "place": "place_salt_store",
         "dialogue": "What debt?",
         "stage_directions": ""
@@ -106253,7 +106253,7 @@
         "stage_directions": "He slides the worn gold bangle across the counter without looking at it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The ticket is made out to the lady Nim. Four years, every month. The gold has slept here long.",
         "stage_directions": "She does not take the bracelet; she lines up a fresh ticket and waits."
@@ -106277,7 +106277,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "From morning until evening I see hands come and go. This one never changes. The lady Nim—she is unwell?",
         "stage_directions": ""
@@ -106304,7 +106304,7 @@
         "stage_directions": "His voice is flat, but his hand trembles slightly as it rests on the counter."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "You are interested only in that month’s cycle. But I am interested in the lady herself. Tell me she is well, and I will write the ticket.",
         "stage_directions": ""
@@ -106820,7 +106820,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_charcoal_hearth",
         "dialogue": "I taught your brother the same dance phrase. He was not a rebel. He was a boy who could not cool his tongue. The phrase is not a weapon. It is a fever — but fever can be a cure.",
         "stage_directions": ""
@@ -106847,7 +106847,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_charcoal_hearth",
         "dialogue": "The fire stoker says we must decide. But I cannot burn what I have not yet taught. Lek, this is your job — you keep the records. Tell me: is a spoken word worth more than a written one?",
         "stage_directions": ""
@@ -106967,7 +106967,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_grammar_mill",
         "dialogue": "I am not asking for revolution. I am asking for my art. This phrase is the heartbeat of a dance I taught for forty years. I cannot let it be buried.",
         "stage_directions": ""
@@ -107141,7 +107141,7 @@
         "stage_directions": "Jai ron khaeng din"
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_rice_ledger",
         "dialogue": "It is not a crop report. It is a dance instruction. The phrase is a heartbeat, not a fertilizer. The ledger has no business with it.",
         "stage_directions": ""
@@ -107180,7 +107180,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_rice_ledger",
         "dialogue": "I have taught this phrase to four generations of dancers. They have brought it forth in joy. It is not a mistake.",
         "stage_directions": ""
@@ -107315,7 +107315,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_bua",
         "place": "place_veranda",
         "dialogue": "I have lived long enough to know that what I said was true: the heart has a temperature. This phrase is not a rebellion. It is a measurement.",
         "stage_directions": ""
@@ -108815,7 +108815,7 @@
         "stage_directions": "body receipt She touches the woven grain sack, fingers tracing the faded inscription."
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_rice_counter",
         "dialogue": "The name is registered. No one has claimed the token. Once spoken, it becomes property. Are you claiming it?",
         "stage_directions": ""
@@ -108848,7 +108848,7 @@
         "stage_directions": "Her lacquered box is open; a single empty vial labeled \"A gift given without reason\" rests beside it."
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_rice_counter",
         "dialogue": "\"The rule is plain: one token, one claim. You both want the same carved tag. Lek must decide whose receipt takes priority.\"",
         "stage_directions": ""
@@ -109010,7 +109010,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_well_keeper",
         "place": "place_laughing_well",
         "dialogue": "\"The well doesn't care about timing. It cares about invention. Sangwan, your bucket is empty. Rangsri, your joke must be new.\"",
         "stage_directions": ""
@@ -109172,7 +109172,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_contract_clerk",
         "place": "place_spirit_hall",
         "dialogue": "\"One receipt can serve two functions — if the words are written in two columns. But the ink fades differently. Which debt survives the reading?\"",
         "stage_directions": ""
@@ -110009,7 +110009,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_rangsri",
         "place": "place_veranda",
         "dialogue": "Rangsri sat nearby, her lacquered box open. She placed a vial labeled \"A gift given without reason\" on the railing between Kamnan and Phra Kam. Neither took it.",
         "stage_directions": ""
@@ -110585,7 +110585,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_mirror_mender",
         "place": "place_mirror_mender",
         "dialogue": "The mender turns the envelope over. A single word is still legible in the corner: “Nim.”",
         "stage_directions": ""
@@ -111398,7 +111398,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "\"Remember — the well does not need a joke. It needs a surprise. That drawing is not a word, but it is new.\"",
         "stage_directions": ""
@@ -112205,7 +112205,7 @@
         "stage_directions": "He sets the clay vessel on the Spoon Sill, his hand trembling."
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "The jar has no name, but it has a weight. Some people say the spirit counts the days. I do not say anything.",
         "stage_directions": "She wipes the dust with her sari."
@@ -112379,7 +112379,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_donation_mirror",
         "dialogue": "The widow stands still, her reflection caught in the mirror.",
         "stage_directions": ""
@@ -113351,7 +113351,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You don't know? You held it. You burned it. You kept the   from me —   she wrote,   she wanted.",
         "stage_directions": "answer why what"
@@ -113378,7 +113378,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "You have nothing. My mother is dead, and I don't know if she forgave me for leaving.",
         "stage_directions": ""
@@ -113399,7 +113399,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_veranda",
         "dialogue": "Then teach me the word. If you can't show me the letter, show me the sound.",
         "stage_directions": ""
@@ -113519,7 +113519,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "I have one letter left in me. The truth—to Mae in Bangkok. I want you to write it, Lek. Tell her Nim died the year her brother sat in a cell.",
         "stage_directions": ""
@@ -113531,7 +113531,7 @@
         "stage_directions": "Steps out from the Debt Arches, his voice formal as a salutation."
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "A debt unpaid sits longer than a truth unspoken.",
         "stage_directions": "The Caretaker places three incense sticks on the Ash Ring without lighting them."
@@ -113552,7 +113552,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "You would dress a ghost in ink and call it devotion? The silver letters are the lie that keeps her alive. I will not carry that lie to my grave.",
         "stage_directions": ""
@@ -113585,7 +113585,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_wai_khru_mound",
         "dialogue": "Lek, you are the clerk. The pen is yours. Choose whose voice you will speak.",
         "stage_directions": ""
@@ -113693,7 +113693,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "The same bracelet, twenty-eighth of the month, four years. The ticket always in a lady’s name. I have already marked it as 'Nim' on every ticket.’ Who is Nim to you?",
         "stage_directions": ""
@@ -113720,13 +113720,13 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_pawnshop",
         "dialogue": "The lady is dead. The sister who paid for his schooling. I held her body while he sat in a cell. The appraiser knows. Everyone knows—but no one will say it.",
         "stage_directions": "Enters behind Lek, leaning on the doorframe."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "I know what a ticket means—and what it doesn’t. You can ask me. I keep what I am paid to keep.",
         "stage_directions": ""
@@ -113753,7 +113753,7 @@
         "stage_directions": "He folds the bracelet into his sleeve."
        },
        {
-        "character": "char_narrator",
+        "character": "char_pawnshop_appraiser",
         "place": "place_pawnshop",
         "dialogue": "And when you is dead, the ticket expire? Who will write the truth then?",
         "stage_directions": ""
@@ -113861,7 +113861,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_boatman",
         "place": "place_letter_writers_landing",
         "dialogue": "Crack: \"The evening boat is held up—I cannot carry it.",
         "stage_directions": ""
@@ -113888,7 +113888,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_letter_writers_landing",
         "dialogue": "The silver letter—when she arrives, Mae from will come down the canal for her daughter — my last. truth—I will write it myself—if you you will not  write it — you. . Is everything all right\"?",
         "stage_directions": "She is seated on the Reading Bench under her bench folded paper in her lap."
@@ -114071,7 +114071,7 @@
       "type": "narrative",
       "lines": [
        {
-        "character": "char_narrator",
+        "character": "char_sangwan",
         "place": "place_veranda",
         "dialogue": "The veranda is full: the boatman, the monk, the appraiser, Bua—all waiting— Wan holds the pen: Everyone looks at Lek— \"The name is Nim— True or false—the water will carry your decision—",
         "stage_directions": ""
@@ -114151,7 +114151,7 @@
         "line": {
          "character": "char_sangwan",
          "place": "place_veranda",
-         "dialogue": "",
+         "dialogue": "You wrote the name true—the debt of love is a debt—and now the ledger is closed—the ink is dry.",
          "stage_directions": ""
         },
         "attribute": "attr_word_hoard",
@@ -114161,7 +114161,7 @@
         "line": {
          "character": "char_sangwan",
          "place": "place_veranda",
-         "dialogue": "",
+         "dialogue": "The pen refused the name—the debt remains—a ghost of ink on a page of water—unpaid.",
          "stage_directions": ""
         },
         "attribute": "attr_word_hoard",
@@ -115181,7 +115181,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_urn_keeper",
         "place": "place_ash_urn",
         "dialogue": "\"The Urn Keeper places a spoonful of rice beside each urn.\"",
         "stage_directions": ""
@@ -115214,7 +115214,7 @@
         "stage_directions": ""
        },
        {
-        "character": "char_narrator",
+        "character": "char_old_lady",
         "place": "place_ash_urn",
         "dialogue": "\"Mae Prasert steps inside, her eyes on the bowl.\"",
         "stage_directions": ""
