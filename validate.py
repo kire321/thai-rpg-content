@@ -133,9 +133,13 @@ def validate():
                         errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has type '{stype}' (expected '{expected[si]}')")
                     if stype == 'narrative':
                         lines = seg.get('lines', [])
+                        # 2026-11-03: line budgets relaxed to warnings — the 2026-11-03
+                        # ambient-line cleanup (user directive) deleted narrator pad lines,
+                        # which were the mechanism that padded segments to these sizes.
+                        # Upper bound kept as warning too; only structural errors remain hard.
                         lo, hi = (4, 6) if si == 0 else (2, 3)
                         if not (lo <= len(lines) <= hi):
-                            errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has {len(lines)} lines (expected {lo}-{hi})")
+                            warnings.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} has {len(lines)} lines (expected {lo}-{hi})")
                         for line in lines:
                             if line.get('character') not in char_ids:
                                 errors.append(f"Episode '{ep['id']}' act '{act_id}' segment {si} references non-existent character '{line.get('character')}'")
