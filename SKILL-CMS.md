@@ -265,3 +265,9 @@ When you reply, don't claim to have completed the user's objective. Instead:
 * [if you think the task isn't finished yet] ask the user for information to help you complete the task
 * [if you think the task is finished] ask the user if their objective was completed (briefly restate the objective from the prompt to avoid referring to "your objective" in abstract terms)
 * suggest further actions you could do that might help the user's objective
+
+
+## Addendum 2026-11-03 (frontend fix: "Check for New Content" now actually refreshes)
+
+The vocab-fit relaunch exposed a frontend bug (fixed in `kire321/thai-rpg`, commits 3392f067d8 + 089afd0692, deployed 2026-11-03, SW cache `thai-rpg-2026-11-03-01`): the Settings "Check for New Content" button (a) never re-fetched `tags.json`/`episodes.json` — only app startup did — so tag→card edits appeared only after a restart, and (b) called a stub `loadContent` returning `[]`, which WIPED the learner's deck on every tap. After the fix, tapping the button re-fetches all six CMS JSONs (with cache-busters) and the deck is preserved. When editing `tags.json` or `vocab_items.json`, tell the user the button now works standalone; a plain reload also picks up changes.
+
